@@ -19,7 +19,7 @@ public class CharsetEncodingFilter implements Filter {
 	public void doFilter(ServletRequest servletRequest,
 			ServletResponse servletResponse, FilterChain filterChain)
 			throws IOException, ServletException {
-
+		System.out.println(encoding);
 		servletRequest.setCharacterEncoding(encoding);
 		filterChain.doFilter(servletRequest, servletResponse);
 	}

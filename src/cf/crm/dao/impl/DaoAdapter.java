@@ -22,8 +22,6 @@ public class DaoAdapter implements Dao {
 
 	@Override
 	public void save(Object entity) {
-		System.out.println(11);
-	
 		getSession().save(entity);
 	}
 

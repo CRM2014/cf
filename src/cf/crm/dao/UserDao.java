@@ -1,5 +1,5 @@
 package cf.crm.dao;
 
-public interface UserDao {
+public interface UserDao extends Dao {
 
 }

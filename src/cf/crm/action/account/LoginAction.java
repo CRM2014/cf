@@ -39,7 +39,7 @@ public class LoginAction extends ActionSupport {
 
 		HttpServletRequest request = ServletActionContext.getRequest();
 
-		System.out.println(request.getCharacterEncoding());
+		
 		User user = new User();
 		if ("root".equals(user.getName())
 				&& "root123".equals(user.getPassword())) {

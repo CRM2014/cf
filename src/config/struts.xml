@@ -23,16 +23,15 @@
 
 
 		<global-results>
-			<result name="checkLoginFail">/login.jsp</result>
+			<result name="checkLoginFail">/view/account/login.jsp</result>
 		</global-results>
 
 		<action name="index">
-			<result>/index.jsp</result>
+			<result>/view/account/login.jsp</result>
 		</action>
 	</package>
 
 	<!-- 包含的配置文件 -->
 	<include file="/config/struts-account.xml"></include>
-
-
+	<include file="/config/struts-marketing.xml"></include>
 </struts>
