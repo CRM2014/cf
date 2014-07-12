@@ -1,30 +1,33 @@
+drop table if exists DataDictionary;
+
+drop table if exists Outflow;
+
 drop table if exists ContactPerson;
 
 drop table if exists ContactRecord;
 
-drop table if exists Customer;
-
-drop table if exists DataDictionary;
-
-drop table if exists Development;
-
-drop table if exists OrderRecord;
-
 drop table if exists OrderRecordProduct;
-
-drop table if exists Outflow;
-
-drop table if exists Product;
-
-drop table if exists SaleChance;
-
-drop table if exists Service;
 
 drop table if exists ServiceCustomer;
 
-drop table if exists Storage;
+drop table if exists Development;
+
+drop table if exists SaleChance;
+
+drop table if exists OrderRecord;
+
+drop table if exists Customer;
+
+drop table if exists Service;
 
 drop table if exists User;
+
+drop table if exists Product;
+
+drop table if exists Storage;
+
+
+
 
 /*==============================================================*/
 /* Table: ContactPerson                                         */
@@ -131,11 +134,11 @@ create table OrderRecord
 /*==============================================================*/
 create table OrderRecordProduct
 (
-   orreprID             char(10),
+   orreprID             char(10) not null,
    prID                 varchar(20) not null,
    orreID               varchar(20) not null,
    orreprNum            int not null,
-   primary key (prID, orreID)
+   primary key (orreprID)
 );
 
 /*==============================================================*/
@@ -218,7 +221,8 @@ create table ServiceCustomer
    secuDeal             varchar(200),
    secuDealTime         datetime,
    secuDealResult       varchar(100),
-   secuSatisfy          int
+   secuSatisfy          int,
+   primary key (secuID)
 );
 
 /*==============================================================*/
@@ -289,7 +293,7 @@ alter table Service add constraint FK_Reference_9 foreign key (usCreateID)
 alter table ServiceCustomer add constraint FK_Reference_19 foreign key (cuID)
       references Customer (cuID) on delete restrict on update restrict;
 
-alter table ServiceCustomer add constraint FK_Reference_20 foreign key (secuID)
+alter table ServiceCustomer add constraint FK_Reference_20 foreign key (seID)
       references Service (seID) on delete restrict on update restrict;
 
 alter table ServiceCustomer add constraint FK_Reference_21 foreign key (usAllocationID)
