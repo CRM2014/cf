@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 2014-7-12 16:42:52 by Hibernate Tools 3.6.0 -->
+<!-- Generated 2014-7-12 22:54:45 by Hibernate Tools 3.6.0 -->
 <hibernate-mapping>
-    <class name="src.cf.crm.entity.Customer" table="customer" catalog="crm">
+    <class name="cf.crm.entity.Customer" table="customer" catalog="crm">
         <id name="cuId" type="string">
             <column name="cuID" length="20" />
             <generator class="assigned" />
         </id>
-        <many-to-one name="user" class="src.cf.crm.entity.User" fetch="select">
+        <many-to-one name="user" class="cf.crm.entity.User" fetch="select">
             <column name="usID" length="20" not-null="true" />
         </many-to-one>
         <property name="cuName" type="string">
@@ -72,31 +72,31 @@
             <key>
                 <column name="cuID" length="20" not-null="true" />
             </key>
-            <one-to-many class="src.cf.crm.entity.Contactperson" />
+            <one-to-many class="cf.crm.entity.Contactperson" />
         </set>
         <set name="contactrecords" table="contactrecord" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="coID" length="20" not-null="true" />
             </key>
-            <one-to-many class="src.cf.crm.entity.Contactrecord" />
+            <one-to-many class="cf.crm.entity.Contactrecord" />
         </set>
         <set name="orderrecords" table="orderrecord" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="cuID" length="20" not-null="true" />
             </key>
-            <one-to-many class="src.cf.crm.entity.Orderrecord" />
+            <one-to-many class="cf.crm.entity.Orderrecord" />
         </set>
         <set name="servicecustomers" table="servicecustomer" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="cuID" length="20" not-null="true" />
             </key>
-            <one-to-many class="src.cf.crm.entity.Servicecustomer" />
+            <one-to-many class="cf.crm.entity.Servicecustomer" />
         </set>
         <set name="outflows" table="outflow" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="cuID" length="20" not-null="true" />
             </key>
-            <one-to-many class="src.cf.crm.entity.Outflow" />
+            <one-to-many class="cf.crm.entity.Outflow" />
         </set>
     </class>
 </hibernate-mapping>
