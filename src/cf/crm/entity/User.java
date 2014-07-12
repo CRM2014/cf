@@ -1,6 +1,6 @@
 package cf.crm.entity;
 
-// Generated 2014-7-12 16:42:52 by Hibernate Tools 3.6.0
+// Generated 2014-7-12 22:54:45 by Hibernate Tools 3.6.0
 
 import java.util.Date;
 import java.util.HashSet;

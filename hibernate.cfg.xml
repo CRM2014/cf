@@ -10,19 +10,19 @@
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLInnoDBDialect</property>
         <property name="hibernate.search.autoregister_listeners">false</property>
-        <mapping resource="src/cf/crm/entity/Service.hbm.xml" />
-        <mapping resource="src/cf/crm/entity/Orderrecord.hbm.xml" />
-        <mapping resource="src/cf/crm/entity/Customer.hbm.xml" />
-        <mapping resource="src/cf/crm/entity/Contactperson.hbm.xml" />
-        <mapping resource="src/cf/crm/entity/Product.hbm.xml" />
-        <mapping resource="src/cf/crm/entity/Development.hbm.xml" />
-        <mapping resource="src/cf/crm/entity/Orderrecordproduct.hbm.xml" />
-        <mapping resource="src/cf/crm/entity/Contactrecord.hbm.xml" />
-        <mapping resource="src/cf/crm/entity/User.hbm.xml" />
-        <mapping resource="src/cf/crm/entity/Salechance.hbm.xml" />
-        <mapping resource="src/cf/crm/entity/Servicecustomer.hbm.xml" />
-        <mapping resource="src/cf/crm/entity/Datadictionary.hbm.xml" />
-        <mapping resource="src/cf/crm/entity/Storage.hbm.xml" />
-        <mapping resource="src/cf/crm/entity/Outflow.hbm.xml" />
+        <mapping resource="cf/crm/entity/Servicecustomer.hbm.xml" />
+        <mapping resource="cf/crm/entity/User.hbm.xml" />
+        <mapping resource="cf/crm/entity/Customer.hbm.xml" />
+        <mapping resource="cf/crm/entity/Salechance.hbm.xml" />
+        <mapping resource="cf/crm/entity/Orderrecordproduct.hbm.xml" />
+        <mapping resource="cf/crm/entity/Service.hbm.xml" />
+        <mapping resource="cf/crm/entity/Contactrecord.hbm.xml" />
+        <mapping resource="cf/crm/entity/Outflow.hbm.xml" />
+        <mapping resource="cf/crm/entity/Product.hbm.xml" />
+        <mapping resource="cf/crm/entity/Datadictionary.hbm.xml" />
+        <mapping resource="cf/crm/entity/Development.hbm.xml" />
+        <mapping resource="cf/crm/entity/Orderrecord.hbm.xml" />
+        <mapping resource="cf/crm/entity/Contactperson.hbm.xml" />
+        <mapping resource="cf/crm/entity/Storage.hbm.xml" />
     </session-factory>
 </hibernate-configuration>

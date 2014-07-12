@@ -1,17 +1,17 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 2014-7-12 16:42:52 by Hibernate Tools 3.6.0 -->
+<!-- Generated 2014-7-12 22:54:45 by Hibernate Tools 3.6.0 -->
 <hibernate-mapping>
-    <class name="src.cf.crm.entity.Service" table="service" catalog="crm">
+    <class name="cf.crm.entity.Service" table="service" catalog="crm">
         <id name="seId" type="string">
             <column name="seID" length="20" />
             <generator class="assigned" />
         </id>
-        <many-to-one name="product" class="src.cf.crm.entity.Product" fetch="select">
+        <many-to-one name="product" class="cf.crm.entity.Product" fetch="select">
             <column name="prID" length="20" not-null="true" />
         </many-to-one>
-        <many-to-one name="user" class="src.cf.crm.entity.User" fetch="select">
+        <many-to-one name="user" class="cf.crm.entity.User" fetch="select">
             <column name="usCreateID" length="20" not-null="true" />
         </many-to-one>
         <property name="seType" type="string">
@@ -25,9 +25,9 @@
         </property>
         <set name="servicecustomers" table="servicecustomer" inverse="true" lazy="true" fetch="select">
             <key>
-                <column name="secuID" length="20" not-null="true" />
+                <column name="seID" length="20" not-null="true" />
             </key>
-            <one-to-many class="src.cf.crm.entity.Servicecustomer" />
+            <one-to-many class="cf.crm.entity.Servicecustomer" />
         </set>
     </class>
 </hibernate-mapping>
