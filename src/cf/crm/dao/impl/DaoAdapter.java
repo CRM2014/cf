@@ -22,7 +22,28 @@ public class DaoAdapter implements Dao {
 
 	@Override
 	public void save(Object entity) {
-		getSession().save(entity);
+		try {
+			getSession().save(entity);
+		} finally {
+		}
+
+	}
+
+	@Override
+	public void delete(Object entity) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Object get(String id, Class<?> clazz) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void getli() {
+		// TODO Auto-generated method stub
 	}
 
 }
