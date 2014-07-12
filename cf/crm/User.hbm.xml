@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-7-12 15:41:19 by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="cf.crm.User" table="user" catalog="crm">
+        <id name="usId" type="string">
+            <column name="usID" length="20" />
+            <generator class="assigned" />
+        </id>
+        <property name="usUserName" type="string">
+            <column name="usUserName" length="20" not-null="true" />
+        </property>
+        <property name="usPassword" type="string">
+            <column name="usPassword" length="20" not-null="true" />
+        </property>
+        <property name="usName" type="string">
+            <column name="usName" length="20" not-null="true" />
+        </property>
+        <property name="usRole" type="string">
+            <column name="usRole" length="20" not-null="true" />
+        </property>
+        <property name="usLoginTime" type="timestamp">
+            <column name="usLoginTime" length="0" />
+        </property>
+        <property name="usLastLoginTime" type="timestamp">
+            <column name="usLastLoginTime" length="0" />
+        </property>
+        <property name="usCreateTime" type="timestamp">
+            <column name="usCreateTime" length="0" not-null="true" />
+        </property>
+        <set name="customers" table="customer" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="usID" length="20" not-null="true" />
+            </key>
+            <one-to-many class="cf.crm.Customer" />
+        </set>
+        <set name="salechancesForUsDesignationId" table="salechance" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="usDesignationID" length="20" />
+            </key>
+            <one-to-many class="cf.crm.Salechance" />
+        </set>
+        <set name="servicecustomersForUsDealId" table="servicecustomer" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="usDealID" length="20" />
+            </key>
+            <one-to-many class="cf.crm.Servicecustomer" />
+        </set>
+        <set name="services" table="service" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="usCreateID" length="20" not-null="true" />
+            </key>
+            <one-to-many class="cf.crm.Service" />
+        </set>
+        <set name="servicecustomersForUsAllocationId" table="servicecustomer" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="usAllocationID" length="20" />
+            </key>
+            <one-to-many class="cf.crm.Servicecustomer" />
+        </set>
+        <set name="salechancesForUsCreateId" table="salechance" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="usCreateID" length="20" not-null="true" />
+            </key>
+            <one-to-many class="cf.crm.Salechance" />
+        </set>
+    </class>
+</hibernate-mapping>

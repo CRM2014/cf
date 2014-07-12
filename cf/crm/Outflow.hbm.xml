@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-7-12 15:41:19 by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="cf.crm.Outflow" table="outflow" catalog="crm">
+        <id name="ouflId" type="string">
+            <column name="ouflID" length="20" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="customer" class="cf.crm.Customer" fetch="select">
+            <column name="cuID" length="20" not-null="true" />
+        </many-to-one>
+        <property name="ouflStatus" type="string">
+            <column name="ouflStatus" length="20" not-null="true" />
+        </property>
+        <property name="ouflAction" type="string">
+            <column name="ouflAction" length="200" not-null="true" />
+        </property>
+        <property name="ouflReson" type="string">
+            <column name="ouflReson" length="200" />
+        </property>
+        <property name="ouflTime" type="timestamp">
+            <column name="ouflTime" length="0" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-7-12 15:41:19 by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="cf.crm.Servicecustomer" table="servicecustomer" catalog="crm">
+        <composite-id name="id" class="cf.crm.ServicecustomerId">
+            <key-property name="secuId" type="string">
+                <column name="secuID" length="20" />
+            </key-property>
+            <key-property name="cuId" type="string">
+                <column name="cuID" length="20" />
+            </key-property>
+            <key-property name="seId" type="string">
+                <column name="seID" length="20" />
+            </key-property>
+            <key-property name="usAllocationId" type="string">
+                <column name="usAllocationID" length="20" />
+            </key-property>
+            <key-property name="secuAllocationTime" type="timestamp">
+                <column name="secuAllocationTime" length="0" />
+            </key-property>
+            <key-property name="usDealId" type="string">
+                <column name="usDealID" length="20" />
+            </key-property>
+            <key-property name="secuDeal" type="string">
+                <column name="secuDeal" length="200" />
+            </key-property>
+            <key-property name="secuDealTime" type="timestamp">
+                <column name="secuDealTime" length="0" />
+            </key-property>
+            <key-property name="secuDealResult" type="string">
+                <column name="secuDealResult" length="100" />
+            </key-property>
+            <key-property name="secuSatisfy" type="java.lang.Integer">
+                <column name="secuSatisfy" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="customer" class="cf.crm.Customer" update="false" insert="false" fetch="select">
+            <column name="cuID" length="20" not-null="true" />
+        </many-to-one>
+        <many-to-one name="service" class="cf.crm.Service" update="false" insert="false" fetch="select">
+            <column name="secuID" length="20" not-null="true" />
+        </many-to-one>
+        <many-to-one name="userByUsAllocationId" class="cf.crm.User" update="false" insert="false" fetch="select">
+            <column name="usAllocationID" length="20" />
+        </many-to-one>
+        <many-to-one name="userByUsDealId" class="cf.crm.User" update="false" insert="false" fetch="select">
+            <column name="usDealID" length="20" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>
