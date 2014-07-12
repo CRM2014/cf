@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-7-12 16:42:52 by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="src.cf.crm.entity.Datadictionary" table="datadictionary" catalog="crm">
+        <id name="dadiId" type="string">
+            <column name="dadiID" length="20" />
+            <generator class="assigned" />
+        </id>
+        <property name="dadiType" type="string">
+            <column name="dadiType" length="20" not-null="true" />
+        </property>
+        <property name="dadiItem" type="string">
+            <column name="dadiItem" length="20" not-null="true" />
+        </property>
+        <property name="dadiValue" type="string">
+            <column name="dadiValue" length="20" not-null="true" />
+        </property>
+        <property name="dadiEnableEdit" type="boolean">
+            <column name="dadiEnableEdit" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
