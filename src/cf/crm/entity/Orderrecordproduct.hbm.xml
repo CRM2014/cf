@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-7-12 16:42:52 by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="src.cf.crm.entity.Orderrecordproduct" table="orderrecordproduct" catalog="crm">
+        <composite-id name="id" class="src.cf.crm.entity.OrderrecordproductId">
+            <key-property name="prId" type="string">
+                <column name="prID" length="20" />
+            </key-property>
+            <key-property name="orreId" type="string">
+                <column name="orreID" length="20" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="orderrecord" class="src.cf.crm.entity.Orderrecord" update="false" insert="false" fetch="select">
+            <column name="orreID" length="20" not-null="true" />
+        </many-to-one>
+        <many-to-one name="product" class="src.cf.crm.entity.Product" update="false" insert="false" fetch="select">
+            <column name="prID" length="20" not-null="true" />
+        </many-to-one>
+        <property name="orreprId" type="string">
+            <column name="orreprID" length="10" />
+        </property>
+        <property name="orreprNum" type="int">
+            <column name="orreprNum" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
