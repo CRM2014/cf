@@ -11,8 +11,8 @@
 <body>
 	<div class="navbar navbar-fixed-top">
 		<div class="container-fluid nopading navbar-header">
-			<a href="#"> <img alt="" src="../../resourse/image/logo.png" width="250px"
-				class="webicon-header" height="35px"></a>
+			<a href="#"> <img alt="" src="../../resourse/image/logo.png"
+				width="250px" class="webicon-header" height="35px"></a>
 
 			<div class="webname-header">
 				<label class="webname-text">CF客户关系管理系统</label>
@@ -25,8 +25,7 @@
 				<ul class="dropdown-menu" role="menu">
 					<li><a data-toggle="modal" href="#"
 						data-target=".bs-example-modal-sm">注销</a></li>
-					<li><a data-toggle="modal" href="#"
-						data-target=".bs-example-modal-sm">个人中心</a></li>
+					<li><a href="../account/user.html">个人中心</a></li>
 				</ul>
 			</div>
 		</div>
@@ -43,8 +42,12 @@
 								data-parent="#accordion-0" href="#accordion-element-1">营销管理</a>
 						</div>
 						<div id="accordion-element-1" class="accordion-body collapse">
-							<div class="accordion-inner">销售机会管理</div>
-							<div class="accordion-inner">客户开发计划</div>
+							<div class="accordion-inner">
+								<a href="../marketing.chance/list.html">销售机会管理</a>
+							</div>
+							<div class="accordion-inner">
+								<a href="../marketing.plan/list.html"> 客户开发计划</a>
+							</div>
 						</div>
 					</div>
 					<div class="accordion-group">
@@ -54,8 +57,12 @@
 						</div>
 						<div id="accordion-element-2" class="accordion-body collapse">
 
-							<div class="accordion-inner">客户信息管理</div>
-							<div class="accordion-inner">客户流失管理</div>
+							<div class="accordion-inner">
+								<a href="../customer.basic/list.html">客户信息管理</a>
+							</div>
+							<div class="accordion-inner">
+								<a href="#">客户流失管理</a>
+							</div>
 
 						</div>
 					</div>
@@ -65,11 +72,21 @@
 								data-parent="#accordion-0" href="#accordion-element-3">服务管理</a>
 						</div>
 						<div id="accordion-element-3" class="accordion-body collapse">
-							<div class="accordion-inner">服务创建</div>
-							<div class="accordion-inner">服务分配</div>
-							<div class="accordion-inner">服务处理</div>
-							<div class="accordion-inner">服务反馈</div>
-							<div class="accordion-inner">服务归档</div>
+							<div class="accordion-inner">
+								<a href="../service.add/add.html">服务创建</a>
+							</div>
+							<div class="accordion-inner">
+								<a href="../service.assign/list.html">服务分配</a>
+							</div>
+							<div class="accordion-inner">
+								<a href="../service.deal/list.html">服务处理</a>
+							</div>
+							<div class="accordion-inner">
+								<a href="../service.feedback/list.html">服务反馈</a>
+							</div>
+							<div class="accordion-inner">
+								<a href="../service.archiving/list.html">服务归档</a>
+							</div>
 						</div>
 					</div>
 					<div class="accordion-group">
@@ -79,10 +96,18 @@
 						</div>
 						<div id="accordion-element-4" class="accordion-body collapse">
 
-							<div class="accordion-inner">客户贡献分析</div>
-							<div class="accordion-inner">客户构成分析</div>
-							<div class="accordion-inner">客户服务分析</div>
-							<div class="accordion-inner">客户流失分析</div>
+							<div class="accordion-inner">
+								<a href="../statistics/contribution.html">客户贡献分析</a>
+							</div>
+							<div class="accordion-inner">
+								<a href="../statistics/composition.html">客户构成分析</a>
+							</div>
+							<div class="accordion-inner">
+								<a href="../statistics/service.html">客户服务分析</a>
+							</div>
+							<div class="accordion-inner">
+								<a href="../statistics/loss.html">客户流失分析</a>
+							</div>
 
 						</div>
 					</div>
@@ -106,9 +131,9 @@
 						</div>
 						<div id="accordion-element-6" class="accordion-body collapse">
 
-                            <div class="accordion-inner">查看用户</div>
-							<div class="accordion-inner">编辑用户</div>
-
+							<div class="accordion-inner">
+								<a href="../account/list.html">查看用户</a>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -176,7 +201,7 @@
 					<h4 class="modal-title" id="mySmallModalLabel">确认注销？</h4>
 				</div>
 				<div class="modal-body">
-					<a>确认</a>
+					<a href="../account/login.html">确认</a>
 				</div>
 			</div>
 		</div>
