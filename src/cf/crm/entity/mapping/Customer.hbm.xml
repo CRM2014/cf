@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-7-12 22:54:45 by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="cf.crm.entity.Customer" table="customer" catalog="crm">
+        <id name="cuId" type="string">
+            <column name="cuID" length="20" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="user" class="cf.crm.entity.User" fetch="select">
+            <column name="usID" length="20" not-null="true" />
+        </many-to-one>
+        <property name="cuName" type="string">
+            <column name="cuName" length="20" not-null="true" />
+        </property>
+        <property name="cuZone" type="string">
+            <column name="cuZone" length="40" not-null="true" />
+        </property>
+        <property name="cuRelation" type="string">
+            <column name="cuRelation" length="20" not-null="true" />
+        </property>
+        <property name="cuLevel" type="string">
+            <column name="cuLevel" length="20" not-null="true" />
+        </property>
+        <property name="cuSatisfy" type="int">
+            <column name="cuSatisfy" not-null="true" />
+        </property>
+        <property name="cuCredit" type="int">
+            <column name="cuCredit" not-null="true" />
+        </property>
+        <property name="cuAddress" type="string">
+            <column name="cuAddress" length="60" not-null="true" />
+        </property>
+        <property name="cuPostal" type="string">
+            <column name="cuPostal" length="20" not-null="true" />
+        </property>
+        <property name="cuTel" type="string">
+            <column name="cuTel" length="20" not-null="true" />
+        </property>
+        <property name="cuFacsimile" type="string">
+            <column name="cuFacsimile" length="20" not-null="true" />
+        </property>
+        <property name="cuWeb" type="string">
+            <column name="cuWeb" length="20" not-null="true" />
+        </property>
+        <property name="cuLegal" type="string">
+            <column name="cuLegal" length="20" not-null="true" />
+        </property>
+        <property name="cuBank" type="string">
+            <column name="cuBank" length="20" not-null="true" />
+        </property>
+        <property name="cuBankAccount" type="string">
+            <column name="cuBankAccount" length="25" not-null="true" />
+        </property>
+        <property name="cuRegisterCapital" type="java.lang.Float">
+            <column name="cuRegisterCapital" precision="12" scale="0" />
+        </property>
+        <property name="cuTurnover" type="int">
+            <column name="cuTurnover" not-null="true" />
+        </property>
+        <property name="cuTurnoverNum" type="string">
+            <column name="cuTurnoverNum" length="20" />
+        </property>
+        <property name="cuLandTaxNum" type="string">
+            <column name="cuLandTaxNum" length="20" />
+        </property>
+        <property name="cuNationTaxNum" type="string">
+            <column name="cuNationTaxNum" length="20" />
+        </property>
+        <set name="contactpersons" table="contactperson" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="cuID" length="20" not-null="true" />
+            </key>
+            <one-to-many class="cf.crm.entity.Contactperson" />
+        </set>
+        <set name="contactrecords" table="contactrecord" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="coID" length="20" not-null="true" />
+            </key>
+            <one-to-many class="cf.crm.entity.Contactrecord" />
+        </set>
+        <set name="orderrecords" table="orderrecord" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="cuID" length="20" not-null="true" />
+            </key>
+            <one-to-many class="cf.crm.entity.Orderrecord" />
+        </set>
+        <set name="servicecustomers" table="servicecustomer" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="cuID" length="20" not-null="true" />
+            </key>
+            <one-to-many class="cf.crm.entity.Servicecustomer" />
+        </set>
+        <set name="outflows" table="outflow" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="cuID" length="20" not-null="true" />
+            </key>
+            <one-to-many class="cf.crm.entity.Outflow" />
+        </set>
+    </class>
+</hibernate-mapping>

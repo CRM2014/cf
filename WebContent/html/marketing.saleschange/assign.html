@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>CF客户关系管理系统</title>
+<!-- css开始 -->
+<link rel="stylesheet" href="../../resourse/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../resourse/css/crm.layout.css">
+<!-- css结束 -->
+</head>
+<body>
+	<div class="navbar navbar-fixed-top">
+		<div class="container-fluid nopading navbar-header">
+			<a href="#"> <img alt="" src="../../resourse/image/logo.png" width="250px"
+				class="webicon-header" height="35px"></a>
+
+			<div class="webname-header">
+				<label class="webname-text">CF客户关系管理系统</label>
+			</div>
+			<div class="btn-group webbtn-header">
+				<button class="btn btn-default dropdown-toggle"
+					data-toggle="dropdown">
+					齐宇（销售主管）<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu" role="menu">
+					<li><a data-toggle="modal" href="#"
+						data-target=".bs-example-modal-sm">注销</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid">
+		<div class="row">
+			<!-- 菜单开始 -->
+			<div class="col-md-2 sidebar">
+				<div class="accordion" id="accordion-0">
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle collapsed" data-toggle="collapse"
+								data-parent="#accordion-0" href="#accordion-element-1">营销管理</a>
+						</div>
+						<div id="accordion-element-1" class="accordion-body collapse">
+							<div class="accordion-inner">销售机会管理</div>
+							<div class="accordion-inner">客户开发计划</div>
+						</div>
+					</div>
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse"
+								data-parent="#accordion-0" href="#accordion-element-2">客户管理</a>
+						</div>
+						<div id="accordion-element-2" class="accordion-body collapse">
+
+							<div class="accordion-inner">客户信息管理</div>
+							<div class="accordion-inner">客户流失管理</div>
+
+						</div>
+					</div>
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse"
+								data-parent="#accordion-0" href="#accordion-element-3">服务管理</a>
+						</div>
+						<div id="accordion-element-3" class="accordion-body collapse">
+							<div class="accordion-inner">服务创建</div>
+							<div class="accordion-inner">服务分配</div>
+							<div class="accordion-inner">服务处理</div>
+							<div class="accordion-inner">服务反馈</div>
+							<div class="accordion-inner">服务归档</div>
+						</div>
+					</div>
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse"
+								data-parent="#accordion-0" href="#accordion-element-4">统计报表</a>
+						</div>
+						<div id="accordion-element-4" class="accordion-body collapse">
+
+							<div class="accordion-inner">客户贡献分析</div>
+							<div class="accordion-inner">客户构成分析</div>
+							<div class="accordion-inner">客户服务分析</div>
+							<div class="accordion-inner">客户流失分析</div>
+
+						</div>
+					</div>
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse"
+								data-parent="#accordion-0" href="#accordion-element-5">基础数据</a>
+						</div>
+						<div id="accordion-element-5" class="accordion-body collapse">
+
+							<div class="accordion-inner">数据字典管理</div>
+							<div class="accordion-inner">查询产品信息</div>
+							<div class="accordion-inner">查询库存</div>
+
+						</div>
+					</div>
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse"
+								data-parent="#accordion-0" href="#accordion-element-6">用户管理</a>
+						</div>
+						<div id="accordion-element-6" class="accordion-body collapse">
+
+							<div class="accordion-inner">新建用户</div>
+							<div class="accordion-inner">编辑用户</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 菜单结束 -->
+			<!-- 主要内容开始 -->
+			<div class="col-md-10 col-md-offset-2 main">
+				<!-- 页面路径开始 -->
+				<h5 class="page-header">
+					<ol class="breadcrumb">
+						<li><a href="#">营销管理</a></li>
+						<li><a href="#">销售机会管理</a></li>
+						<li class="active">创建销售机会</li>
+					</ol>
+				</h5>
+				<!-- 页面路径结束 -->
+				<h3>指派销售机会</h3>
+				<!-- 数据显示与交互内容开始 -->
+				<div class="workpage well well-lg">
+					<form class="form-horizontal" role="form">
+						<div class="form-group">
+							<label for="inputEmail3" class="col-sm-2 control-label">编号：</label>
+							<div class="col-sm-3">
+								<input type="text" class="form-control" id="" disabled>
+							</div>
+							<label for="inputEmail3" class="col-sm-2 control-label">机会来源：</label>
+							<div class="col-sm-3">
+								<input type="text" class="form-control" id="" disabled>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputEmail3" class="col-sm-2 control-label">客户名称：</label>
+							<div class="col-sm-3">
+								<input type="text" class="form-control" id="" disabled>
+							</div>
+							<label for="inputEmail3" class="col-sm-2 control-label">成功几率：</label>
+							<div class="col-sm-3">
+								<input type="text" class="form-control" id="" disabled>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputEmail3" class="col-sm-2 control-label">概要：</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" id="" disabled>
+							</div>
+
+						</div>
+						<div class="form-group">
+							<label for="inputEmail3" class="col-sm-2 control-label">联系人：</label>
+							<div class="col-sm-3">
+								<input type="text" class="form-control" id="" disabled>
+							</div>
+							<label for="inputEmail3" class="col-sm-2 control-label">联系电话：</label>
+							<div class="col-sm-3">
+								<input type="text" class="form-control" id="" disabled>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputEmail3" class="col-sm-2 control-label">机会描述：</label>
+							<div class="col-sm-8">
+								<textarea class="form-control" rows="3" disabled></textarea>
+							</div>
+
+						</div>
+						<div class="form-group">
+							<label for="inputEmail3" class="col-sm-2 control-label">创建人：</label>
+							<div class="col-sm-3">
+								<input type="text" class="form-control" id="" disabled>
+							</div>
+							<label for="inputEmail3" class="col-sm-2 control-label">创建时间：</label>
+							<div class="col-sm-3">
+								<input type="text" class="form-control" id="" disabled>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputEmail3" class="col-sm-2 control-label">指派给：</label>
+							<div class="col-sm-3">
+								<select class="form-control">
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+								</select>
+
+
+							</div>
+							
+						</div>
+					</form>
+					<div class="col-sm-offset-2 col-xs-4">
+						<button type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-screenshot">确认指派</button>
+					</div>
+					<div>
+					 <button type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-share-alt">返回</button></div>
+					</div>
+				</div>
+				<!-- 数据显示与交互内容结束 -->
+			</div>
+			<!-- 主要内容结束 -->
+		</div>
+	</div>
+	<!-- 注销确认框开始 -->
+	<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog"
+		aria-labelledby="mySmallModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">×</span><span class="sr-only">Close</span>
+					</button>
+					<h4 class="modal-title" id="mySmallModalLabel">确认注销？</h4>
+				</div>
+				<div class="modal-body">
+					<a>确认</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 注销确认框结束 -->
+	<!-- js开始 -->
+	<script src="../../resourse/js/jquery.min.js" type="text/javascript"></script>
+	<script src="../../resourse/js/bootstrap.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		
+            </script>
+	<!-- js结束 -->
+</body>
+</html>
