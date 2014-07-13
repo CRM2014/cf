@@ -26,7 +26,6 @@ public class DaoAdapter implements Dao {
 			getSession().save(entity);
 		} finally {
 		}
-
 	}
 
 	@Override
@@ -37,8 +36,10 @@ public class DaoAdapter implements Dao {
 
 	@Override
 	public Object get(String id, Class<?> clazz) {
-		// TODO Auto-generated method stub
-		return null;
+		try {
+			return getSession().get(clazz, id);
+		} finally {
+		}
 	}
 
 	@Override

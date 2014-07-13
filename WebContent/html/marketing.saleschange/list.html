@@ -11,8 +11,8 @@
 <body>
 	<div class="navbar navbar-fixed-top">
 		<div class="container-fluid nopading navbar-header">
-			<a href="#"> <img alt="" src="../../resourse/image/logo.png" width="250px"
-				class="webicon-header" height="35px"></a>
+			<a href="#"> <img alt="" src="../../resourse/image/logo.png"
+				width="250px" class="webicon-header" height="35px"></a>
 
 			<div class="webname-header">
 				<label class="webname-text">CF客户关系管理系统</label>
@@ -123,95 +123,68 @@
 					</ol>
 				</h5>
 				<!-- 页面路径结束 -->
-				<h3>创建销售机会</h3>
+				<h3>销售机会管理</h3>
 				<!-- 数据显示与交互内容开始 -->
-                <div class="workpage well well-lg">
-                    <form class="form-horizontal" role="form">
-                      
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-2 control-label">编号：</label>
-                                <div class="col-sm-3">
-                                    <input type="email" class="form-control" id="">
-                                </div>
-                                <label for="inputEmail3" class="col-sm-2 control-label">机会来源：</label>
-                                <div class="col-sm-3">
-                                    <input type="email" class="form-control" id="" >
-                                </div>
-                            </div>
-                       <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-2 control-label">客户名称：</label>
-                                <div class="col-sm-3">
-                                    <input type="email" class="form-control" id="">
-                                </div>
-                                <label for="inputEmail3" class="col-sm-2 control-label">成功几率：</label>
-                                <div class="col-sm-3">
-                                    <input type="email" class="form-control" id="" >
-                                </div>
-                            </div>
-                             <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-2 control-label">概要：</label>
-                                <div class="col-sm-8">
-                                    <input type="email" class="form-control" id="">
-                                </div>
-                                
-                            </div>
-                      <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-2 control-label">联系人：</label>
-                                <div class="col-sm-3">
-                                    <input type="email" class="form-control" id="">
-                                </div>
-                                <label for="inputEmail3" class="col-sm-2 control-label">联系电话：</label>
-                                <div class="col-sm-3">
-                                    <input type="email" class="form-control" id="" >
-                                </div>
-                            </div>
-                             <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-2 control-label">机会描述：</label>
-                                <div class="col-sm-8">
-                                  <textarea class="form-control" rows="3"></textarea>
-                                </div>
-                                
-                            </div>
-                           <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-2 control-label">创建人：</label>
-                                <div class="col-sm-3">
-                                    <input type="email" class="form-control" id="Email1">
-                                </div>
-                                <label for="inputEmail3" class="col-sm-2 control-label">创建时间：</label>
-                                <div class="col-sm-3">
-                                    <input type="email" class="form-control" id="Email2" >
-                                </div>
-                            </div>
-                           <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-2 control-label">指派给：</label>
-                                <div class="col-sm-3">
-                                   <select class="form-control" disabled>
-  <option>1</option>
-  <option>2</option>
-  <option>3</option>
-  <option>4</option>
-  <option>5</option>
-</select>
-       
-                                       
-                                </div>
-                                <label for="inputEmail3" class="col-sm-2 control-label">指派时间：</label>
-                                <div class="col-sm-3">
-                                    <input type="email" class="form-control" id="" disabled>
-                                </div>
-                            </div>
-                      
-                       
+				<div class="workpage well well-lg">
+					
+					<form class="form-inline" role="form">
+						<div class="form-group">
+							<div class="input-group">
+								<div class="input-group-addon">客户名称</div>
+								<input class="form-control" type="text" placeholder="">
+							</div>
+						</div>
 
- 
+						<div class="form-group">
+							<div class="input-group">
+								<div class="input-group-addon">概要</div>
+								<input class="form-control" type="text" placeholder="">
+							</div>
+						</div>
 
-                    </form>
-                    <div class="col-sm-offset-2 col-xs-4">   <button type="button" class="btn btn-primary btn-lg">保存</button>
-                         </div>
-                    <div >   
-                      <button type="button" class="btn btn-danger btn-lg">返回</button></div>
-                    </div>
-                <!-- 数据显示与交互内容结束 -->
+						<div class="form-group">
+							<div class="input-group">
+								<div class="input-group-addon">联系人</div>
+								<input class="form-control" type="text" placeholder="">
+							</div>
+						</div>
+
+						<button type="submit" class="btn btn-default">
+							<span class="glyphicon glyphicon-search"></span> 查询
+						</button>
+						<button type="submit" class="btn btn-default">
+							<span class="glyphicon glyphicon-plus"></span> 新建
+						</button>
+
+					</form>
+
+					<br> <br>
+					<table class="table table-bordered" align="center" valign="middle">
+						<tr>
+							<td align="center">编号</td>
+							<td align="center">客户名称</td>
+							<td align="center">概要</td>
+							<td align="center">联系人</td>
+							<td align="center">联系人电话</td>
+							<td align="center">创建时间</td>
+							<td align="center">操作</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td align="center">
+								<button type="button" class="btn btn-default">查看</button>
+								<button type="button" class="btn btn-default">修改</button>
+								<button type="button" class="btn btn-default">删除</button>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<!-- 数据显示与交互内容结束 -->
 			</div>
 			<!-- 主要内容结束 -->
 		</div>

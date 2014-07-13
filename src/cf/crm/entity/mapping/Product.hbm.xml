@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-7-12 22:54:45 by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="cf.crm.entity.Product" table="product" catalog="crm">
+        <id name="prId" type="string">
+            <column name="prID" length="20" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="storage" class="cf.crm.entity.Storage" fetch="select">
+            <column name="stID" length="20" not-null="true" />
+        </many-to-one>
+        <property name="prName" type="string">
+            <column name="prName" length="20" not-null="true" />
+        </property>
+        <property name="prModel" type="string">
+            <column name="prModel" length="20" not-null="true" />
+        </property>
+        <property name="prLevel" type="string">
+            <column name="prLevel" length="20" not-null="true" />
+        </property>
+        <property name="prUnit" type="string">
+            <column name="prUnit" length="10" not-null="true" />
+        </property>
+        <property name="prPrice" type="int">
+            <column name="prPrice" not-null="true" />
+        </property>
+        <property name="prPosition" type="string">
+            <column name="prPosition" length="20" not-null="true" />
+        </property>
+        <property name="prNumber" type="int">
+            <column name="prNumber" not-null="true" />
+        </property>
+        <property name="prRemark" type="string">
+            <column name="prRemark" length="50" />
+        </property>
+        <set name="orderrecordproducts" table="orderrecordproduct" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="prID" length="20" not-null="true" />
+            </key>
+            <one-to-many class="cf.crm.entity.Orderrecordproduct" />
+        </set>
+        <set name="services" table="service" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="prID" length="20" not-null="true" />
+            </key>
+            <one-to-many class="cf.crm.entity.Service" />
+        </set>
+    </class>
+</hibernate-mapping>
