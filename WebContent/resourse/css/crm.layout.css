@@ -61,20 +61,20 @@ body {
 
 .webicon-header {
 	margin-left: 1px;
-	margin-top: 20px;
 	width: auto;
 	float: left;
+	height: 100px;
 }
 
 .webbtn-header {
 	margin-left: 1px;
 	margin-top: 20px;
-	margin-right:20px;
+	margin-right: 20px;
 	width: auto;
 	float: right;
 }
 
-.workpage{
+.workpage {
 	
 }
 
