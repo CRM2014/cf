@@ -30,6 +30,10 @@ public class LoginAction extends BaseAction {
 	@Qualifier("userServiceImpl")
 	private UserService userService;
 
+	public String index() {
+		return "index";
+	}
+
 	public String login() throws Exception {
 		HttpServletRequest request = ServletActionContext.getRequest();
 		User existUser = userService.findByUserName(user.getUsUserName());

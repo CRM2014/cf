@@ -26,9 +26,10 @@ public abstract class BaseAction extends ActionSupport implements Preparable {
 	@Override
 	public void prepare() throws Exception {
 		Map<String, Object> session = ActionContext.getContext().getSession();
-		String id = session.get("user.id").toString();
-		if (id != null && !"".endsWith(id)) {
-			currentUser = userService.find(id);
+		Object id = session.get("user.id");
+
+		if (id != null && !"".endsWith(id.toString())) {
+			currentUser = userService.find(id.toString());
 		}
 	}
 

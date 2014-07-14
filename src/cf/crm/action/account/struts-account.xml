@@ -6,10 +6,11 @@
 <struts>
 
 	<!-- 与spring集成的写法，action等交予spring管理 -->
-	<package name="login" extends="struts_base" namespace="/account" >
-		<action name="login" class="loginAction">
+	<package name="login" extends="struts_base" namespace="/account">
+		<action name="login-*" class="loginAction" method="{1}">
+			<result name="index">/view/account/login.jsp</result>
+			<result name="success">/view/account/user.jsp</result>
 			<result name="fail">/view/account/login.jsp</result>
 		</action>
 	</package>
-
 </struts>
