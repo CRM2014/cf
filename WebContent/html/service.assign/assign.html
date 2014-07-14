@@ -68,7 +68,7 @@
 									<a href="../customer.basic/list.html">客户信息管理</a>
 								</div>
 								<div class="accordion-inner">
-									<a href="#">客户流失管理</a>
+									<a href="../customer.runoff/list.html">客户流失管理</a>
 								</div>
 							</div>
 						</div>
@@ -135,9 +135,15 @@
 						</div>
 						<div id="collapse-5" class="panel-collapse collapse">
 							<div class="panel-body">
-								<div class="accordion-inner">数据字典管理</div>
-								<div class="accordion-inner">查询产品信息</div>
-								<div class="accordion-inner">查询库存</div>
+								<div class="accordion-inner">
+									<a href="../database.datadictionary/list.html">数据字典管理</a>
+								</div>
+								<div class="accordion-inner">
+									<a href="../database.product/list.html">查询产品信息</a>
+								</div>
+								<div class="accordion-inner">
+									<a href="../database.storage/list.html">查询库存</a>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -164,9 +170,9 @@
 				<!-- 页面路径开始 -->
 				<h5 class="page-header">
 					<ol class="breadcrumb">
-						<li><a href="#">营销管理</a></li>
-						<li><a href="#">销售机会管理</a></li>
-						<li class="active">创建销售机会</li>
+						<li>服务管理</li>
+						<li><a href="list.html">服务分配列表</a></li>
+						<li>服务分配</li>
 					</ol>
 				</h5>
 				<!-- 页面路径结束 -->
@@ -224,14 +230,18 @@
 								</select>
 							</div>
 						</div>
-
+						<div class="form-group">
+							<div class="col-sm-6">
+								<a role="button" href="../service.assign/list.html"
+									class="btn btn-default btn-lg col-sm-offset-9">保存</a>
+							</div>
+							<div class="col-sm-6">
+								<a role="button" href="../service.assign/list.html"
+									class="btn btn-default btn-lg">返回</a>
+							</div>
+						</div>
 					</form>
-					<div class="col-sm-offset-2 col-xs-4">
-						<button type="button" class="btn btn-default btn-lg">保存</button>
-					</div>
-					<div>
-						<button type="button" class="btn btn-default btn-lg">返回</button>
-					</div>
+
 				</div>
 				<!-- 数据显示与交互内容结束 -->
 			</div>
@@ -257,13 +267,13 @@
 		</div>
 	</div>
 	<!-- 注销确认框结束 -->
-		<!-- js开始 -->
+	<!-- js开始 -->
 	<script src="../../resourse/js/jquery.min.js" type="text/javascript"></script>
 	<script src="../../resourse/js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="../../resourse/js/common.js" type="text/javascript"></script>
 	<script type="text/javascript">
-	var pageInfo = new PageInfo(3);
-	pageInfo.generate();
+		var pageInfo = new PageInfo(3);
+		pageInfo.generate();
 	</script>
 	<!-- js结束 -->
 </body>
