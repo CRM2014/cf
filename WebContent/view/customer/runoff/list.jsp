@@ -25,7 +25,27 @@
 					</ol>
 				</h5>
 				<!-- 页面路径结束 -->
-				
+				<h3>客户流失管理</h3>
+				<!-- 数据显示与交互内容开始 -->
+				<div class="workpage well well-lg">
+					<br> <br>
+					<table class="table table-bordered" align="center" valign="middle">
+						<tr>
+							<td align="center">客户ID</td>
+							<td align="center">客户状态</td>
+							<td align="center">操作</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td align="center"><a role="button" class="btn btn-default"
+								href="reprieve.html">暂缓流失</a> <a role="button"
+								class="btn btn-default" href="confirm.html">确认流失</a>
+								<button type="button" class="btn btn-default">恢复正常</button></td>
+						</tr>
+					</table>
+				</div>
+				<!-- 数据显示与交互内容结束 -->
 				
 				</div>
 			<!-- 主要内容结束 -->

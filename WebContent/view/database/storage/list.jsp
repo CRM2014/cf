@@ -25,8 +25,45 @@
 					</ol>
 				</h5>
 				<!-- 页面路径结束 -->
-				
-				
+				<h3>仓库信息查询</h3>
+				<!-- 数据显示与交互内容开始 -->
+				<div class="workpage well well-lg">
+
+					<form class="form-inline" role="form">
+						<div class="form-group">
+							<div class="input-group">
+								<div class="input-group-addon">产品名称</div>
+								<input class="form-control" type="text" placeholder="">
+							</div>
+						</div>
+
+						<button type="submit" class="btn btn-default">
+							<span class="glyphicon glyphicon-search"></span> 查询
+						</button>
+
+					</form>
+
+					<br> <br>
+					<table class="table table-bordered" align="center" valign="middle">
+						<tr>
+							<td align="center">产品编号</td>
+							<td align="center">产品名称</td>
+							<td align="center">仓库名称</td>
+							<td align="center">货位</td>
+							<td align="center">件数</td>
+							<td align="center">备注</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</table>
+				</div>
+				<!-- 数据显示与交互内容结束 -->
 				</div>
 			<!-- 主要内容结束 -->
 		</div>

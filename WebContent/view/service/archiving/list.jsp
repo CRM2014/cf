@@ -25,56 +25,64 @@
 					</ol>
 				</h5>
 				<!-- 页面路径结束 -->
-				<h3>客户信息管理</h3>
-				<!-- 导航栏开始 -->
-				<ul class="nav nav-tabs col-sm-offset-6" role="tablist">
-					<li class="active"><a href="../customer.basic/view.html">基本信息</a></li>
-					<li><a href="../customer.contact/list.html">联系人管理</a></li>
-					<li><a href="../customer.history/list.html">历史订单管理</a></li>
-					<li><a href="../customer.communicate/list.html">交往记录管理</a></li>
-				</ul>
-				<!-- 导航栏结束 -->
-
+				<h3>服务归档列表</h3>
 				<!-- 数据显示与交互内容开始 -->
 				<div class="workpage well well-lg">
 
 					<form class="form-inline" role="form">
 						<div class="form-group">
 							<div class="input-group">
-								<div class="input-group-addon">客户名称</div>
+								<div class="input-group-addon">客户</div>
 								<input class="form-control" type="text" placeholder="">
 							</div>
 						</div>
 
 						<div class="form-group">
 							<div class="input-group">
-								<div class="input-group-addon">客户等级</div>
+								<div class="input-group-addon">概要</div>
 								<input class="form-control" type="text" placeholder="">
 							</div>
 						</div>
 
 						<div class="form-group">
 							<div class="input-group">
-								<div class="input-group-addon">客户经理</div>
+								<div class="input-group-addon">服务类型</div>
+								<input class="form-control" type="text" placeholder="">
+							</div>
+						</div>
+						<br /> <br />
+						<div class="form-group">
+							<div class="input-group">
+								<div class="input-group-addon">创建时间</div>
+								<input class="form-control" type="text" placeholder="">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="input-group">
+								<label>-</label>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="input-group">
 								<input class="form-control" type="text" placeholder="">
 							</div>
 						</div>
 
 						<button type="submit" class="btn btn-default">
-							<span class="glyphicon glyphicon-search"></span>查询
+							<span class="glyphicon glyphicon-search"></span> 查询
 						</button>
-
 					</form>
 
 					<br> <br>
 					<table class="table table-bordered" align="center" valign="middle">
 						<tr>
 							<td align="center">编号</td>
-							<td align="center">客户名称</td>
-							<td align="center">客户等级</td>
-							<td align="center">客户经理</td>
-							<td align="center">所在地区</td>
-							<td align="center">创建时间</td>
+							<td align="center">产品</td>
+							<td align="center">客户</td>
+							<td align="center">概要</td>
+							<td align="center">服务类型</td>
+							<td align="center">创建人</td>
+							<td align="center">创建日期</td>
 							<td align="center">操作</td>
 						</tr>
 						<tr>
@@ -84,15 +92,13 @@
 							<td></td>
 							<td></td>
 							<td></td>
+							<td></td>
 							<td align="center"><a role="button" class="btn btn-default"
-								href="view.html">查看</a> <a role="button" class="btn btn-default"
-								href="edit.html">编辑</a> <a role="button" class="btn btn-default">删除</a>
-							</td>
+								href="archiving.html">查看</a></td>
 						</tr>
 					</table>
 				</div>
 				<!-- 数据显示与交互内容结束 -->
-				
 				</div>
 			<!-- 主要内容结束 -->
 		</div>

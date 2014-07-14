@@ -25,56 +25,49 @@
 					</ol>
 				</h5>
 				<!-- 页面路径结束 -->
-				<h3>客户信息管理</h3>
-				<!-- 导航栏开始 -->
-				<ul class="nav nav-tabs col-sm-offset-6" role="tablist">
-					<li class="active"><a href="../customer.basic/view.html">基本信息</a></li>
-					<li><a href="../customer.contact/list.html">联系人管理</a></li>
-					<li><a href="../customer.history/list.html">历史订单管理</a></li>
-					<li><a href="../customer.communicate/list.html">交往记录管理</a></li>
-				</ul>
-				<!-- 导航栏结束 -->
-
+				<h3>数据字典管理</h3>
 				<!-- 数据显示与交互内容开始 -->
 				<div class="workpage well well-lg">
 
 					<form class="form-inline" role="form">
 						<div class="form-group">
 							<div class="input-group">
-								<div class="input-group-addon">客户名称</div>
+								<div class="input-group-addon">类别</div>
 								<input class="form-control" type="text" placeholder="">
 							</div>
 						</div>
 
 						<div class="form-group">
 							<div class="input-group">
-								<div class="input-group-addon">客户等级</div>
+								<div class="input-group-addon">条目</div>
 								<input class="form-control" type="text" placeholder="">
 							</div>
 						</div>
 
 						<div class="form-group">
 							<div class="input-group">
-								<div class="input-group-addon">客户经理</div>
+								<div class="input-group-addon">值</div>
 								<input class="form-control" type="text" placeholder="">
 							</div>
 						</div>
 
 						<button type="submit" class="btn btn-default">
-							<span class="glyphicon glyphicon-search"></span>查询
+							<span class="glyphicon glyphicon-search"></span> 查询
 						</button>
+						<a role="button" class="btn btn-default" href="add.html"> <span
+							class="glyphicon glyphicon-plus"></span> 新建
+						</a>
 
 					</form>
 
 					<br> <br>
 					<table class="table table-bordered" align="center" valign="middle">
 						<tr>
-							<td align="center">编号</td>
-							<td align="center">客户名称</td>
-							<td align="center">客户等级</td>
-							<td align="center">客户经理</td>
-							<td align="center">所在地区</td>
-							<td align="center">创建时间</td>
+							<td align="center">数据字典ID</td>
+							<td align="center">类别</td>
+							<td align="center">条目</td>
+							<td align="center">值</td>
+							<td align="center">是否可编辑</td>
 							<td align="center">操作</td>
 						</tr>
 						<tr>
@@ -83,11 +76,10 @@
 							<td></td>
 							<td></td>
 							<td></td>
-							<td></td>
 							<td align="center"><a role="button" class="btn btn-default"
-								href="view.html">查看</a> <a role="button" class="btn btn-default"
-								href="edit.html">编辑</a> <a role="button" class="btn btn-default">删除</a>
-							</td>
+								href="modify.html">修改
+									</button> <a role="button" class="btn btn-default" href="list.html">删除
+										</button></td>
 						</tr>
 					</table>
 				</div>

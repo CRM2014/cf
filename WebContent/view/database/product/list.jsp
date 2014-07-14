@@ -25,43 +25,27 @@
 					</ol>
 				</h5>
 				<!-- 页面路径结束 -->
-				<h3>客户信息管理</h3>
-				<!-- 导航栏开始 -->
-				<ul class="nav nav-tabs col-sm-offset-6" role="tablist">
-					<li class="active"><a href="../customer.basic/view.html">基本信息</a></li>
-					<li><a href="../customer.contact/list.html">联系人管理</a></li>
-					<li><a href="../customer.history/list.html">历史订单管理</a></li>
-					<li><a href="../customer.communicate/list.html">交往记录管理</a></li>
-				</ul>
-				<!-- 导航栏结束 -->
-
+				<h3>产品信息查询</h3>
 				<!-- 数据显示与交互内容开始 -->
 				<div class="workpage well well-lg">
 
 					<form class="form-inline" role="form">
 						<div class="form-group">
 							<div class="input-group">
-								<div class="input-group-addon">客户名称</div>
+								<div class="input-group-addon">产品名称</div>
 								<input class="form-control" type="text" placeholder="">
 							</div>
 						</div>
 
 						<div class="form-group">
 							<div class="input-group">
-								<div class="input-group-addon">客户等级</div>
-								<input class="form-control" type="text" placeholder="">
-							</div>
-						</div>
-
-						<div class="form-group">
-							<div class="input-group">
-								<div class="input-group-addon">客户经理</div>
+								<div class="input-group-addon">产品型号</div>
 								<input class="form-control" type="text" placeholder="">
 							</div>
 						</div>
 
 						<button type="submit" class="btn btn-default">
-							<span class="glyphicon glyphicon-search"></span>查询
+							<span class="glyphicon glyphicon-search"></span> 查询
 						</button>
 
 					</form>
@@ -69,13 +53,14 @@
 					<br> <br>
 					<table class="table table-bordered" align="center" valign="middle">
 						<tr>
-							<td align="center">编号</td>
-							<td align="center">客户名称</td>
-							<td align="center">客户等级</td>
-							<td align="center">客户经理</td>
-							<td align="center">所在地区</td>
-							<td align="center">创建时间</td>
-							<td align="center">操作</td>
+							<td align="center">产品名称</td>
+							<td align="center">型号</td>
+							<td align="center">等级</td>
+							<td align="center">单位</td>
+							<td align="center">单价</td>
+							<td align="center">货位</td>
+							<td align="center">件数</td>
+							<td align="center">备注</td>
 						</tr>
 						<tr>
 							<td></td>
@@ -84,10 +69,8 @@
 							<td></td>
 							<td></td>
 							<td></td>
-							<td align="center"><a role="button" class="btn btn-default"
-								href="view.html">查看</a> <a role="button" class="btn btn-default"
-								href="edit.html">编辑</a> <a role="button" class="btn btn-default">删除</a>
-							</td>
+							<td></td>
+							<td></td>
 						</tr>
 					</table>
 				</div>
