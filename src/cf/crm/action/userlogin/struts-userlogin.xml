@@ -7,7 +7,13 @@
 
 	<!-- 与spring集成的写法，action等交予spring管理 -->
 	<package name="userlogin" extends="struts_base" namespace="/userlogin" >
-		
+		<action name="login-*" class="loginAction" method="{1}">
+			<result name="login">/view/account/login.jsp</result>
+			<result name="success">/view/account/user.jsp</result>
+			<result name="fail" type="redirect">
+				login-login.action
+			</result>
+		</action>
 	</package>
 
 </struts>
