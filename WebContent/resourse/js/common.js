@@ -7,5 +7,8 @@ function PageInfo(level) {
 }
 
 PageInfo.prototype.generate = function() {
-	$("#collapse-" + this.level).addClass("in");
+	try {
+		$("#collapse-" + this.level).addClass("in");
+	} finally {
+	}
 };
