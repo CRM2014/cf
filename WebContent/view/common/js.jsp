@@ -2,4 +2,5 @@
     pageEncoding="UTF-8"%>
     <script src="${ctx}/resourse/js/jquery.min.js" type="text/javascript"></script>
 	<script src="${ctx}/resourse/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="${ctx}/resourse/js/chart.min.js" type="text/javascript"></script>
 	<script src="${ctx}/resourse/js/common.js" type="text/javascript"></script>
