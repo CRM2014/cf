@@ -6,6 +6,6 @@ function PageInfo(level) {
 	this.level = level;
 }
 
-PageInfo.prototype.generateMenu = function() {
-	$("#collapse-" + this.level).collapse();
+PageInfo.prototype.generate = function() {
+	$("#collapse-" + this.level).addClass("in");
 };

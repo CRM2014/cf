@@ -1,5 +1,19 @@
 package cf.crm.dao;
 
-public interface UserDao extends Dao {
+import java.util.List;
 
+import cf.crm.entity.User;
+
+public interface UserDao extends Dao {
+	public void add(User user);
+
+	public void remove(User user);
+
+	public void modify(User user);
+
+	public User find(String id);
+
+	public List<User> findList();
+
+	public User findByUserName(String userName);
 }
