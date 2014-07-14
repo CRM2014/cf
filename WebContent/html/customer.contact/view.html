@@ -166,11 +166,11 @@
 					<ol class="breadcrumb">
 						<li>客户管理</li>
 						<li><a href="#">客户信息管理</a></li>
-						<li class="active">联系人信息</a></li>
+						<li><a class="active">联系人管理</a></li>
 					</ol>
 				</h5>
 				<!-- 页面路径结束 -->
-				<h3>XX客户联系人信息</h3>
+				<h3>查看联系人</h3>
 				<!-- 导航栏开始 -->
 				<ul class="nav nav-tabs col-sm-offset-6" role="tablist">
 					<li><a href="../customer.basic/view.html">基本信息</a></li>
@@ -180,63 +180,56 @@
 				</ul>
 				<!-- 导航栏结束 -->
 				<!-- 数据显示与交互内容开始 -->
-				<div class="workpage well well-lg">
-				
-					<form class="form-inline" role="form">
-						<div class="form-group">
-							<div class="input-group">
-								<div class="input-group-addon">姓名</div>
-								<input class="form-control" type="text" placeholder="">
-							</div>
-						</div>
-
-						<div class="form-group">
-							<div class="input-group">
-								<div class="input-group-addon">职位</div>
-								<input class="form-control" type="text" placeholder="">
-							</div>
-						</div>
-
-						<div class="form-group">
-							<div class="input-group">
-								<div class="input-group-addon">手机</div>
-								<input class="form-control" type="text" placeholder="">
-							</div>
-						</div>
-
-						<button type="submit" class="btn btn-default">
-							<span class="glyphicon glyphicon-search"></span> 查询
-						</button>
-						<a role="button" class="btn btn-default" style="submit" href="add.html">添加联系人</a>
-					</form>
-
-					<br> <br>
-					<table class="table table-bordered" align="center" valign="middle">
-						<tr>
-							<td align="center">编号</td>
-							<td align="center">姓名</td>
-							<td align="center">性别</td>
-							<td align="center">职位</td>
-							<td align="center">办公室电话</td>
-							<td align="center">手机号</td>
-							<td align="center">操作</td>
-						</tr>
-						<tr>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td align="center">
-								<a role="button" class="btn btn-default" href="view.html">查看</a>
-								<a role="button" class="btn btn-default" href="edit.html">编辑</a>
-								<a role="button" class="btn btn-default">删除</a>
-							</td>
-						</tr>
-					</table>
-				</div>
-				<!-- 数据显示与交互内容结束 -->
+                <div class="workpage well well-lg">
+                    <form class="form-horizontal" role="form">
+                      
+                            <div class="form-group">
+                                <label for="name" class="col-sm-2 control-label">姓名：</label>
+                                <div class="col-sm-3">
+                                    <input type="email" class="form-control" id="customerName" disabled="disabled" >
+                                </div>
+                                
+                                <label for="sex" class="col-sm-2 control-label">性别：</label>
+                                <div class="col-sm-3">
+                                    <input type="email" class="form-control" id="" disabled="disabled">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="level" class="col-sm-2 control-label">职位：</label>
+                                <div class="col-sm-3">
+                                    <input type="email" class="form-control" id="" disabled="disabled">
+                                </div>
+                            </div>
+                            
+                       <div class="form-group">
+                                <label for="tel" class="col-sm-2 control-label">办公室电话：</label>
+                                <div class="col-sm-3">
+                                    <input type="email" class="form-control" id="" disabled="disabled">
+                                </div>
+                                <label for="phone" class="col-sm-2 control-label">手机：</label>
+                                <div class="col-sm-3">
+                                    <input type="email" class="form-control" id="" disabled="disabled">
+                        </div>
+       </div>
+                         
+                        <div class="form-group">
+                                <label for="note" class="col-sm-2 control-label">备注：</label>
+                                <div class="col-sm-8">
+                                    <textarea type="email" class="form-control"  rows="3" disabled="disabled"></textarea>
+                                </div>
+                            </div>
+                                                           
+		</div>
+        </form>
+                    <div class="col-sm-offset-2 col-xs-4">   
+                      <a role="button" class="btn btn-default btn-lg" href="edit.html" >编辑</a>
+                    </div>
+                    <div align="center" >   
+                      <a role="button" class="btn btn-default btn-lg" href="list.html" >返回</a>
+                    </div>
+        </div>
+                <!-- 数据显示与交互内容结束 -->
 			</div>
 			<!-- 主要内容结束 -->
 		</div>
