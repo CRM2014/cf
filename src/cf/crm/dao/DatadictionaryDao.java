@@ -5,11 +5,11 @@ import java.util.List;
 import cf.crm.entity.Datadictionary;
 
 public interface DatadictionaryDao extends Dao {
-	public void add(Datadictionary Datadictionary);
+	public void add(Datadictionary datadictionary);
 
-	public void remove(Datadictionary Datadictionary);
+	public void remove(Datadictionary datadictionary);
 
-	public void modify(Datadictionary Datadictionary);
+	public void modify(Datadictionary datadictionary);
 
 	public Datadictionary find(String id);
 

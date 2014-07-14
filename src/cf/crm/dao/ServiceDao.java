@@ -5,11 +5,11 @@ import java.util.List;
 import cf.crm.entity.Service;
 
 public interface ServiceDao extends Dao {
-	public void add(Service Service);
+	public void add(Service service);
 
-	public void remove(Service Service);
+	public void remove(Service service);
 
-	public void modify(Service Service);
+	public void modify(Service service);
 
 	public Service find(String id);
 

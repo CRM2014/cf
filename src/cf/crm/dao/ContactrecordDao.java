@@ -5,11 +5,11 @@ import java.util.List;
 import cf.crm.entity.Contactrecord;
 
 public interface ContactrecordDao extends Dao {
-	public void add(Contactrecord Contactrecord);
+	public void add(Contactrecord contactrecord);
 
-	public void remove(Contactrecord Contactrecord);
+	public void remove(Contactrecord contactrecord);
 
-	public void modify(Contactrecord Contactrecord);
+	public void modify(Contactrecord contactrecord);
 
 	public Contactrecord find(String id);
 

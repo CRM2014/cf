@@ -5,11 +5,11 @@ import java.util.List;
 import cf.crm.entity.Orderrecordproduct;
 
 public interface OrderrecordproductDao extends Dao {
-	public void add(Orderrecordproduct Orderrecordproduct);
+	public void add(Orderrecordproduct orderrecordproduct);
 
-	public void remove(Orderrecordproduct Orderrecordproduct);
+	public void remove(Orderrecordproduct orderrecordproduct);
 
-	public void modify(Orderrecordproduct Orderrecordproduct);
+	public void modify(Orderrecordproduct orderrecordproduct);
 
 	public Orderrecordproduct find(String id);
 

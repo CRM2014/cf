@@ -5,11 +5,11 @@ import java.util.List;
 import cf.crm.entity.Outflow;
 
 public interface OutflowDao extends Dao {
-	public void add(Outflow Outflow);
+	public void add(Outflow outflow);
 
-	public void remove(Outflow Outflow);
+	public void remove(Outflow outflow);
 
-	public void modify(Outflow Outflow);
+	public void modify(Outflow outflow);
 
 	public Outflow find(String id);
 

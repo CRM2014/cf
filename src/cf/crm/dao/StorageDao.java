@@ -5,11 +5,11 @@ import java.util.List;
 import cf.crm.entity.Storage;
 
 public interface StorageDao extends Dao {
-	public void add(Storage Storage);
+	public void add(Storage storage);
 
-	public void remove(Storage Storage);
+	public void remove(Storage storage);
 
-	public void modify(Storage Storage);
+	public void modify(Storage storage);
 
 	public Storage find(String id);
 

@@ -5,11 +5,11 @@ import java.util.List;
 import cf.crm.entity.Salechance;
 
 public interface SalechanceDao extends Dao {
-	public void add(Salechance Salechance);
+	public void add(Salechance salechance);
 
-	public void remove(Salechance Salechance);
+	public void remove(Salechance salechance);
 
-	public void modify(Salechance Salechance);
+	public void modify(Salechance salechance);
 
 	public Salechance find(String id);
 
