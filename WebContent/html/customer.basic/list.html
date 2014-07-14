@@ -49,7 +49,7 @@
 									<a href="../marketing.chance/list.html">销售机会管理</a>
 								</div>
 								<div class="accordion-inner">
-									<a href="../marketing.plan/list.html"> 客户开发计划</a>
+									<a href="../marketing.plan/list.html">客户开发计划</a>
 								</div>
 							</div>
 						</div>
@@ -68,7 +68,7 @@
 									<a href="../customer.basic/list.html">客户信息管理</a>
 								</div>
 								<div class="accordion-inner">
-									<a href="#">客户流失管理</a>
+									<a href="../customer.runoff/list.html">客户流失管理</a>
 								</div>
 							</div>
 						</div>
@@ -135,9 +135,15 @@
 						</div>
 						<div id="collapse-5" class="panel-collapse collapse">
 							<div class="panel-body">
-								<div class="accordion-inner">数据字典管理</div>
-								<div class="accordion-inner">查询产品信息</div>
-								<div class="accordion-inner">查询库存</div>
+								<div class="accordion-inner">
+									<a href="../database.datadictionary/list.html">数据字典管理</a>
+								</div>
+								<div class="accordion-inner">
+									<a href="../database.product/list.html">查询产品信息</a>
+								</div>
+								<div class="accordion-inner">
+									<a href="../database.storage/list.html">查询库存</a>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -170,6 +176,15 @@
 				</h5>
 				<!-- 页面路径结束 -->
 				<h3>客户信息管理</h3>
+				<!-- 导航栏开始 -->
+				<ul class="nav nav-tabs col-sm-offset-6" role="tablist">
+					<li class="active"><a href="../customer.basic/view.html">基本信息</a></li>
+					<li><a href="../customer.contact/list.html">联系人管理</a></li>
+					<li><a href="../customer.history/list.html">历史订单管理</a></li>
+					<li><a href="../customer.communicate/list.html">交往记录管理</a></li>
+				</ul>
+				<!-- 导航栏结束 -->
+
 				<!-- 数据显示与交互内容开始 -->
 				<div class="workpage well well-lg">
 					
@@ -220,9 +235,9 @@
 							<td></td>
 							<td></td>
 							<td align="center">
-								<button type="button" class="btn btn-default">查看</button>
-								<button type="button" class="btn btn-default">修改</button>
-								<button type="button" class="btn btn-default">删除</button>
+							<a role="button" class="btn btn-default btn-lg" href="view.html">查看</a>
+							<a role="button" class="btn btn-default btn-lg" href="edit.html">编辑</a>
+							<a role="button" class="btn btn-default btn-lg">删除</a>
 							</td>
 						</tr>
 					</table>

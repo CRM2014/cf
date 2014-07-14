@@ -68,7 +68,7 @@
 									<a href="../customer.basic/list.html">客户信息管理</a>
 								</div>
 								<div class="accordion-inner">
-									<a href="#">客户流失管理</a>
+									<a href="../customer.runoff/list.html">客户流失管理</a>
 								</div>
 							</div>
 						</div>
@@ -135,9 +135,15 @@
 						</div>
 						<div id="collapse-5" class="panel-collapse collapse">
 							<div class="panel-body">
-								<div class="accordion-inner">数据字典管理</div>
-								<div class="accordion-inner">查询产品信息</div>
-								<div class="accordion-inner">查询库存</div>
+								<div class="accordion-inner">
+									<a href="../database.datadictionary/list.html">数据字典管理</a>
+								</div>
+								<div class="accordion-inner">
+									<a href="../database.product/list.html">查询产品信息</a>
+								</div>
+								<div class="accordion-inner">
+									<a href="../database.storage/list.html">查询库存</a>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -165,18 +171,18 @@
 				<h5 class="page-header">
 					<ol class="breadcrumb">
 						<li>客户管理</li>
-						<li><a href="#">客户信息管理</a></li>
+						<li><a href="../customer.basic/list.html">客户信息管理</a></li>
 						<li class="active">交往记录管理</li>
 					</ol>
 				</h5>
 				<!-- 页面路径结束 -->
-				<h3>添加交往记录</h3>
+				<h3>添加XX客户交往记录</h3>
 				<!-- 导航栏开始 -->
 				<ul class="nav nav-tabs col-sm-offset-6 " role="tablist">
-					<li><a href="#">基本信息</a></li>
-					<li><a href="#">联系人管理</a></li>
-					<li><a href="#">历史订单管理</a></li>
-					<li class="active"><a href="#">交往记录管理</a></li>
+					<li><a href="../customer.basic/list.html">基本信息</a></li>
+					<li><a href="../customer.contact/list.html">联系人管理</a></li>
+					<li><a href="../customer.history/list.html">历史订单管理</a></li>
+					<li class="active"><a href="../customer.communicate/list.html">交往记录管理</a></li>
 				</ul>
 				<!-- 导航栏结束 -->
 				<!-- 数据显示与交互内容开始 -->
@@ -221,10 +227,12 @@
                             </div>
                         </div>
                     </form>
-                    <div class="col-sm-offset-2 col-xs-4">   <button type="button" class="btn btn-primary btn-lg">保存</button>
-                         </div>
-                    <div >   
-                      <button type="button" class="btn btn-danger btn-lg">返回</button></div>
+                    <div class="col-sm-offset-2 col-xs-4">
+                       <a role="button" class="btn btn-default btn-lg" href="../customer.communicate/list.html">保存</a>
+                    </div>
+                	<div >
+                       <a role="button" class="btn btn-default btn-lg" href="../customer.communicate/list.html">返回</a>
+                	</div>
                 </div>
 				<!-- 数据显示与交互内容结束 -->
 			</div>
