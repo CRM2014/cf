@@ -1,11 +1,15 @@
 package cf.crm.dao;
 
+import java.util.List;
+
 public interface Dao {
-	public void save(Object entity);
+	public void add(Object entity);
 
-	public void delete(Object entity);
+	public void remove(Object entity);
 
-	public Object get(String id, Class<?> clazz);
+	public void modify(Object entity);
 
-	public void getli();
+	public Object find(String id, Class<?> clazz);
+
+	public List<?> findList(Class<?> clazz);
 }

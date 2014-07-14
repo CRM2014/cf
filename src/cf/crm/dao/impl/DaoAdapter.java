@@ -1,15 +1,15 @@
 package cf.crm.dao.impl;
 
+import java.util.List;
+import java.util.Random;
+
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 
 import cf.crm.dao.Dao;
 
-@Component
-@Scope("prototype")
-public class DaoAdapter implements Dao {
+public abstract class DaoAdapter implements Dao {
 	private SessionFactory sessionFactory;
 
 	public void setSessionFactory(SessionFactory sessionFactory) {
@@ -20,8 +20,20 @@ public class DaoAdapter implements Dao {
 		return sessionFactory.getCurrentSession();
 	}
 
+	public String generateKey() {
+		int length = 10;
+		String base = "abcdefghijklmnopqrstuvwxyz0123456789";
+		Random random = new Random();
+		StringBuffer sb = new StringBuffer();
+		for (int i = 0; i < length; i++) {
+			int number = random.nextInt(base.length());
+			sb.append(base.charAt(number));
+		}
+		return sb.toString();
+	}
+
 	@Override
-	public void save(Object entity) {
+	public void add(Object entity) {
 		try {
 			getSession().save(entity);
 		} finally {
@@ -29,13 +41,15 @@ public class DaoAdapter implements Dao {
 	}
 
 	@Override
-	public void delete(Object entity) {
-		// TODO Auto-generated method stub
-
+	public void remove(Object entity) {
+		try {
+			getSession().delete(entity);
+		} finally {
+		}
 	}
 
 	@Override
-	public Object get(String id, Class<?> clazz) {
+	public Object find(String id, Class<?> clazz) {
 		try {
 			return getSession().get(clazz, id);
 		} finally {
@@ -43,8 +57,20 @@ public class DaoAdapter implements Dao {
 	}
 
 	@Override
-	public void getli() {
-		// TODO Auto-generated method stub
+	public void modify(Object entity) {
+		try {
+			getSession().update(entity);
+		} finally {
+		}
+	}
+
+	@Override
+	public List<?> findList(Class<?> clazz) {
+		try {
+			Criteria cri = getSession().createCriteria(clazz);
+			return cri.list();
+		} finally {
+		}
 	}
 
 }

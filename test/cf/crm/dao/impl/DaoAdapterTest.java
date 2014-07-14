@@ -23,7 +23,7 @@ public class DaoAdapterTest {
 		Storage storage = new Storage();
 		storage.setStId("1");
 		storage.setStName("1s");
-		daoAdapter.save(storage);
+		daoAdapter.add(storage);
 	}
 
 }

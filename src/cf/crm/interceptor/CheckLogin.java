@@ -27,11 +27,10 @@ public class CheckLogin implements Interceptor {
 
 		Map<String, Object> session = ActionContext.getContext().getSession();
 
-		if (session.get("user.name") != null) {
+		if (session.get("user.id") != null) {
 			return actionInvocation.invoke();
 		}
 
 		return "checkLoginFail";
 	}
-
 }
