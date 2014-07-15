@@ -54,7 +54,7 @@
 							<span class="glyphicon glyphicon-search"></span> 查询
 						</button>
 						<a role="button" class="btn btn-default"
-							href="../customer.communicate/add.html">新建</a>
+							href="customer/communicate-add.action">新建</a>
 
 					</form>
 
@@ -73,7 +73,9 @@
 							<td></td>
 							<td></td>
 							<td align="center"><a role="button" class="btn btn-default"
-								href="../customer.communicate/record.html">查看</a>
+								href="customer/communicate-view.action">查看</a>
+								<a role="button" class="btn btn-default"
+								href="customer/communicate-edit.action">编辑</a>
 								<button type="button" class="btn btn-default">删除</button></td>
 						</tr>
 					</table>
