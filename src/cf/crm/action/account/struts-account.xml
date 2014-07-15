@@ -6,10 +6,7 @@
 <struts>
 
 	<!-- 与spring集成的写法，action等交予spring管理 -->
-	<package name="login" extends="struts_base" namespace="/account" >
-		<action name="login" class="loginAction">
-			<result name="fail">/view/account/login.jsp</result>
-		</action>
+	<package name="login" extends="struts_base" namespace="/account">
+		
 	</package>
-
 </struts>

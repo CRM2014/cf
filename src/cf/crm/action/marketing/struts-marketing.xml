@@ -4,11 +4,9 @@
     "http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
+
 	<!-- 与spring集成的写法，action等交予spring管理 -->
-	<package name="marketing" extends="struts_base" namespace="/marketing">
-		<action name="saleschance-*" class="salesChanceAction" method="{1}">
-			<result name="add">/view/marketing/saleschange/add.jsp</result>
-		</action>
+	<package name="marketing" extends="struts_base" namespace="/marketing" >
 	</package>
 
 </struts>
