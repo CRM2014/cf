@@ -34,4 +34,13 @@ public class MarketingOpportunitiesAction extends BaseAction {
 	public String init(){
 		return "init";
 	}
+	public String list(){
+		return "list";
+	}
+	public String add(){
+		return "add";
+	}
+	public String assign(){
+		return "assign";
+	}
 }
