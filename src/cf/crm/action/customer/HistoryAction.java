@@ -7,26 +7,22 @@ import cf.crm.action.BaseAction;
 
 @Controller
 @Scope("prototype")
-public class CustomerAction extends BaseAction {
+public class HistoryAction extends BaseAction {
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 7843189697363605993L;
-	
+	private static final long serialVersionUID = 5539655586980962510L;
+
 	@Override
 	public String execute() throws Exception {
 		return "fail";
 	}
-	
-	public String edit(){
-		return "edit";
-	}
-	
 	public String init(){
 		return "init";
 	}
-	public String view(){
-		return "view";
+	public String detail(){
+		return "detail";
 	}
+
 }

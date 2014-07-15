@@ -4,7 +4,6 @@
     "http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
-
 	<!-- 更改struts2请求Action的后缀名，默认为action。若想去掉后缀，设为","即可 -->
 	<constant name="struts.action.extension" value="action"></constant>
 	

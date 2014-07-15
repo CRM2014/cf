@@ -179,11 +179,12 @@
 
 						<div class="form-group">
 							<div class="col-sm-6">
-								<a role="button" href="edit.html"
+								<a role="button" href="customer/customer-edit.action" 
 									class="btn btn-default btn-lg col-sm-offset-9">编辑</a>
 							</div>
 							<div class="col-sm-6">
-								<a role="button" href="list.html" class="btn btn-default btn-lg">返回</a>
+								<a role="button" href="customer/customer-list.action" 
+									class="btn btn-default btn-lg">返回</a>
 							</div>
 						</div>
 					</form>
