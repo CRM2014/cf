@@ -39,8 +39,8 @@
 							<td></td>
 							<td></td>
 							<td align="center"><a role="button" class="btn btn-default"
-								href="reprieve.html">暂缓流失</a> <a role="button"
-								class="btn btn-default" href="confirm.html">确认流失</a>
+								href="customer/runoff-reprieve.action">暂缓流失</a> <a role="button"
+								class="btn btn-default" href="customer/runoff-confirm.action">确认流失</a>
 								<button type="button" class="btn btn-default">恢复正常</button></td>
 						</tr>
 					</table>

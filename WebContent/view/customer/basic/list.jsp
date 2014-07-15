@@ -85,8 +85,8 @@
 							<td></td>
 							<td></td>
 							<td align="center"><a role="button" class="btn btn-default"
-								href="view.html">查看</a> <a role="button" class="btn btn-default"
-								href="edit.html">编辑</a> <a role="button" class="btn btn-default">删除</a>
+								href="customer/customer-view.action">查看</a> <a role="button" class="btn btn-default"
+								href="customer/customer-edit.action">编辑</a> <a role="button" class="btn btn-default">删除</a>
 							</td>
 						</tr>
 					</table>

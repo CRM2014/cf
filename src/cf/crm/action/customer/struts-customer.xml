@@ -7,6 +7,31 @@
 
 	<!-- 与spring集成的写法，action等交予spring管理 -->
 	<package name="customer" extends="struts_base" namespace="/customer">
-		
+		<action name="customer-*" class="customerAction" method="{1}">
+			<result name="edit">/view/customer/basic/edit.jsp</result>
+			<result name="list">/view/customer/basic/list.jsp</result>
+			<result name="view">/view/customer/basic/view.jsp</result>
+		</action>
+		<action name="communicate-*" class="communicateAction" method="{1}">
+			<result name="add">/view/customer/communicate/add.jsp</result>
+			<result name="edit">/view/customer/communicate/edit.jsp</result>
+			<result name="list">/view/customer/communicate/list.jsp</result>
+			<result name="view">/view/customer/communicate/view.jsp</result>
+		</action>
+		<action name="contact-*" class="contactAction" method="{1}">
+			<result name="add">/view/customer/contact/add.jsp</result>
+			<result name="edit">/view/customer/contact/edit.jsp</result>
+			<result name="list">/view/customer/contact/list.jsp</result>
+			<result name="view">/view/customer/contact/view.jsp</result>
+		</action>
+		<action name="history-*" class="historyAction" method="{1}">
+			<result name="list">/view/customer/history/list.jsp</result>
+			<result name="view">/view/customer/history/view.jsp</result>
+		</action>
+		<action name="runoff-*" class="runoffAction" method="{1}">
+			<result name="confirm">/view/customer/runoff/confirm.jsp</result>
+			<result name="list">/view/customer/runoff/list.jsp</result>
+			<result name="reprieve">/view/customer/runoff/reprieve.jsp</result>
+		</action>
 	</package>
 </struts>

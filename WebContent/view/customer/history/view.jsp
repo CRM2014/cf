@@ -25,7 +25,7 @@
 					</ol>
 				</h5>
 				<!-- 页面路径结束 -->
-				<h3>XX客户历史订单管理</h3>
+				<h3>查看XX客户历史订单明细</h3>
 				<!-- 导航栏开始 -->
 				<ul class="nav nav-tabs col-sm-offset-6 " role="tablist">
 					<li><a href="../customer.basic/list.html">基本信息</a></li>
@@ -36,48 +36,48 @@
 				<!-- 导航栏结束 -->
 				<!-- 数据显示与交互内容开始 -->
 				<div class="workpage well well-lg">
-					<form class="form-inline" role="form">
+					<form class="form-horizontal" role="form">
 						<div class="form-group">
-							<div class="input-group">
-								<div class="input-group-addon">下单时间</div>
-								<input class="form-control" type="text" placeholder="">
-							</div>
+							<label for="inputEmail3" class="col-sm-2 control-label">编号：</label>
+							<div class="col-sm-3">No.1</div>
+							<label for="inputEmail3" class="col-sm-2 control-label">客户：</label>
+							<div class="col-sm-3">balabala</div>
 						</div>
 						<div class="form-group">
-							<div class="input-group">
-								<div class="input-group-addon">订单状态</div>
-								<select class="form-control" disabled>
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
-									<option>5</option>
-								</select>
+							<label for="inputEmail3" class="col-sm-2 control-label">下单时间：</label>
+							<div class="col-sm-3">****-**-**</div>
+							<label for="inputEmail3" class="col-sm-2 control-label">订单状态：</label>
+							<div class="col-sm-3">未付款</div>
+						</div>
+						<div class="form-group">
+							<label for="inputEmail3" class="col-sm-2 control-label">送货地址：</label>
+							<div class="col-sm-8">北京市</div>
+						</div>
+						<br>
+						<div class="form-group">
+							<label for="inputEmail3" class="col-sm-2 control-label">订单明细：</label>
+							<div class="panel panel-default">
+								<!-- Default panel contents -->
+								<div class="panel-heading">Panel heading</div>
+								<!-- Table -->
+								<table class="table">
+									<tr>
+										<td align="center">产品编号</td>
+										<td align="center">产品名称</td>
+										<td align="center">数量</td>
+									</tr>
+									<tr>
+										<td align="center">1</td>
+										<td align="center">balabala</td>
+										<td align="center">balabala</td>
+									</tr>
+								</table>
 							</div>
 						</div>
-						<button type="submit" class="btn btn-default">
-							<span class="glyphicon glyphicon-search"></span> 查询
-						</button>
+						<div align="center">
+							<a role="button" class="btn btn-default" href="customer/history-list.action">返回</a>
+						</div>
 					</form>
-					<br> <br>
-					<table class="table table-bordered" align="center" valign="middle">
-						<tr>
-							<td align="center">编号</td>
-							<td align="center">下单日期</td>
-							<td align="center">送货地址</td>
-							<td align="center">订单状态</td>
-							<td align="center">操作</td>
-						</tr>
-						<tr>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td align="center"><a role="button" class="btn btn-default"
-								href="customer/history-view.action">查看</a>
-								<button type="button" class="btn btn-default">删除</button></td>
-						</tr>
-					</table>
 				</div>
 				<!-- 数据显示与交互内容结束 -->
 				

@@ -31,5 +31,12 @@ public class DevelopmentPlanAction extends BaseAction {
 	public String fail(){
 		return "fail";
 	}
+	public String make(){
+		return "make";
+	}
+	public String list(){
+		return "list";
+	}
+	
 
 }

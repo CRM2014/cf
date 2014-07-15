@@ -62,7 +62,7 @@
 						<button type="submit" class="btn btn-default">
 							<span class="glyphicon glyphicon-search"></span> 查询
 						</button>
-						<a role="button" class="btn btn-default" style="" href="add.html">添加联系人</a>
+						<a role="button" class="btn btn-default" style="" href="customer/contact-add.action">添加联系人</a>
 					</form>
 
 					<br> <br>
@@ -84,8 +84,8 @@
 							<td></td>
 							<td></td>
 							<td align="center"><a role="button" class="btn btn-default"
-								href="view.html">查看</a> <a role="button" class="btn btn-default"
-								href="edit.html">编辑</a> <a role="button" class="btn btn-default">删除</a>
+								href="customer/contact-view.action">查看</a> <a role="button" class="btn btn-default"
+								href="customer/contact-edit.action">编辑</a> <a role="button" class="btn btn-default">删除</a>
 							</td>
 						</tr>
 					</table>

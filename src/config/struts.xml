@@ -4,10 +4,9 @@
     "http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
-
 	<!-- 更改struts2请求Action的后缀名，默认为action。若想去掉后缀，设为","即可 -->
 	<constant name="struts.action.extension" value="action"></constant>
-	
+
 	<package name="struts_base" extends="struts-default" namespace="/">
 
 		<interceptors>
@@ -34,5 +33,10 @@
 	<!-- 包含的配置文件 -->
 	<include file="/cf/crm/action/account/struts-account.xml"></include>
 	<include file="/cf/crm/action/marketing/struts-marketing.xml"></include>
+	<include file="/cf/crm/action/statistics/struts-statistics.xml"></include>
+	<include file="/cf/crm/action/database/struts-database.xml"></include>
+	<include file="/cf/crm/action/service/struts-service.xml"></include>
+	<include file="/cf/crm/action/LoginAction/struts-LoginAction.xml"></include>
+	<include file="/cf/crm/action/customer/struts-customer.xml"></include>
 
 </struts>
