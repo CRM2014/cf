@@ -170,8 +170,8 @@
 				<!-- 页面路径开始 -->
 				<h5 class="page-header">
 					<ol class="breadcrumb">
-						<li><a href="#">统计报表</a></li>
-						<li class="active">客户构成分析</li>
+						<li>统计报表</li>
+						<li>客户构成分析</li>
 					</ol>
 				</h5>
 				<!-- 页面路径结束 -->
@@ -192,7 +192,7 @@
 							<span class="glyphicon glyphicon-search"></span> 查询
 						</button>
 						<button class="btn btn-default" data-toggle="modal"
-							data-target="#chart">图表</button>
+							data-target="#chart">客户构成比例</button>
 					</div>
 
 					<br> <br>
@@ -207,7 +207,19 @@
 							<td></td>
 							<td></td>
 						</tr>
-					</table>
+					</table><div class="text-center">
+
+						<!-- 分页栏开始 --><ul class="pager">
+						<li class="col-md-6">共有10条记录 每页显示<select><option>10</option>
+								<option>20</option>
+								<option>30</option></select>条 第1页/共3页
+						<li>
+						<li><input style="width: 30px" type="text" text="1">
+							<button>跳转</button></li>
+						<li><a href="#">上一页</a></li>
+						<li><a href="#">下一页</a></li>
+					</ul><!-- 分页栏结束 -->
+					</div>
 				</div>
 				<!-- 数据显示与交互内容结束 -->
 			</div>
@@ -247,10 +259,22 @@
 
 				<div class="modal-body">
 					<div class="row">
-						<div class="col-md-offset-4">
+						<div class="col-md-offset-1 col-md-5">
 							<canvas id="chart-area" width="300" height="300" />
 						</div>
-
+						<div>
+							<br>
+							<h4>1级客户：300</h4>
+							<br>
+							<h4>2级客户：50</h4>
+							<br>
+							<h4>3级客户：100</h4>
+							<br>
+							<h4>4级客户：40</h4>
+							<br>
+							<h4>5级客户：150</h4>
+							<br>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -299,11 +323,11 @@
 						}
 
 					];
-
-					window.onload = function(){
-						var ctx = document.getElementById("chart-area").getContext("2d");
+		var ctx = document.getElementById("chart-area").getContext("2d");
+		$('#chart').on('shown.bs.modal', function(e) {
+						
 						window.myPie = new Chart(ctx).Pie(pieData);
-					};
+		});
 	</script>
 	<!-- js结束 -->
 </body>

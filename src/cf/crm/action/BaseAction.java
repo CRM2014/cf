@@ -14,7 +14,14 @@ import com.opensymphony.xwork2.Preparable;
 
 public abstract class BaseAction extends ActionSupport implements Preparable {
 
-	private User currentUser;
+	protected User currentUser;
+
+	protected String info;
+
+	protected String warn;
+
+	protected String error;
+	
 	@Autowired
 	@Qualifier("userServiceImpl")
 	private UserService userService;
@@ -37,8 +44,16 @@ public abstract class BaseAction extends ActionSupport implements Preparable {
 		return currentUser;
 	}
 
-	public void setCurrentUser(User currentUser) {
-		this.currentUser = currentUser;
+	public String getInfo() {
+		return info;
+	}
+
+	public String getWarn() {
+		return warn;
+	}
+
+	public String getError() {
+		return error;
 	}
 
 }
