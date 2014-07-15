@@ -192,7 +192,7 @@
 							<span class="glyphicon glyphicon-search"></span> 查询
 						</button>
 						<button class="btn btn-default" data-toggle="modal"
-							data-target="#chart">图表</button>
+							data-target="#chart">客户构成比例</button>
 					</div>
 
 					<br> <br>
@@ -247,10 +247,22 @@
 
 				<div class="modal-body">
 					<div class="row">
-						<div class="col-md-offset-4">
+						<div class="col-md-offset-1 col-md-5">
 							<canvas id="chart-area" width="300" height="300" />
 						</div>
-
+						<div>
+							<br>
+							<h4>1级客户：300</h4>
+							<br>
+							<h4>2级客户：50</h4>
+							<br>
+							<h4>3级客户：100</h4>
+							<br>
+							<h4>4级客户：40</h4>
+							<br>
+							<h4>5级客户：150</h4>
+							<br>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -299,11 +311,11 @@
 						}
 
 					];
-
-					window.onload = function(){
-						var ctx = document.getElementById("chart-area").getContext("2d");
+		var ctx = document.getElementById("chart-area").getContext("2d");
+		$('#chart').on('shown.bs.modal', function(e) {
+						
 						window.myPie = new Chart(ctx).Pie(pieData);
-					};
+		});
 	</script>
 	<!-- js结束 -->
 </body>
