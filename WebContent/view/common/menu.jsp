@@ -12,10 +12,10 @@
 			<div id="collapse-1" class="panel-collapse collapse">
 				<div class="panel-body">
 					<div class="accordion-inner">
-						<a href="../marketing.chance/list.html">销售机会管理</a>
+						<a href="/${webname}/marketing/developmentPlan-list.action">销售机会管理</a>
 					</div>
 					<div class="accordion-inner">
-						<a href="../marketing.plan/list.html"> 客户开发计划</a>
+						<a href="/${webname}/marketing/marketingOpportunities-list.action"> 客户开发计划</a>
 					</div>
 				</div>
 			</div>
