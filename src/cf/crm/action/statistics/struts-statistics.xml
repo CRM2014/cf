@@ -6,7 +6,17 @@
 <struts>
 
 	<!-- 与spring集成的写法，action等交予spring管理 -->
-	<package name="statistics" extends="struts_base" namespace="/statistics" >
+	<package name="statistics" extends="struts_base" namespace="/statistics">
+		<action name="statistics-*" class="statisticalStatemenAction"
+			method="{1}">
+			<result name="contribution">/view/statistics/contribution.jsp</result>
+			<result name="constitute">/view/statistics/composition.jsp</result>
+			<result name="analyze">/view/statistics/service.jsp</result>		
+			<result name="drain">/view/statistics/loss.jsp</result>
+			<result name="fail" type="redirect">
+				statistics-statistics.action
+			</result>
+		</action>
 	</package>
 
 </struts>

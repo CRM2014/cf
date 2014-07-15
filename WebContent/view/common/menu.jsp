@@ -77,20 +77,21 @@
 			<div id="collapse-4" class="panel-collapse collapse">
 				<div class="panel-body">
 					<div class="accordion-inner">
-						<a href="../statistics/contribution.html">客户贡献分析</a>
+						<a href="/${webname}/statistics/statistics-contribution.action">客户贡献分析</a>
 					</div>
 					<div class="accordion-inner">
-						<a href="../statistics/composition.html">客户构成分析</a>
+						<a href="/${webname}/statistics/statistics-constitute.action">客户构成分析</a>
 					</div>
 					<div class="accordion-inner">
-						<a href="../statistics/service.html">客户服务分析</a>
+						<a href="/${webname}/statistics/statistics-analyze.action">客户服务分析</a>
 					</div>
 					<div class="accordion-inner">
-						<a href="../statistics/loss.html">客户流失分析</a>
+						<a href="/${webname}/statistics/statistics-drain.action">客户流失分析</a>
 					</div>
 				</div>
 			</div>
 		</div>
+		
 
 		<div class="panel panel-default">
 			<div class="panel-heading">
@@ -102,13 +103,13 @@
 			<div id="collapse-5" class="panel-collapse collapse">
 				<div class="panel-body">
 					<div class="accordion-inner">
-						<a href="../database.datadictionary/list.html">数据字典管理</a>
+						<a href="/${webname}/database/database-init.action">数据字典管理</a>
 					</div>
 					<div class="accordion-inner">
-						<a href="../database.product/list.html">查询产品信息</a>
+						<a href="/${webname}/database/database-product.action">查询产品信息</a>
 					</div>
 					<div class="accordion-inner">
-						<a href="../database.storage/list.html">查询库存</a>
+						<a href="/${webname}/database/database-depot.action">查询库存</a>
 					</div>
 				</div>
 			</div>

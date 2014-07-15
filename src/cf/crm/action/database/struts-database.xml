@@ -7,6 +7,25 @@
 
 	<!-- 与spring集成的写法，action等交予spring管理 -->
 	<package name="database" extends="struts_base" namespace="/database">
-		
+		<action name="database-*" class="dataDictionaryAction" method="{1}">
+			<result name="add">/view/database/datadictionary/add.jsp</result>
+			<result name="delete">/view/database/datadictionary/list.jsp</result>
+			<result name="update">/view/database/datadictionary/modify.jsp</result>
+			<result name="inquiry">/view/database/datadictionary/list.jsp</result>
+			<result name="init">/view/database/datadictionary/list.jsp</result>
+			<result name="fail" type="redirect">
+				database-database.action
+			</result>
+		</action>
+
+		<action name="database-*" class="dataInquiryAction" method="{1}">
+			<result name="product">/view/database/product/list.jsp</result>
+			<result name="depot">/view/database/storage/list.jsp</result>
+			<result name="init">/view/database/product/list.jsp</result>
+			<result name="fail" type="redirect">
+				database-database.action
+			</result>
+		</action>
+
 	</package>
 </struts>
