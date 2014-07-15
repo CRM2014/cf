@@ -7,6 +7,15 @@
 
 	<!-- 与spring集成的写法，action等交予spring管理 -->
 	<package name="service" extends="struts_base" namespace="/service" >
+	<action name="service-*" class="serviceAction" method="{1}">
+			<result name="add">/view/service/add.jsp</result>
+		</action>
+		
+		<action name="serviceCustomer-*" class ="serviceCustomerAction" method ="{1}">
+			<result name="assign">/view/service/assign.jsp</result>
+		    <result name="feedback">/view/service/feedback.jsp</result>
+			 <result name="archiving">/view/service/archiving.jsp</result>
+			 <result name="deal">/view/service/deal.jsp</result>
+			</action>
 	</package>
-
 </struts>

@@ -24,5 +24,7 @@ public class ServiceAction extends BaseAction {
 	public String init(){
 		return "init";
 	}
-
+	public String add(){
+		return "add";
+	}
 }
