@@ -30,8 +30,18 @@ public class ServiceCustomerAction extends BaseAction {
 	public String filing(){
 		return "filing";
 	}
-	public String init(){
-		return "init";
+	public String assign(){
+		return "assign";
 	}
+	public String feedback(){
+		return "feedback";
+	}
+	public String archiving(){
+		return "archiving";
+	}
+	public String deal(){
+		return "deal";
+	}
+
 
 }

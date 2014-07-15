@@ -4,29 +4,27 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import cf.crm.action.BaseAction;
-
 @Controller
 @Scope("prototype")
-public class CustomerAction extends BaseAction {
+public class RunOffAction extends BaseAction {
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 7843189697363605993L;
-	
+	private static final long serialVersionUID = 1452512885255618539L;
+
 	@Override
 	public String execute() throws Exception {
 		return "fail";
 	}
-	
-	public String edit(){
-		return "edit";
-	}
-	
 	public String init(){
 		return "init";
 	}
-	public String view(){
-		return "view";
+	public String reprieve(){
+		return "reprieve";
 	}
+	public String confirm(){
+		return "confirm";
+	}
+
 }
