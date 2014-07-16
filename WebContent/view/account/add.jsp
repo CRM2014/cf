@@ -20,11 +20,12 @@
 				<!-- 页面路径开始 -->
 				<h5 class="page-header">
 					<ol class="breadcrumb">
-						<li>服务管理</li>
-						<li>服务创建</li>
+						<li>用户管理</li>
+						<li>新建用户</li>
 					</ol>
 				</h5>
 				<!-- 页面路径结束 -->
+
 				<h3>新建用户</h3>
 				<!-- 数据显示与交互内容开始 -->
 				<div class="workpage well well-lg">
@@ -37,20 +38,7 @@
 								<input type="email" class="form-control" id="">
 							</div>
 						</div>
-						<div class="form-group">
-							<label for="inputEmail3"
-								class="col-sm-3 col-sm-offset-1 control-label">用户密码：</label>
-							<div class="col-sm-4">
-								<input type="email" class="form-control" id="">
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="inputEmail3"
-								class="col-sm-3 col-sm-offset-1 control-label">确认密码：</label>
-							<div class="col-sm-4">
-								<input type="email" class="form-control" id="">
-							</div>
-						</div>
+
 						<div class="form-group">
 							<label for="inputEmail3"
 								class="col-sm-3 col-sm-offset-1 control-label">用户姓名：</label>
@@ -78,12 +66,11 @@
 					</form>
 				</div>
 				<!-- 数据显示与交互内容结束 -->
-				
-				</div>
+			</div>
 			<!-- 主要内容结束 -->
 		</div>
 	</div>
-	
+
 	<!-- js开始 -->
 	<%@ include file="/view/common/js.jsp"%>
 	<script type="text/javascript">

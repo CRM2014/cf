@@ -20,59 +20,67 @@
 				<!-- 页面路径开始 -->
 				<h5 class="page-header">
 					<ol class="breadcrumb">
-						<li>服务管理</li>
-						<li>服务创建</li>
+						<li>个人中心</li>
 					</ol>
 				</h5>
 				<!-- 页面路径结束 -->
+
 				<!-- 数据显示与交互内容开始 -->
-                <div >
-                    <form class="form-horizontal" role="form">
-                      
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-4 control-label">编号：</label>
-                                <label for="inputEmail3" class="col-sm--3 control-label">22222</label>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-4 control-label">用户名：</label>
-                                <label for="inputEmail3" class="col-sm--3 control-label">宇神</label>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-4 control-label">用户姓名：</label>
-                                <label for="inputEmail3" class="col-sm--3 control-label">齐宇</label>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-4 control-label">用户角色：</label>
-                                <label for="inputEmail3" class="col-sm--3 control-label">销售主管</label>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-4 control-label">登录时间：</label>
-                                <label for="inputEmail3" class="col-sm--3 control-label">2014-07-13 3：00 pm</label>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-4 control-label">上次登录时间：</label>
-                                <label for="inputEmail3" class="col-sm--3 control-label">2014-07-12 3：00 pm</label>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-4 control-label">创建时间：</label>
-                                <label for="inputEmail3" class="col-sm--3 control-label">2014-07-10 3：00 pm</label>
-                            </div>
+				<div>
+					<form class="form-horizontal" role="form">
 
-                    </form>
-                <!-- 数据显示与交互内容结束 -->
-				
+						<div class="form-group">
+							<label for="inputEmail3" class="col-sm-4 control-label">编号：</label>
+							<label for="inputEmail3" class="col-sm--3 control-label">22222</label>
+						</div>
+						<div class="form-group">
+							<label for="inputEmail3" class="col-sm-4 control-label">用户名：</label>
+							<label for="inputEmail3" class="col-sm--3 control-label">宇神</label>
+						</div>
+						<div class="form-group">
+							<label for="inputEmail3" class="col-sm-4 control-label">用户姓名：</label>
+							<label for="inputEmail3" class="col-sm--3 control-label">齐宇</label>
+						</div>
+						<div class="form-group">
+							<label for="inputEmail3" class="col-sm-4 control-label">用户角色：</label>
+							<label for="inputEmail3" class="col-sm--3 control-label">销售主管</label>
+						</div>
+						<div class="form-group">
+							<label for="inputEmail3" class="col-sm-4 control-label">登录时间：</label>
+							<label for="inputEmail3" class="col-sm--3 control-label">2014-07-13
+								3：00 pm</label>
+						</div>
+						<div class="form-group">
+							<label for="inputEmail3" class="col-sm-4 control-label">上次登录时间：</label>
+							<label for="inputEmail3" class="col-sm--3 control-label">2014-07-12
+								3：00 pm</label>
+						</div>
+						<div class="form-group">
+							<label for="inputEmail3" class="col-sm-4 control-label">创建时间：</label>
+							<label for="inputEmail3" class="col-sm--3 control-label">2014-07-10
+								3：00 pm</label>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-6">
+								<a data-toggle="modal" href="#" data-target="#loginout"
+									class="btn btn-default col-sm-offset-9" role="button">修改密码</a>
+
+							</div>
+
+						</div>
+					</form>
+					<!-- 数据显示与交互内容结束 -->
 				</div>
-			<!-- 主要内容结束 -->
+				<!-- 主要内容结束 -->
+			</div>
 		</div>
-	</div>
-	
-	<!-- js开始 -->
-	<%@ include file="/view/common/js.jsp"%>
-	<script type="text/javascript">
-		var pageInfo = new PageInfo(3);
-		pageInfo.generate();
-	</script>
-	<!-- js结束 -->
 
+		<!-- js开始 -->
+		<%@ include file="/view/common/js.jsp"%>
+		<script type="text/javascript">
+			var pageInfo = new PageInfo(3);
+			pageInfo.generate();
+		</script>
+		<!-- js结束 -->
 </body>
 </html>
