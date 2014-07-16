@@ -6,16 +6,28 @@
 <struts>
 
 	<!-- 与spring集成的写法，action等交予spring管理 -->
-	<package name="service" extends="struts_base" namespace="/service" >
-	<action name="service-*" class="serviceAction" method="{1}">
-			<result name="add">/view/service/add.jsp</result>
+	<package name="service" extends="struts_base" namespace="/service">
+		<action name="service-*" class="serviceAction" method="{1}">
+			<result name="add">/view/service/basic/add.jsp</result>
 		</action>
-		
-		<action name="serviceCustomer-*" class ="serviceCustomerAction" method ="{1}">
-			<result name="assign">/view/service/assign.jsp</result>
-		    <result name="feedback">/view/service/feedback.jsp</result>
-			 <result name="archiving">/view/service/archiving.jsp</result>
-			 <result name="deal">/view/service/deal.jsp</result>
-			</action>
+
+		<action name="archive-*" class="archiveAction" method="{1}">
+			<result name="archive">/view/service/archive/archive.jsp</result>
+			<result name="list">/view/service/archive/list.jsp</result>
+		</action>
+
+		<action name="assign-*" class="assignAction" method="{1}">
+			<result name="assign">/view/service/assign/assign.jsp</result>
+			<result name="feedback">/view/service/assign/list.jsp</result>
+		</action>
+
+		<action name="deal-*" class="dealAction" method="{1}">
+			<result name="deal">/view/service/deal/deal.jsp</result>
+			<result name="list">/view/service/deal/list.jsp</result>
+		</action>
+		<action name="feedback-*" class="feedbackAction" method="{1}">
+			<result name="feedback">/view/service/feedback/feedback.jsp</result>
+			<result name="list">/view/service/feedback/list.jsp</result>
+		</action>
 	</package>
 </struts>

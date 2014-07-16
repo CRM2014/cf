@@ -12,19 +12,36 @@ public class ServiceAction extends BaseAction {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -2558708032939778786L;
+	private static final long serialVersionUID = -5655494816627785760L;
 
 	@Override
 	public String execute() throws Exception {
 		return "fail";
 	}
-	public String found(){
-		return "found";
+	public String allot(){
+		return "allot";
 	}
-	public String init(){
-		return "init";
+	public String dispose(){
+		return "dispose";
+	}
+	public String tickling(){
+		return "tickling";
+	}
+	public String filing(){
+		return "filing";
+	}
+	public String assign(){
+		return "assign";
+	}
+	public String feedback(){
+		return "feedback";
+	}
+	public String archiving(){
+		return "archiving";
 	}
 	public String add(){
 		return "add";
 	}
+
+
 }

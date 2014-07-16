@@ -96,7 +96,7 @@
 	<!-- js开始 -->
 	<%@ include file="/view/common/js.jsp"%>
 	<script type="text/javascript">
-		var pageInfo = new PageInfo(3);
+		var pageInfo = new PageInfo(1);
 		pageInfo.generate();
 	</script>
 	<!-- js结束 -->

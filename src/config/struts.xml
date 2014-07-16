@@ -31,12 +31,12 @@
 	</package>
 
 	<!-- 包含的配置文件 -->
-	<include file="/cf/crm/action/account/struts-account.xml"></include>
+	<include file="/cf/crm/action/permission/struts-permission.xml"></include>
 	<include file="/cf/crm/action/marketing/struts-marketing.xml"></include>
 	<include file="/cf/crm/action/statistics/struts-statistics.xml"></include>
-	<include file="/cf/crm/action/database/struts-database.xml"></include>
+	<include file="/cf/crm/action/data/struts-data.xml"></include>
 	<include file="/cf/crm/action/service/struts-service.xml"></include>
-	<include file="/cf/crm/action/LoginAction/struts-LoginAction.xml"></include>
+	<include file="/cf/crm/action/account/struts-account.xml"></include>
 	<include file="/cf/crm/action/customer/struts-customer.xml"></include>
 
 </struts>

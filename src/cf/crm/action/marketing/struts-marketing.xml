@@ -6,19 +6,18 @@
 <struts>
 
 	<!-- 与spring集成的写法，action等交予spring管理 -->
-	<package name="marketing" extends="struts_base" namespace="/marketing" >
-<action name="developmentPlan-*" class="developmentPlanAction" method="{1}">
+	<package name="marketing" extends="struts_base" namespace="/marketing">
+		<action name="plan-*" class="planAction" method="{1}">
 			<result name="make">/view/marketing/plan/make.jsp</result>
 			<result name="list">/view/marketing/plan/list.jsp</result>
 			<result name="execute">/view/marketing/plan/execute.jsp</result>
-			
+
 		</action>
-		<action name="marketingOpportunities-*" class ="marketingOpportunitiesAction" method ="{1}">
+		<action name="chance-*" class="chanceAction" method="{1}">
 			<result name="list">/view/marketing/chance/list.jsp</result>
-		    <result name="add">/view/marketing/chance/add.jsp</result>
-			 <result name="assign">/view/marketing/chance/assign.jsp</result>
-			
-			</action>
-</package>
+			<result name="add">/view/marketing/chance/add.jsp</result>
+			<result name="assign">/view/marketing/chance/assign.jsp</result>
+		</action>
+	</package>
 
 </struts>
