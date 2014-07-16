@@ -31,10 +31,10 @@
 			<div id="collapse-2" class="panel-collapse collapse">
 				<div class="panel-body">
 					<div class="accordion-inner">
-						<a href="../customer.basic/list.html">客户信息管理</a>
+						<a href="/${webname}/customer/customer-list.action">客户信息管理</a>
 					</div>
 					<div class="accordion-inner">
-						<a href="../customer.runoff/list.html">客户流失管理</a>
+						<a href="/${webname}/customer/runoff-list.action">客户流失管理</a>
 					</div>
 				</div>
 			</div>
