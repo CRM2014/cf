@@ -29,4 +29,8 @@ public class CustomerAction extends BaseAction {
 	public String view(){
 		return "view";
 	}
+	
+	public String list(){
+		return "list";
+	}
 }
