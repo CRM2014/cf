@@ -5,8 +5,8 @@
 		<a href="#"> <img alt="" src="${ctx}/resourse/image/logo.png"
 			width="250px" class="webicon-header" height="35px"></a>
 
-		<div class="webname-header">
-			<label class="webname-text">CF客户关系管理系统</label>
+		<div class="ctx-header">
+			<label class="ctx-text">CF客户关系管理系统</label>
 		</div>
 		<div class="btn-group webbtn-header">
 			<button class="btn btn-default dropdown-toggle"

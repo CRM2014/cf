@@ -12,10 +12,10 @@
 			<div id="collapse-1" class="panel-collapse collapse">
 				<div class="panel-body">
 					<div class="accordion-inner">
-						<a href="/${webname}/marketing/developmentPlan-list.action">销售机会管理</a>
+						<a href="${ctx}/marketing/developmentPlan-list.action">销售机会管理</a>
 					</div>
 					<div class="accordion-inner">
-						<a href="/${webname}/marketing/marketingOpportunities-list.action"> 客户开发计划</a>
+						<a href="${ctx}/marketing/marketingOpportunities-list.action"> 客户开发计划</a>
 					</div>
 				</div>
 			</div>
@@ -31,10 +31,10 @@
 			<div id="collapse-2" class="panel-collapse collapse">
 				<div class="panel-body">
 					<div class="accordion-inner">
-						<a href="/${webname}/customer/customer-list.action">客户信息管理</a>
+						<a href="${ctx}/customer/customer-list.action">客户信息管理</a>
 					</div>
 					<div class="accordion-inner">
-						<a href="/${webname}/customer/runoff-list.action">客户流失管理</a>
+						<a href="${ctx}/customer/runoff-list.action">客户流失管理</a>
 					</div>
 				</div>
 			</div>
@@ -49,19 +49,19 @@
 			<div id="collapse-3" class="panel-collapse collapse">
 				<div class="panel-body">
 					<div class="accordion-inner">
-						<a href="/${webname}/service/service-add.action">服务创建</a>
+						<a href="${ctx}/service/service-add.action">服务创建</a>
 					</div>
 					<div class="accordion-inner">
-						<a href="/${webname}/service/serviceCustomer-assign.actionl">服务分配</a>
+						<a href="${ctx}/service/serviceCustomer-assign.actionl">服务分配</a>
 					</div>
 					<div class="accordion-inner">
-						<a href="/${webname}/service/serviceCustomer-deal.action">服务处理</a>
+						<a href="${ctx}/service/serviceCustomer-deal.action">服务处理</a>
 					</div>
 					<div class="accordion-inner">
-						<a href="/${webname}/service/serviceCustomer-feedback.action">服务反馈</a>
+						<a href="${ctx}/service/serviceCustomer-feedback.action">服务反馈</a>
 					</div>
 					<div class="accordion-inner">
-						<a href="/${webname}/service/serviceCustomer-archiving.action">服务归档</a>
+						<a href="${ctx}/service/serviceCustomer-archiving.action">服务归档</a>
 					</div>
 				</div>
 			</div>
@@ -77,16 +77,16 @@
 			<div id="collapse-4" class="panel-collapse collapse">
 				<div class="panel-body">
 					<div class="accordion-inner">
-						<a href="/${webname}/statistics/statistics-contribution.action">客户贡献分析</a>
+						<a href="${ctx}/statistics/statistics-contribution.action">客户贡献分析</a>
 					</div>
 					<div class="accordion-inner">
-						<a href="/${webname}/statistics/statistics-constitute.action">客户构成分析</a>
+						<a href="${ctx}/statistics/statistics-constitute.action">客户构成分析</a>
 					</div>
 					<div class="accordion-inner">
-						<a href="/${webname}/statistics/statistics-analyze.action">客户服务分析</a>
+						<a href="${ctx}/statistics/statistics-analyze.action">客户服务分析</a>
 					</div>
 					<div class="accordion-inner">
-						<a href="/${webname}/statistics/statistics-drain.action">客户流失分析</a>
+						<a href="${ctx}/statistics/statistics-drain.action">客户流失分析</a>
 					</div>
 				</div>
 			</div>
@@ -103,13 +103,13 @@
 			<div id="collapse-5" class="panel-collapse collapse">
 				<div class="panel-body">
 					<div class="accordion-inner">
-						<a href="/${webname}/database/database-init.action">数据字典管理</a>
+						<a href="${ctx}/database/database-init.action">数据字典管理</a>
 					</div>
 					<div class="accordion-inner">
-						<a href="/${webname}/database/database-product.action">查询产品信息</a>
+						<a href="${ctx}/database/database-product.action">查询产品信息</a>
 					</div>
 					<div class="accordion-inner">
-						<a href="/${webname}/database/database-depot.action">查询库存</a>
+						<a href="${ctx}/database/database-depot.action">查询库存</a>
 					</div>
 				</div>
 			</div>
