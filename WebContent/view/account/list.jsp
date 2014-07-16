@@ -20,8 +20,8 @@
 				<!-- 页面路径开始 -->
 				<h5 class="page-header">
 					<ol class="breadcrumb">
-						<li>服务管理</li>
-						<li>服务创建</li>
+						<li>用户管理</li>
+						<li>查看用户</li>
 					</ol>
 				</h5>
 				<!-- 页面路径结束 -->
@@ -73,10 +73,22 @@
 								<button type="button" class="btn btn-default">删除</button></td>
 						</tr>
 					</table>
+                    <div class="text-center">
+
+						<!-- 分页栏开始 --><ul class="pager">
+						<li class="col-md-6">共有10条记录 每页显示<select><option>10</option>
+								<option>20</option>
+								<option>30</option></select>条 第1页/共3页
+						<li>
+						<li><input style="width: 30px" type="text" text="1">
+							<button>跳转</button></li>
+						<li><a href="#">上一页</a></li>
+						<li><a href="#">下一页</a></li>
+					</ul><!-- 分页栏结束 -->
+					</div>
 				</div>
 				<!-- 数据显示与交互内容结束 -->
-				
-				</div>
+			</div>
 			<!-- 主要内容结束 -->
 		</div>
 	</div>
