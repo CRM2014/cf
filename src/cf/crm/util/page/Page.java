@@ -1,9 +1,24 @@
 package cf.crm.util.page;
 
-public class Page {
+import java.util.List;
+
+public class Page<T> {
 	private int currentPage;
 	private int pageSize;
-	private int total;
+	private boolean isDesc;
+	private String order;
+	private List<T> list;
+	private int count;
+	private int countPage;
+
+	public int getFirstRec() {
+		return (currentPage - 1) * pageSize;
+	}
+
+	public int getCountPage() {
+		countPage = count / pageSize + 1;
+		return countPage;
+	}
 
 	public int getCurrentPage() {
 		return currentPage;
@@ -21,11 +36,35 @@ public class Page {
 		this.pageSize = pageSize;
 	}
 
-	public int getTotal() {
-		return total;
+	public boolean isDesc() {
+		return isDesc;
 	}
 
-	public void setTotal(int total) {
-		this.total = total;
+	public void setDesc(boolean isDesc) {
+		this.isDesc = isDesc;
+	}
+
+	public String getOrder() {
+		return order;
+	}
+
+	public void setOrder(String order) {
+		this.order = order;
+	}
+
+	public List<T> getList() {
+		return list;
+	}
+
+	public void setList(List<T> list) {
+		this.list = list;
+	}
+
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
 	}
 }

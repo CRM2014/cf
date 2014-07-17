@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC
-    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
-    "http://struts.apache.org/dtds/struts-2.0.dtd">
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
-	<!-- 更改struts2请求Action的后缀名，默认为action。若想去掉后缀，设为","即可 -->
-	<constant name="struts.action.extension" value="action"></constant>
+
+	<constant name="struts.devMode" value="true"></constant>
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	<constant name="struts.action.extension" value="action,,"></constant>
 
 	<package name="struts_base" extends="struts-default" namespace="/">
 
@@ -22,11 +24,16 @@
 
 
 		<global-results>
+			<result name="404">/view/error/404.jsp</result>
 			<result name="checkLoginFail">/view/account/login.jsp</result>
 		</global-results>
 
 		<action name="index">
 			<result>/view/account/login.jsp</result>
+		</action>
+
+		<action name="404">
+			<result>/view/error/404.jsp</result>
 		</action>
 	</package>
 
@@ -38,5 +45,4 @@
 	<include file="/cf/crm/action/service/struts-service.xml"></include>
 	<include file="/cf/crm/action/account/struts-account.xml"></include>
 	<include file="/cf/crm/action/customer/struts-customer.xml"></include>
-
 </struts>

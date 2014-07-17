@@ -1,6 +1,7 @@
 package cf.crm.service.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Component;
 import cf.crm.dao.UserDao;
 import cf.crm.entity.User;
 import cf.crm.service.UserService;
+import cf.crm.util.page.Page;
 
 @Component
 @Scope("prototype")
@@ -48,4 +50,8 @@ public class UserServiceImpl implements UserService {
 		return userDao.findByUserName(userName);
 	}
 
+	@Override
+	public void findByPage(Page<User> page, Map<String, Object> like) {
+		userDao.findByPage(page, like);
+	}
 }

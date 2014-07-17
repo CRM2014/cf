@@ -11,6 +11,12 @@
 			<result name="add">/view/permission/add.jsp</result>
 			<result name="list">/view/permission/list.jsp</result>
 			<result name="modify">/view/permission/modify.jsp</result>
+			<result name="modify-success" type="chain">permission-list
+			</result>
+			<result name="add-success" type="chain">permission-list
+			</result>
+			<result name="delete-success" type="chain">permission-list
+			</result>
 		</action>
 	</package>
 </struts>

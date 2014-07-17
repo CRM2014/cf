@@ -1,5 +1,6 @@
 package cf.crm.action.account;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -13,12 +14,13 @@ import org.springframework.stereotype.Controller;
 import cf.crm.action.BaseAction;
 import cf.crm.entity.User;
 import cf.crm.service.UserService;
+import cf.crm.util.page.Page;
 
 import com.opensymphony.xwork2.ActionContext;
 
 @Controller
 @Scope("prototype")
-public class LoginAction extends BaseAction {
+public class AccountAction extends BaseAction {
 
 	/**
 	 * 
@@ -29,6 +31,7 @@ public class LoginAction extends BaseAction {
 	@Autowired
 	@Qualifier("userServiceImpl")
 	private UserService userService;
+
 	public String login() throws Exception {
 		HttpServletRequest request = ServletActionContext.getRequest();
 		User existUser = userService.findByUserName(user.getUsUserName());
@@ -50,6 +53,14 @@ public class LoginAction extends BaseAction {
 			System.out.println("登录失败，登录用户名：" + user.getUsName());
 			return "fail";
 		}
+	}
+
+	public String user() {
+		return "user";
+	}
+
+	public String logoutUser() {
+		return "user";
 	}
 
 	public User getUser() {

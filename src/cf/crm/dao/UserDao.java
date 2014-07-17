@@ -1,8 +1,10 @@
 package cf.crm.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import cf.crm.entity.User;
+import cf.crm.util.page.Page;
 
 public interface UserDao extends Dao {
 	public void add(User user);
@@ -16,4 +18,6 @@ public interface UserDao extends Dao {
 	public List<User> findList();
 
 	public User findByUserName(String userName);
+
+	public void findByPage(Page<User> page, Map<String, Object> like);
 }

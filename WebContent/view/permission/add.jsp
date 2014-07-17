@@ -29,13 +29,15 @@
 				<h3>新建用户</h3>
 				<!-- 数据显示与交互内容开始 -->
 				<div class="workpage well well-lg">
-					<form class="form-horizontal" role="form">
-
+					<form class="form-horizontal" role="form"
+						action="${ctx }/permission/permission-addUser.action"
+						method="post">
 						<div class="form-group">
 							<label for="inputEmail3"
 								class="col-sm-3 col-sm-offset-1 control-label">用户名：</label>
 							<div class="col-sm-4">
-								<input type="email" class="form-control" id="">
+								<input type="text" class="form-control" name="user.usUserName"
+									value="${ user.usUserName}">
 							</div>
 						</div>
 
@@ -43,23 +45,26 @@
 							<label for="inputEmail3"
 								class="col-sm-3 col-sm-offset-1 control-label">用户姓名：</label>
 							<div class="col-sm-4">
-								<input type="email" class="form-control" id="">
+								<input type="text" class="form-control" name="user.usName"
+									value="${ user.usName}">
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="inputEmail3"
 								class="col-sm-3 col-sm-offset-1 control-label">用户角色：</label>
 							<div class="col-sm-4">
-								<input type="email" class="form-control" id="">
+								<input type="text" class="form-control" name="user.usRole"
+									value="${ user.usRole}">
 							</div>
 						</div>
 						<div class="form-group">
 							<div class="col-sm-6">
-								<a role="button" href="../account/list.html"
-									class="btn btn-default btn-lg col-sm-offset-9">确认</a>
+								<button type="submit"
+									class="btn btn-default btn-lg col-sm-offset-9">保存</button>
 							</div>
 							<div class="col-sm-6">
-								<a role="button" href="../account/list.html"
+								<a role="button"
+									href="${ctx }/permission/permission-list.action"
 									class="btn btn-default btn-lg">返回</a>
 							</div>
 						</div>

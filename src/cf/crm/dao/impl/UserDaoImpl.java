@@ -1,6 +1,7 @@
 package cf.crm.dao.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Component;
 
 import cf.crm.dao.UserDao;
 import cf.crm.entity.User;
+import cf.crm.util.page.Page;
 
 @Component
 @Scope("prototype")
@@ -43,11 +45,16 @@ public class UserDaoImpl extends DaoAdapter implements UserDao {
 	@Override
 	public User findByUserName(String userName) {
 		try {
-			 Criteria cri = getSession().createCriteria(User.class);
-			 cri.add(Restrictions.eq("usUserName", userName));
-			 return (User) cri.uniqueResult();
+			Criteria cri = getSession().createCriteria(User.class);
+			cri.add(Restrictions.eq("usUserName", userName));
+			return (User) cri.uniqueResult();
 		} finally {
 
 		}
+	}
+
+	@Override
+	public void findByPage(Page<User> page, Map<String, Object> like) {
+		super.findByPage(User.class, page, like);
 	}
 }

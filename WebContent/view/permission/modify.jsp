@@ -28,68 +28,62 @@
 				<h3>编辑用户</h3>
 				<!-- 数据显示与交互内容开始 -->
 				<div class="workpage well well-lg">
-					<form class="form-horizontal" role="form">
+					<form class="form-horizontal" role="form"
+						action="${ctx }/permission/permission-modifyUser.action"
+						method="post">
 						<div class="form-group">
 							<label for="inputEmail3"
 								class="col-sm-3 col-sm-offset-1 control-label">编号：</label>
 							<div class="col-sm-4">
-								<input type="email" class="form-control" id="" disabled>
+								<input type="text" class="form-control" name="user.usId"
+									disabled value="${ user.usId}">
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="inputEmail3"
 								class="col-sm-3 col-sm-offset-1 control-label">用户名：</label>
 							<div class="col-sm-4">
-								<input type="email" class="form-control" id="">
+								<input type="text" class="form-control" name="user.usUserName"
+									value="${ user.usUserName}">
 							</div>
 						</div>
-						<div class="form-group">
-							<label for="inputEmail3"
-								class="col-sm-3 col-sm-offset-1 control-label">用户密码：</label>
-							<div class="col-sm-4">
-								<input type="email" class="form-control" id="">
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="inputEmail3"
-								class="col-sm-3 col-sm-offset-1 control-label">确认密码：</label>
-							<div class="col-sm-4">
-								<input type="email" class="form-control" id="">
-							</div>
-						</div>
+
 						<div class="form-group">
 							<label for="inputEmail3"
 								class="col-sm-3 col-sm-offset-1 control-label">用户姓名：</label>
 							<div class="col-sm-4">
-								<input type="email" class="form-control" id="">
+								<input type="text" class="form-control" name="user.usName"
+									value="${ user.usName}">
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="inputEmail3"
 								class="col-sm-3 col-sm-offset-1 control-label">用户角色：</label>
 							<div class="col-sm-4">
-								<input type="email" class="form-control" id="">
+								<input type="text" class="form-control" name="user.usRole"
+									value="${ user.usRole}">
 							</div>
 						</div>
 						<div class="form-group">
 							<div class="col-sm-6">
-								<a role="button" href="../account/list.html"
-									class="btn btn-default btn-lg col-sm-offset-9">保存</a>
+								<button type="submit"
+									class="btn btn-default btn-lg col-sm-offset-9">保存</button>
 							</div>
 							<div class="col-sm-6">
-								<a role="button" href="../account/list.html"
+								<a role="button"
+									href="${ctx }/permission/permission-list.action"
 									class="btn btn-default btn-lg">返回</a>
 							</div>
 						</div>
 					</form>
 				</div>
 				<!-- 数据显示与交互内容结束 -->
-				
-				</div>
+
+			</div>
 			<!-- 主要内容结束 -->
 		</div>
 	</div>
-	
+
 	<!-- js开始 -->
 	<%@ include file="/view/common/js.jsp"%>
 	<script type="text/javascript">

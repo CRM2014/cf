@@ -28,10 +28,11 @@
 			</list>
 		</property>
 	</bean>
-	
+
 	<!-- Spring管理Struts2的Interceptor -->
 	<bean name="checkLoginInterceptor" class="cf.crm.interceptor.CheckLogin"
 		scope="prototype"></bean>
+	
 	<!-- 配置事务管理器 -->
 	<bean id="transactionManager"
 		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
@@ -52,8 +53,7 @@
 	<!-- 那些类那些方法使用事务 -->
 	<aop:config>
 		<!-- 只对业务逻辑层实施事务 -->
-		<aop:pointcut id="allManagerMethod"
-			expression="execution(* cf.crm.service.*.*(..))" />
+		<aop:pointcut id="allManagerMethod" expression="execution(* cf.crm.service.*.*(..))" />
 		<aop:advisor pointcut-ref="allManagerMethod" advice-ref="txadvice" />
 	</aop:config>
 
