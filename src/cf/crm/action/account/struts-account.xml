@@ -7,6 +7,14 @@
 
 	<!-- 与spring集成的写法，action等交予spring管理 -->
 	<package name="account" extends="struts_base" namespace="/account">
-		
+		<action name="account-*" class="runoffAction" method="{1}">
+			<result name="add">/view/account/add.jsp</result>
+			<result name="modify">/view/account/modify.jsp</result>
+			<result name="delete">/view/account/list.jsp</result>
+			<result name="init">/view/account/list.jsp</result>
+			<result name="fail" type="redirect">
+				account-account.action
+			</result>
+		</action>
 	</package>
 </struts>

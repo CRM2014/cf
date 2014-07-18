@@ -124,7 +124,7 @@
 			<div id="collapse-6" class="panel-collapse collapse">
 				<div class="panel-body">
 					<div class="accordion-inner">
-						<a href="../account/list.html">查看用户</a>
+						<a href="/${webname}/account/account-init.action">查看用户</a>
 					</div>
 				</div>
 			</div>

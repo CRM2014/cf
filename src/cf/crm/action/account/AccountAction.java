@@ -30,4 +30,5 @@ public class AccountAction extends BaseAction {
 	public String init(){
 		return "init";
 	}
+	
 }
