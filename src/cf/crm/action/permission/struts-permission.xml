@@ -13,7 +13,11 @@
 			<result name="modify">/view/permission/modify.jsp</result>
 			<result name="modify-success" type="chain">permission-list
 			</result>
-			<result name="add-success" type="chain">permission-list
+			<result name="add-success" type="redirectAction">
+				<param name="actionName">permission-list</param>
+				<param name="namespace">/permission </param>
+				<param name="error">${error} </param>
+				<param name="warn">${warn} </param>
 			</result>
 			<result name="delete-success" type="chain">permission-list
 			</result>

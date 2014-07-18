@@ -1,25 +1,18 @@
 package cf.crm.action.permission;
 
-import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.servlet.http.HttpServletResponse;
-
-import net.sf.json.JSONArray;
-import net.sf.json.JSONObject;
-
-import org.apache.struts2.ServletActionContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
-import com.opensymphony.xwork2.ActionContext;
-import com.opensymphony.xwork2.ActionSupport;
-
 import cf.crm.action.BaseAction;
+import cf.crm.action.util.MD5Util;
+import cf.crm.action.util.Message;
 import cf.crm.entity.User;
 import cf.crm.service.UserService;
 import cf.crm.util.page.Page;
@@ -36,7 +29,7 @@ public class PermissionAction extends BaseAction {
 	@Autowired
 	@Qualifier("userServiceImpl")
 	private UserService userService;
-	private Page page;
+	private Page<User> page;
 	private User user;
 	private User condition;
 
@@ -49,6 +42,7 @@ public class PermissionAction extends BaseAction {
 		return "modify";
 	}
 
+	@SuppressWarnings("unchecked")
 	public String list() {
 		if (page == null)
 			page = PageHelper.generatePage();
@@ -57,7 +51,7 @@ public class PermissionAction extends BaseAction {
 			like = new HashMap<String, Object>();
 			if (condition.getUsRole() != null
 					&& !"".equals(condition.getUsRole()))
-				like.put("usRole",  condition.getUsRole() );
+				like.put("usRole", condition.getUsRole());
 			if (condition.getUsUserName() != null
 					&& !"".equals(condition.getUsUserName()))
 				like.put("usUserName", condition.getUsUserName());
@@ -77,8 +71,13 @@ public class PermissionAction extends BaseAction {
 
 	public String addUser() {
 		user.setUsCreateTime(new Date());
-		user.setUsPassword("666666");
+		user.setUsPassword(MD5Util.getMD5String(user.getUsPassword()));
 		userService.add(user);
+
+		if (warn == null)
+			warn = new ArrayList<Message>();
+		warn.add(new Message("1", "2"));
+
 		return "add-success";
 	}
 
@@ -96,11 +95,11 @@ public class PermissionAction extends BaseAction {
 		this.condition = condition;
 	}
 
-	public Page getPage() {
+	public Page<User> getPage() {
 		return page;
 	}
 
-	public void setPage(Page page) {
+	public void setPage(Page<User> page) {
 		this.page = page;
 	}
 

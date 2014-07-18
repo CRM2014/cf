@@ -11,11 +11,13 @@
 
 package cf.crm.action;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
+import cf.crm.action.util.Message;
 import cf.crm.entity.User;
 import cf.crm.service.UserService;
 
@@ -27,11 +29,11 @@ public abstract class BaseAction extends ActionSupport implements Preparable {
 
 	protected User currentUser;
 
-	protected String info;
+	protected List<Message> info;
 
-	protected String warn;
+	protected List<Message> warn;
 
-	protected String error;
+	protected List<Message> error;
 
 	@Autowired
 	@Qualifier("userServiceImpl")
@@ -45,7 +47,7 @@ public abstract class BaseAction extends ActionSupport implements Preparable {
 	public void prepare() throws Exception {
 		Map<String, Object> session = ActionContext.getContext().getSession();
 		Object id = session.get("user.id");
-		
+
 		if (id != null && !"".endsWith(id.toString())) {
 			currentUser = userService.find(id.toString());
 		}
@@ -55,15 +57,15 @@ public abstract class BaseAction extends ActionSupport implements Preparable {
 		return currentUser;
 	}
 
-	public String getInfo() {
+	public List<Message> getInfo() {
 		return info;
 	}
 
-	public String getWarn() {
+	public List<Message> getWarn() {
 		return warn;
 	}
 
-	public String getError() {
+	public List<Message> getError() {
 		return error;
 	}
 

@@ -26,6 +26,9 @@
 				</h5>
 				<!-- 页面路径结束 -->
 				<h3>查看用户</h3>
+				<!-- 提示开始 -->
+				<%@ include file="/view/common/message.jsp"%>
+				<!-- 提示结束 -->
 				<!-- 数据显示与交互内容开始 -->
 				<form action="${ctx }/permission/permission-list.action"
 					method="post" id="main-form">

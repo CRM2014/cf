@@ -1,12 +1,19 @@
+/** 
+ * <p>Copyright® 2014 CodeFactory版权所有。</p> 
+ */
+
+/** 
+ * <h2>dao原有方法类<h2> 
+ *
+ * @author 齐宇 
+ * @version 1.0, 2014-7-15 
+ */
 package cf.crm.dao.impl;
 
-import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Random;
-
-import net.sf.json.JSONObject;
 
 import org.hibernate.Criteria;
 import org.hibernate.Session;
@@ -14,7 +21,6 @@ import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 
-import quicktime.std.RestrictionSet;
 import cf.crm.dao.Dao;
 import cf.crm.util.page.Page;
 
@@ -82,6 +88,7 @@ public class DaoAdapter implements Dao {
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public void findByPage(Class<?> clazz, Page<?> page,
 			Map<String, Object> like) {
