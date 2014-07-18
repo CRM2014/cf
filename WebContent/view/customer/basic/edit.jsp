@@ -15,13 +15,15 @@
 			<!-- 菜单开始 -->
 			<%@ include file="/view/common/menu.jsp"%>
 			<!-- 菜单结束 -->
-			<!-- 主要内容开始 -->
+		<!-- 主要内容开始 -->
 			<div class="col-md-10 col-md-offset-2 main">
 				<!-- 页面路径开始 -->
 				<h5 class="page-header">
 					<ol class="breadcrumb">
-						<li>服务管理</li>
-						<li>服务创建</li>
+						<li>客户管理</li>
+						<li><a href="list.html">客户信息管理</a></li>
+						<li><a href="view.html">基本信息</a></li>
+						<li>编辑客户基本信息</li>
 					</ol>
 				</h5>
 				<!-- 页面路径结束 -->
@@ -160,19 +162,17 @@
 
 						<div class="form-group">
 							<div class="col-sm-6">
-								<a role="button" href="customer/customer-view.action"
+								<a role="button" href="view.html"
 									class="btn btn-default btn-lg col-sm-offset-9">保存</a>
 							</div>
 							<div class="col-sm-6">
-								<a role="button" href="customer/customer-list.action"
-									class="btn btn-default btn-lg">返回</a>
+								<a role="button" href="list.html" class="btn btn-default btn-lg">返回</a>
 							</div>
 						</div>
 					</form>
 				</div>
 				<!-- 数据显示与交互内容结束 -->
-				
-				</div>
+			</div>
 			<!-- 主要内容结束 -->
 		</div>
 	</div>
