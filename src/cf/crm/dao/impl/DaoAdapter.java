@@ -1,5 +1,6 @@
 package cf.crm.dao.impl;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -30,7 +31,7 @@ public class DaoAdapter implements Dao {
 
 	public String generateKey() {
 		int length = 10;
-		String base = "abcdefghijklmnopqrstuvwxyz0123456789";
+		String base = "0123456789";
 		Random random = new Random();
 		StringBuffer sb = new StringBuffer();
 		for (int i = 0; i < length; i++) {

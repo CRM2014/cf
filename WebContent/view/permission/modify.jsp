@@ -35,8 +35,9 @@
 							<label for="inputEmail3"
 								class="col-sm-3 col-sm-offset-1 control-label">编号：</label>
 							<div class="col-sm-4">
-								<input type="text" class="form-control" name="user.usId"
-									disabled value="${ user.usId}">
+								<input type="text" class="form-control" disabled
+									value="${ user.usId}"> <input type="hidden"
+									name="user.usId" value="${ user.usId}">
 							</div>
 						</div>
 						<div class="form-group">
