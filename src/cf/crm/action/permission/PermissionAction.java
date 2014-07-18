@@ -1,6 +1,5 @@
 package cf.crm.action.permission;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -12,7 +11,6 @@ import org.springframework.stereotype.Controller;
 
 import cf.crm.action.BaseAction;
 import cf.crm.action.util.MD5Util;
-import cf.crm.action.util.Message;
 import cf.crm.entity.User;
 import cf.crm.service.UserService;
 import cf.crm.util.page.Page;
@@ -74,9 +72,7 @@ public class PermissionAction extends BaseAction {
 		user.setUsPassword(MD5Util.getMD5String(user.getUsPassword()));
 		userService.add(user);
 
-		if (warn == null)
-			warn = new ArrayList<Message>();
-		warn.add(new Message("1", "2"));
+		warn = "添加成功";
 
 		return "add-success";
 	}
