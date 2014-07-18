@@ -70,4 +70,5 @@ public class AccountAction extends BaseAction {
 	public void setUser(User user) {
 		this.user = user;
 	}
+	
 }
