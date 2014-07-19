@@ -3,6 +3,8 @@ package cf.crm.action.service;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
@@ -23,8 +25,8 @@ public class DealAction extends BaseAction {
 	 */
 	private static final long serialVersionUID = -5655494816627785760L;
 	
-	
-
+	@Autowired
+	@Qualifier("servicecustomerServiceImpl")
 	private ServicecustomerService servicecustomerservice;
 	private Page<Servicecustomer> page;
 	private Servicecustomer servicecustomer;
@@ -32,14 +34,14 @@ public class DealAction extends BaseAction {
 	
 	public String deal(){
 		servicecustomer = servicecustomerservice.find(servicecustomer.getSecuId());
-		return "assign";
+		return "deal";
 	}
 	
 	public String dealService() {
 		Servicecustomer origService = servicecustomerservice.find(servicecustomer.getSecuId());
 		origService.setSecuDeal(servicecustomer.getSecuDeal());
 		servicecustomerservice.modify(origService);
-		return "assign-success";
+		return "deal-success";
 	}
 	
 	@SuppressWarnings("unchecked")

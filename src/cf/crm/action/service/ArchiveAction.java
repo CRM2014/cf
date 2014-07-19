@@ -3,6 +3,8 @@ package cf.crm.action.service;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
@@ -23,6 +25,8 @@ public class ArchiveAction extends BaseAction {
 	 */
 	private static final long serialVersionUID = -2558708032939778786L;
 
+	@Autowired
+	@Qualifier("servicecustomerServiceImpl")
 	private ServicecustomerService servicecustomerservice;
 	private Page<Servicecustomer> page;
 	private Servicecustomer servicecustomer;
