@@ -32,86 +32,99 @@
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">编号：</label>
 							<div class="col-sm-3">
-								<input type="email" class="form-control" disabled id="">
+								<input type="email" class="form-control" disabled
+									value="${ servicecustomer.secuId}">
 							</div>
 							<label for="inputEmail3" class="col-sm-2 control-label">服务类型：</label>
 							<div class="col-sm-3">
-								<input type="email" class="form-control" disabled id="">
+								<input type="email" class="form-control" disabled
+									value="${ servicecustomer.service.seType}">
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">客户：</label>
 							<div class="col-sm-3">
-								<input type="email" class="form-control" disabled id="">
+								<input type="email" class="form-control" disabled
+									value="${ servicecustomer.customer.cuname}">
 							</div>
 							<label for="inputEmail3" class="col-sm-2 control-label">产品：</label>
 							<div class="col-sm-3">
-								<input type="email" class="form-control" disabled id="">
+								<input type="email" class="form-control" disabled
+									value="${ servicecustomer.service.product}">
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">概要：</label>
 							<div class="col-sm-8">
-								<input type="email" class="form-control" disabled id="">
+								<input type="email" class="form-control" disabled
+									value="${ servicecustomer.service.seMain}">
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">创建人</label>
 							<div class="col-sm-3">
-								<input type="email" class="form-control" disabled id="">
+								<input type="email" class="form-control" disabled
+									value="${ servicecustomer.userByUsAllocationId.usname}">
 							</div>
 							<label for="inputEmail3" class="col-sm-2 control-label">创建时间</label>
 							<div class="col-sm-3">
-								<input type="email" class="form-control" disabled id="">
+								<input type="email" class="form-control" disabled
+									value="${ servicecustomer.service.seCreateTime}">
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">分配给</label>
 							<div class="col-sm-3">
-								<input type="email" class="form-control" disabled id="">
+								<input type="email" class="form-control" disabled
+									value="${ servicecustomer.userByUsDealId.usname}">
 							</div>
 							<label for="inputEmail3" class="col-sm-2 control-label">分配时间</label>
 							<div class="col-sm-3">
-								<input type="email" class="form-control" disabled id="">
+								<input type="email" class="form-control" disabled
+									value="${ servicecustomer.secuAllocationTime}">
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">服务处理：</label>
 							<div class="col-sm-8">
-								<textarea class="form-control" disabled rows="3"></textarea>
+								<textarea class="form-control" disabled rows="3" value="${ servicecustomer.secuDeal}"></textarea>
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">处理人</label>
 							<div class="col-sm-3">
-								<input type="email" class="form-control" disabled id="">
+								<input type="email" class="form-control" disabled
+									value="${ servicecustomer.userByUsDealId.usname}">
 							</div>
 							<label for="inputEmail3" class="col-sm-2 control-label">处理时间</label>
 							<div class="col-sm-3">
-								<input type="email" class="form-control" disabled id="">
+								<input type="email" class="form-control" disabled
+									value="${ servicecustomer.secuDealTime}">
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">处理结果：</label>
 							<div class="col-sm-3">
-								<input type="email" class="form-control" disabled id="">
+								<input type="email" class="form-control" disabled
+									value="${ servicecustomer.secuDealResult}">
 							</div>
 							<label for="inputEmail3" class="col-sm-2 control-label">满意度：</label>
 							<div class="col-sm-3">
-								<input type="email" class="form-control" disabled id="">
+								<input type="email" class="form-control" disabled
+									value="${ servicecustomer.secuSatisfy}">
 							</div>
 						</div>
 					</form>
 
 				</div>
 				<!-- 数据显示与交互内容结束 -->
-				
-				</div>
+
+			</div>
 			<!-- 主要内容结束 -->
 		</div>
 	</div>
-	
+
 	<!-- js开始 -->
 	<%@ include file="/view/common/js.jsp"%>
 	<script type="text/javascript">

@@ -33,28 +33,33 @@
 						<div class="form-group">
 							<div class="input-group">
 								<div class="input-group-addon">客户</div>
-								<input class="form-control" type="text" placeholder="">
+								<input class="form-control" type="text" placeholder=""
+									name="condition.customer.cuname" value="${ condition.customer.cuname}">
 							</div>
 						</div>
 
 						<div class="form-group">
 							<div class="input-group">
 								<div class="input-group-addon">概要</div>
-								<input class="form-control" type="text" placeholder="">
+								<input class="form-control" type="text" placeholder=""
+									name="condition.service.seMain" value="${ condition.service.seMain}">
 							</div>
 						</div>
 
 						<div class="form-group">
 							<div class="input-group">
 								<div class="input-group-addon">服务类型</div>
-								<input class="form-control" type="text" placeholder="">
+								<input class="form-control" type="text" placeholder=""
+									name="condition.service.seType" value="${ condition.service.seType}">
 							</div>
 						</div>
 						<br /> <br />
 						<div class="form-group">
 							<div class="input-group">
 								<div class="input-group-addon">创建时间</div>
-								<input class="form-control" type="text" placeholder="">
+								<input class="form-control" type="text" placeholder=""
+									name=""
+									value="${}">
 							</div>
 						</div>
 						<div class="form-group">
@@ -64,7 +69,9 @@
 						</div>
 						<div class="form-group">
 							<div class="input-group">
-								<input class="form-control" type="text" placeholder="">
+								<input class="form-control" type="text" placeholder=""
+									name=""
+									value="${}">
 							</div>
 						</div>
 
@@ -86,24 +93,29 @@
 							<td align="center">操作</td>
 						</tr>
 						<tr>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td align="center"><a role="button" class="btn btn-default"
-								href="archiving.html">查看</a></td>
+						
+						<s:iterator value="%{page.list}">
+								<tr>
+									<td>${seId}</td>
+									<td>${product}</td>
+									<td>${user}</td>
+									<td>${seMain}</td>
+									<td>${seType}</td>
+									<td>${servicecustomers}</td>
+									<td>${seCreateTime}</td>
+									<td align="center"><a role="button" class="btn btn-default"
+								href="#${ctx }/service/archive-archive.action?servicecustomer.secuId=${secuId}">查看</a></td> 
+							</s:iterator>
+							
 						</tr>
 					</table>
 				</div>
 				<!-- 数据显示与交互内容结束 -->
-				</div>
+			</div>
 			<!-- 主要内容结束 -->
 		</div>
 	</div>
-	
+
 	<!-- js开始 -->
 	<%@ include file="/view/common/js.jsp"%>
 	<script type="text/javascript">
