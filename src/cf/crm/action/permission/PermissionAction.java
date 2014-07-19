@@ -35,7 +35,7 @@ public class PermissionAction extends BaseAction {
 		return "add";
 	}
 
-	public String modify() {
+	public String modify() {  
 		user = userService.find(user.getUsId());
 		return "modify";
 	}
