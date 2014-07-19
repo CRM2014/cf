@@ -5,7 +5,7 @@
 <head>
 <%@ include file="/view/common/header.jsp"%>
 <%@ include file="/view/common/css.jsp"%>
-</head>  
+</head>
 <body>
 	<!-- 顶部开始 -->
 	<%@ include file="/view/common/top.jsp"%>
@@ -27,44 +27,47 @@
 				<!-- 页面路径结束 -->
 				<h3>客户构成分析</h3>
 				<!-- 数据显示与交互内容开始 -->
-				<div class="workpage well well-lg">
+				<form action="${ctx }/permission/permission-list.action"
+					method="post" id="main-form">
+					<div class="workpage well well-lg">
 
-					<div class="form-inline" role="form">
+						<div class="form-inline" role="form">
 
-						<select class="form-control">
-							<option>全部</option>
-							<option>按编号</option>
-							<option>按等级</option>
-							<option>按客户数量</option>
-						</select>
+							<select class="form-control">
+								<option>全部</option>
+								<option>按编号</option>
+								<option>按等级</option>
+								<option>按客户数量</option>
+							</select>
 
-						<button type="submit" class="btn btn-default">
-							<span class="glyphicon glyphicon-search"></span> 查询
-						</button>
-						<button class="btn btn-default" data-toggle="modal"
-							data-target="#chart">图表</button>
+							<button type="submit" class="btn btn-default">
+								<span class="glyphicon glyphicon-search"></span> 查询
+							</button>
+							<button class="btn btn-default" data-toggle="modal"
+								data-target="#chart">图表</button>
+						</div>
+
+						<br> <br>
+						<table class="table table-bordered" align="center" valign="middle">
+							<tr>
+								<td align="center">编号</td>
+								<td align="center">等级</td>
+								<td align="center">客户数量</td>
+							</tr>
+							<tr>
+								<td align="center">${usId}</td>
+								<td>${usUserName}</td>
+								<td>${usName }</td>
+							</tr>
+						</table>
 					</div>
-
-					<br> <br>
-					<table class="table table-bordered" align="center" valign="middle">
-						<tr>
-							<td align="center">编号</td>
-							<td align="center">等级</td>
-							<td align="center">客户数量</td>
-						</tr>
-						<tr>
-							<td align="center">1</td>
-							<td></td>
-							<td></td>
-						</tr>
-					</table>
-				</div>
-				<!-- 数据显示与交互内容结束 -->
-				</div>
+					<!-- 数据显示与交互内容结束 -->
+				</form>
+			</div>
 			<!-- 主要内容结束 -->
 		</div>
 	</div>
-	
+
 	<!-- js开始 -->
 	<%@ include file="/view/common/js.jsp"%>
 	<script type="text/javascript">
