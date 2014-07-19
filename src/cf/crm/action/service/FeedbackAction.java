@@ -3,6 +3,8 @@ package cf.crm.action.service;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
@@ -23,6 +25,8 @@ public class FeedbackAction extends BaseAction {
 	 */
 	private static final long serialVersionUID = -5655494816627785760L;
 
+	@Autowired
+	@Qualifier("servicecustomerServiceImpl")
 	private ServicecustomerService servicecustomerservice;
 	private Page<Servicecustomer> page;
 	private Servicecustomer servicecustomer;
@@ -31,7 +35,7 @@ public class FeedbackAction extends BaseAction {
 	public String feeedback() {
 		servicecustomer = servicecustomerservice.find(servicecustomer
 				.getSecuId());
-		return "assign";
+		return "feedback";
 	}
 
 	public String feedbackService() {
@@ -40,7 +44,7 @@ public class FeedbackAction extends BaseAction {
 		origService.setSecuDealResult(servicecustomer.getSecuDealResult());
 		origService.setSecuSatisfy(servicecustomer.getSecuSatisfy());
 		servicecustomerservice.modify(origService);
-		return "assign-success";
+		return "feedback-success";
 	}
 
 	@SuppressWarnings("unchecked")

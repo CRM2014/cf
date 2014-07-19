@@ -96,7 +96,7 @@
 						</div>
 						<div class="form-group">
 							<div class="col-sm-6">
-								<a role="submit" class="btn btn-default btn-lg col-sm-offset-9">保存</a>
+								<button type="submit" class="btn btn-default btn-lg col-sm-offset-9">保存</button>
 							</div>
 							<div class="col-sm-6">
 								<a role="button" href="${ctx }/service/assign-list.action"
