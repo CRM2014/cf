@@ -7,6 +7,7 @@
 
 	<!-- 与spring集成的写法，action等交予spring管理 -->
 	<package name="marketing" extends="struts_base" namespace="/marketing">
+
 		<action name="plan-*" class="planAction" method="{1}">
 			<result name="make">/view/marketing/plan/make.jsp</result>
 			<result name="list">/view/marketing/plan/list.jsp</result>

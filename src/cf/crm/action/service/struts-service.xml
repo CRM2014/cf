@@ -7,6 +7,7 @@
 
 	<!-- 与spring集成的写法，action等交予spring管理 -->
 	<package name="service" extends="struts_base" namespace="/service">
+	
 		<action name="service-*" class="serviceAction" method="{1}">
 			<result name="add">/view/service/basic/add.jsp</result>
 		</action>

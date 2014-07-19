@@ -7,6 +7,7 @@
 
 	<!-- 与spring集成的写法，action等交予spring管理 -->
 	<package name="customer" extends="struts_base" namespace="/customer">
+
 		<action name="customer-*" class="customerAction" method="{1}">
 			<result name="edit">/view/customer/basic/edit.jsp</result>
 			<result name="list">/view/customer/basic/list.jsp</result>

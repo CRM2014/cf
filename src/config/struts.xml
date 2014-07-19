@@ -18,14 +18,14 @@
 				<interceptor-ref name="defaultStack" />
 			</interceptor-stack>
 		</interceptors>
-
-
-		<default-action-ref name="index.action"></default-action-ref>
-
-
+		<default-interceptor-ref name="checkLoginInterceptor" />
+		<default-action-ref name="index.action" />
 		<global-results>
 			<result name="404">/view/error/404.jsp</result>
-			<result name="checkLoginFail">/view/account/login.jsp</result>
+			<result name="checkLoginFail" type="redirectAction">
+				<param name="actionName">login-login</param>
+				<param name="namespace">/account </param>
+			</result>
 		</global-results>
 
 		<action name="index">

@@ -7,7 +7,9 @@
 
 	<!-- 与spring集成的写法，action等交予spring管理 -->
 	<package name="permission" extends="struts_base" namespace="/permission">
+	
 		<action name="permission-*" class="permissionAction" method="{1}">
+
 			<result name="add">/view/permission/add.jsp</result>
 			<result name="list">/view/permission/list.jsp</result>
 			<result name="modify">/view/permission/modify.jsp</result>
