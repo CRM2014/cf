@@ -33,7 +33,8 @@
 						<div class="form-group">
 							<div class="input-group">
 								<div class="input-group-addon">客户名称</div>
-								<input class="form-control" type="text" placeholder="">
+								<input class="form-control" type="text" placeholder=""
+								name="condition.usCustomerName" value="">
 							</div>
 						</div>
 
@@ -60,7 +61,7 @@
 					<br> <br>
 					<table class="table table-bordered" align="center" valign="middle">
 						<tr>
-							<td align="center">编号</td>
+							<td align="center" >编号</td>
 							<td align="center">客户名称</td>
 							<td align="center">订单金额（元）</td>
 						</tr>
@@ -72,11 +73,11 @@
 					</table>
 				</div>
 				<!-- 数据显示与交互内容结束 -->
-				</div>
+			</div>
 			<!-- 主要内容结束 -->
 		</div>
 	</div>
-	
+
 	<!-- js开始 -->
 	<%@ include file="/view/common/js.jsp"%>
 	<script type="text/javascript">

@@ -5,7 +5,7 @@
 <head>
 <%@ include file="/view/common/header.jsp"%>
 <%@ include file="/view/common/css.jsp"%>
-</head>
+</head>  
 <body>
 	<!-- 顶部开始 -->
 	<%@ include file="/view/common/top.jsp"%>
