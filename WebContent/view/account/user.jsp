@@ -24,7 +24,9 @@
 					</ol>
 				</h5>
 				<!-- 页面路径结束 -->
-
+				<!-- 提示开始 -->
+				<%@ include file="/view/common/message.jsp"%>
+				<!-- 提示结束 -->
 				<!-- 数据显示与交互内容开始 -->
 				<div>
 					<form class="form-horizontal" role="form">
@@ -84,7 +86,8 @@
 											<label for="inputEmail3"
 												class="col-sm-3 col-sm-offset-1 control-label">原密码：</label>
 											<div class="col-sm-4">
-												<input type="password" class="form-control" name="oldPassword">
+												<input type="password" class="form-control"
+													name="oldPassword">
 											</div>
 										</div>
 
@@ -92,14 +95,16 @@
 											<label for="inputEmail3"
 												class="col-sm-3 col-sm-offset-1 control-label">新密码：</label>
 											<div class="col-sm-4">
-												<input type="password" class="form-control" name="newPassword">
+												<input type="password" class="form-control"
+													name="newPassword">
 											</div>
 										</div>
 										<div class="form-group">
 											<label for="inputEmail3"
 												class="col-sm-3 col-sm-offset-1 control-label">确认密码：</label>
 											<div class="col-sm-4">
-												<input type="password" class="form-control" name="rePassword">
+												<input type="password" class="form-control"
+													name="rePassword">
 											</div>
 										</div>
 										<div class="form-group">
