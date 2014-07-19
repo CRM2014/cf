@@ -41,27 +41,27 @@
 						method="post">
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">编号：</label>
-							<div class="col-sm-3">${coreId }</div>
+							<div class="col-sm-3">${contactRecord.coreId }</div>
 							<label for="inputEmail3" class="col-sm-2 control-label">客户：</label>
-							<div class="col-sm-3">${customer.cuName }</div>
+							<div class="col-sm-3">${contactRecord.customer.cuName }</div>
 						</div>
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">交往时间：</label>
-							<div class="col-sm-3">${coreDate }</div>
+							<div class="col-sm-3">${contactRecord.coreDate }</div>
 							<label for="inputEmail3" class="col-sm-2 control-label">交往地点：</label>
-							<div class="col-sm-3">${corePlace }</div>
+							<div class="col-sm-3">${contactRecord.corePlace }</div>
 						</div>
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">概要：</label>
-							<div class="col-sm-8">${coreMain }</div>
+							<div class="col-sm-8">${contactRecord.coreMain }</div>
 						</div>
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">描述：</label>
-							<div class="col-sm-8">${coreDescription }</div>
+							<div class="col-sm-8">${contactRecord.coreDescription }</div>
 						</div>
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">详情：</label>
-							<div class="col-sm-8">${coreDetail }</div>
+							<div class="col-sm-8">${contactRecord.coreDetail }</div>
 						</div>
 						<div class="form-group">
 							<div class="col-sm-6">

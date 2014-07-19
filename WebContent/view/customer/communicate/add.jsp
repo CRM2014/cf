@@ -42,45 +42,45 @@
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">编号：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control" name="user.usRole"
+								<input type="text" class="form-control" name="contactRecord.coreId"
 									value="${ contactRecord.coreId}">
 							</div>
 							<label for="inputEmail3" class="col-sm-2 control-label">客户：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control" name="user.usRole"
+								<input type="text" class="form-control" name="contactRecord.customer.cuName"
 									value="${ contactRecord.customer.cuName}">
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">交往时间：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control" name="user.usRole"
+								<input type="text" class="form-control" name="contactRecord.coreDate"
 									value="${ contactRecord.coreDate}">
 							</div>
 							<label for="inputEmail3" class="col-sm-2 control-label">交往地点：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control" name="user.usRole"
+								<input type="text" class="form-control" name="contactRecord.corePlace"
 									value="${ contactRecord.corePlace}">
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">概要：</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" name="user.usRole"
+								<input type="text" class="form-control" name="contactRecord.coreMain"
 									value="${ contactRecord.coreMain}">
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">描述：</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" name="user.usRole"
+								<input type="text" class="form-control" name="contactRecord.coreDescription"
 									value="${ contactRecord.coreDescription}">
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">详情：</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" name="user.usRole"
+								<input type="text" class="form-control" name="contactRecord.coreDetail"
 									value="${ contactRecord.coreDetail}">
 							</div>
 						</div>

@@ -39,7 +39,13 @@ public class CommunicateAction extends BaseAction {
 		return "add";
 	}
 	public String edit(){
+		contactRecord = coreService.find(contactRecord.getCoreId());
+		contactRecord.getCustomer();
 		return "edit";
+	}
+	public String view(){
+		contactRecord = coreService.find(contactRecord.getCoreId());
+		return "view";
 	}
 	
 	@SuppressWarnings("unchecked")

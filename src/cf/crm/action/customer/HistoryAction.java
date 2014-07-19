@@ -48,6 +48,9 @@ public class HistoryAction extends BaseAction {
 	}
 	public String view(){
 		orderRecord = orreService.find(orderRecord.getOrreId());
+		orderRecord.getCustomer();
+		orderRecord.getOrderrecordproducts();
+		//不会了，怎么从一个set中获取product
 		return "view";
 	}
 	public String init(){
@@ -56,5 +59,4 @@ public class HistoryAction extends BaseAction {
 	public String detail(){
 		return "detail";
 	}
-
 }
