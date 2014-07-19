@@ -1,6 +1,7 @@
 package cf.crm.service.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -9,7 +10,9 @@ import org.springframework.stereotype.Component;
 
 import cf.crm.dao.DatadictionaryDao;
 import cf.crm.entity.Datadictionary;
+import cf.crm.entity.User;
 import cf.crm.service.DatadictionaryService;
+import cf.crm.util.page.Page;
 
 @Component
 @Scope("prototype")
@@ -42,6 +45,10 @@ public class DatadictionaryServiceImpl implements DatadictionaryService {
 	public List<Datadictionary> findList() {
 		return datadictionaryDao.findList();
 	}
-
+	
+	
+	public void findByPage(Page<Datadictionary> page, Map<String, Object> like) {
+		datadictionaryDao.findByPage(page, like);
+	}
 
 }
