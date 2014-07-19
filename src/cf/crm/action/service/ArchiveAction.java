@@ -22,13 +22,12 @@ public class ArchiveAction extends BaseAction {
 	 * 
 	 */
 	private static final long serialVersionUID = -2558708032939778786L;
-	
-	
+
 	private ServicecustomerService servicecustomerservice;
 	private Page<Servicecustomer> page;
 	private Servicecustomer servicecustomer;
 	private Servicecustomer condition;
-	
+
 	@SuppressWarnings("unchecked")
 	public String list() {
 		if (page == null)
@@ -40,17 +39,19 @@ public class ArchiveAction extends BaseAction {
 					&& !"".equals(condition.getCustomer().getCuName()))
 				like.put("customerName", condition.getCustomer().getCuName());
 			if (condition.getService().getSeMain() != null
-					&& !"".equals(condition.getService().getSeMain()));
-				like.put("seMain", condition.getService().getSeMain());
+					&& !"".equals(condition.getService().getSeMain()))
+				;
+			like.put("seMain", condition.getService().getSeMain());
 			if (condition.getService().getSeType() != null
 					&& !"".equals(condition.getService().getSeType()))
 				like.put("seType", condition.getService().getSeType());
-			if (condition.getSecuAllocationTime() != null
-					&& !"".equals(condition.getSeCreateTime()))
-				like.put("seCreateTime", condition.getSeCreateTime());
-			if (condition.getSeCreateTime() != null
-					&& !"".equals(condition.getSeCreateTime()))
-				like.put("seCreateTime", condition.getSeCreateTime());
+			/*
+			 * if (condition.getSecuAllocationTime() != null &&
+			 * !"".equals(condition.getSeCreateTime())) like.put("seCreateTime",
+			 * condition.getSeCreateTime()); if (condition.getSeCreateTime() !=
+			 * null && !"".equals(condition.getSeCreateTime()))
+			 * like.put("seCreateTime", condition.getSeCreateTime());
+			 */
 		}
 		servicecustomerservice.findByPage(page, like);
 		return "list";
@@ -59,7 +60,7 @@ public class ArchiveAction extends BaseAction {
 	public Servicecustomer getCondition() {
 		return condition;
 	}
-	
+
 	public void setCondition(Servicecustomer condition) {
 		this.condition = condition;
 	}

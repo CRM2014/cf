@@ -58,12 +58,13 @@ public class DealAction extends BaseAction {
 			if (condition.getService().getSeType() != null
 					&& !"".equals(condition.getService().getSeType()))
 				like.put("seType", condition.getService().getSeType());
-			if (condition.getSecuAllocationTime() != null
-					&& !"".equals(condition.getSeCreateTime()))
-				like.put("seCreateTime", condition.getSeCreateTime());
-			if (condition.getSeCreateTime() != null
-					&& !"".equals(condition.getSeCreateTime()))
-				like.put("seCreateTime", condition.getSeCreateTime());
+			/*
+			 * if (condition.getSecuAllocationTime() != null &&
+			 * !"".equals(condition.getSeCreateTime())) like.put("seCreateTime",
+			 * condition.getSeCreateTime()); if (condition.getSeCreateTime() !=
+			 * null && !"".equals(condition.getSeCreateTime()))
+			 * like.put("seCreateTime", condition.getSeCreateTime());
+			 */
 		}
 		servicecustomerservice.findByPage(page, like);
 		return "list";

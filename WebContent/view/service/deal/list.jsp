@@ -59,7 +59,7 @@
 								<div class="input-group-addon">创建时间</div>
 								<input class="form-control" type="text" placeholder=""
 									name=""
-									value="${}">
+									value="${1}">
 							</div>
 						</div>
 						<div class="form-group">
@@ -71,7 +71,7 @@
 							<div class="input-group">
 								<input class="form-control" type="text" placeholder=""
 									name=""
-									value="${}">
+									value="${1}">
 							</div>
 						</div>
 
