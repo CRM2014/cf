@@ -1,14 +1,14 @@
 package cf.crm.dao.impl;
 
 import java.util.List;
+import java.util.Map;
 
-import org.hibernate.Criteria;
-import org.hibernate.criterion.Restrictions;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import cf.crm.dao.CustomerDao;
 import cf.crm.entity.Customer;
+import cf.crm.util.page.Page;
 
 @Component
 @Scope("prototype")
@@ -38,6 +38,12 @@ public class CustomerDaoImpl extends DaoAdapter implements CustomerDao {
 	@Override
 	public List<Customer> findList() {
 		return (List<Customer>) super.findList(Customer.class);
+	}
+
+	@Override
+	public void findByPage(Page<Customer> page, Map<String, Object> like) {
+		// TODO Auto-generated method stub
+		super.findByPage(Customer.class, page, like);
 	}
 
 	
