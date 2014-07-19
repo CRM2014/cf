@@ -16,7 +16,6 @@ import java.util.Map.Entry;
 import java.util.Random;
 
 import org.hibernate.Criteria;
-import org.hibernate.Session;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
@@ -78,12 +77,12 @@ public class DaoAdapter extends HibernateDaoSupport implements Dao {
 		} finally {
 		}
 	}
-
 	@SuppressWarnings("unchecked")
 	@Override
 	public void findByPage(Class<?> clazz, Page<?> page,
 			Map<String, Object> like) {
 		try {
+
 			Criteria cri = getSession().createCriteria(clazz);
 			if (like != null) {
 				for (Entry<String, Object> entry : like.entrySet()) {

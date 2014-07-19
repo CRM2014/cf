@@ -15,6 +15,7 @@ import java.util.Map;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
@@ -51,6 +52,7 @@ public abstract class BaseAction extends ActionSupport implements Preparable {
 		if (id != null && !"".equals(id)) {
 			currentUser = userService.find(id.toString());
 			log.info("当前用户：" + currentUser.getUsName());
+			
 		} else
 			log.info("无用户登录");
 	}

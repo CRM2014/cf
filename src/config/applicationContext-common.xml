@@ -32,11 +32,16 @@
 	<!-- Spring管理Struts2的Interceptor -->
 	<bean name="checkLoginInterceptor" class="cf.crm.interceptor.CheckLogin"
 		scope="prototype"></bean>
-	
+
 	<!-- 配置事务管理器 -->
 	<bean id="transactionManager"
 		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory" />
+		<property name="hibernateManagedSession" value="false" />
+		<property name="prepareConnection" value="false" />
+
+
+
 	</bean>
 
 	<!-- 事务的传播特性 -->
@@ -45,8 +50,6 @@
 			<tx:method name="add*" propagation="REQUIRED" />
 			<tx:method name="remove*" propagation="REQUIRED" />
 			<tx:method name="modify*" propagation="REQUIRED" />
-
-			<tx:method name="*" propagation="REQUIRED" read-only="true" />
 		</tx:attributes>
 	</tx:advice>
 
