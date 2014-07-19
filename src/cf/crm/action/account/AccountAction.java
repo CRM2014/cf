@@ -39,21 +39,21 @@ public class AccountAction extends BaseAction {
 	public String passwordModify() {
 		if (oldPassword == null || "".equals(oldPassword))
 			return "password-fail";
-		
+
 		if (newPassword == null || "".equals(newPassword))
 			return "password-fail";
-		
+
 		if (rePassword == null || "".equals(rePassword))
 			return "password-fail";
-		
+
 		if (!newPassword.equals(rePassword))
 			return "password-fail";
-		
+
 		if (!currentUser.getUsPassword().equals(
 				MD5Util.getMD5String(oldPassword)))
 			return "password-fail";
-		
-		currentUser.setUsPassword(newPassword);
+
+		currentUser.setUsPassword(MD5Util.getMD5String(newPassword));
 		userService.modify(currentUser);
 		return "password-success";
 	}
