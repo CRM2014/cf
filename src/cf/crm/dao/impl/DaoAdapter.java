@@ -17,23 +17,14 @@ import java.util.Random;
 
 import org.hibernate.Criteria;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import cf.crm.dao.Dao;
 import cf.crm.util.page.Page;
 
-public class DaoAdapter implements Dao {
-	private SessionFactory sessionFactory;
-
-	public void setSessionFactory(SessionFactory sessionFactory) {
-		this.sessionFactory = sessionFactory;
-	}
-
-	public Session getSession() {
-		return sessionFactory.getCurrentSession();
-	}
+public class DaoAdapter extends HibernateDaoSupport implements Dao {
 
 	public String generateKey() {
 		int length = 10;

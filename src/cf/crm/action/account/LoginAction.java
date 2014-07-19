@@ -82,5 +82,4 @@ public class LoginAction extends BaseAction {
 	public void setUser(User user) {
 		this.user = user;
 	}
-
 }
