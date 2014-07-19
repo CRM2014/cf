@@ -1,8 +1,10 @@
 package cf.crm.service;
 
 import java.util.List;
+import java.util.Map;
 
 import cf.crm.entity.Customer;
+import cf.crm.util.page.Page;
 
 public interface CustomerService {
 	public void add(Customer customer);
@@ -15,4 +17,5 @@ public interface CustomerService {
 
 	public List<Customer> findList();
 	
+	public void findByPage(Page<Customer> page, Map<String, Object> like);
 }

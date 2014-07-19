@@ -1,8 +1,10 @@
 package cf.crm.service;
 
 import java.util.List;
+import java.util.Map;
 
 import cf.crm.entity.Orderrecord;
+import cf.crm.util.page.Page;
 
 public interface OrderrecordService {
 	public void add(Orderrecord orderrecord);
@@ -14,5 +16,7 @@ public interface OrderrecordService {
 	public Orderrecord find(String id);
 
 	public List<Orderrecord> findList();
+
+	public void findByPage(Page<Orderrecord> page, Map<String, Object> like);
 	
 }
