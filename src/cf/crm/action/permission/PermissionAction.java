@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 
 import cf.crm.action.BaseAction;
 import cf.crm.action.util.MD5Util;
+import cf.crm.entity.Orderrecord;
 import cf.crm.entity.User;
 import cf.crm.service.UserService;
 import cf.crm.util.page.Page;
@@ -59,11 +60,15 @@ public class PermissionAction extends BaseAction {
 	}
 
 	public String modifyUser() {
+
 		User origUser = userService.find(user.getUsId());
 		origUser.setUsName(user.getUsName());
 		origUser.setUsUserName(user.getUsUserName());
 		origUser.setUsRole(user.getUsRole());
 		userService.modify(origUser);
+
+		warn = "修改 Success!";
+
 		return "modify-success";
 	}
 
@@ -72,7 +77,7 @@ public class PermissionAction extends BaseAction {
 		user.setUsPassword(MD5Util.getMD5String(user.getUsPassword()));
 		userService.add(user);
 
-		warn = "添加成功";
+		warn = "Save Success!";
 
 		return "add-success";
 	}
@@ -80,6 +85,9 @@ public class PermissionAction extends BaseAction {
 	public String deleteUser() {
 		user = userService.find(user.getUsId());
 		userService.remove(user);
+		
+		warn = "Delete Success!";
+		
 		return "delete-success";
 	}
 

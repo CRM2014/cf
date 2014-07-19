@@ -73,4 +73,16 @@ public abstract class BaseAction extends ActionSupport implements Preparable {
 		return error;
 	}
 
+	public void setInfo(String info) {
+		this.info = info;
+	}
+
+	public void setWarn(String warn) {
+		this.warn = warn;
+	}
+
+	public void setError(String error) {
+		this.error = error;
+	}
+
 }

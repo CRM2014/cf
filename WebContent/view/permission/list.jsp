@@ -57,7 +57,6 @@
 								href="${ctx }/permission/permission-add.action" type="button">
 								<span class="glyphicon glyphicon-plus"></span>新建
 							</a>
-
 						</div>
 
 						<br> <br>
