@@ -61,11 +61,15 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="inputEmail3"
-								class="col-sm-3 col-sm-offset-1 control-label">用户角色：</label>
+							<label for="" class="col-sm-3 col-sm-offset-1 control-label">用户角色：</label>
 							<div class="col-sm-4">
-								<input type="text" class="form-control" name="user.usRole"
-									value="${ user.usRole}">
+								<input type="hidden" value="${ user.usRole}" id="usRole">
+								<select class="form-control" name="user.usRole">
+									<option>销售主管</option>
+									<option>客户经理</option>
+									<option>高管</option>
+									<option>管理员</option>
+								</select>
 							</div>
 						</div>
 						<div class="form-group">
@@ -93,6 +97,7 @@
 	<script type="text/javascript">
 		var pageInfo = new PageInfo(6);
 		pageInfo.generate();
+		$("[name='user.usRole']").val($("#usRole").val());
 	</script>
 	<!-- js结束 -->
 

@@ -7,13 +7,47 @@
 
 	<!-- 与spring集成的写法，action等交予spring管理 -->
 	<package name="account" extends="struts_base" namespace="/account">
+
 		<action name="account-*" class="accountAction" method="{1}">
-			<result name="login">/view/account/login.jsp</result>
+
 			<result name="user">/view/account/user.jsp</result>
-			<result name="success" type="redirect">login-user.action</result>
-			<result name="fail" type="redirect">
-				login-login.action
+			<result name="password-success" type="redirectAction">
+				<param name="actionName">login-login</param>
+				<param name="namespace">/account </param>
+				<param name="error">${error} </param>
+				<param name="warn">${warn} </param>
 			</result>
+			<result name="password-fail" type="redirectAction">
+				<param name="actionName">account-user</param>
+				<param name="namespace">/account </param>
+				<param name="error">${error} </param>
+				<param name="warn">${warn} </param>
+			</result>
+
+			<result name="logout-success" type="redirectAction">
+				<param name="actionName">login-login</param>
+				<param name="namespace">/account </param>
+				<param name="error">${error} </param>
+				<param name="warn">${warn} </param>
+			</result>
+		</action>
+
+		<action name="login-*" class="loginAction" method="{1}">
+
+			<result name="login">/view/account/login.jsp</result>
+			<result name="login-success" type="redirectAction">
+				<param name="actionName">account-user</param>
+				<param name="namespace">/account </param>
+				<param name="error">${error} </param>
+				<param name="warn">${warn} </param>
+			</result>
+			<result name="login-fail" type="redirectAction">
+				<param name="actionName">login-login</param>
+				<param name="namespace">/account </param>
+				<param name="error">${error} </param>
+				<param name="warn">${warn} </param>
+			</result>
+
 		</action>
 	</package>
 

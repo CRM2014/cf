@@ -2,6 +2,8 @@ package cf.crm.interceptor;
 
 import java.util.Map;
 
+import cf.crm.action.account.LoginAction;
+
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionInvocation;
 import com.opensymphony.xwork2.interceptor.Interceptor;
@@ -24,13 +26,17 @@ public class CheckLogin implements Interceptor {
 	public String intercept(ActionInvocation actionInvocation) throws Exception {
 
 		System.out.println("------CheckLogin.intercept------");
-
-		Map<String, Object> session = ActionContext.getContext().getSession();
-
-		if (session.get("user.id") != null) {
+		// 对LoginAction不做该项拦截
+		Object action = actionInvocation.getAction();
+		if (action instanceof LoginAction) {
 			return actionInvocation.invoke();
 		}
-
+		// 对已登录用户不做该项拦截
+		Map<String, Object> session = ActionContext.getContext().getSession();
+		Object id = session.get("USER_ID");
+		if (id != null && !"".equals(id)) {
+			return actionInvocation.invoke();
+		}
 		return "checkLoginFail";
 	}
 }

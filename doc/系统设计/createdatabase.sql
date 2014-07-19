@@ -241,8 +241,8 @@ create table Storage
 create table User
 (
    usID                 varchar(20) not null,
-   usUserName           varchar(20) not null,
-   usPassword           varchar(20) not null,
+   usUserName           varchar(20) not null UNIQUE,
+   usPassword           varchar(40) not null,
    usName               varchar(20) not null,
    usRole               varchar(20) not null,
    usLoginTime          datetime,

@@ -1,8 +1,11 @@
 package cf.crm.dao;
 
 import java.util.List;
+import java.util.Map;
 
+import cf.crm.entity.Service;
 import cf.crm.entity.Servicecustomer;
+import cf.crm.util.page.Page;
 
 public interface ServicecustomerDao extends Dao {
 	public void add(Servicecustomer servicecustomer);
@@ -14,5 +17,7 @@ public interface ServicecustomerDao extends Dao {
 	public Servicecustomer find(String id);
 
 	public List<Servicecustomer> findList();
+	
+	public void findByPage(Page<Servicecustomer> page, Map<String, Object> like);
 	
 }

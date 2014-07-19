@@ -21,6 +21,22 @@
 		<param-value>classpath:config/applicationContext.xml</param-value>
 	</context-param>
 
+	<!-- 将HibernateSession开关控制配置在Filter，保证一个请求一个session，并对lazy提供支持 -->
+	<filter>
+		<filter-name>openSessionInView</filter-name>
+		<filter-class>
+	org.springframework.orm.hibernate3.support.OpenSessionInViewFilter</filter-class>
+		<init-param>
+<param-name>singleSession</param-name>
+<param-value>true</param-value>
+</init-param>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>openSessionInView</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
 <!-- 配置Struts2 -->
 	<filter>
 		<filter-name>struts2</filter-name>
@@ -66,21 +82,7 @@
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 
-	<!-- 将HibernateSession开关控制配置在Filter，保证一个请求一个session，并对lazy提供支持 -->
-	<filter>
-		<filter-name>OpenSessionInView</filter-name>
-		<filter-class>org.springframework.orm.hibernate3.support.OpenSessionInViewFilter</filter-class>
-		<init-param>
-			<param-name>singleSession</param-name>
-			<param-value>true</param-value>
-		</init-param>
 
-	</filter>
-
-	<filter-mapping>
-		<filter-name>OpenSessionInView</filter-name>
-		<url-pattern>/*</url-pattern>
-	</filter-mapping>
 
 	
  <listener>
