@@ -34,7 +34,8 @@
 							<label for="inputEmail3"
 								class="col-sm-3 col-sm-offset-1 control-label">产品：</label>
 							<div class="col-sm-4">
-								<input type="text" class="form-control" id="">
+								<input type="text" class="form-control" name="service.product"
+									value="${ service.product}">
 							</div>
 						</div>
 						<div class="form-group">
@@ -54,17 +55,17 @@
 							<label for="inputEmail3"
 								class="col-sm-3 col-sm-offset-1 control-label">概要：</label>
 							<div class="col-sm-4">
-								<input type="email" class="form-control" id="">
+								<input type="email" class="form-control" name="service.seMain"
+									value="${ service.seMain}">
 							</div>
 
 						</div>
 						<div class="form-group">
 							<div class="col-sm-6">
-								<a role="button" href="../service.assign/list.html"
-									class="btn btn-default btn-lg col-sm-offset-9">保存</a>
+								<a role="submit" class="btn btn-default btn-lg col-sm-offset-9">保存</a>
 							</div>
 							<div class="col-sm-6">
-								<a role="button" href="../service.assign/list.html"
+								<a role="button" href="${ctx }/service/assign-list.action"
 									class="btn btn-default btn-lg">返回</a>
 							</div>
 						</div>
@@ -76,7 +77,7 @@
 			<!-- 主要内容结束 -->
 		</div>
 	</div>
-	
+
 	<!-- js开始 -->
 	<%@ include file="/view/common/js.jsp"%>
 	<script type="text/javascript">

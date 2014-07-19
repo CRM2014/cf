@@ -1,9 +1,20 @@
 package cf.crm.action.service;
 
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import cf.crm.action.BaseAction;
+import cf.crm.action.util.MD5Util;
+import cf.crm.entity.Service;
+import cf.crm.entity.User;
+import cf.crm.service.ServiceService;
+import cf.crm.service.UserService;
+import cf.crm.util.page.Page;
+import cf.crm.util.page.PageHelper;
 
 @Controller
 @Scope("prototype")
@@ -14,33 +25,51 @@ public class ServiceAction extends BaseAction {
 	 */
 	private static final long serialVersionUID = -5655494816627785760L;
 
-	@Override
-	public String execute() throws Exception {
-		return "fail";
-	}
-	public String allot(){
-		return "allot";
-	}
-	public String dispose(){
-		return "dispose";
-	}
-	public String tickling(){
-		return "tickling";
-	}
-	public String filing(){
-		return "filing";
-	}
-	public String assign(){
-		return "assign";
-	}
-	public String feedback(){
-		return "feedback";
-	}
-	public String archiving(){
-		return "archiving";
-	}
+	private ServiceService serviceService;
+	private Page<Service> page;
+	private Service service;
+	private Service condition;
+	
 	public String add(){
 		return "add";
+	}
+	
+	public String addService() {
+		service.setProduct(service.getProduct());
+		service.setSeMain(service.getSeMain());
+		service.setSeType(service.getSeType());
+		service.setUser(service.getUser());
+		service.setSeCreateTime(service.getSeCreateTime());
+		service.setServicecustomers(service.getServicecustomers());
+		serviceService.add(service);
+
+		warn = "添加成功";
+
+		return "add-success";
+	}
+	
+	public Service getCondition() {
+		return condition;
+	}
+
+	public void setCondition(Service condition) {
+		this.condition = condition;
+	}
+
+	public Page<Service> getPage() {
+		return page;
+	}
+
+	public void setPage(Page<Service> page) {
+		this.page = page;
+	}
+
+	public Service getService() {
+		return service;
+	}
+
+	public void setService(Service service) {
+		this.service = service;
 	}
 
 
