@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 
 import cf.crm.action.BaseAction;
 import cf.crm.entity.Datadictionary;
+import cf.crm.entity.User;
 import cf.crm.service.DatadictionaryService;
 import cf.crm.util.page.Page;
 import cf.crm.util.page.PageHelper;
@@ -27,6 +28,7 @@ public class DictionaryAction extends BaseAction {
 	@Qualifier("datadictionaryServiceImpl")
 	private DatadictionaryService DatadictionaryService;
 	private Page<Datadictionary> page;
+	
 	private Datadictionary dataDictionary;
 	private Datadictionary condition;
 	
@@ -65,6 +67,41 @@ public class DictionaryAction extends BaseAction {
 		DatadictionaryService.findByPage(page, like);
 		return "list";
 	}
+	public String addData(){
+		System.out.println("===============================================");
+		System.out.println(dataDictionary.getDadiItem());
+		System.out.println(dataDictionary.getDadiType());
+		System.out.println(dataDictionary.getDadiValue());
+		System.out.println(dataDictionary.isDadiEnableEdit());
+		
+		return "add-success";
+	}
+	
+	
+	
+	
+	public Datadictionary getCondition() {
+		return condition;
+	}
 
+	public void setCondition(Datadictionary condition) {
+		this.condition = condition;
+	}
+
+	public Page<Datadictionary> getPage() {
+		return page;
+	}
+
+	public void setPage(Page<Datadictionary> page) {
+		this.page = page;
+	}
+
+	public Datadictionary getDatadictionary() {
+		return dataDictionary;
+	}
+
+	public void setDatadictionary(Datadictionary dataDictionary) {
+		this.dataDictionary = dataDictionary;
+	}
 	
 }
