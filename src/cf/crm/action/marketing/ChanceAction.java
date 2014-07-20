@@ -63,7 +63,7 @@ public class ChanceAction extends BaseAction {
 		salechanceService.findByPage(page, like);
 		return "list";
 	}
-	
+
 	public String addSalechance() {
 		
 		salechance.setUsOrigin(salechance.getUsOrigin());
@@ -74,7 +74,7 @@ public class ChanceAction extends BaseAction {
 		salechance.setUsContanctTel(salechance.getUsContanctTel());
 		salechance.setUsChanceDescribe(salechance.getUsChanceDescribe());
 		salechance.setUsCreateTime(new Date());
-
+		
 		salechanceService.add(salechance);
 
 		warn = "Save Success!";
@@ -96,7 +96,7 @@ public class ChanceAction extends BaseAction {
 		origSalechance.setUserByUsDesignationId(origSalechance.getUserByUsDesignationId());
 		salechanceService.modify(origSalechance);
 		return "modify-success";
-	} 
+	}
 
 	public Salechance getCondition() {
 		return condition;
