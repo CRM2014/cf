@@ -111,7 +111,7 @@
 	<%@ include file="/view/common/js.jsp"%>
 	<script type="text/javascript">
 		$(document).ready(function() {
-			var pageInfo = new PageInfo(6);
+			var pageInfo = new PageInfo(2);
 			pageInfo.generate();
 		});
 	</script>
