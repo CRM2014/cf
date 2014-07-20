@@ -29,17 +29,19 @@
 				<!-- 数据显示与交互内容开始 -->
 				<div class="workpage well well-lg">
 					<form class="form-horizontal" role="form"
-						action="${ctx }/service/service-addService.action"
-						method="post">
+						action="${ctx }/service/service-addService.action" method="post">
 
-						<%-- <div class="form-group">
+						<div class="form-group">
 							<label for="inputEmail3"
 								class="col-sm-3 col-sm-offset-1 control-label">产品：</label>
 							<div class="col-sm-4">
-								<input type="text" class="form-control" name="service.product"
-									value="${ service.product}">
+								<select class="form-control" name="productId">
+									<s:iterator value="products" id="p">
+										<option value="${p.prId}">${p.prName }</option>
+									</s:iterator>
+								</select>
 							</div>
-						</div> --%>
+						</div>
 						<div class="form-group">
 							<label for="inputEmail3"
 								class="col-sm-3 col-sm-offset-1 control-label">服务类型：</label>
