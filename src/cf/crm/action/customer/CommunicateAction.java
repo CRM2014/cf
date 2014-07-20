@@ -2,6 +2,7 @@ package cf.crm.action.customer;
 
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,7 @@ import cf.crm.action.BaseAction;
 import cf.crm.entity.Contactrecord;
 import cf.crm.entity.Customer;
 import cf.crm.service.ContactrecordService;
+import cf.crm.service.CustomerService;
 import cf.crm.util.page.Page;
 import cf.crm.util.page.PageHelper;
 
@@ -26,12 +28,17 @@ public class CommunicateAction extends BaseAction {
 	private static final long serialVersionUID = 6653078869879460109L;
 
 	@Autowired
-	@Qualifier("ContactrecordServiceImpl")
+	@Qualifier("contactrecordServiceImpl")
 	private ContactrecordService coreService;
+	@Autowired
+	@Qualifier("customerServiceImpl")
+	private CustomerService customerService;
 	private Page<Contactrecord> page;
 	private Contactrecord condition;
 	private Contactrecord contactRecord;
 	private Customer customer;
+	private List<Customer> customers;
+	private String customerId;
 	
 	@Override
 	public String execute() throws Exception {
@@ -39,6 +46,7 @@ public class CommunicateAction extends BaseAction {
 	}
 	
 	public String add(){
+		customers = customerService.findList();
 		return "add";
 	}
 	public String edit(){
@@ -59,7 +67,8 @@ public class CommunicateAction extends BaseAction {
 		Map<String, Object> like = new HashMap<String, Object>();;
 		
 		//condition中还差一个客户ID
-		like.put("cuId", customer.getCuId());
+		condition = coreService.find(condition.getCoreId());
+		customer = condition.getCustomer();
 		
 		if (condition != null) {
 			if (condition.getCoreDate() != null
@@ -73,6 +82,7 @@ public class CommunicateAction extends BaseAction {
 		return "list";
 	}
 	public String addUser() {
+		contactRecord.setCustomer(customerService.find(customerId));
 		contactRecord.setCoreDate(new Date());
 		coreService.add(contactRecord);
 
@@ -131,5 +141,21 @@ public class CommunicateAction extends BaseAction {
 
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
+	}
+
+	public List<Customer> getCustomers() {
+		return customers;
+	}
+
+	public void setCustomers(List<Customer> customers) {
+		this.customers = customers;
+	}
+
+	public String getCustomerId() {
+		return customerId;
+	}
+
+	public void setCustomerId(String customerId) {
+		this.customerId = customerId;
 	}
 }

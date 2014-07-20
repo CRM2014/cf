@@ -11,8 +11,10 @@ import org.springframework.stereotype.Controller;
 import cf.crm.action.BaseAction;
 import cf.crm.entity.Customer;
 import cf.crm.entity.Orderrecord;
+import cf.crm.entity.Orderrecordproduct;
 import cf.crm.service.CustomerService;
 import cf.crm.service.OrderrecordService;
+import cf.crm.service.OrderrecordproductService;
 import cf.crm.util.page.Page;
 import cf.crm.util.page.PageHelper;
 
@@ -27,10 +29,12 @@ public class HistoryAction extends BaseAction {
 	@Autowired
 	@Qualifier("orderrecordServiceImpl")
 	private OrderrecordService orreService;
-/*	@Autowired
+	@Autowired
 	@Qualifier("customerServiceImpl")
-	private CustomerService customerService;
-*/
+	private CustomerService cuService;
+	@Autowired
+	@Qualifier("orderrecordproductServiceImpl")
+	private OrderrecordproductService orreprService;
 	private Page<Orderrecord> page;
 	private Orderrecord condition;
 	private Orderrecord orderRecord;
@@ -43,13 +47,12 @@ public class HistoryAction extends BaseAction {
 
 	@SuppressWarnings("unchecked")
 	public String list() {
-		// System.out.println("~~~~~~~HistoryAction.list(): " +
-		// customer.getCuId());
+		customer = cuService.find(customer.getCuId());
 		if (page == null)
 			page = PageHelper.generatePage();
-		Map<String, Object> like = new HashMap<String, Object>();
-		// like.put("cuId", customer.getCuId());
+		Map<String, Object> like = null;
 		if (condition != null) {
+			like = new HashMap<String, Object>();
 			if (condition.getOrreDate() != null
 					&& !"".equals(condition.getOrreDate()))
 				like.put("orreDate", condition.getOrreDate());
@@ -64,14 +67,16 @@ public class HistoryAction extends BaseAction {
 	public String view() {
 		orderRecord = orreService.find(orderRecord.getOrreId());
 		customer = orderRecord.getCustomer();
-		orderRecord.getCustomer();
-		orderRecord.getOrderrecordproducts();
-		// 不会了，怎么从一个set中获取product
 		return "view";
 	}
 
 	public String deleteUser() {
 		orderRecord = orreService.find(orderRecord.getOrreId());
+		customer = orderRecord.getCustomer();
+		for(Object o: orderRecord.getOrderrecordproducts()){
+			Orderrecordproduct orp = (Orderrecordproduct) o;
+			orreprService.remove(orp);
+		}
 		orreService.remove(orderRecord);
 
 		warn = "Delete Success!";

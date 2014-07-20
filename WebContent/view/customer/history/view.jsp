@@ -20,12 +20,14 @@
 				<!-- 页面路径开始 -->
 				<h5 class="page-header">
 					<ol class="breadcrumb">
-						<li>服务管理</li>
-						<li>服务创建</li>
+						<li>客户管理</li>
+						<li><a href="${ctx }/customer/basic/basic-list.action">客户信息管理</a></li>
+						<li><a href="${ctx }/customer/history/history-list.action?customer.cuId=${customer.cuId}">客户信息管理</a></li>
+						<li>历史订单详情</li>
 					</ol>
 				</h5>
 				<!-- 页面路径结束 -->
-				<h3>查看XX客户历史订单明细</h3>
+				<h3>查看${customer.cuName }历史订单明细</h3>
 				<!-- 导航栏开始 -->
 				<ul class="nav nav-tabs col-sm-offset-6 " role="tablist">
 					<li><a href="${ctx }/customer/basic/basic-list.action?customer.cuId=${customer.cuId}">基本信息</a></li>
@@ -66,11 +68,11 @@
 										<td align="center">产品名称</td>
 										<td align="center">数量</td>
 									</tr>
-									<s:iterator value="%{page.list.orderrecordproducts}">
+									<s:iterator value="%{orderRecord.orderrecordproducts}">
 										<tr>
 											<td align="center">${product.prId}</td>
 											<td align="center">${product.prName}</td>
-											<td align="center">${orreprID}</td>
+											<td align="center">${orreprNum}</td>
 										</tr>
 									</s:iterator>
 								</table>
