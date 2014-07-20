@@ -54,8 +54,9 @@
 						<button type="submit" class="btn btn-default">
 							<span class="glyphicon glyphicon-search"></span> 查询
 						</button>
-						<a role="button" class="btn btn-default" href="add.html"> <span
-							class="glyphicon glyphicon-plus"></span> 新建
+						<a role="button" class="btn btn-default" 
+							href="${ctx }/data/data-add.action" type="button"> 
+							<span class="glyphicon glyphicon-plus"></span> 新建
 						</a>
 
 					</form>
