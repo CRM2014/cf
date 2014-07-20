@@ -21,13 +21,20 @@
 			<result name="view">/view/customer/communicate/view.jsp</result>
 			
 			<result name="modify-success" type="redirectAction">
-				<param name="actionName">communicate-list</param>
+				<param name="actionName">communicate-view</param>
 				<param name="namespace">/customer </param>
 				<param name="error">${error} </param>
 				<param name="warn">${warn} </param>
 			</result>
 			
 			<result name="add-success" type="redirectAction">
+				<param name="actionName">communicate-view</param>
+				<param name="namespace">/customer </param>
+				<param name="error">${error} </param>
+				<param name="warn">${warn} </param>
+			</result>
+			
+			<result name="delete-success" type="redirectAction">
 				<param name="actionName">communicate-list</param>
 				<param name="namespace">/customer </param>
 				<param name="error">${error} </param>
@@ -43,6 +50,13 @@
 		<action name="history-*" class="historyAction" method="{1}">
 			<result name="list">/view/customer/history/list.jsp</result>
 			<result name="view">/view/customer/history/view.jsp</result>
+			
+			<result name="delete-success" type="redirectAction">
+				<param name="actionName">history-list</param>
+				<param name="namespace">/customer </param>
+				<param name="error">${error} </param>
+				<param name="warn">${warn} </param>
+			</result>
 		</action>
 		<action name="drain-*" class="drainAction" method="{1}">
 			<result name="confirm">/view/customer/drain/confirm.jsp</result>
