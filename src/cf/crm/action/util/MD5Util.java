@@ -1,7 +1,5 @@
 package cf.crm.action.util;
 
-import sun.security.provider.MD5;
-import sun.security.rsa.RSASignature.MD5withRSA;
 
 public class MD5Util {
 	private static final String DEFAULTPASSWORD = "666666";

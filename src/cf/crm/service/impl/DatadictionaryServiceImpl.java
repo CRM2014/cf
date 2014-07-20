@@ -10,7 +10,6 @@ import org.springframework.stereotype.Component;
 
 import cf.crm.dao.DatadictionaryDao;
 import cf.crm.entity.Datadictionary;
-import cf.crm.entity.User;
 import cf.crm.service.DatadictionaryService;
 import cf.crm.util.page.Page;
 

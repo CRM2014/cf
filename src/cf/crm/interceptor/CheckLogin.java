@@ -10,7 +10,6 @@ import com.opensymphony.xwork2.interceptor.Interceptor;
 
 @SuppressWarnings("serial")
 public class CheckLogin implements Interceptor {
-
 	@Override
 	public void destroy() {
 	}

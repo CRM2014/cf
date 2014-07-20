@@ -30,7 +30,7 @@ public class ContactAction extends BaseAction {
 	@Autowired
 	@Qualifier("customerServiceImpl")
 	private CustomerService customerService;
-	private Page page;
+	private Page<Contactperson> page;
 	private Contactperson contactperson;
 	private Customer customer;
 	private Contactperson condition;
@@ -50,6 +50,7 @@ public class ContactAction extends BaseAction {
 		return "add";
 	}
 	
+	@SuppressWarnings("unchecked")
 	public String list() {
 		if (page == null)
 			page = PageHelper.generatePage();

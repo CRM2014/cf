@@ -9,7 +9,6 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import cf.crm.dao.ServicecustomerDao;
-import cf.crm.entity.Service;
 import cf.crm.entity.Servicecustomer;
 import cf.crm.service.ServicecustomerService;
 import cf.crm.util.page.Page;

@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Map;
 
 import cf.crm.entity.Development;
-import cf.crm.entity.Servicecustomer;
 import cf.crm.util.page.Page;
 
 public interface DevelopmentDao extends Dao {
