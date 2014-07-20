@@ -107,7 +107,7 @@
 									<td>${service.seCreateTime}</td>
 									<td align="center"><a role="button"
 										class="btn btn-default"
-										href="#${ctx }/service/archive-archive.action?servicecustomer.secuId=${secuId}">查看</a></td>
+										href="${ctx }/service/archive-archive.action?servicecustomer.secuId=${secuId}">查看</a></td>
 							</s:iterator>
 
 						</tr>
