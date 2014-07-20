@@ -1,6 +1,7 @@
 package cf.crm.service.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -9,7 +10,9 @@ import org.springframework.stereotype.Component;
 
 import cf.crm.dao.DevelopmentDao;
 import cf.crm.entity.Development;
+import cf.crm.entity.Servicecustomer;
 import cf.crm.service.DevelopmentService;
+import cf.crm.util.page.Page;
 
 @Component
 @Scope("prototype")
@@ -43,6 +46,10 @@ public class DevelopmentServiceImpl implements DevelopmentService {
 		return developmentDao.findList();
 	}
 
+	@Override
+	public void findByPage(Page<Development> page, Map<String, Object> like) {
+		developmentDao.findByPage(page, like);
+	}
 
 
 }

@@ -1,6 +1,8 @@
 package cf.crm.action.marketing;
 
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -13,6 +15,7 @@ import cf.crm.entity.Salechance;
 import cf.crm.entity.User;
 import cf.crm.service.SalechanceService;
 import cf.crm.util.page.Page;
+import cf.crm.util.page.PageHelper;
 
 @Controller
 @Scope("prototype")
@@ -29,76 +32,72 @@ public class ChanceAction extends BaseAction {
 	private Page<Salechance> page;
 	private Salechance salechance;
 	private Salechance condition;
-	@Override
-	public String execute() throws Exception {
-		return "fail";
+	
+	
+	public String add(){
+		return "add";
 	}
+	
 	public String modify() {  
         salechance = salechanceService.find(salechance.getSachId());
 		return "modify";
 	}
 
+	@SuppressWarnings("unchecked")
+	public String list() {
+		if (page == null)
+			page = PageHelper.generatePage();
+		Map<String, Object> like = null;
+		if (condition != null) {
+			like = new HashMap<String, Object>();
+			if (condition.getUsCustomerName()!= null
+					&& !"".equals(condition.getUsCustomerName()))
+				like.put("usCustomerName", condition.getUsCustomerName());
+			if (condition.getUsMain()!= null
+					&& !"".equals(condition.getUsMain()))
+				like.put("usMain", condition.getUsMain());
+			if (condition.getUsContanct()!= null
+					&& !"".equals(condition.getUsContanct()))
+				like.put("usContanct", condition.getUsContanct());
+		}
+		salechanceService.findByPage(page, like);
+		return "list";
+	}
 
 	public String addSalechance() {
-		salechance.setUsCreateTime(new Date());
-		salechance.setUsContanct(salechance.getUsContanct());
-		salechance.setUsChanceDescribe(salechance.getUsChanceDescribe());
+		
+		salechance.setUsOrigin(salechance.getUsOrigin());
 		salechance.setUsCustomerName(salechance.getUsCustomerName());
 		salechance.setUsProbability(salechance.getUsProbability());
 		salechance.setUsMain(salechance.getUsMain());
-		salechance.setUsOrigin(salechance.getUsOrigin());
+		salechance.setUsContanct(salechance.getUsContanct());
 		salechance.setUsContanctTel(salechance.getUsContanctTel());
-	//	salechance.setUsDesignationId(salechance.getUsDesignationId);
+		salechance.setUsChanceDescribe(salechance.getUsChanceDescribe());
+		salechance.setUsCreateTime(new Date());
 		
 		salechanceService.add(salechance);
 
-		warn = "添加成功";
+		warn = "Save Success!";
 
 		return "add-success";
 	}
-	//删除函数
+	
 	public String deleteSalechance() {
+		
 		salechance = salechanceService.find(salechance.getSachId());
 		salechanceService.remove(salechance);
+		warn = "Delete Success!";
+		
 		return "delete-success";
 	}
- public String modifySalechance() {
+	
+    public String modifySalechance() {
 		Salechance origSalechance = salechanceService.find(salechance.getSachId());
-		origSalechance.setUsContanct(origSalechance.getUsContanct());
-		origSalechance.setUsChanceDescribe(origSalechance.getUsChanceDescribe());
-		origSalechance.setUsCustomerName(origSalechance.getUsCustomerName());
-		origSalechance.setUsProbability(origSalechance.getUsProbability());
-		origSalechance.setUsMain(origSalechance.getUsMain());
-		origSalechance.setUsOrigin(origSalechance.getUsOrigin());
-		origSalechance.setUsContanctTel(origSalechance.getUsContanctTel());
+		origSalechance.setUserByUsDesignationId(origSalechance.getUserByUsDesignationId());
 		salechanceService.modify(origSalechance);
 		return "modify-success";
-	} 
-	public String found(){
-		return "found";
-	}
-	public String edit(){
-		return "edit";
-	}
-	public String delete(){
-		return "delete";
 	}
 
-	public String appoint(){
-		return "appoint";
-	}
-	public String init(){
-		return "init";
-	}
-	public String list(){
-		return "list";
-	}
-	public String add(){
-		return "add";
-	}
-	public String assign(){
-		return "assign";
-	}
 	public Salechance getCondition() {
 		return condition;
 	}

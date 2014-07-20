@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 
 import cf.crm.action.BaseAction;
 import cf.crm.entity.Datadictionary;
+import cf.crm.entity.User;
 import cf.crm.service.DatadictionaryService;
 import cf.crm.util.page.Page;
 import cf.crm.util.page.PageHelper;
@@ -27,29 +28,32 @@ public class DictionaryAction extends BaseAction {
 	@Qualifier("datadictionaryServiceImpl")
 	private DatadictionaryService DatadictionaryService;
 	private Page<Datadictionary> page;
-	private Datadictionary dataDictionary;
+
+	private Datadictionary dictionary;
 	private Datadictionary condition;
-	
-	
-	
-	
+
 	@Override
 	public String execute() throws Exception {
 		return "fail";
 	}
-	public String add(){
+
+	public String add() {
 		return "add";
 	}
-	public String delete(){
+
+	public String delete() {
 		return "delete";
 	}
-	public String update(){
+
+	public String update() {
 		return "update";
 	}
-	public String inquiry(){
+
+	public String inquiry() {
 		return "inquiry";
 	}
-	public String list(){
+
+	public String list() {
 		if (page == null)
 			page = PageHelper.generatePage();
 		Map<String, Object> like = null;
@@ -66,5 +70,38 @@ public class DictionaryAction extends BaseAction {
 		return "list";
 	}
 
-	
+	public String addData() {
+		System.out.println("===============================================");
+		System.out.println(dictionary.getDadiItem());
+		System.out.println(dictionary.getDadiType());
+		System.out.println(dictionary.getDadiValue());
+		System.out.println(dictionary.isDadiEnableEdit());
+
+		return "add-success";
+	}
+
+	public Datadictionary getCondition() {
+		return condition;
+	}
+
+	public void setCondition(Datadictionary condition) {
+		this.condition = condition;
+	}
+
+	public Page<Datadictionary> getPage() {
+		return page;
+	}
+
+	public void setPage(Page<Datadictionary> page) {
+		this.page = page;
+	}
+
+	public Datadictionary getDictionary() {
+		return dictionary;
+	}
+
+	public void setDictionary(Datadictionary dictionary) {
+		this.dictionary = dictionary;
+	}
+
 }

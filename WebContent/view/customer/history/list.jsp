@@ -28,15 +28,16 @@
 				<h3>XX客户历史订单管理</h3>
 				<!-- 导航栏开始 -->
 				<ul class="nav nav-tabs col-sm-offset-6 " role="tablist">
-					<li><a href="${ctx }/customer/basic/basic-list.action">基本信息</a></li>
-					<li><a href="${ctx }/customer/contact/contact-list.action">联系人管理</a></li>
-					<li class="active"><a href="${ctx }/customer/history/history-list.action">历史订单管理</a></li>
-					<li><a href="${ctx }/customer/communicate/communicate-list.action">交往记录管理</a></li>
+					<li><a href="${ctx }/customer/basic/basic-list.action?customer.cuId=${customer.cuId}">基本信息</a></li>
+					<li><a href="${ctx }/customer/contact/contact-list.action?customer.cuId=${customer.cuId}">联系人管理</a></li>
+					<li class="active"><a href="${ctx }/customer/history/history-list.action?customer.cuId=${customer.cuId}">历史订单管理</a></li>
+					<li><a href="${ctx }/customer/communicate/communicate-list.action?customer.cuId=${customer.cuId}">交往记录管理</a></li>
 				</ul>
 				<!-- 导航栏结束 -->
 				<!-- 数据显示与交互内容开始 -->
 				<div class="workpage well well-lg">
-					<form action="${ctx }/customer/history/history-list.action" method="post" id="main-form">
+					<form action="${ctx }/customer/history/history-list.action?customer.cuId=${customer.cuId}" method="post" id="main-form">
+					<div class="form-inline">
 						<div class="form-group">
 							<div class="input-group">
 								<div class="input-group-addon">下单时间</div>
@@ -59,6 +60,7 @@
 						<button type="submit" class="btn btn-default">
 							<span class="glyphicon glyphicon-search"></span> 查询
 						</button>
+						</div>
 					</form>
 					<br> <br>
 					<table class="table table-bordered" align="center" valign="middle">

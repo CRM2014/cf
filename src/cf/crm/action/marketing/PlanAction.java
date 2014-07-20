@@ -1,6 +1,8 @@
 package cf.crm.action.marketing;
 
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -15,6 +17,7 @@ import cf.crm.service.DevelopmentService;
 import cf.crm.service.SalechanceService;
 import cf.crm.service.UserService;
 import cf.crm.util.page.Page;
+import cf.crm.util.page.PageHelper;
 
 @Controller
 @Scope("prototype")
@@ -31,38 +34,100 @@ public class PlanAction extends BaseAction {
 	private Development development;
 	private Development condition;
 
-	@Override
-	public String execute() throws Exception {
-		return "fail";
+	
+	public String addMake(){
+		return "addmake";
 	}
-	public String addDevelopmentPlan() {
-		development.setDeDate(new Date());
-		development.setDePlan(development.getDePlan());
-		developmentService.add(development);
-		warn = "添加成功";
+    
+	public String modifyMake() {  
+		development = developmentService.find(development.getDeId());
+		return "modifymake";
+	}
+	
+	public String modifyexecute() {  
+		development = developmentService.find(development.getDeId());
+		return "modifyexecute";
+	}
+	
+	@SuppressWarnings("unchecked")
+	public String list() {
+		if (page == null)
+			page = PageHelper.generatePage();
+		Map<String, Object> like = null;
+		if (condition != null) {
+			like = new HashMap<String, Object>();
+			if (condition.getSalechance().getUsCustomerName()!= null
+					&& !"".equals(condition.getSalechance().getUsCustomerName()))
+				like.put("usCustomerName", condition.getSalechance().getUsCustomerName());
+			if (condition.getSalechance().getUsMain()!= null
+					&& !"".equals(condition.getSalechance().getUsMain()))
+				like.put("usMain", condition.getSalechance().getUsMain());
+			if (condition.getSalechance().getUsContanct()!= null
+					&& !"".equals(condition.getSalechance().getUsContanct()))
+				like.put("usContanct", condition.getSalechance().getUsContanct());
+		}
+		developmentService.findByPage(page, like);
+		return "list";
+	}
+	
+public String addDevelopment() {
 		
+	    development.setDePlan(development.getDePlan());
+	    developmentService.add(development);
+		warn = "Save Success!";
+
 		return "add-success";
 	}
-	public String enact(){
-		return "enact";
+	
+	public String deletedevelopment() {
+		
+		development = developmentService.find(development.getDeId());
+		developmentService.remove(development);
+		warn = "Delete Success!";
+		
+		return "delete-success";
 	}
-	public String exeDevelopmentPlan(){
-		development.setDeResult(development.getDeResult());
-		development.setDeStatus(development.getDeStatus());
-		warn = "执行成功";
-		return "exe-success";
+	
+    public String modifydevelopment() {
+    	Development origDevelopment = developmentService.find(development.getDeId());
+		origDevelopment.setDePlan(origDevelopment.getDePlan());
+		developmentService.modify(origDevelopment);
+		
+		warn = "modify Success!";
+		return "modify-success";
 	}
-	public String success(){ 
-		return "success";
+    
+    public String modifydevelopmentExecute() {
+    	Development origDevelopmentexecute = developmentService.find(development.getDeId());
+		origDevelopmentexecute.setDeResult(origDevelopmentexecute.getDeResult());
+		developmentService.modify(origDevelopmentexecute);
+		
+		warn = "modify Success!";
+		return "modify-execute-success";
 	}
-	public String fail(){
-		return "fail";   
+	
+	public Development getCondition() {
+		return condition;
 	}
-	public String make(){
-		return "make";
+
+	public void setCondition(Development condition) {
+		this.condition = condition;
 	}
-	public String list(){
-		return "list";
+
+	public Page<Development> getPage() {
+		return page;
+	}
+
+	public void setPage(Page<Development> page) {
+		this.page = page;
+	}
+
+	public Development getDevelopment() {
+		return development;
+	}
+
+	public void setDevelopment(Development development) {
+		this.development = development;
 	}
 	
 

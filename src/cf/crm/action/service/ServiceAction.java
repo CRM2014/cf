@@ -2,6 +2,7 @@ package cf.crm.action.service;
 
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Controller;
 
 import cf.crm.action.BaseAction;
 import cf.crm.action.util.MD5Util;
+import cf.crm.entity.Product;
 import cf.crm.entity.Service;
 import cf.crm.entity.User;
 import cf.crm.service.ProductService;
@@ -37,13 +39,16 @@ public class ServiceAction extends BaseAction {
 	private Page<Service> page;
 	private Service service;
 	private Service condition;
-	
-	public String add(){
+	private List<Product> products;
+	private String productId;
+
+	public String add() {
+		products = productService.findList();
 		return "add";
 	}
-	
+
 	public String addService() {
-		service.setProduct(productService.find("1"));
+		service.setProduct(productService.find(productId));
 		service.setSeMain(service.getSeMain());
 		service.setSeType(service.getSeType());
 		service.setUser(currentUser);
@@ -54,7 +59,7 @@ public class ServiceAction extends BaseAction {
 
 		return "add-success";
 	}
-	
+
 	public Service getCondition() {
 		return condition;
 	}
@@ -79,5 +84,20 @@ public class ServiceAction extends BaseAction {
 		this.service = service;
 	}
 
+	public List<Product> getProducts() {
+		return products;
+	}
+
+	public void setProducts(List<Product> products) {
+		this.products = products;
+	}
+
+	public String getProductId() {
+		return productId;
+	}
+
+	public void setProductId(String productId) {
+		this.productId = productId;
+	}
 
 }

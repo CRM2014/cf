@@ -9,10 +9,6 @@ import java.util.Date;
  */
 public class Development implements java.io.Serializable {
 
-	/**
-	 * 
-	 */
-
 	private String deId;
 	private Salechance salechance;
 	private Date deDate;

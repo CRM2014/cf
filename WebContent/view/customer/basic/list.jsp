@@ -27,14 +27,6 @@
 				</h5>
 				<!-- 页面路径结束 -->
 				<h3>客户信息管理</h3>
-				<!-- 导航栏开始 -->
-				<ul class="nav nav-tabs col-sm-offset-6" role="tablist">
-					<li class="active"><a href="../customer.basic/view.html">基本信息</a></li>
-					<li><a href="../customer.contact/list.html">联系人管理</a></li>
-					<li><a href="../customer.history/list.html">历史订单管理</a></li>
-					<li><a href="../customer.communicate/list.html">交往记录管理</a></li>
-				</ul>
-				<!-- 导航栏结束 -->
 
 				<!-- 数据显示与交互内容开始 -->
 				<form action="${ctx }/customer/customer-list.action" method="post"
@@ -119,7 +111,7 @@
 	<%@ include file="/view/common/js.jsp"%>
 	<script type="text/javascript">
 		$(document).ready(function() {
-			var pageInfo = new PageInfo(6);
+			var pageInfo = new PageInfo(2);
 			pageInfo.generate();
 		});
 	</script>

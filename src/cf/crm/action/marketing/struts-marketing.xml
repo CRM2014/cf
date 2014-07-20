@@ -12,40 +12,55 @@
 			<result name="make">/view/marketing/plan/make.jsp</result>
 			<result name="list">/view/marketing/plan/list.jsp</result>
 			<result name="execute">/view/marketing/plan/execute.jsp</result>
- 	<result name="exe-success" type="redirectAction">
-				<param name="actionName">/developmentPlan -list</param>
-				<param name="namespace">/developmentPlan </param>
+			
+			<result name="make-modify-success" type="redirectAction">
+				<param name="actionName">plan-make</param>
+				<param name="namespace">/marketing </param>
 				<param name="error">${error} </param>
 				<param name="warn">${warn} </param>
 			</result>
-			<result name="add-success" type="redirectAction">
-				<param name="actionName">developmentPlan -list</param>
-				<param name="namespace">/developmentPlan </param>
+			<result name="make-delete-success" type="redirectAction">
+				<param name="actionName">plan-make</param>
+				<param name="namespace">/marketing </param>
 				<param name="error">${error} </param>
 				<param name="warn">${warn} </param>
 			</result>
+			<result name="make-add-success" type="redirectAction">
+				<param name="actionName">plan-make</param>
+				<param name="namespace">/marketing </param>
+				<param name="error">${error} </param>
+				<param name="warn">${warn} </param>
+			</result>
+			<result name="execute-modify-success" type="redirectAction">
+				<param name="actionName">plan-execute</param>
+				<param name="namespace">/marketing </param>
+				<param name="error">${error} </param>
+				<param name="warn">${warn} </param>
+			</result>
+
 		</action>
-		
 		<action name="chance-*" class="chanceAction" method="{1}">
 			<result name="list">/view/marketing/chance/list.jsp</result>
 			<result name="add">/view/marketing/chance/add.jsp</result>
 			<result name="assign">/view/marketing/chance/assign.jsp</result>
 			
-			<result name="modify-success" type="redirectAction">
-				<param name="actionName">/saleChance -list</param>
-				<param name="namespace">/saleChance </param>
-				<param name="error">${error} </param>
-				<param name="warn">${warn} </param>
-			</result>
 			<result name="add-success" type="redirectAction">
-				<param name="actionName">saleChance-list</param>
-				<param name="namespace">/saleChance </param>
+				<param name="actionName">chance-list</param>
+				<param name="namespace">/marketing </param>
 				<param name="error">${error} </param>
 				<param name="warn">${warn} </param>
 			</result>
+			
 			<result name="delete-success" type="redirectAction">
-				<param name="actionName">saleChance-list</param>
-				<param name="namespace">/saleChance </param>
+				<param name="actionName">chance-list</param>
+				<param name="namespace">/marketing </param>
+				<param name="error">${error} </param>
+				<param name="warn">${warn} </param>
+			</result>
+			
+			<result name="assign-modify-success" type="redirectAction">
+				<param name="actionName">chance-list</param>
+				<param name="namespace">/marketing </param>
 				<param name="error">${error} </param>
 				<param name="warn">${warn} </param>
 			</result>
