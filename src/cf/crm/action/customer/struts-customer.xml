@@ -48,6 +48,7 @@
 			<result name="edit">/view/customer/contact/edit.jsp</result>
 			<result name="list">/view/customer/contact/list.jsp</result>
 			<result name="view">/view/customer/contact/view.jsp</result>
+			<result name="success" type="chain">contact-view</result>
 		</action>
 		<action name="history-*" class="historyAction" method="{1}">
 			<result name="list">/view/customer/history/list.jsp</result>
