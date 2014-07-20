@@ -78,33 +78,10 @@ public class DaoAdapter extends HibernateDaoSupport implements Dao {
 		}
 	}
 
-	@SuppressWarnings("unchecked")
 	@Override
 	public void findByPage(Class<?> clazz, Page<?> page,
 			Map<String, Object> like) {
-		try {
-
-			Criteria cri = getSession().createCriteria(clazz);
-			if (like != null) {
-				for (Entry<String, Object> entry : like.entrySet()) {
-					cri.add(Restrictions.like(entry.getKey(), "%"
-							+ entry.getValue().toString() + "%"));
-				}
-			}
-			if (page.getOrder() != null && !"".equals(page.getOrder())) {
-				if (page.isDesc())
-					cri.addOrder(Order.desc(page.getOrder()));
-				else {
-					cri.addOrder(Order.asc(page.getOrder()));
-				}
-			}
-			int count = cri.list().size();
-			cri.setFirstResult(page.getFirstRec());
-			cri.setMaxResults(page.getPageSize());
-			page.setCount(count);
-			page.setList(cri.list());
-		} finally {
-		}
+		findByPage(clazz, page, null, like);
 	}
 
 	@Override
@@ -123,6 +100,55 @@ public class DaoAdapter extends HibernateDaoSupport implements Dao {
 			Criteria cri = getSession().createCriteria(clazz);
 			cri.add(Restrictions.eq(name, value));
 			return cri.list();
+		} finally {
+		}
+	}
+
+	@Override
+	public List<?> findList(Class<?> clazz, Map<String, Object> eq,
+			Map<String, Object> like) {
+		try {
+			Criteria cri = getSession().createCriteria(clazz);
+			if (eq != null)
+				cri.add(Restrictions.allEq(eq));
+			if (like != null) {
+				for (Entry<String, Object> entry : like.entrySet()) {
+					cri.add(Restrictions.like(entry.getKey(), "%"
+							+ entry.getValue().toString() + "%"));
+				}
+			}
+			return cri.list();
+		} finally {
+		}
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public void findByPage(Class<?> clazz, Page<?> page,
+			Map<String, Object> eq, Map<String, Object> like) {
+		try {
+
+			Criteria cri = getSession().createCriteria(clazz);
+			if (eq != null)
+				cri.add(Restrictions.allEq(eq));
+			if (like != null) {
+				for (Entry<String, Object> entry : like.entrySet()) {
+					cri.add(Restrictions.like(entry.getKey(), "%"
+							+ entry.getValue().toString() + "%"));
+				}
+			}
+			if (page.getOrder() != null && !"".equals(page.getOrder())) {
+				if (page.isDesc())
+					cri.addOrder(Order.desc(page.getOrder()));
+				else {
+					cri.addOrder(Order.asc(page.getOrder()));
+				}
+			}
+			int count = cri.list().size();
+			cri.setFirstResult(page.getFirstRec());
+			cri.setMaxResults(page.getPageSize());
+			page.setCount(count);
+			page.setList(cri.list());
 		} finally {
 		}
 	}
