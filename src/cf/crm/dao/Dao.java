@@ -19,6 +19,9 @@ public interface Dao {
 	public void findByPage(Class<?> clazz, Page<?> page,
 			Map<String, Object> like);
 
+	public void findByPage(Class<?> clazz, Page<?> page,
+			Map<String, Object> eq, Map<String, Object> like);
+
 	/**
 	 * 查找一个实体，根据类型、参数名、参数值
 	 * 
@@ -48,4 +51,18 @@ public interface Dao {
 	 * @return 实体列表
 	 */
 	public List<?> findListByField(Class<?> clazz, String name, Object value);
+
+	/**
+	 * 查找一个实体列表，根据类型、模糊查询条件、等于条件
+	 * 
+	 * @param clazz
+	 *            类型
+	 * @param eq
+	 *            模糊查询条件
+	 * @param like
+	 *            等于条件
+	 * @return 实体列表
+	 */
+	public List<?> findList(Class<?> clazz, Map<String, Object> eq,
+			Map<String, Object> like);
 }
