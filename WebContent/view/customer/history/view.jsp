@@ -28,10 +28,10 @@
 				<h3>查看XX客户历史订单明细</h3>
 				<!-- 导航栏开始 -->
 				<ul class="nav nav-tabs col-sm-offset-6 " role="tablist">
-					<li><a href="${ctx }/customer/basic/basic-list.action">基本信息</a></li>
-					<li><a href="${ctx }/customer/contact/contact-list.action">联系人管理</a></li>
-					<li class="active"><a href="${ctx }/customer/history/history-list.action">历史订单管理</a></li>
-					<li><a href="${ctx }/customer/communicate/communicate-list.action">交往记录管理</a></li>
+					<li><a href="${ctx }/customer/basic/basic-list.action?customer.cuId=${customer.cuId}">基本信息</a></li>
+					<li><a href="${ctx }/customer/contact/contact-list.action?customer.cuId=${customer.cuId}">联系人管理</a></li>
+					<li class="active"><a href="${ctx }/customer/history/history-list.action?customer.cuId=${customer.cuId}">历史订单管理</a></li>
+					<li><a href="${ctx }/customer/communicate/communicate-list.action?customer.cuId=${customer.cuId}">交往记录管理</a></li>
 				</ul>
 				<!-- 导航栏结束 -->
 				<!-- 数据显示与交互内容开始 -->
@@ -41,7 +41,7 @@
 						method="post">
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">编号：</label>
-							<div class="col-sm-3">${orderRecord.orreID}</div>
+							<div class="col-sm-3">${orderRecord.orreId}</div>
 							<label for="inputEmail3" class="col-sm-2 control-label">客户：</label>
 							<div class="col-sm-3">${orderRecord.customer.cuName}</div>
 						</div>
@@ -59,8 +59,6 @@
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">订单明细：</label>
 							<div class="panel panel-default">
-								<!-- Default panel contents -->
-								<div class="panel-heading">Panel heading</div>
 								<!-- Table -->
 								<table class="table">
 									<tr>
@@ -79,7 +77,7 @@
 							</div>
 						</div>
 						<div align="center">
-							<a role="button" class="btn btn-default" href="customer/history-list.action">返回</a>
+							<a role="button" class="btn btn-default" href="customer/history-list.action?customer.cuId=${customer.cuId}">返回</a>
 						</div>
 					</form>
 				</div>
