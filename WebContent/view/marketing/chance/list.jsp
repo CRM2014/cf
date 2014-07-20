@@ -80,8 +80,8 @@
 							<td></td>
 						
 							<td align="center">
+							      <a role ="button" href="../marketing.chance/assign.jsp" class="btn btn-default">分配</a>
 								  <a role="button" href="../marketing.plan/make.jsp" class="btn btn-default">制定开发计划</a>
-								<a role ="button" class="btn btn-default">修改</a>
 								<a role ="button"  class="btn btn-default">删除</a>
 							</td>
 						</tr>
