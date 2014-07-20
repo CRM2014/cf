@@ -13,19 +13,15 @@ public class CheckLogin implements Interceptor {
 
 	@Override
 	public void destroy() {
-		System.out.println("------CheckLogin.destroy------");
 	}
 
 	@Override
 	public void init() {
-		System.out.println("------CheckLogin.init------");
-
 	}
 
 	@Override
 	public String intercept(ActionInvocation actionInvocation) throws Exception {
 
-		System.out.println("------CheckLogin.intercept------");
 		// 对LoginAction不做该项拦截
 		Object action = actionInvocation.getAction();
 		if (action instanceof LoginAction) {

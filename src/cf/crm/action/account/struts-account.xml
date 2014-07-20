@@ -47,7 +47,11 @@
 				<param name="error">${error} </param>
 				<param name="warn">${warn} </param>
 			</result>
-
+			<result name="security-image" type="stream">
+				<param name="contentType">image/jpeg</param>
+				<param name="inputName">imageStream</param>
+				<param name="bufferSize">2048</param>
+			</result>
 		</action>
 	</package>
 

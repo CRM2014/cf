@@ -42,25 +42,25 @@ function comfirmDelete(btn) {
 }
 
 function permission() {
+	var colNum = 6;
+	var roleNum = 5;
 	var currentRole = $("#current-role").val();
-	for (var i = 1; i <= 6; i++) {
+	for (var i = 1; i <= colNum; i++) {
 		$("#menu-" + i).hide();
 	}
 
-	for (var i = 0; i < 5; i++) {
+	for (var i = 0; i < roleNum; i++) {
 		var role = $("#role-" + i).val();
 		var open = $("#open-" + i).val();
 		if (currentRole == role) {
-			
-			var arr1 = JSON.parse(open);
-		
-			var arr = (arr1+"").split(",");
+
+			var json = JSON.parse(open);
+
+			var arr = (json + "").split(",");
 			for (var j = 0; j < arr.length; j++) {
 				$("#menu-" + arr[j]).show();
-				
 				var strs = arr[j].split("-");
 				if (strs[1] != "" && strs[1] != "undefined")
-				
 					$("#menu-" + strs[0]).show();
 			}
 		}
