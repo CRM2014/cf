@@ -1,8 +1,9 @@
 ﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <div class="col-md-2 sidebar">
 	<div class="panel-group" id="accordion">
-		<div class="panel panel-default">
+		<div class="panel panel-default" id="menu-1">
 			<div class="panel-heading">
 				<h4 class="panel-title">
 					<a data-toggle="collapse" data-parent="#accordion"
@@ -21,7 +22,7 @@
 			</div>
 		</div>
 
-		<div class="panel panel-default">
+		<div class="panel panel-default" id="menu-2">
 			<div class="panel-heading">
 				<h4 class="panel-title">
 					<a data-toggle="collapse" data-parent="#accordion"
@@ -39,7 +40,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="panel panel-default">
+		<div class="panel panel-default" id="menu-3">
 			<div class="panel-heading">
 				<h4 class="panel-title">
 					<a data-toggle="collapse" data-parent="#accordion"
@@ -67,7 +68,7 @@
 			</div>
 		</div>
 
-		<div class="panel panel-default">
+		<div class="panel panel-default" id="menu-4">
 			<div class="panel-heading">
 				<h4 class="panel-title">
 					<a data-toggle="collapse" data-parent="#accordion"
@@ -91,9 +92,9 @@
 				</div>
 			</div>
 		</div>
-		
 
-		<div class="panel panel-default">
+
+		<div class="panel panel-default" id="menu-5">
 			<div class="panel-heading">
 				<h4 class="panel-title">
 					<a data-toggle="collapse" data-parent="#accordion"
@@ -114,7 +115,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="panel panel-default">
+		<div class="panel panel-default" id="menu-6">
 			<div class="panel-heading">
 				<h4 class="panel-title">
 					<a data-toggle="collapse" data-parent="#accordion"
@@ -131,3 +132,9 @@
 		</div>
 	</div>
 </div>
+
+<input type="hidden" value="${currentUser.usRole}" id="current-role" />
+<s:iterator value="permissions" id="o" status="st">
+	<input type="hidden" value="${o.role}" id="role-${st.index}" />
+	<input type="hidden" value="${o.open}" id="open-${st.index}" />
+</s:iterator>

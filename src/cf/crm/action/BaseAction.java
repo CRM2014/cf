@@ -11,16 +11,20 @@
 
 package cf.crm.action;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
 import cf.crm.entity.User;
 import cf.crm.service.UserService;
+import cf.crm.util.Info.Permission;
+import cf.crm.util.Info.PermissionInfo;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
@@ -35,6 +39,8 @@ public abstract class BaseAction extends ActionSupport implements Preparable {
 	protected String warn;
 
 	protected String error;
+
+	private List<Permission> permissions;
 
 	protected final Log log = LogFactory.getLog(getClass());
 	@Autowired
@@ -54,6 +60,7 @@ public abstract class BaseAction extends ActionSupport implements Preparable {
 			log.info("当前用户：" + currentUser.getUsName());
 		} else
 			log.info("无用户登录");
+		permissions = new PermissionInfo().getPermissions();
 	}
 
 	public User getCurrentUser() {
@@ -64,7 +71,9 @@ public abstract class BaseAction extends ActionSupport implements Preparable {
 		return info;
 	}
 
-	public String getWarn() {
+	public String getWarn() throws UnsupportedEncodingException {
+		if (warn != null)
+			warn = URLDecoder.decode(warn, "UTF-8");
 		return warn;
 	}
 
@@ -84,4 +93,13 @@ public abstract class BaseAction extends ActionSupport implements Preparable {
 		this.error = error;
 	}
 
+	
+
+	public List<Permission> getPermissions() {
+		return permissions;
+	}
+
+	public void setPermissions(List<Permission> permissions) {
+		this.permissions = permissions;
+	}
 }

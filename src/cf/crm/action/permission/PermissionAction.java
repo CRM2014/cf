@@ -1,7 +1,9 @@
 package cf.crm.action.permission;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +15,7 @@ import cf.crm.action.BaseAction;
 import cf.crm.action.util.MD5Util;
 import cf.crm.entity.User;
 import cf.crm.service.UserService;
+import cf.crm.util.Info.Role;
 import cf.crm.util.page.Page;
 import cf.crm.util.page.PageHelper;
 
@@ -30,13 +33,26 @@ public class PermissionAction extends BaseAction {
 	private Page<User> page;
 	private User user;
 	private User condition;
+	private List<String> roles;
 
 	public String add() {
+		if (roles == null)
+			roles = new ArrayList<String>();
+		roles.add(Role.CUSTOMER);
+		roles.add(Role.SALES);
+		roles.add(Role.SENIOR);
+		roles.add(Role.SYSTEM);
 		return "add";
 	}
 
-	public String modify() {  
+	public String modify() {
 		user = userService.find(user.getUsId());
+		if (roles == null)
+			roles = new ArrayList<String>();
+		roles.add(Role.CUSTOMER);
+		roles.add(Role.SALES);
+		roles.add(Role.SENIOR);
+		roles.add(Role.SYSTEM);
 		return "modify";
 	}
 
@@ -66,7 +82,7 @@ public class PermissionAction extends BaseAction {
 		origUser.setUsRole(user.getUsRole());
 		userService.modify(origUser);
 
-		warn = "修改 Success!";
+		warn = "修改成功!";
 
 		return "modify-success";
 	}
@@ -76,7 +92,7 @@ public class PermissionAction extends BaseAction {
 		user.setUsPassword(MD5Util.getMD5String(user.getUsPassword()));
 		userService.add(user);
 
-		warn = "Save Success!";
+		warn = "添加成功!";
 
 		return "add-success";
 	}
@@ -84,9 +100,9 @@ public class PermissionAction extends BaseAction {
 	public String deleteUser() {
 		user = userService.find(user.getUsId());
 		userService.remove(user);
-		
-		warn = "Delete Success!";
-		
+
+		warn = "删除成功!";
+
 		return "delete-success";
 	}
 
@@ -112,5 +128,13 @@ public class PermissionAction extends BaseAction {
 
 	public void setUser(User user) {
 		this.user = user;
+	}
+
+	public List<String> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(List<String> roles) {
+		this.roles = roles;
 	}
 }

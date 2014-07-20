@@ -65,10 +65,9 @@
 							<div class="col-sm-4">
 								<input type="hidden" value="${ user.usRole}" id="usRole">
 								<select class="form-control" name="user.usRole">
-									<option>销售主管</option>
-									<option>客户经理</option>
-									<option>高管</option>
-									<option>管理员</option>
+									<s:iterator value="roles" id="r">
+										<option>${r}</option>
+									</s:iterator>
 								</select>
 							</div>
 						</div>
