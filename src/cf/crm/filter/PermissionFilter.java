@@ -11,17 +11,16 @@ import javax.servlet.ServletResponse;
 
 public class PermissionFilter implements Filter {
 
-	
-
 	@Override
 	public void destroy() {
 
 	}
 
 	@Override
-	public void doFilter(ServletRequest arg0, ServletResponse arg1,
-			FilterChain arg2) throws IOException, ServletException {
-
+	public void doFilter(ServletRequest servletRequest,
+			ServletResponse servletResponse, FilterChain filterChain)
+			throws IOException, ServletException {
+		filterChain.doFilter(servletRequest, servletResponse);
 	}
 
 	@Override
