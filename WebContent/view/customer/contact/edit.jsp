@@ -36,49 +36,60 @@
 				<!-- 导航栏结束 -->
 				<!-- 数据显示与交互内容开始 -->
 				<div class="workpage well well-lg">
-					<form class="form-horizontal" role="form">
-
+					<form class="form-horizontal" action="${ctx }/customer/contact-save.action" role="form">
+<input type="hidden" name="contactperson.copeId" value="${contactperson.copeId }">
 						<div class="form-group">
 							<label for="name" class="col-sm-2 control-label">姓名：</label>
 							<div class="col-sm-3">
-								<input type="email" class="form-control" id="customerName">
+								<input type="text" class="form-control"
+									name="contactperson.copeName"
+									value="${contactperson.copeName }">
 							</div>
 
 							<label for="sex" class="col-sm-2 control-label">性别：</label>
 							<div class="col-sm-3">
-								<input type="email" class="form-control" id="">
+								<input type="text" class="form-control"
+									name="contactperson.copeSex" value="${contactperson.copeSex }">
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label for="level" class="col-sm-2 control-label">职位：</label>
 							<div class="col-sm-3">
-								<input type="email" class="form-control" id="">
+								<input type="text" class="form-control"
+									name="contactperson.copePosition"
+									value="${contactperson.copePosition }">
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label for="tel" class="col-sm-2 control-label">办公室电话：</label>
 							<div class="col-sm-3">
-								<input type="email" class="form-control" id="">
+								<input type="text" class="form-control"
+									name="contactperson.copeTel" value="${contactperson.copeTel }">
 							</div>
 							<label for="phone" class="col-sm-2 control-label">手机：</label>
 							<div class="col-sm-3">
-								<input type="email" class="form-control" id="">
+								<input type="text" class="form-control"
+									name="contactperson.copePhone"
+									value="${contactperson.copePhone }">
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label for="note" class="col-sm-2 control-label">备注：</label>
 							<div class="col-sm-8">
-								<textarea type="email" class="form-control" rows="3"></textarea>
+								<textarea type="text" class="form-control"
+									name="contactperson.copeNote"
+									value="${contactperson.copeNote }">
+							</textarea>
 							</div>
 						</div>
 
 						<div class="form-group">
 							<div class="col-sm-6">
-								<a role="button" href="customer/contact-view.action"
-									class="btn btn-default btn-lg col-sm-offset-9">保存</a>
+								<button type="submit"
+									class="btn btn-default btn-lg col-sm-offset-9">保存</button>
 							</div>
 							<div class="col-sm-6">
 								<a role="button" href="customer/contact-list.action"
@@ -88,12 +99,12 @@
 					</form>
 				</div>
 				<!-- 数据显示与交互内容结束 -->
-				
-				</div>
+
+			</div>
 			<!-- 主要内容结束 -->
 		</div>
 	</div>
-	
+
 	<!-- js开始 -->
 	<%@ include file="/view/common/js.jsp"%>
 	<script type="text/javascript">

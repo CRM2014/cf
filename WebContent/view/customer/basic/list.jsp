@@ -28,11 +28,15 @@
 				<!-- 页面路径结束 -->
 				<h3>客户信息管理</h3>
 				<!-- 导航栏开始 -->
-				<ul class="nav nav-tabs col-sm-offset-6" role="tablist">
-					<li class="active"><a href="../customer.basic/view.html">基本信息</a></li>
-					<li><a href="../customer.contact/list.html">联系人管理</a></li>
-					<li><a href="../customer.history/list.html">历史订单管理</a></li>
-					<li><a href="../customer.communicate/list.html">交往记录管理</a></li>
+				<ul class="nav nav-tabs col-sm-offset-6 " role="tablist">
+					<li class="active"><a
+						href="${ctx }/customer/basic/basic-list.action?customer.cuId=${customer.cuId}">基本信息</a></li>
+					<li><a
+						href="${ctx }/customer/contact/contact-list.action?customer.cuId=${customer.cuId}">联系人管理</a></li>
+					<li><a
+						href="${ctx }/customer/history/history-list.action?customer.cuId=${customer.cuId}">历史订单管理</a></li>
+					<li><a
+						href="${ctx }/customer/communicate/communicate-list.action?customer.cuId=${customer.cuId}">交往记录管理</a></li>
 				</ul>
 				<!-- 导航栏结束 -->
 
@@ -88,12 +92,12 @@
 											<%-- ${user.usName} --%>
 										</td>
 										<td>${cuZone}</td>
-										<td align="center">
-											<a role="button" href="${ctx }/customer/customer-view.action?customer.cuId=${cuId}" 
-											class="btn btn-default">查看</a> 
-											<a role="button" href="${ctx }/customer/customer-edit.action?customer.cuId=${cuId}" 
-											class="btn btn-default">修改</a>
-											<a role="button" href="#${ctx }/customer/customer-delete.action?customer.cuId=${cuId}"
+										<td align="center"><a role="button"
+											href="${ctx }/customer/customer-view.action?customer.cuId=${cuId}"
+											class="btn btn-default">查看</a> <a role="button"
+											href="${ctx }/customer/customer-edit.action?customer.cuId=${cuId}"
+											class="btn btn-default">修改</a> <a role="button"
+											href="#${ctx }/customer/customer-delete.action?customer.cuId=${cuId}"
 											onclick="comfirmDelete($(this))" class="btn btn-default">删除</a>
 										</td>
 									</tr>
@@ -106,7 +110,7 @@
 								<!-- 分页栏结束 -->
 							</div>
 						</div>
-				</div>
+					</div>
 				</form>
 				<!-- 数据显示与交互内容结束 -->
 
