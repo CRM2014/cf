@@ -1,5 +1,7 @@
 package cf.crm.action.marketing;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
@@ -26,19 +28,29 @@ public class PlanAction extends BaseAction {
 	@Qualifier("developmentServiceImpl")
 	private DevelopmentService developmentService;
 	private Page<Development> page;
-	private Development Development;
+	private Development development;
 	private Development condition;
 
 	@Override
 	public String execute() throws Exception {
 		return "fail";
 	}
-	
+	public String addDevelopmentPlan() {
+		development.setDeDate(new Date());
+		development.setDePlan(development.getDePlan());
+		developmentService.add(development);
+		warn = "添加成功";
+		
+		return "add-success";
+	}
 	public String enact(){
 		return "enact";
 	}
-	public String exe(){
-		return "exe";
+	public String exeDevelopmentPlan(){
+		development.setDeResult(development.getDeResult());
+		development.setDeStatus(development.getDeStatus());
+		warn = "执行成功";
+		return "exe-success";
 	}
 	public String success(){ 
 		return "success";

@@ -56,19 +56,24 @@ public class ChanceAction extends BaseAction {
 
 		return "add-success";
 	}
+	//删除函数
 	public String deleteSalechance() {
 		salechance = salechanceService.find(salechance.getSachId());
 		salechanceService.remove(salechance);
 		return "delete-success";
 	}
- /*public String modifySalechance() {
+ public String modifySalechance() {
 		Salechance origSalechance = salechanceService.find(salechance.getSachId());
-		origSalechance.setUsName(origSalechance.getUsName());
-		origUser.setUsUserName(user.getUsUserName());
-		origUser.setUsRole(user.getUsRole());
-		userService.modify(origUser);
+		origSalechance.setUsContanct(origSalechance.getUsContanct());
+		origSalechance.setUsChanceDescribe(origSalechance.getUsChanceDescribe());
+		origSalechance.setUsCustomerName(origSalechance.getUsCustomerName());
+		origSalechance.setUsProbability(origSalechance.getUsProbability());
+		origSalechance.setUsMain(origSalechance.getUsMain());
+		origSalechance.setUsOrigin(origSalechance.getUsOrigin());
+		origSalechance.setUsContanctTel(origSalechance.getUsContanctTel());
+		salechanceService.modify(origSalechance);
 		return "modify-success";
-	} */
+	} 
 	public String found(){
 		return "found";
 	}
@@ -78,6 +83,7 @@ public class ChanceAction extends BaseAction {
 	public String delete(){
 		return "delete";
 	}
+
 	public String appoint(){
 		return "appoint";
 	}
