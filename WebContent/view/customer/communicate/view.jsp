@@ -21,7 +21,7 @@
 				<h5 class="page-header">
 					<ol class="breadcrumb">
 						<li>客户管理</li>
-						<li><a href="${ctx }/customer/basic/basic-list.action">客户信息管理</a></li>
+						<li><a href="${ctx }/customer/basic/customer-list.action">客户信息管理</a></li>
 						<li><a href="${ctx }/customer/communicate/communicate-list.action?customer.cuId=${customer.cuId}">交往记录管理</a></li>
 						<li>查看交往记录详情</li>
 					</ol>
