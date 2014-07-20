@@ -20,12 +20,13 @@
 				<!-- 页面路径开始 -->
 				<h5 class="page-header">
 					<ol class="breadcrumb">
-						<li>服务管理</li>
-						<li>服务创建</li>
+						<li>客户管理</li>
+						<li><a href="${ctx }/customer/basic/customer-list.action">客户信息管理</a></li>
+						<li>客户历史订单</li>
 					</ol>
 				</h5>
 				<!-- 页面路径结束 -->
-				<h3>XX客户历史订单管理</h3>
+				<h3>${customer.cuName }历史订单管理</h3>
 				<!-- 导航栏开始 -->
 				<ul class="nav nav-tabs col-sm-offset-6 " role="tablist">
 					<li><a href="${ctx }/customer/basic/basic-list.action?customer.cuId=${customer.cuId}">基本信息</a></li>
@@ -81,7 +82,7 @@
 									<a role="button" class="btn btn-default"
 									href="${ctx }/customer/history/history-view.action?orderRecord.orreId=${orreId}">查看
 									</a>
-									<a role="button" href="#${ctx }/customer/communicate/communicate-deleteUser.action?orderRecord.orreId=${orreId}"
+									<a role="button" href="#${ctx }/customer/history/history-deleteUser.action?orderRecord.orreId=${orreId}"
 									onclick="comfirmDelete($(this))" class="btn btn-default">删除
 									</a>
 								</td>

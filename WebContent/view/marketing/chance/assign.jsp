@@ -28,79 +28,81 @@
 				<h3>指派销售机会</h3>
 				<!-- 数据显示与交互内容开始 -->
 				<div class="workpage well well-lg">
-					<form class="form-horizontal" role="form">
+					<form class="form-horizontal" role="form"
+					action="${ctx }/marketing/chance-modifySalechance.action"
+						method="post">
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">编号：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control" id="" disabled>
+							<input type="hidden" class="form-control" name="salechance.sachId" value="${ salechance.sachId}">
+								<input type="text" class="form-control" disabled value="${ salechance.sachId}">
 							</div>
 							<label for="inputEmail3" class="col-sm-2 control-label">机会来源：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control" id="" disabled>
+								<input type="text" class="form-control" disabled value="${ salechance.usOrigin}">
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">客户名称：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control" id="" disabled>
+								<input type="text" class="form-control" disabled value="${ salechance.usCustomerName}">
 							</div>
 							<label for="inputEmail3" class="col-sm-2 control-label">成功几率：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control" id="" disabled>
+								<input type="text" class="form-control" disabled value="${ salechance.usProbability}">
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">概要：</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" id="" disabled>
+								<input type="text" class="form-control" disabled value="${ salechance.usMain}">
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">联系人：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control" id="" disabled>
+								<input type="text" class="form-control" disabled value="${ salechance.usContanct}">
 							</div>
 							<label for="inputEmail3" class="col-sm-2 control-label">联系电话：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control" id="" disabled>
+								<input type="text" class="form-control" disabled value="${ salechance.usContanctTel}">
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">机会描述：</label>
 							<div class="col-sm-8">
-								<textarea class="form-control" rows="3" disabled></textarea>
+								<textarea class="form-control" rows="3" disabled value="${ salechance.usChanceDescribe}"></textarea>
 							</div>
 
 						</div>
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">创建人：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control" id="" disabled>
+								<input type="text" class="form-control" disabled value="${ salechance.userByUsCreateId.usName}">
 							</div>
 							<label for="inputEmail3" class="col-sm-2 control-label">创建时间：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control" id="" disabled>
+								<input type="text" class="form-control" disabled value="${ salechance.usCreateTime}">
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">指派给：</label>
 							<div class="col-sm-3">
-								<select class="form-control">
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
-									<option>5</option>
+							    <select class="form-control" name="userId">
+									<s:iterator value="users" id="u">
+										<option value="${ u.usId}">${u.usName }</option>
+									</s:iterator>
 								</select>
 							</div>
 						</div>
 						<div class="form-group">
 							<div class="col-sm-6">
-								<a role="button" href="../marketing.chance/list.jsp"
-									class="btn btn-default btn-lg col-sm-offset-9">确认指派</a>
+								<button type="submit"
+									class="btn btn-default btn-lg col-sm-offset-9">确认指派</button>
 							</div>
 							<div class="col-sm-6">
-								<a role="button" href="../marketing.chance/list.jsp"
+								<a role="button"
+									href="${ctx }/marketing/chance-list.action"
 									class="btn btn-default btn-lg">返回</a>
 							</div>
 						</div>

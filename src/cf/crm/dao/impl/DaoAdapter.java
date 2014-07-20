@@ -18,7 +18,6 @@ import java.util.Random;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
-
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import cf.crm.dao.Dao;
@@ -78,13 +77,60 @@ public class DaoAdapter extends HibernateDaoSupport implements Dao {
 		} finally {
 		}
 	}
-	@SuppressWarnings("unchecked")
+
 	@Override
 	public void findByPage(Class<?> clazz, Page<?> page,
 			Map<String, Object> like) {
+		findByPage(clazz, page, null, like);
+	}
+
+	@Override
+	public Object findByField(Class<?> clazz, String name, Object value) {
+		try {
+			Criteria cri = getSession().createCriteria(clazz);
+			cri.add(Restrictions.eq(name, value));
+			return cri.uniqueResult();
+		} finally {
+		}
+	}
+
+	@Override
+	public List<?> findListByField(Class<?> clazz, String name, Object value) {
+		try {
+			Criteria cri = getSession().createCriteria(clazz);
+			cri.add(Restrictions.eq(name, value));
+			return cri.list();
+		} finally {
+		}
+	}
+
+	@Override
+	public List<?> findList(Class<?> clazz, Map<String, Object> eq,
+			Map<String, Object> like) {
+		try {
+			Criteria cri = getSession().createCriteria(clazz);
+			if (eq != null)
+				cri.add(Restrictions.allEq(eq));
+			if (like != null) {
+				for (Entry<String, Object> entry : like.entrySet()) {
+					cri.add(Restrictions.like(entry.getKey(), "%"
+							+ entry.getValue().toString() + "%"));
+				}
+			}
+			return cri.list();
+		} finally {
+		}
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public void findByPage(Class<?> clazz, Page<?> page,
+			Map<String, Object> eq, Map<String, Object> like) {
 		try {
 
 			Criteria cri = getSession().createCriteria(clazz);
+			if (eq != null)
+				cri.add(Restrictions.allEq(eq));
 			if (like != null) {
 				for (Entry<String, Object> entry : like.entrySet()) {
 					cri.add(Restrictions.like(entry.getKey(), "%"

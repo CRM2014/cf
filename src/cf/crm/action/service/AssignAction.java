@@ -1,6 +1,7 @@
 package cf.crm.action.service;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +11,9 @@ import org.springframework.stereotype.Controller;
 
 import cf.crm.action.BaseAction;
 import cf.crm.entity.Servicecustomer;
+import cf.crm.entity.User;
 import cf.crm.service.ServicecustomerService;
+import cf.crm.service.UserService;
 import cf.crm.util.page.Page;
 import cf.crm.util.page.PageHelper;
 
@@ -25,20 +28,26 @@ public class AssignAction extends BaseAction {
 	@Autowired
 	@Qualifier("servicecustomerServiceImpl")
 	private ServicecustomerService servicecustomerservice;
+	@Autowired
+	@Qualifier("userServiceImpl")
+	private UserService userService;
 	private Page<Servicecustomer> page;
 	private Servicecustomer servicecustomer;
 	private Servicecustomer condition;
+	private List<User> users;
+	private String userId;
 
 	public String assign() {
 		servicecustomer = servicecustomerservice.find(servicecustomer
 				.getSecuId());
+		users = userService.findListByRole("客户经理");
 		return "assign";
 	}
 
 	public String assignService() {
 		Servicecustomer origService = servicecustomerservice
 				.find(servicecustomer.getSecuId());
-		origService.setUserByUsDealId(servicecustomer.getUserByUsDealId());
+		origService.setUserByUsDealId(userService.find(userId));
 		servicecustomerservice.modify(origService);
 		return "assign-success";
 	}
@@ -69,6 +78,7 @@ public class AssignAction extends BaseAction {
 			 */
 		}
 		servicecustomerservice.findByPage(page, like);
+		log.info(page.getList().size());
 		return "list";
 	}
 
@@ -94,6 +104,22 @@ public class AssignAction extends BaseAction {
 
 	public void setServicecustomer(Servicecustomer servicecustomer) {
 		this.servicecustomer = servicecustomer;
+	}
+
+	public List<User> getUsers() {
+		return users;
+	}
+
+	public void setUsers(List<User> users) {
+		this.users = users;
+	}
+
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userDealId) {
+		this.userId = userDealId;
 	}
 
 }

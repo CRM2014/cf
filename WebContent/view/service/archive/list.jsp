@@ -29,7 +29,8 @@
 				<!-- 数据显示与交互内容开始 -->
 				<div class="workpage well well-lg">
 
-					<form class="form-inline" role="form">
+					<form class="form-inline" role="form"
+					action="${ctx }/service/archive-list.action" method="post">
 						<div class="form-group">
 							<div class="input-group">
 								<div class="input-group-addon">客户</div>
@@ -97,16 +98,16 @@
 
 							<s:iterator value="%{page.list}">
 								<tr>
-									<td>${seId}</td>
-									<td>${product}</td>
-									<td>${user}</td>
-									<td>${seMain}</td>
-									<td>${seType}</td>
-									<td>${servicecustomers}</td>
-									<td>${seCreateTime}</td>
+									<td>${secuId}</td>
+									<td>${service.product.prName}</td>
+									<td>${customer.cuName}</td>
+									<td>${service.seMain}</td>
+									<td>${service.seType}</td>
+									<td>${service.user.usName}</td>
+									<td>${service.seCreateTime}</td>
 									<td align="center"><a role="button"
 										class="btn btn-default"
-										href="#${ctx }/service/archive-archive.action?servicecustomer.secuId=${secuId}">查看</a></td>
+										href="${ctx }/service/archive-archive.action?servicecustomer.secuId=${secuId}">查看</a></td>
 							</s:iterator>
 
 						</tr>

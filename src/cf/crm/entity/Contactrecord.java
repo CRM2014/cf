@@ -9,6 +9,11 @@ import java.util.Date;
  */
 public class Contactrecord implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	private String coreId;
 	private Customer customer;
 	private Date coreDate;

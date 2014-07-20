@@ -29,25 +29,30 @@
 				<!-- 数据显示与交互内容开始 -->
 				<div class="workpage well well-lg">
 
-					<form class="form-inline" role="form">
+					<form class="form-inline" role="form"
+							action="${ctx }/data/data-list.action"
+							method="post" id="main-form">
 						<div class="form-group">
 							<div class="input-group">
 								<div class="input-group-addon">类别</div>
-								<input class="form-control" type="text" placeholder="">
+								<input class="form-control" type="text" placeholder=""
+										name="condition.dadiType" value="${condition.dadiType}">
 							</div>
 						</div>
 
 						<div class="form-group">
 							<div class="input-group">
 								<div class="input-group-addon">条目</div>
-								<input class="form-control" type="text" placeholder="">
+								<input class="form-control" type="text" placeholder=""
+										name="condition.dadiItem" value="${condition.dadiItem}">
 							</div>
 						</div>
 
 						<div class="form-group">
 							<div class="input-group">
 								<div class="input-group-addon">值</div>
-								<input class="form-control" type="text" placeholder="">
+								<input class="form-control" type="text" placeholder=""
+									name="condition.dadiValue" value="${condition.dadiValue}">
 							</div>
 						</div>
 
@@ -71,17 +76,22 @@
 							<td align="center">是否可编辑</td>
 							<td align="center">操作</td>
 						</tr>
+						<s:iterator value="%{page.list}">
 						<tr>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td align="center"><a role="button" class="btn btn-default"
-								href="modify.html">修改
-									</button> <a role="button" class="btn btn-default" href="list.html">删除
-										</button></td>
+							<td>${dadiId}</td>
+							<td>${dadiType}</td>
+							<td>${dadiItem}</td>
+							<td>${dadiValue}</td>
+							<td>${dadiEnableEdit}</td>
+							<td align="center">
+								<a role="button" class="btn btn-default"
+								   href="${ctx }/data/data-modify.action?dictionary.dadiId=${dadiId}">修改</a>
+								<a role="button" class="btn btn-default" 
+								   href="#${ctx }/data/data-deleteData.action?dictionary.dadiId=${dadiId}"
+								   onclick="comfirmDelete($(this))">删除</a>
+							</td>
 						</tr>
+						</s:iterator>
 					</table>
 				</div>
 				<!-- 数据显示与交互内容结束 -->

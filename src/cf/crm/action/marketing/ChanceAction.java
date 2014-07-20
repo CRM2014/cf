@@ -2,6 +2,7 @@ package cf.crm.action.marketing;
 
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import cf.crm.action.util.MD5Util;
 import cf.crm.entity.Salechance;
 import cf.crm.entity.User;
 import cf.crm.service.SalechanceService;
+import cf.crm.service.UserService;
 import cf.crm.util.page.Page;
 import cf.crm.util.page.PageHelper;
 
@@ -25,22 +27,28 @@ public class ChanceAction extends BaseAction {
 	 * 
 	 */
 	private static final long serialVersionUID = 6256010052756813006L;
-
+	
+	@Autowired
+	@Qualifier("userServiceImpl")
+	private UserService userService;
 	@Autowired
 	@Qualifier("salechanceServiceImpl")
 	private SalechanceService salechanceService;
 	private Page<Salechance> page;
 	private Salechance salechance;
 	private Salechance condition;
+	private List<User> users;
+	private String userId;
 	
 	
 	public String add(){
 		return "add";
 	}
 	
-	public String modify() {  
+	public String assign() {  
         salechance = salechanceService.find(salechance.getSachId());
-		return "modify";
+        users = userService.findListByRole("客户经理");
+		return "assign";
 	}
 
 	@SuppressWarnings("unchecked")
@@ -66,17 +74,9 @@ public class ChanceAction extends BaseAction {
 
 	public String addSalechance() {
 		
-		salechance.setUsOrigin(salechance.getUsOrigin());
-		salechance.setUsCustomerName(salechance.getUsCustomerName());
-		salechance.setUsProbability(salechance.getUsProbability());
-		salechance.setUsMain(salechance.getUsMain());
-		salechance.setUsContanct(salechance.getUsContanct());
-		salechance.setUsContanctTel(salechance.getUsContanctTel());
-		salechance.setUsChanceDescribe(salechance.getUsChanceDescribe());
 		salechance.setUsCreateTime(new Date());
-		
+		salechance.setUserByUsCreateId(currentUser);
 		salechanceService.add(salechance);
-
 		warn = "Save Success!";
 
 		return "add-success";
@@ -93,9 +93,11 @@ public class ChanceAction extends BaseAction {
 	
     public String modifySalechance() {
 		Salechance origSalechance = salechanceService.find(salechance.getSachId());
-		origSalechance.setUserByUsDesignationId(origSalechance.getUserByUsDesignationId());
+		origSalechance.setUserByUsDesignationId(userService.find(userId));
 		salechanceService.modify(origSalechance);
-		return "modify-success";
+		
+		warn = "Modify Success!";
+		return "assign-modify-success";
 	}
 
 	public Salechance getCondition() {
@@ -120,5 +122,21 @@ public class ChanceAction extends BaseAction {
 
 	public void setSalechance(Salechance salechance) {
 		this.salechance = salechance;
+	}
+
+	public List<User> getUsers() {
+		return users;
+	}
+
+	public void setUsers(List<User> users) {
+		this.users = users;
+	}
+
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
 }
