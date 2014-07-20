@@ -1,6 +1,7 @@
 package cf.crm.dao.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
@@ -8,7 +9,9 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import cf.crm.dao.ProductDao;
+import cf.crm.entity.Datadictionary;
 import cf.crm.entity.Product;
+import cf.crm.util.page.Page;
 
 @Component
 @Scope("prototype")
@@ -38,6 +41,11 @@ public class ProductDaoImpl extends DaoAdapter implements ProductDao {
 	@Override
 	public List<Product> findList() {
 		return (List<Product>) super.findList(Product.class);
+	}
+
+	@Override
+	public void findByPage(Page<Product> page, Map<String, Object> like) {
+		super.findByPage(Product.class, page, like);
 	}
 
 	

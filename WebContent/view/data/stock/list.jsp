@@ -29,18 +29,20 @@
 				<!-- 数据显示与交互内容开始 -->
 				<div class="workpage well well-lg">
 
-					<form class="form-inline" role="form">
+					<form class="form-inline" role="form"
+							action="${ctx }/data/stock-list.action"
+							method="post" id="main-form">
 						<div class="form-group">
 							<div class="input-group">
 								<div class="input-group-addon">产品名称</div>
-								<input class="form-control" type="text" placeholder="">
+								<input class="form-control" type="text" placeholder=""
+										name="condition.prName" value="${condition.prName}">
 							</div>
 						</div>
 
 						<button type="submit" class="btn btn-default">
-							<span class="glyphicon glyphicon-search"></span> 查询
+								<span class="glyphicon glyphicon-search"></span> 查询
 						</button>
-
 					</form>
 
 					<br> <br>
@@ -53,14 +55,16 @@
 							<td align="center">件数</td>
 							<td align="center">备注</td>
 						</tr>
+						<s:iterator value="%{page.list}">
 						<tr>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
+							<td>${prId}</td>
+							<td>${prName}</td>
+							<td>${storage.stName}</td>
+							<td>${prPosition}</td>
+							<td>${prNumber}</td>
+							<td>${prRemark}</td>
 						</tr>
+						</s:iterator>
 					</table>
 				</div>
 				<!-- 数据显示与交互内容结束 -->

@@ -45,8 +45,9 @@ public class DictionaryAction extends BaseAction {
 		return "delete";
 	}
 
-	public String update() {
-		return "update";
+	public String modify() {
+		dictionary = DatadictionaryService.find(dictionary.getDadiId());
+		return "modify";
 	}
 
 	public String inquiry() {
@@ -71,13 +72,30 @@ public class DictionaryAction extends BaseAction {
 	}
 
 	public String addData() {
-		System.out.println("===============================================");
-		System.out.println(dictionary.getDadiItem());
-		System.out.println(dictionary.getDadiType());
-		System.out.println(dictionary.getDadiValue());
-		System.out.println(dictionary.isDadiEnableEdit());
-
+		DatadictionaryService.add(dictionary);
 		return "add-success";
+	}
+	
+	public String modifyData(){
+		
+		Datadictionary origData = DatadictionaryService.find(dictionary.getDadiId());
+		origData.setDadiItem(dictionary.getDadiItem());
+		origData.setDadiType(dictionary.getDadiType());
+		origData.setDadiEnableEdit(dictionary.isDadiEnableEdit());
+		DatadictionaryService.modify(origData);
+
+		warn = "修改 Success!";
+		
+		return "modify-success";
+	}
+	
+	
+	public String deleteData(){
+		dictionary = DatadictionaryService.find(dictionary.getDadiId());
+		DatadictionaryService.remove(dictionary);
+		
+		warn = "Delete Success!";
+		return "delete-success";
 	}
 
 	public Datadictionary getCondition() {
