@@ -28,39 +28,55 @@
 				<h3>编辑数据字典目录</h3>
 				<!-- 数据显示与交互内容开始 -->
 				<div class="workpage well well-lg">
-					<form class="form-horizontal" role="form">
-
+					<form class="form-horizontal" role="form"
+						action="${ctx }/data/data-modifyData.action"
+						method="post">
+						<div class="form-group">
+							<label for="inputEmail3"
+								class="col-sm-3 col-sm-offset-1 control-label">编号：</label>
+							<div class="col-sm-4">
+								<input type="text" class="form-control" disabled
+									value="${ dictionary.dadiId}"> <input type="hidden"
+									name="dictionary.dadiId" value="${ dictionary.dadiId}">
+							</div>
+						</div>
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">类别</label>
 							<div class="col-sm-3">
-								<input type="email" class="form-control" id="">
+								<input type="text" class="form-control" name="dictionary.dadiType"
+									value="${ dictionary.dadiType}">
 							</div>
 							<label for="inputEmail3" class="col-sm-2 control-label">条目</label>
 							<div class="col-sm-3">
-								<input type="email" class="form-control" id="">
+								<input type="text" class="form-control" name="dictionary.dadiItem"
+									value="${ dictionary.dadiItem}">
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">值</label>
 							<div class="col-sm-3">
-								<input type="email" class="form-control" id="">
+								<input type="text" class="form-control" name="dictionary.dadiValue"
+									value="${ dictionary.dadiValue}">
 							</div>
 							<label for="inputEmail3" class="col-sm-2 control-label">是否可编辑</label>
 							<div class="col-sm-3">
-								<select class="form-control">
-									<option>可以</option>
-									<option>不能</option>
+								<input type="hidden" value="${ dictionary.dadiEnableEdit}" id="dadiEnableEdit">
+								<select class="form-control" name="dictionary.dadiEnableEdit">
+									<option value="true">可以</option>
+									<option value="false">不能</option>
 								</select>
 							</div>
 						</div>
 
 						<div class="form-group">
 							<div class="col-sm-6">
-								<a role="button" href="list.html"
-									class="btn btn-default btn-lg col-sm-offset-9">保存</a>
+								<button type="submit"
+									class="btn btn-default btn-lg col-sm-offset-9">保存</button>
 							</div>
 							<div class="col-sm-6">
-								<a role="button" href="list.html" class="btn btn-default btn-lg">返回</a>
+								<a role="button"
+									href="${ctx }/data/data-list.action"
+									class="btn btn-default btn-lg">返回</a>
 							</div>
 						</div>
 

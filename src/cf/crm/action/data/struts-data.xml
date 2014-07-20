@@ -19,13 +19,25 @@
 				<param name="error">${error} </param>
 				<param name="warn">${warn} </param>
 			</result>
+			<result name="modify-success" type="redirectAction">
+				<param name="actionName">data-list</param>
+				<param name="namespace">/data </param>
+				<param name="error">${error} </param>
+				<param name="warn">${warn} </param>
+			</result>
+			<result name="delete-success" type="redirectAction">
+				<param name="actionName">data-list</param>
+				<param name="namespace">/data </param>
+				<param name="error">${error} </param>
+				<param name="warn">${warn} </param>
+			</result>
 
 		</action>
 
 		<action name="product-*" class="productAction" method="{1}">
 			<result name="list">/view/data/product/list.jsp</result>
 		</action>
-		<action name="stock-*" class="stockAction" method="{1}">
+		<action name="stock-*" class="productAction" method="{1}">
 			<result name="list">/view/data/stock/list.jsp</result>
 		</action>
 	</package>

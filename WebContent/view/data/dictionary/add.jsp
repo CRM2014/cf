@@ -50,13 +50,13 @@
 								<input type="text" class="form-control"
 									name="dictionary.dadiValue" value="${ dictionary.dadiValue}">
 							</div>
-							<!-- <label for="inputEmail3" class="col-sm-2 control-label">是否可编辑</label>
+							<label for="inputEmail3" class="col-sm-2 control-label">是否可编辑</label>
 							<div class="col-sm-3">
 								<select class="form-control" name="dictionary.dadiEnableEdit">
 									<option value="true">可以</option>
 									<option value="false">不能</option>
 								</select>
-							</div> -->
+							</div> 
 						</div>
 						<div class="form-group">
 							<div class="col-sm-6">
