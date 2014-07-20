@@ -28,46 +28,59 @@
 				<h3>创建销售机会</h3>
 				<!-- 数据显示与交互内容开始 -->
 				<div class="workpage well well-lg">
-					<form class="form-horizontal" role="form">
+					<form class="form-horizontal" role="form"
+						action="${ctx }/marketing/chance-addSalechance.action"
+						method="post">
 
 						<div class="form-group">
-							<label for="inputEmail3" class="col-sm-2 control-label">机会来源：</label>
+							<label for="inputtext3" class="col-sm-2 control-label">机会来源：</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" id="">
+								<input type="text" class="form-control"
+									name="salechance.usOrigin" value="${ salechance.usOrigin}">
 							</div>
 
 						</div>
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">客户名称：</label>
 							<div class="col-sm-3">
-								<input type="email" class="form-control" id="">
+								<input type="text" class="form-control"
+									name="salechance.usCustomerName"
+									value="${ salechance.usCustomerName}">
 							</div>
 							<label for="inputEmail3" class="col-sm-2 control-label">成功几率：</label>
 							<div class="col-sm-3">
-								<input type="email" class="form-control" id="">
+								<input type="text" class="form-control"
+									name="salechance.usProbability"
+									value="${ salechance.usProbability}">
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">概要：</label>
 							<div class="col-sm-8">
-								<input type="email" class="form-control" id="">
+								<input type="text" class="form-control" name="salechance.usMain"
+									value="${ salechance.usMain}">
 							</div>
 
 						</div>
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">联系人：</label>
 							<div class="col-sm-3">
-								<input type="email" class="form-control" id="">
+								<input type="text" class="form-control"
+									name="salechance.usContanct" value="${ salechance.usContanct}">
 							</div>
 							<label for="inputEmail3" class="col-sm-2 control-label">联系电话：</label>
 							<div class="col-sm-3">
-								<input type="email" class="form-control" id="">
+								<input type="text" class="form-control"
+									name="salechance.usContanctTel"
+									value="${ salechance.usContanctTel}">
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="inputEmail3" class="col-sm-2 control-label">机会描述：</label>
+							<label for="inputtext3" class="col-sm-2 control-label">机会描述：</label>
 							<div class="col-sm-8">
-								<textarea class="form-control" rows="3"></textarea>
+								<textarea class="form-control" rows="3"
+									name="salechance.usChanceDescribe"
+									value="${ salechance.usChanceDescribe}"></textarea>
 							</div>
 
 						</div>
@@ -87,27 +100,28 @@
 							</div>
 							<label for="inputEmail3" class="col-sm-2 control-label">指派时间：</label>
 							<div class="col-sm-3">
-								<input type="email" class="form-control" id="" disabled>
+								<input type="text" class="form-control" disabled
+									value="${ salechance.usDesignationTime}">
 							</div>
 						</div>
 						<div class="form-group">
 							<div class="col-sm-6">
-								<a role="button" href="../marketing.chance/list.jsp"
-									class="btn btn-default btn-lg col-sm-offset-9">保存</a>
+								<button type="submit"
+									class="btn btn-default btn-lg col-sm-offset-9">保存</button>
 							</div>
 							<div class="col-sm-6">
-								<a role="button" href="../marketing.chance/list.jsp"
+								<a role="button" href="${ctx }/marketing/chance-list.action"
 									class="btn btn-default btn-lg">返回</a>
 							</div>
 						</div>
 					</form>
 				</div>
 				<!-- 数据显示与交互内容结束 -->
-				</div>
+			</div>
 			<!-- 主要内容结束 -->
 		</div>
 	</div>
-	
+
 	<!-- js开始 -->
 	<%@ include file="/view/common/js.jsp"%>
 	<script type="text/javascript">

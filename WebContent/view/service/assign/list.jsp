@@ -28,7 +28,8 @@
 				<h3>服务分配列表</h3>
 				<!-- 数据显示与交互内容开始 -->
 				<div class="workpage well well-lg">
-					<form class="form-inline" role="form" method="post">
+					<form class="form-inline" role="form"
+					action="${ctx }/service/assign-list.action" method="post">
 						<div class="form-group">
 							<div class="input-group">
 								<div class="input-group-addon">客户</div>

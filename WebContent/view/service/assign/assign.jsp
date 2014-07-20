@@ -28,7 +28,8 @@
 				<h3>分配服务</h3>
 				<!-- 数据显示与交互内容开始 -->
 				<div class="workpage well well-lg">
-					<form class="form-horizontal" role="form">
+					<form class="form-horizontal" role="form"
+					  action="${ctx }/service/assign-assignService.action" method="post">
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">编号：</label>
 							<div class="col-sm-3">
@@ -40,8 +41,6 @@
 							<label for="inputEmail3" class="col-sm-2 control-label">服务类型：</label>
 							<div class="col-sm-3">
 								<input type="text" class="form-control" disabled
-									value="${ servicecustomer.service.seType}"> <input
-									type="hidden" name="servicecustomer.service.seType"
 									value="${ servicecustomer.service.seType}">
 							</div>
 						</div>
@@ -49,24 +48,18 @@
 							<label for="inputEmail3" class="col-sm-2 control-label">客户：</label>
 							<div class="col-sm-3">
 								<input type="text" class="form-control" disabled
-									value="${ servicecustomer.customer.cuName}"> <input
-									type="hidden" name="servicecustomer.customer.cuname"
-									value="${ servicecustomer.customer.cuName}">
+									value="${ servicecustomer.customer.cuName}"> 
 							</div>
 							<label for="inputEmail3" class="col-sm-2 control-label">产品：</label>
 							<div class="col-sm-3">
 								<input type="text" class="form-control" disabled
-									value="${ servicecustomer.service.product}"> <input
-									type="hidden" name="servicecustomer.service.product"
-									value="${ servicecustomer.service.product}">
+									value="${ servicecustomer.service.product.prName}">
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">概要：</label>
 							<div class="col-sm-8">
 								<input type="text" class="form-control" disabled
-									value="${ servicecustomer.service.seMain}"> <input
-									type="hidden" name="servicecustomer.service.seMain"
 									value="${ servicecustomer.service.seMain}">
 							</div>
 
@@ -83,8 +76,6 @@
 							<label for="inputEmail3" class="col-sm-2 control-label">创建时间</label>
 							<div class="col-sm-3">
 								<input type="text" class="form-control" disabled
-									value="${ servicecustomer.service.seCreateTime}"> <input
-									type="hidden" name="servicecustomer.service.seCreateTime"
 									value="${ servicecustomer.service.seCreateTime}">
 							</div>
 						</div>
