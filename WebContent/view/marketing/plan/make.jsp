@@ -83,13 +83,7 @@
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">指派给：</label>
 							<div class="col-sm-3">
-								<select class="form-control" disabled>
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
-									<option>5</option>
-								</select>
+								<input type="text" class="form-control" id="Text1" disabled>
 							</div>
                             <label for="" class="col-sm-2 control-label">创建时间：</label>
 							<div class="col-sm-3">

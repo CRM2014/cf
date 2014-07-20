@@ -35,18 +35,13 @@ public class PlanAction extends BaseAction {
 	private Development condition;
 
 	
-	public String addMake(){
-		return "addmake";
+	public String make(){
+		return "make";
 	}
     
-	public String modifyMake() {  
+	public String execute() {  
 		development = developmentService.find(development.getDeId());
-		return "modifymake";
-	}
-	
-	public String modifyexecute() {  
-		development = developmentService.find(development.getDeId());
-		return "modifyexecute";
+		return "execute";
 	}
 	
 	@SuppressWarnings("unchecked")
