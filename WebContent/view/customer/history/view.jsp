@@ -28,30 +28,32 @@
 				<h3>查看XX客户历史订单明细</h3>
 				<!-- 导航栏开始 -->
 				<ul class="nav nav-tabs col-sm-offset-6 " role="tablist">
-					<li><a href="../customer.basic/list.html">基本信息</a></li>
-					<li><a href="../customer.contact/list.html">联系人管理</a></li>
-					<li class="active"><a href="../customer.history/list.html">历史订单管理</a></li>
-					<li><a href="../customer.communicate/list.html">交往记录管理</a></li>
+					<li><a href="${ctx }/customer/basic/basic-list.action">基本信息</a></li>
+					<li><a href="${ctx }/customer/contact/contact-list.action">联系人管理</a></li>
+					<li class="active"><a href="${ctx }/customer/history/history-list.action">历史订单管理</a></li>
+					<li><a href="${ctx }/customer/communicate/communicate-list.action">交往记录管理</a></li>
 				</ul>
 				<!-- 导航栏结束 -->
 				<!-- 数据显示与交互内容开始 -->
 				<div class="workpage well well-lg">
-					<form class="form-horizontal" role="form">
+					<form class="form-horizontal" role="form"
+						action="${ctx }/customer/history/history-view.action"
+						method="post">
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">编号：</label>
-							<div class="col-sm-3">No.1</div>
+							<div class="col-sm-3">${orderRecord.orreID}</div>
 							<label for="inputEmail3" class="col-sm-2 control-label">客户：</label>
-							<div class="col-sm-3">balabala</div>
+							<div class="col-sm-3">${orderRecord.customer.cuName}</div>
 						</div>
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">下单时间：</label>
-							<div class="col-sm-3">****-**-**</div>
+							<div class="col-sm-3">${orderRecord.orreDate}</div>
 							<label for="inputEmail3" class="col-sm-2 control-label">订单状态：</label>
-							<div class="col-sm-3">未付款</div>
+							<div class="col-sm-3">${orderRecord.orreStatus}</div>
 						</div>
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">送货地址：</label>
-							<div class="col-sm-8">北京市</div>
+							<div class="col-sm-8">${orderRecord.orrePlace}</div>
 						</div>
 						<br>
 						<div class="form-group">
@@ -66,11 +68,13 @@
 										<td align="center">产品名称</td>
 										<td align="center">数量</td>
 									</tr>
-									<tr>
-										<td align="center">1</td>
-										<td align="center">balabala</td>
-										<td align="center">balabala</td>
-									</tr>
+									<s:iterator value="%{page.list.orderrecordproducts}">
+										<tr>
+											<td align="center">${product.prId}</td>
+											<td align="center">${product.prName}</td>
+											<td align="center">${orreprID}</td>
+										</tr>
+									</s:iterator>
 								</table>
 							</div>
 						</div>
@@ -80,7 +84,6 @@
 					</form>
 				</div>
 				<!-- 数据显示与交互内容结束 -->
-				
 				</div>
 			<!-- 主要内容结束 -->
 		</div>

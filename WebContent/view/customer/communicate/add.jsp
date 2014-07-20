@@ -28,60 +28,69 @@
 				<h3>添加XX客户交往记录</h3>
 				<!-- 导航栏开始 -->
 				<ul class="nav nav-tabs col-sm-offset-6 " role="tablist">
-					<li><a href="../customer.basic/list.html">基本信息</a></li>
-					<li><a href="../customer.contact/list.html">联系人管理</a></li>
-					<li><a href="../customer.history/list.html">历史订单管理</a></li>
-					<li class="active"><a href="../customer.communicate/list.html">交往记录管理</a></li>
+					<li><a href="${ctx }/customer/basic/basic-list.action">基本信息</a></li>
+					<li><a href="${ctx }/customer/contact/contact-list.action">联系人管理</a></li>
+					<li><a href="${ctx }/customer/history/history-list.action">历史订单管理</a></li>
+					<li class="active"><a href="${ctx }/customer/communicate/communicate-list.action">交往记录管理</a></li>
 				</ul>
 				<!-- 导航栏结束 -->
 				<!-- 数据显示与交互内容开始 -->
 				<div class="workpage well well-lg">
-					<form class="form-horizontal" role="form">
+					<form class="form-horizontal" role="form"
+						action="${ctx }/customer/cummunicate/communicate-addUser.action"
+						method="post">
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">编号：</label>
 							<div class="col-sm-3">
-								<input type="email" class="form-control" id="">
+								<input type="text" class="form-control" name="contactRecord.coreId"
+									value="${ contactRecord.coreId}">
 							</div>
 							<label for="inputEmail3" class="col-sm-2 control-label">客户：</label>
 							<div class="col-sm-3">
-								<input type="email" class="form-control" id="" disabled>
+								<input type="text" class="form-control" name="contactRecord.customer.cuName"
+									value="${ contactRecord.customer.cuName}">
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">交往时间：</label>
 							<div class="col-sm-3">
-								<input type="email" class="form-control" id="">
+								<input type="text" class="form-control" name="contactRecord.coreDate"
+									value="${ contactRecord.coreDate}">
 							</div>
 							<label for="inputEmail3" class="col-sm-2 control-label">交往地点：</label>
 							<div class="col-sm-3">
-								<input type="email" class="form-control" id="">
+								<input type="text" class="form-control" name="contactRecord.corePlace"
+									value="${ contactRecord.corePlace}">
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">概要：</label>
 							<div class="col-sm-8">
-								<input type="email" class="form-control" id="">
+								<input type="text" class="form-control" name="contactRecord.coreMain"
+									value="${ contactRecord.coreMain}">
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">描述：</label>
 							<div class="col-sm-8">
-								<textarea class="form-control" rows="3"></textarea>
+								<input type="text" class="form-control" name="contactRecord.coreDescription"
+									value="${ contactRecord.coreDescription}">
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">详情：</label>
 							<div class="col-sm-8">
-								<textarea class="form-control" rows="5"></textarea>
+								<input type="text" class="form-control" name="contactRecord.coreDetail"
+									value="${ contactRecord.coreDetail}">
 							</div>
 						</div>
 						<div class="form-group">
 							<div class="col-sm-6">
-								<a role="button" href="customer/communicate-view.action"
-									class="btn btn-default btn-lg col-sm-offset-9">保存</a>
+								<button type="submit"
+									class="btn btn-default btn-lg col-sm-offset-9">保存</button>
 							</div>
 							<div class="col-sm-6">
-								<a role="button" href="customer/communicate-list.action"
+								<a role="button" href="${ctx }/customer/communicate/communicate-list.action"
 									class="btn btn-default btn-lg">返回</a>
 							</div>
 						</div>

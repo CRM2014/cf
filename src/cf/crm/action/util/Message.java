@@ -1,5 +1,6 @@
 package cf.crm.action.util;
 
+
 public class Message {
 	private String title;
 	private String content;
@@ -24,4 +25,5 @@ public class Message {
 	public void setContent(String content) {
 		this.content = content;
 	}
+
 }

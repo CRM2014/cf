@@ -38,7 +38,7 @@
 								<div class="input-group">
 									<div class="input-group-addon">用户名</div>
 									<input class="form-control" type="text" placeholder=""
-										name="condition.usUserName" value="${ condition.usUserName}">
+										name="condition.usUserName" value="${condition.usUserName}">
 								</div>
 							</div>
 
@@ -57,7 +57,6 @@
 								href="${ctx }/permission/permission-add.action" type="button">
 								<span class="glyphicon glyphicon-plus"></span>新建
 							</a>
-
 						</div>
 
 						<br> <br>

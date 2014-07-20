@@ -28,25 +28,28 @@
 				<h3>创建服务</h3>
 				<!-- 数据显示与交互内容开始 -->
 				<div class="workpage well well-lg">
-					<form class="form-horizontal" role="form">
+					<form class="form-horizontal" role="form"
+						action="${ctx }/service/service-addService.action"
+						method="post">
 
-						<div class="form-group">
+						<%-- <div class="form-group">
 							<label for="inputEmail3"
 								class="col-sm-3 col-sm-offset-1 control-label">产品：</label>
 							<div class="col-sm-4">
-								<input type="text" class="form-control" id="">
+								<input type="text" class="form-control" name="service.product"
+									value="${ service.product}">
 							</div>
-						</div>
+						</div> --%>
 						<div class="form-group">
 							<label for="inputEmail3"
 								class="col-sm-3 col-sm-offset-1 control-label">服务类型：</label>
 							<div class="col-sm-4">
-								<select class="form-control">
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
-									<option>5</option>
+								<select class="form-control" name="service.seType">
+									<option>咨询</option>
+									<option>建议</option>
+									<option>购买</option>
+									<option>培训</option>
+									<option>合作</option>
 								</select>
 							</div>
 						</div>
@@ -54,17 +57,18 @@
 							<label for="inputEmail3"
 								class="col-sm-3 col-sm-offset-1 control-label">概要：</label>
 							<div class="col-sm-4">
-								<input type="email" class="form-control" id="">
+								<input type="text" class="form-control" name="service.seMain"
+									value="${ service.seMain}">
 							</div>
 
 						</div>
 						<div class="form-group">
 							<div class="col-sm-6">
-								<a role="button" href="../service.assign/list.html"
-									class="btn btn-default btn-lg col-sm-offset-9">保存</a>
+								<button type="submit"
+									class="btn btn-default btn-lg col-sm-offset-9">保存</button>
 							</div>
 							<div class="col-sm-6">
-								<a role="button" href="../service.assign/list.html"
+								<a role="button" href="${ctx }/service/assign-list.action"
 									class="btn btn-default btn-lg">返回</a>
 							</div>
 						</div>
@@ -76,7 +80,7 @@
 			<!-- 主要内容结束 -->
 		</div>
 	</div>
-	
+
 	<!-- js开始 -->
 	<%@ include file="/view/common/js.jsp"%>
 	<script type="text/javascript">

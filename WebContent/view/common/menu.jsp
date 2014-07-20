@@ -52,16 +52,16 @@
 						<a href="${ctx}/service/service-add.action">服务创建</a>
 					</div>
 					<div class="accordion-inner">
-						<a href="${ctx}/service/assign-assign.action">服务分配</a>
+						<a href="${ctx}/service/assign-list.action">服务分配</a>
 					</div>
 					<div class="accordion-inner">
-						<a href="${ctx}/service/deal-deal.action">服务处理</a>
+						<a href="${ctx}/service/deal-list.action">服务处理</a>
 					</div>
 					<div class="accordion-inner">
-						<a href="${ctx}/service/feedback-feedback.action">服务反馈</a>
+						<a href="${ctx}/service/feedback-list.action">服务反馈</a>
 					</div>
 					<div class="accordion-inner">
-						<a href="${ctx}/service/archive-archive.action">服务归档</a>
+						<a href="${ctx}/service/archive-list.action">服务归档</a>
 					</div>
 				</div>
 			</div>

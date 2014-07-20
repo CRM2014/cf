@@ -13,6 +13,9 @@ package cf.crm.action;
 
 import java.util.Map;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
@@ -33,6 +36,7 @@ public abstract class BaseAction extends ActionSupport implements Preparable {
 
 	protected String error;
 
+	protected final Log log = LogFactory.getLog(getClass());
 	@Autowired
 	@Qualifier("userServiceImpl")
 	private UserService userService;
@@ -44,11 +48,13 @@ public abstract class BaseAction extends ActionSupport implements Preparable {
 	@Override
 	public void prepare() throws Exception {
 		Map<String, Object> session = ActionContext.getContext().getSession();
-		Object id = session.get("user.id");
-
-		if (id != null && !"".endsWith(id.toString())) {
+		Object id = session.get("USER_ID");
+		if (id != null && !"".equals(id)) {
 			currentUser = userService.find(id.toString());
-		}
+			log.info("当前用户：" + currentUser.getUsName());
+			log.info(currentUser.getCustomers().size());
+		} else
+			log.info("无用户登录");
 	}
 
 	public User getCurrentUser() {
@@ -65,6 +71,18 @@ public abstract class BaseAction extends ActionSupport implements Preparable {
 
 	public String getError() {
 		return error;
+	}
+
+	public void setInfo(String info) {
+		this.info = info;
+	}
+
+	public void setWarn(String warn) {
+		this.warn = warn;
+	}
+
+	public void setError(String error) {
+		this.error = error;
 	}
 
 }
