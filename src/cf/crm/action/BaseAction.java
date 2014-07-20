@@ -52,7 +52,6 @@ public abstract class BaseAction extends ActionSupport implements Preparable {
 		if (id != null && !"".equals(id)) {
 			currentUser = userService.find(id.toString());
 			log.info("当前用户：" + currentUser.getUsName());
-			log.info(currentUser.getCustomers().size());
 		} else
 			log.info("无用户登录");
 	}
@@ -71,6 +70,18 @@ public abstract class BaseAction extends ActionSupport implements Preparable {
 
 	public String getError() {
 		return error;
+	}
+
+	public void setInfo(String info) {
+		this.info = info;
+	}
+
+	public void setWarn(String warn) {
+		this.warn = warn;
+	}
+
+	public void setError(String error) {
+		this.error = error;
 	}
 
 }

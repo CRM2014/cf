@@ -57,4 +57,10 @@ public class UserDaoImpl extends DaoAdapter implements UserDao {
 	public void findByPage(Page<User> page, Map<String, Object> like) {
 		super.findByPage(User.class, page, like);
 	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<User> findListByRole(String role) {
+		return (List<User>) super.findListByField(User.class, "usRole", role);
+	}
 }

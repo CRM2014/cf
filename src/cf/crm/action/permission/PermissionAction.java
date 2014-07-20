@@ -35,7 +35,7 @@ public class PermissionAction extends BaseAction {
 		return "add";
 	}
 
-	public String modify() {
+	public String modify() {  
 		user = userService.find(user.getUsId());
 		return "modify";
 	}
@@ -59,11 +59,15 @@ public class PermissionAction extends BaseAction {
 	}
 
 	public String modifyUser() {
+
 		User origUser = userService.find(user.getUsId());
 		origUser.setUsName(user.getUsName());
 		origUser.setUsUserName(user.getUsUserName());
 		origUser.setUsRole(user.getUsRole());
 		userService.modify(origUser);
+
+		warn = "修改 Success!";
+
 		return "modify-success";
 	}
 
@@ -72,7 +76,7 @@ public class PermissionAction extends BaseAction {
 		user.setUsPassword(MD5Util.getMD5String(user.getUsPassword()));
 		userService.add(user);
 
-		warn = "添加成功";
+		warn = "Save Success!";
 
 		return "add-success";
 	}
@@ -80,6 +84,9 @@ public class PermissionAction extends BaseAction {
 	public String deleteUser() {
 		user = userService.find(user.getUsId());
 		userService.remove(user);
+		
+		warn = "Delete Success!";
+		
 		return "delete-success";
 	}
 

@@ -20,4 +20,6 @@ public interface UserDao extends Dao {
 	public User findByUserName(String userName);
 
 	public void findByPage(Page<User> page, Map<String, Object> like);
+
+	public List<User> findListByRole(String role);
 }

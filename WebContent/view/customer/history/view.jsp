@@ -20,18 +20,20 @@
 				<!-- 页面路径开始 -->
 				<h5 class="page-header">
 					<ol class="breadcrumb">
-						<li>服务管理</li>
-						<li>服务创建</li>
+						<li>客户管理</li>
+						<li><a href="${ctx }/customer/basic/customer-list.action">客户信息管理</a></li>
+						<li><a href="${ctx }/customer/history/history-list.action?customer.cuId=${customer.cuId}">客户信息管理</a></li>
+						<li>历史订单详情</li>
 					</ol>
 				</h5>
 				<!-- 页面路径结束 -->
-				<h3>查看XX客户历史订单明细</h3>
+				<h3>查看${customer.cuName }历史订单明细</h3>
 				<!-- 导航栏开始 -->
 				<ul class="nav nav-tabs col-sm-offset-6 " role="tablist">
-					<li><a href="${ctx }/customer/basic/basic-list.action">基本信息</a></li>
-					<li><a href="${ctx }/customer/contact/contact-list.action">联系人管理</a></li>
-					<li class="active"><a href="${ctx }/customer/history/history-list.action">历史订单管理</a></li>
-					<li><a href="${ctx }/customer/communicate/communicate-list.action">交往记录管理</a></li>
+					<li><a href="${ctx }/customer/basic/basic-list.action?customer.cuId=${customer.cuId}">基本信息</a></li>
+					<li><a href="${ctx }/customer/contact/contact-list.action?customer.cuId=${customer.cuId}">联系人管理</a></li>
+					<li class="active"><a href="${ctx }/customer/history/history-list.action?customer.cuId=${customer.cuId}">历史订单管理</a></li>
+					<li><a href="${ctx }/customer/communicate/communicate-list.action?customer.cuId=${customer.cuId}">交往记录管理</a></li>
 				</ul>
 				<!-- 导航栏结束 -->
 				<!-- 数据显示与交互内容开始 -->
@@ -41,26 +43,24 @@
 						method="post">
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">编号：</label>
-							<div class="col-sm-3">${orreID}</div>
+							<div class="col-sm-3">${orderRecord.orreId}</div>
 							<label for="inputEmail3" class="col-sm-2 control-label">客户：</label>
-							<div class="col-sm-3">${customer.cuName}</div>
+							<div class="col-sm-3">${orderRecord.customer.cuName}</div>
 						</div>
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">下单时间：</label>
-							<div class="col-sm-3">${orreDate}</div>
+							<div class="col-sm-3">${orderRecord.orreDate}</div>
 							<label for="inputEmail3" class="col-sm-2 control-label">订单状态：</label>
-							<div class="col-sm-3">${orreStatus}</div>
+							<div class="col-sm-3">${orderRecord.orreStatus}</div>
 						</div>
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">送货地址：</label>
-							<div class="col-sm-8">${orrePlace}</div>
+							<div class="col-sm-8">${orderRecord.orrePlace}</div>
 						</div>
 						<br>
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">订单明细：</label>
 							<div class="panel panel-default">
-								<!-- Default panel contents -->
-								<div class="panel-heading">Panel heading</div>
 								<!-- Table -->
 								<table class="table">
 									<tr>
@@ -68,18 +68,18 @@
 										<td align="center">产品名称</td>
 										<td align="center">数量</td>
 									</tr>
-									<s:iterator value="%{page.list.orderrecordproducts}">
+									<s:iterator value="%{orderRecord.orderrecordproducts}">
 										<tr>
 											<td align="center">${product.prId}</td>
 											<td align="center">${product.prName}</td>
-											<td align="center">${orreprID}</td>
+											<td align="center">${orreprNum}</td>
 										</tr>
 									</s:iterator>
 								</table>
 							</div>
 						</div>
 						<div align="center">
-							<a role="button" class="btn btn-default" href="customer/history-list.action">返回</a>
+							<a role="button" class="btn btn-default" href="customer/history-list.action?customer.cuId=${customer.cuId}">返回</a>
 						</div>
 					</form>
 				</div>

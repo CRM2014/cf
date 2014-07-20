@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 
 import cf.crm.dao.CustomerDao;
 import cf.crm.entity.Customer;
+import cf.crm.entity.User;
 import cf.crm.util.page.Page;
 
 @Component
@@ -42,7 +43,6 @@ public class CustomerDaoImpl extends DaoAdapter implements CustomerDao {
 
 	@Override
 	public void findByPage(Page<Customer> page, Map<String, Object> like) {
-		// TODO Auto-generated method stub
 		super.findByPage(Customer.class, page, like);
 	}
 

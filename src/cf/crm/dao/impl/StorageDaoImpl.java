@@ -1,6 +1,7 @@
 package cf.crm.dao.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
@@ -9,6 +10,8 @@ import org.springframework.stereotype.Component;
 
 import cf.crm.dao.StorageDao;
 import cf.crm.entity.Storage;
+import cf.crm.entity.User;
+import cf.crm.util.page.Page;
 
 @Component
 @Scope("prototype")
@@ -38,6 +41,11 @@ public class StorageDaoImpl extends DaoAdapter implements StorageDao {
 	@Override
 	public List<Storage> findList() {
 		return (List<Storage>) super.findList(Storage.class);
+	}
+
+	@Override
+	public void findByPage(Page<Storage> page, Map<String, Object> like) {
+		super.findByPage(Storage.class, page, like);
 	}
 
 	

@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import cf.crm.entity.Customer;
+import cf.crm.entity.User;
 import cf.crm.util.page.Page;
 
 public interface CustomerService {
@@ -16,6 +17,7 @@ public interface CustomerService {
 	public Customer find(String id);
 
 	public List<Customer> findList();
-	
+
 	public void findByPage(Page<Customer> page, Map<String, Object> like);
+
 }
