@@ -28,30 +28,32 @@ public class DictionaryAction extends BaseAction {
 	@Qualifier("datadictionaryServiceImpl")
 	private DatadictionaryService DatadictionaryService;
 	private Page<Datadictionary> page;
-	
-	private Datadictionary dataDictionary;
+
+	private Datadictionary dictionary;
 	private Datadictionary condition;
-	
-	
-	
-	
+
 	@Override
 	public String execute() throws Exception {
 		return "fail";
 	}
-	public String add(){
+
+	public String add() {
 		return "add";
 	}
-	public String delete(){
+
+	public String delete() {
 		return "delete";
 	}
-	public String update(){
+
+	public String update() {
 		return "update";
 	}
-	public String inquiry(){
+
+	public String inquiry() {
 		return "inquiry";
 	}
-	public String list(){
+
+	public String list() {
 		if (page == null)
 			page = PageHelper.generatePage();
 		Map<String, Object> like = null;
@@ -67,19 +69,17 @@ public class DictionaryAction extends BaseAction {
 		DatadictionaryService.findByPage(page, like);
 		return "list";
 	}
-	public String addData(){
+
+	public String addData() {
 		System.out.println("===============================================");
-		System.out.println(dataDictionary.getDadiItem());
-		System.out.println(dataDictionary.getDadiType());
-		System.out.println(dataDictionary.getDadiValue());
-		System.out.println(dataDictionary.isDadiEnableEdit());
-		
+		System.out.println(dictionary.getDadiItem());
+		System.out.println(dictionary.getDadiType());
+		System.out.println(dictionary.getDadiValue());
+		System.out.println(dictionary.isDadiEnableEdit());
+
 		return "add-success";
 	}
-	
-	
-	
-	
+
 	public Datadictionary getCondition() {
 		return condition;
 	}
@@ -96,12 +96,12 @@ public class DictionaryAction extends BaseAction {
 		this.page = page;
 	}
 
-	public Datadictionary getDatadictionary() {
-		return dataDictionary;
+	public Datadictionary getDictionary() {
+		return dictionary;
 	}
 
-	public void setDatadictionary(Datadictionary dataDictionary) {
-		this.dataDictionary = dataDictionary;
+	public void setDictionary(Datadictionary dictionary) {
+		this.dictionary = dictionary;
 	}
-	
+
 }
