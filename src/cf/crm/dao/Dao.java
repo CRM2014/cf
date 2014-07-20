@@ -18,4 +18,34 @@ public interface Dao {
 
 	public void findByPage(Class<?> clazz, Page<?> page,
 			Map<String, Object> like);
+
+	/**
+	 * 查找一个实体，根据类型、参数名、参数值
+	 * 
+	 * @author qiyu
+	 * 
+	 * @param clazz
+	 *            类型
+	 * @param name
+	 *            参数名
+	 * @param value
+	 *            参数值
+	 * @return 实体
+	 */
+	public Object findByField(Class<?> clazz, String name, Object value);
+
+	/**
+	 * 查找一个实体列表，根据类型、参数名、参数值
+	 * 
+	 * @author qiyu
+	 * 
+	 * @param clazz
+	 *            类型
+	 * @param name
+	 *            参数名
+	 * @param value
+	 *            参数值
+	 * @return 实体列表
+	 */
+	public List<?> findListByField(Class<?> clazz, String name, Object value);
 }

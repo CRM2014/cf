@@ -28,13 +28,13 @@
 				<h3>服务分配列表</h3>
 				<!-- 数据显示与交互内容开始 -->
 				<div class="workpage well well-lg">
-
-					<form class="form-inline" role="form">
+					<form class="form-inline" role="form" method="post">
 						<div class="form-group">
 							<div class="input-group">
 								<div class="input-group-addon">客户</div>
 								<input class="form-control" type="text" placeholder=""
-									name="condition.customer.cuname" value="${ condition.customer.cuname}">
+									name="condition.customer.cuname"
+									value="${ condition.customer.cuname}">
 							</div>
 						</div>
 
@@ -42,7 +42,8 @@
 							<div class="input-group">
 								<div class="input-group-addon">概要</div>
 								<input class="form-control" type="text" placeholder=""
-									name="condition.service.seMain" value="${ condition.service.seMain}">
+									name="condition.service.seMain"
+									value="${ condition.service.seMain}">
 							</div>
 						</div>
 
@@ -50,15 +51,15 @@
 							<div class="input-group">
 								<div class="input-group-addon">服务类型</div>
 								<input class="form-control" type="text" placeholder=""
-									name="condition.service.seType" value="${ condition.service.seType}">
+									name="condition.service.seType"
+									value="${ condition.service.seType}">
 							</div>
 						</div>
 						<br /> <br />
 						<div class="form-group">
 							<div class="input-group">
 								<div class="input-group-addon">创建时间</div>
-								<input class="form-control" type="text" placeholder=""
-									name=""
+								<input class="form-control" type="text" placeholder="" name=""
 									value="">
 							</div>
 						</div>
@@ -69,8 +70,7 @@
 						</div>
 						<div class="form-group">
 							<div class="input-group">
-								<input class="form-control" type="text" placeholder=""
-									name=""
+								<input class="form-control" type="text" placeholder="" name=""
 									value="">
 							</div>
 						</div>
@@ -93,20 +93,22 @@
 							<td align="center">操作</td>
 						</tr>
 						<tr>
-						
-						<s:iterator value="%{page.list}">
+
+							<s:iterator value="%{page.list}">
+
 								<tr>
-									<td>${seId}</td>
-									<td>${product}</td>
-									<td>${user}</td>
-									<td>${seMain}</td>
-									<td>${seType}</td>
-									<td>${servicecustomers}</td>
-									<td>${seCreateTime}</td>
-									<td align="center"><a role="button" class="btn btn-default"
-								href="#${ctx }/service/archive-archive.action?servicecustomer.secuId=${secuId}">查看</a></td> 
+									<td>${secuId}</td>
+									<td>${service.product.prName}</td>
+									<td>${customer.cuName}</td>
+									<td>${service.seMain}</td>
+									<td>${service.seType}</td>
+									<td>${service.user.usName}</td>
+									<td>${service.seCreateTime}</td>
+									<td align="center"><a role="button"
+										class="btn btn-default"
+										href="${ctx }/service/assign-assign.action?servicecustomer.secuId=${secuId}">分配</a></td>
 							</s:iterator>
-							
+
 						</tr>
 					</table>
 				</div>
