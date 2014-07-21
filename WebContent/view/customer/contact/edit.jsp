@@ -41,7 +41,8 @@
 				<!-- 导航栏结束 -->
 				<!-- 数据显示与交互内容开始 -->
 				<div class="workpage well well-lg">
-					<form class="form-horizontal" action="${ctx }/customer/contact-save.action" role="form">
+					<form class="form-horizontal"
+					 action="${ctx }/customer/contact-modify.action" role="form">
 <input type="hidden" name="contactperson.copeId" value="${contactperson.copeId }">
 						<div class="form-group">
 							<label for="name" class="col-sm-2 control-label">姓名：</label>

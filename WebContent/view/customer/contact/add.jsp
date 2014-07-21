@@ -41,8 +41,8 @@
 				<!-- 导航栏结束 -->
 				<!-- 数据显示与交互内容开始 -->
 				<div class="workpage well well-lg">
-					<form class="form-horizontal" role="form">
-
+					<form class="form-horizontal" role="form"
+ 				action="${ctx}/customer/contact-add.action" method="post">
 						<div class="form-group">
 							<label for="name" class="col-sm-2 control-label">姓名：</label>
 							<div class="col-sm-3">

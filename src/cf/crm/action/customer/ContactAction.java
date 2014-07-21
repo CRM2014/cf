@@ -45,9 +45,8 @@ public class ContactAction extends BaseAction {
 		return "edit";
 	}
 
-	@SuppressWarnings("null")
 	public String add() {
-		Contactperson origContact = null;
+		Contactperson origContact = new Contactperson();
 		origContact.setCopeName(contactperson.getCopeName());
 		origContact.setCopeSex(contactperson.getCopeSex());
 		origContact.setCopePosition(contactperson.getCopePosition());
@@ -80,7 +79,7 @@ public class ContactAction extends BaseAction {
 		return "list";
 	}
 
-	public String save() {
+	public String modify() {
 		Contactperson origContact = contactpersonService.find(contactperson
 				.getCopeId());
 		origContact.setCopeName(contactperson.getCopeName());

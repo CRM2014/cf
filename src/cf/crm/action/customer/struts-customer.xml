@@ -15,13 +15,7 @@
 			<result name="modify-success" type="redirectAction">
 				<param name="actionName">customer-view</param>
 				<param name="namespace">/customer </param>
-				<param name="error">${error} </param>
-				<param name="warn">${warn} </param>
-				<param name="encode">true</param>
-			</result>
-			<result name="add-success" type="redirectAction">
-				<param name="actionName">customer-view</param>
-				<param name="namespace">/customer </param>
+				<param name="customer.cuId">${customer.cuId} </param>
 				<param name="error">${error} </param>
 				<param name="warn">${warn} </param>
 				<param name="encode">true</param>
