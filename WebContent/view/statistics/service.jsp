@@ -45,7 +45,7 @@
 					<table class="table table-bordered" align="center" valign="middle">
 						<tr>
 							<td align="center">编号</td>
-							<td align="center">条目</td>
+							<td align="center">服务类型</td>
 							<td align="center">服务数量</td>
 						</tr>
 						<tr>
