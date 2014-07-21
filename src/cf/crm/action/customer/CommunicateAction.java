@@ -64,12 +64,13 @@ public class CommunicateAction extends BaseAction {
 	public String list() {
 		if (page == null)
 			page = PageHelper.generatePage();
-		Map<String, Object> like = new HashMap<String, Object>();;
+		Map<String, Object> like = null;
 		
 		//condition中还差一个客户ID
 		customer = customerService.find(customer.getCuId());
 		
 		if (condition != null) {
+			like = new HashMap<String, Object>();
 			if (condition.getCoreDate() != null
 					&& !"".equals(condition.getCoreDate()))
 				like.put("coreDate", condition.getCoreDate());
