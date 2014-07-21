@@ -3,6 +3,9 @@ package cf.crm.dao;
 import java.util.List;
 import java.util.Map;
 
+import org.hibernate.criterion.Criterion;
+
+import cf.crm.entity.Servicecustomer;
 import cf.crm.util.page.Page;
 
 public interface Dao {
@@ -171,6 +174,10 @@ public interface Dao {
 	 */
 	public void findByPage(Class<?> clazz, Page<?> page,
 			Map<String, Object> eq, Map<String, Object> not,
-			Map<String, Object> like);
+			Map<String, Object> like, List<String> empty);
 
+	public void findByPage(Class<?> clazz, Page<?> page,
+			Map<String, Object> like, List<Criterion> criterion);
+
+	public void findByPage(Page page, String sql);
 }

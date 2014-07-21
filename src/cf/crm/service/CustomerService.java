@@ -19,4 +19,5 @@ public interface CustomerService {
 
 	public void findByPage(Page<Customer> page, Map<String, Object> like);
 
+	public void findContributionByPage(Page page);
 }

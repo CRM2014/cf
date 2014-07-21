@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 
 import cf.crm.dao.ServicecustomerDao;
 import cf.crm.entity.Servicecustomer;
+import cf.crm.entity.User;
 import cf.crm.service.ServicecustomerService;
 import cf.crm.util.page.Page;
 
@@ -48,6 +49,38 @@ public class ServicecustomerServiceImpl implements ServicecustomerService {
 	@Override
 	public void findByPage(Page<Servicecustomer> page, Map<String, Object> like) {
 		servicecustomerDao.findByPage(page, like);
+	}
+
+	@Override
+	public void findByPage(Page<Servicecustomer> page, Map<String, Object> eq,
+			Map<String, Object> not, Map<String, Object> like,
+			List<String> empty) {
+		servicecustomerDao.findByPage(Servicecustomer.class, page, eq, not,
+				like, empty);
+	}
+
+	@Override
+	public void findAssignByPage(Page<Servicecustomer> page,
+			Map<String, Object> like) {
+		servicecustomerDao.findAssignByPage(page, like);
+	}
+
+	@Override
+	public void findDealByPage(Page<Servicecustomer> page,
+			Map<String, Object> like) {
+		servicecustomerDao.findDealByPage(page, like);
+	}
+
+	@Override
+	public void findFeedbackByPage(Page<Servicecustomer> page,
+			Map<String, Object> like) {
+		servicecustomerDao.findFeedbackByPage(page, like);
+	}
+
+	@Override
+	public void findArchiveByPage(Page<Servicecustomer> page,
+			Map<String, Object> like) {
+		servicecustomerDao.findArchiveByPage(page, like);
 	}
 
 }
