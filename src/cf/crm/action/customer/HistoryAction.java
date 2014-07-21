@@ -2,6 +2,7 @@ package cf.crm.action.customer;
 
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +41,8 @@ public class HistoryAction extends BaseAction {
 	private Orderrecord condition;
 	private Orderrecord orderRecord;
 	private Customer customer;
+	private List<String> status;
+	private String orderStatus;
 
 	@Override
 	public String execute() throws Exception {
@@ -52,10 +55,6 @@ public class HistoryAction extends BaseAction {
 		if (page == null)
 			page = PageHelper.generatePage();
 		Map<String, Object> like = null;
-//		System.out.println(condition.getOrreDate());
-		/*if (condition.getOrreDate() != null && !"".equals(condition.getOrreDate())
-				&& condition.getOrreDate() instanceof Date)
-			System.out.println("~~~OK~~~");*/
 		if (condition != null) {
 			like = new HashMap<String, Object>();
 			if (condition.getOrreDate() != null

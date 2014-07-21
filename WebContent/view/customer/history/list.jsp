@@ -50,12 +50,10 @@
 						<div class="form-group">
 							<div class="input-group">
 								<div class="input-group-addon">订单状态</div>
-								<select class="form-control" disabled>
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
-									<option>5</option>
+								<select class="form-control" name="orderStatus">
+									<s:iterator value="status" id="s">
+										<option value="${s }">${s }</option>
+									</s:iterator>
 								</select>
 							</div>
 						</div>
