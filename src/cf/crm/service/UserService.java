@@ -26,4 +26,9 @@ public interface UserService {
 
 	public void findByPage(Page<User> page, Map<String, Object> like,
 			Map<String, Object> not);
+
+	public void findByPageIncludeSystem(Page<User> page,
+			Map<String, Object> like);
+
+	public void findByPageNoSystem(Page<User> page, Map<String, Object> like);
 }
