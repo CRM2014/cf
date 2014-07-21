@@ -20,17 +20,17 @@
 				<!-- 页面路径开始 -->
 				<h5 class="page-header">
 					<ol class="breadcrumb">
-						<li>客户服务</li>
-						<li><a href="list.html">客户信息管理</a></li>
-						<li>客户联系人信息</li>
+						<li>客户管理</li>
+						<li><a href="${ctx }/customer/customer/customer-list.action">客户信息管理</a></li>
+						<li>联系人信息管理</li>
 					</ol>
 				</h5>
 				<!-- 页面路径结束 -->
-				<h3>客户联系人管理</h3>
+				<h3>联系人列表</h3>
 				<!-- 导航栏开始 -->
 				<ul class="nav nav-tabs col-sm-offset-6 " role="tablist">
 					<li><a
-						href="${ctx }/customer/basic/basic-list.action?customer.cuId=${customer.cuId}">基本信息</a></li>
+						href="${ctx }/customer/customer/customer-view.action?customer.cuId=${customer.cuId}">基本信息</a></li>
 					<li class="active"><a
 						href="${ctx }/customer/contact/contact-list.action?customer.cuId=${customer.cuId}">联系人管理</a></li>
 					<li><a
@@ -72,8 +72,8 @@
 							<button type="submit" class="btn btn-default">
 								<span class="glyphicon glyphicon-search"></span> 查询
 							</button>
-							<a role="button" class="btn btn-default" style=""
-								href="customer/contact-add.action">添加联系人</a> <br> <br>
+							<a role="button" class="btn btn-default" 
+								href="${ctx }/customer/contact-add.action">添加联系人</a>							<br> <br>
 							<table class="table table-bordered" align="center"
 								valign="middle">
 								<tr>

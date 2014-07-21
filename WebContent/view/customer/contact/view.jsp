@@ -20,8 +20,9 @@
 				<!-- 页面路径开始 -->
 				<h5 class="page-header">
 					<ol class="breadcrumb">
-						<li>服务管理</li>
-						<li>服务创建</li>
+						<li>客户管理</li>
+						<li><a href="${ctx }/customer/customer/customer-list.action">客户信息管理</a></li>
+						<li>联系人信息管理</li>
 					</ol>
 				</h5>
 				<!-- 页面路径结束 -->
@@ -29,7 +30,7 @@
 				<!-- 导航栏开始 -->
 				<ul class="nav nav-tabs col-sm-offset-6 " role="tablist">
 					<li><a
-						href="${ctx }/customer/basic/basic-list.action?customer.cuId=${customer.cuId}">基本信息</a></li>
+						href="${ctx }/customer/customer/customer-view.action?customer.cuId=${customer.cuId}">基本信息</a></li>
 					<li class="active"><a
 						href="${ctx }/customer/contact/contact-list.action?customer.cuId=${customer.cuId}">联系人管理</a></li>
 					<li><a

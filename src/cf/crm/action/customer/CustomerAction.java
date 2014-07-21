@@ -88,8 +88,10 @@ public class CustomerAction extends BaseAction {
 		origCustomer.setCuNationTaxNum(customer.getCuNationTaxNum());
 		origCustomer.setCuSatisfy(customer.getCuSatisfy());
 		customerService.modify(origCustomer);
-		return "success";
+		return "modify-success";
 	}
+	
+	
 
 	public Page getPage() {
 		return page;

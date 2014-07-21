@@ -22,11 +22,11 @@
 					<ol class="breadcrumb">
 						<li>客户管理</li>
 						<li><a href="list.html">客户信息管理</a></li>
-						<li>客户基本信息</li>
+						<li>客户列表</li>
 					</ol>
 				</h5>
 				<!-- 页面路径结束 -->
-				<h3>客户信息管理</h3>
+				<h3>客户列表</h3>
 
 				<!-- 数据显示与交互内容开始 -->
 				<form action="${ctx }/customer/customer-list.action" method="post"
