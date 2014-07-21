@@ -1,5 +1,6 @@
 package cf.crm.action.marketing;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -62,14 +63,14 @@ public class PlanAction extends BaseAction {
 	
 public String addDevelopment() {
 		
-	    development.setDePlan(development.getDePlan());
+	    development.setDeDate(new Date());
 	    developmentService.add(development);
 		warn = "Save Success!";
 
 		return "add-success";
 	}
 	
-	public String deletedevelopment() {
+	public String deleteDevelopment() {
 		
 		development = developmentService.find(development.getDeId());
 		developmentService.remove(development);
@@ -78,7 +79,7 @@ public String addDevelopment() {
 		return "delete-success";
 	}
 	
-    public String modifydevelopment() {
+    public String modifyDevelopment() {
     	Development origDevelopment = developmentService.find(development.getDeId());
 		origDevelopment.setDePlan(origDevelopment.getDePlan());
 		developmentService.modify(origDevelopment);
@@ -87,7 +88,7 @@ public String addDevelopment() {
 		return "modify-success";
 	}
     
-    public String modifydevelopmentExecute() {
+    public String modifyDevelopmentExecute() {
     	Development origDevelopmentexecute = developmentService.find(development.getDeId());
 		origDevelopmentexecute.setDeResult(origDevelopmentexecute.getDeResult());
 		developmentService.modify(origDevelopmentexecute);

@@ -32,81 +32,71 @@
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">编号：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control" id="" disabled>
+								<input type="hidden" class="form-control" name="development.salechance.sachId" value="${ development.salechance.sachId}">
+								<input type="text" class="form-control" disabled value="${ development.salechance.sachId}">
 							</div>
 							<label for="inputEmail3" class="col-sm-2 control-label">机会来源：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control" id="" disabled>
+								<input type="text" class="form-control" disabled value="${ development.salechance.usOrigin}">
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">客户名称：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control" id="" disabled>
+								<input type="text" class="form-control" disabled value="${ development.salechance.usCustomerName}">
 							</div>
 							<label for="inputEmail3" class="col-sm-2 control-label">成功几率：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control" id="" disabled>
+								<input type="text" class="form-control" disabled value="${ development.salechance.usProbability}">
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">概要：</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" id="" disabled>
+								<input type="text" class="form-control" disabled value="${ development.salechance.usMain}">
 							</div>
-
 						</div>
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">联系人：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control" id="" disabled>
+								<input type="text" class="form-control" disabled value="${ development.salechance.usContanct}">
 							</div>
 							<label for="inputEmail3" class="col-sm-2 control-label">联系电话：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control" id="" disabled>
+								<input type="text" class="form-control" disabled value="${ development.salechance.usContanctTel}">
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">机会描述：</label>
 							<div class="col-sm-8">
-								<textarea class="form-control" rows="3" disabled></textarea>
+								<textarea class="form-control" rows="3" disabled value="${ development.salechance.usChanceDescribe}"></textarea>
 							</div>
-
 						</div>
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">创建人：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control" id="" disabled>
+								<input type="text" class="form-control" disabled value="${ development.salechance.userByUsCreateId.usName}">
 							</div>
 							<label for="inputEmail3" class="col-sm-2 control-label">创建时间：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control" id="" disabled>
+								<input type="text" class="form-control" disabled value="${ development.salechance.usCreateTime}">
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">指派给：</label>
 							<div class="col-sm-3">
-								<select class="form-control" disabled>
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
-									<option>5</option>
-								</select>
-
-
+								<input type="text" class="form-control" disabled value="${ development.salechance.userByUsDesignationId.usName}">
 							</div>
                             <label for="" class="col-sm-2 control-label">创建时间：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control" id="Text1" disabled>
+								<input type="text" class="form-control" disabled value="${ development.salechance.usCreateTime}">
 							</div>
-							
 						</div>
 					</form>
 					
                <div class="workpage well well-lg"> 
                <form class="form-horizontal" role="form"
-						action="${ctx }/marketing/plan-execute.action"
+						action="${ctx }/marketing/plan-modifyDevelopmentExecute.action"
 						method="post">
                    	<table class="table table-bordered" align="center" valign="middle">
 						<tr>
@@ -115,20 +105,19 @@
                          	<td align="center">执行效果</td>
 							<td align="center">操作</td>
 						</tr>
-						<tr>
-							<td></td>
-                            <td></td>
-							<td><input type="text" class="form-control" 
-							name="development.deResult" 
-								value="${ development.deResult}">
+						<s:iterator value="%{page.list}">
+							<tr>
+								<td>${deDate}</td>
+								<td>${dePlan}</td>
+								<td>${deResult}</td>
 
-							</td>
-							<td align="center">
-                              
-								 <a role="button" href="${ctx }/marketing/plan-list.action" class="btn btn-default"> <span class="  glyphicon glyphicon-save"></span>保存</a>
-								
-							</td>
-						</tr>
+								<td align="center">
+								<button type="submit" class="btn btn-default btn-lg">保存</button></td>
+								<%-- <a role="button"
+									href="${ctx }/marketing/plan-execute.action?development.deId=${deId}"
+									class="btn btn-default">保存</a></td> --%>
+							</tr>
+						</s:iterator>
 					</table>
 					</form>
                    </div>
