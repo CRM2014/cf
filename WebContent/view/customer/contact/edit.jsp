@@ -20,18 +20,23 @@
 				<!-- 页面路径开始 -->
 				<h5 class="page-header">
 					<ol class="breadcrumb">
-						<li>服务管理</li>
-						<li>服务创建</li>
+						<li>客户管理</li>
+						<li><a href="${ctx }/customer/customer/customer-list.action">客户信息管理</a></li>
+						<li>联系人信息管理</li>
 					</ol>
 				</h5>
 				<!-- 页面路径结束 -->
 				<h3>编辑联系人</h3>
 				<!-- 导航栏开始 -->
-				<ul class="nav nav-tabs col-sm-offset-6" role="tablist">
-					<li><a href="../customer.basic/view.html">基本信息</a></li>
-					<li class="active"><a href="../customer.contact/list.html">联系人管理</a></li>
-					<li><a href="../customer.history/list.html">历史订单管理</a></li>
-					<li><a href="../customer.communicate/list.html">交往记录管理</a></li>
+				<ul class="nav nav-tabs col-sm-offset-6 " role="tablist">
+					<li><a
+						href="${ctx }/customer/customer/customer-view.action?customer.cuId=${customer.cuId}">基本信息</a></li>
+					<li class="active"><a
+						href="${ctx }/customer/contact/contact-list.action?customer.cuId=${customer.cuId}">联系人管理</a></li>
+					<li><a
+						href="${ctx }/customer/history/history-list.action?customer.cuId=${customer.cuId}">历史订单管理</a></li>
+					<li><a
+						href="${ctx }/customer/communicate/communicate-list.action?customer.cuId=${customer.cuId}">交往记录管理</a></li>
 				</ul>
 				<!-- 导航栏结束 -->
 				<!-- 数据显示与交互内容开始 -->

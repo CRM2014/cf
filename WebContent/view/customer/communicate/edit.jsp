@@ -21,7 +21,7 @@
 				<h5 class="page-header">
 					<ol class="breadcrumb">
 						<li>客户管理</li>
-						<li><a href="${ctx }/customer/basic/customer-list.action">客户信息管理</a></li>
+						<li><a href="${ctx }/customer/customer/customer-list.action">客户信息管理</a></li>
 						<li><a
 							href="${ctx }/customer/communicate/communicate-list.action?customer.cuId=${customer.cuId}">交往记录管理</a></li>
 						<li>编辑交往记录</li>
@@ -32,7 +32,7 @@
 				<!-- 导航栏开始 -->
 				<ul class="nav nav-tabs col-sm-offset-6 " role="tablist">
 					<li><a
-						href="${ctx }/customer/basic/basic-list.action?customer.cuId=${customer.cuId}">基本信息</a></li>
+						href="${ctx }/customer/customer/customer-list.action?customer.cuId=${customer.cuId}">基本信息</a></li>
 					<li><a
 						href="${ctx }/customer/contact/contact-list.action?customer.cuId=${customer.cuId}">联系人管理</a></li>
 					<li><a

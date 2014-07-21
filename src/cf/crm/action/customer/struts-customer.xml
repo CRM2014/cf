@@ -12,14 +12,34 @@
 			<result name="edit">/view/customer/basic/edit.jsp</result>
 			<result name="list">/view/customer/basic/list.jsp</result>
 			<result name="view">/view/customer/basic/view.jsp</result>
-			<result name="success" type="chain">customer-view</result>
+			<result name="modify-success" type="redirectAction">
+				<param name="actionName">customer-view</param>
+				<param name="namespace">/customer </param>
+				<param name="error">${error} </param>
+				<param name="warn">${warn} </param>
+				<param name="encode">true</param>
+			</result>
+			<result name="add-success" type="redirectAction">
+				<param name="actionName">customer-view</param>
+				<param name="namespace">/customer </param>
+				<param name="error">${error} </param>
+				<param name="warn">${warn} </param>
+				<param name="encode">true</param>
+			</result>
+			<result name="delete-success" type="redirectAction">
+				<param name="actionName">customer-view</param>
+				<param name="namespace">/customer </param>
+				<param name="error">${error} </param>
+				<param name="warn">${warn} </param>
+				<param name="encode">true</param>
+			</result>
 		</action>
 		<action name="communicate-*" class="communicateAction" method="{1}">
 			<result name="add">/view/customer/communicate/add.jsp</result>
 			<result name="edit">/view/customer/communicate/edit.jsp</result>
 			<result name="list">/view/customer/communicate/list.jsp</result>
 			<result name="view">/view/customer/communicate/view.jsp</result>
-			
+
 			<result name="modify-success" type="redirectAction">
 				<param name="actionName">communicate-view</param>
 				<param name="namespace">/customer </param>
@@ -27,7 +47,7 @@
 				<param name="warn">${warn} </param>
 				<param name="contactRecord.coreId">${contactRecord.coreId}</param>
 			</result>
-			
+
 			<result name="add-success" type="redirectAction">
 				<param name="actionName">communicate-view</param>
 				<param name="namespace">/customer </param>
@@ -35,7 +55,7 @@
 				<param name="warn">${warn} </param>
 				<param name="contactRecord.coreId">${contactRecord.coreId}</param>
 			</result>
-			
+
 			<result name="delete-success" type="redirectAction">
 				<param name="actionName">communicate-list</param>
 				<param name="namespace">/customer </param>
@@ -48,12 +68,32 @@
 			<result name="edit">/view/customer/contact/edit.jsp</result>
 			<result name="list">/view/customer/contact/list.jsp</result>
 			<result name="view">/view/customer/contact/view.jsp</result>
-			<result name="success" type="chain">contact-view</result>
+			<result name="modify-success" type="redirectAction">
+				<param name="actionName">contact-list</param>
+				<param name="namespace">/customer </param>
+				<param name="error">${error} </param>
+				<param name="warn">${warn} </param>
+				<param name="encode">true</param>
+			</result>
+			<result name="add-success" type="redirectAction">
+				<param name="actionName">contact-list</param>
+				<param name="namespace">/customer </param>
+				<param name="error">${error} </param>
+				<param name="warn">${warn} </param>
+				<param name="encode">true</param>
+			</result>
+			<result name="delete-success" type="redirectAction">
+				<param name="actionName">contact-list</param>
+				<param name="namespace">/customer </param>
+				<param name="error">${error} </param>
+				<param name="warn">${warn} </param>
+				<param name="encode">true</param>
+			</result>
 		</action>
 		<action name="history-*" class="historyAction" method="{1}">
 			<result name="list">/view/customer/history/list.jsp</result>
 			<result name="view">/view/customer/history/view.jsp</result>
-			
+
 			<result name="delete-success" type="redirectAction">
 				<param name="actionName">history-list</param>
 				<param name="namespace">/customer </param>
