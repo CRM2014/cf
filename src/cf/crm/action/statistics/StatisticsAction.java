@@ -34,14 +34,23 @@ public class StatisticsAction extends BaseAction {
 	}
 
 	public String composition() {
+		page = PageHelper.generatePage();
+		customerService.findCompositionByPage(page);
+		log.info(JSONArray.fromObject(page.getList()));
 		return "composition";
 	}
 
 	public String service() {
+		page = PageHelper.generatePage();
+		customerService.findServiceByPage(page);
+		log.info(JSONArray.fromObject(page.getList()));
 		return "service";
 	}
 
 	public String drain() {
+		page = PageHelper.generatePage();
+		customerService.findDrainByPage(page);
+		log.info(JSONArray.fromObject(page.getList()));
 		return "drain";
 	}
 
