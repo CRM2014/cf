@@ -77,18 +77,14 @@
 						<s:iterator value="%{page.list}">
 							<tr>
 								<td>${deId}</td>
-								<td>${salachance.usCustomerName}</td>
+								<td>${salechance.usCustomerName}</td>
 								<td>${dePlan}</td>
 								<td>${deResult}</td>
 								<td>${deDate}</td>
 
 								<td align="center"><a role="button"
-									href="${ctx }/marketing/plan-execute.action?development.deId=${deId}"
-									class="btn btn-default">执行计划</a> <a role="button"
-									href="${ctx }/marketing/plan-make.action?development.deId=${deId}"
-									class="btn btn-default">修改</a> <a role="button"
-									href="#${ctx }/marketing/plan-deleteDevelopment.action?development.deId=${deId}"
-									onclick="comfirmDelete($(this))" class="btn btn-default">删除</a></td>
+									href="${ctx }/marketing/plan-execute.action?salechance.sachId=${salechance.sachId}"
+									class="btn btn-default">执行计划</a></td>
 							</tr>
 						</s:iterator>
 					</table>

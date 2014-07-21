@@ -18,4 +18,6 @@ public interface DevelopmentDao extends Dao {
 	public List<Development> findList();
 	
 	public void findByPage(Page<Development> page, Map<String, Object> like);
+
+	public void findListByField(String name, Object value);
 }

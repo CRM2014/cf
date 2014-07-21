@@ -50,5 +50,9 @@ public class DevelopmentServiceImpl implements DevelopmentService {
 		developmentDao.findByPage(page, like);
 	}
 
+	@Override
+	public void findListByField(String name, Object value) {
+		developmentDao.findListByField(name, value);
+	}
 
 }
