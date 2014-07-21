@@ -11,10 +11,10 @@
 	<li><input style="width: 30px" type="text"
 		value="${page.currentPage}" name="page.currentPage">
 		<button type="submit">跳转</button></li>
-	<s:if test="%{page.currentPage>1}">
+	<s:if test="%{page.currentPage > 1}">
 		<li><a href="#" onclick="pre()">上一页</a></li>
 	</s:if>
-	<s:if test="%{page.currentPage<page.countPage}">
+	<s:if test="%{page.currentPage < page.countPage}">
 		<li><a href="#" onclick="next()">下一页</a></li>
 	</s:if>
 </ul>
