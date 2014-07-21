@@ -56,4 +56,19 @@ public class CustomerServiceImpl implements CustomerService {
 		customerDao.findContributionByPage(page);
 	}
 
+	@Override
+	public void findCompositionByPage(Page page){
+		customerDao.findCompositionByPage(page);
+	}
+
+	@Override
+	public void findServiceByPage(Page page){
+		customerDao.findServiceByPage(page);
+	}
+
+	@Override
+	public void findDrainByPage(Page page){
+		customerDao.findDrainByPage(page);
+	}
+
 }
