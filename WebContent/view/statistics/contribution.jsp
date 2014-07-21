@@ -64,19 +64,23 @@
 							<td align="center">客户名称</td>
 							<td align="center">订单金额（元）</td>
 						</tr>
-						<tr>
-							<td align="center">1</td>
-							<td></td>
-							<td></td>
-						</tr>
+						<s:iterator value="page.list" status="st">
+							<tr>
+								<td align="center">${st.index+1 }</td>
+								<s:iterator value="page.list[#st.index]" id="i">
+									<td align="center">${i }</td>
+								</s:iterator>
+
+							</tr>
+						</s:iterator>
 					</table>
 				</div>
 				<!-- 数据显示与交互内容结束 -->
-				</div>
+			</div>
 			<!-- 主要内容结束 -->
 		</div>
 	</div>
-	
+
 	<!-- js开始 -->
 	<%@ include file="/view/common/js.jsp"%>
 	<script type="text/javascript">

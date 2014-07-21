@@ -11,6 +11,9 @@ public class Page<T> {
 	private int count;
 	private int countPage;
 
+	Page() {
+	}
+
 	public int getFirstRec() {
 		return (currentPage - 1) * pageSize;
 	}
