@@ -16,6 +16,7 @@ import java.util.Map.Entry;
 import java.util.Random;
 
 import org.hibernate.Criteria;
+import org.hibernate.criterion.Expression;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
@@ -78,33 +79,10 @@ public class DaoAdapter extends HibernateDaoSupport implements Dao {
 		}
 	}
 
-	@SuppressWarnings("unchecked")
 	@Override
 	public void findByPage(Class<?> clazz, Page<?> page,
 			Map<String, Object> like) {
-		try {
-
-			Criteria cri = getSession().createCriteria(clazz);
-			if (like != null) {
-				for (Entry<String, Object> entry : like.entrySet()) {
-					cri.add(Restrictions.like(entry.getKey(), "%"
-							+ entry.getValue().toString() + "%"));
-				}
-			}
-			if (page.getOrder() != null && !"".equals(page.getOrder())) {
-				if (page.isDesc())
-					cri.addOrder(Order.desc(page.getOrder()));
-				else {
-					cri.addOrder(Order.asc(page.getOrder()));
-				}
-			}
-			int count = cri.list().size();
-			cri.setFirstResult(page.getFirstRec());
-			cri.setMaxResults(page.getPageSize());
-			page.setCount(count);
-			page.setList(cri.list());
-		} finally {
-		}
+		findByPage(clazz, page, null, like);
 	}
 
 	@Override
@@ -123,6 +101,76 @@ public class DaoAdapter extends HibernateDaoSupport implements Dao {
 			Criteria cri = getSession().createCriteria(clazz);
 			cri.add(Restrictions.eq(name, value));
 			return cri.list();
+		} finally {
+		}
+	}
+
+	@Override
+	public List<?> findList(Class<?> clazz, Map<String, Object> eq,
+			Map<String, Object> like) {
+		try {
+			Criteria cri = getSession().createCriteria(clazz);
+			if (eq != null)
+				cri.add(Restrictions.allEq(eq));
+			if (like != null) {
+				for (Entry<String, Object> entry : like.entrySet()) {
+					cri.add(Restrictions.like(entry.getKey(), entry.getValue()));
+				}
+			}
+			return cri.list();
+		} finally {
+		}
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public void findByPage(Class<?> clazz, Page<?> page,
+			Map<String, Object> eq, Map<String, Object> like) {
+		findByPage(clazz, page, eq, null, like);
+	}
+
+	@Override
+	public List<?> findList(Class<?> clazz, Map<String, Object> eq,
+			Map<String, Object> not, Map<String, Object> like) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void findByPage(Class<?> clazz, Page<?> page,
+			Map<String, Object> eq, Map<String, Object> not,
+			Map<String, Object> like) {
+		try {
+
+			Criteria cri = getSession().createCriteria(clazz);
+			if (eq != null)
+				cri.add(Restrictions.allEq(eq));
+			if (not != null)
+				for (Entry<String, Object> entry : not.entrySet()) {
+					cri.add(Restrictions.ne(entry.getKey(), entry.getValue()));
+				}
+			if (like != null) {
+				for (Entry<String, Object> entry : like.entrySet()) {
+					if (entry.getValue() instanceof String)
+						cri.add(Restrictions.ilike(entry.getKey(),
+								entry.getValue()));
+					else
+						cri.add(Restrictions.like(entry.getKey(),
+								entry.getValue()));
+				}
+			}
+			if (page.getOrder() != null && !"".equals(page.getOrder())) {
+				if (page.isDesc())
+					cri.addOrder(Order.desc(page.getOrder()));
+				else {
+					cri.addOrder(Order.asc(page.getOrder()));
+				}
+			}
+			int count = cri.list().size();
+			cri.setFirstResult(page.getFirstRec());
+			cri.setMaxResults(page.getPageSize());
+			page.setCount(count);
+			page.setList(cri.list());
 		} finally {
 		}
 	}

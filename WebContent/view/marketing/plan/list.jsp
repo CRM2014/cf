@@ -69,15 +69,15 @@
 							<td align="center">操作</td>
 						</tr>
 						<tr>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>	
-							<td></td>
+							<td>${sachId}</td>
+							<td>${usCustomerName}</td>
+							<td>${dePlan}</td>
+							<td>${deResult}</td>	
+							<td>${deDate}</td>
 							<td align="center">
-                                <a role="button" href="../marketing.plan/execute.jsp"  class="btn btn-default">执行计划</a>
-							 	<a role="button" href="../marketing.plan/make.jsp"  class="btn btn-default">修改</a>
-							  	 <a role="button" class="btn btn-default">删除</a>
+                                <a role="button" href="${ctx }/marketing/plan-execute.action?salechance.sachId=${deId}"  class="btn btn-default">执行计划</a>
+							 	<a role="button" href="${ctx }/marketing/plan-modifydevelopment.action?salechance.sachId=${deId}"  class="btn btn-default">修改</a>
+							  	 <a role="button"href="${ctx }/marketing/plan-deletedevelopment.action?salechance.sachId=${deId}" class="btn btn-default">删除</a>
 							</td>
 						</tr>
 					</table>

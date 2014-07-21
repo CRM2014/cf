@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Map;
 
 import cf.crm.entity.Customer;
-import cf.crm.entity.User;
 import cf.crm.util.page.Page;
 
 public interface CustomerService {

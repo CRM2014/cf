@@ -10,7 +10,6 @@ import org.springframework.stereotype.Controller;
 
 import cf.crm.action.BaseAction;
 import cf.crm.entity.Datadictionary;
-import cf.crm.entity.User;
 import cf.crm.service.DatadictionaryService;
 import cf.crm.util.page.Page;
 import cf.crm.util.page.PageHelper;

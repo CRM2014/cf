@@ -9,9 +9,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import cf.crm.action.BaseAction;
-import cf.crm.entity.Service;
 import cf.crm.entity.Servicecustomer;
-import cf.crm.service.ServiceService;
 import cf.crm.service.ServicecustomerService;
 import cf.crm.util.page.Page;
 import cf.crm.util.page.PageHelper;
@@ -32,7 +30,7 @@ public class FeedbackAction extends BaseAction {
 	private Servicecustomer servicecustomer;
 	private Servicecustomer condition;
 
-	public String feeedback() {
+	public String feedback() {
 		servicecustomer = servicecustomerservice.find(servicecustomer
 				.getSecuId());
 		return "feedback";

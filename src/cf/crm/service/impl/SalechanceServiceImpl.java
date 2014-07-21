@@ -10,7 +10,6 @@ import org.springframework.stereotype.Component;
 
 import cf.crm.dao.SalechanceDao;
 import cf.crm.entity.Salechance;
-import cf.crm.entity.Servicecustomer;
 import cf.crm.service.SalechanceService;
 import cf.crm.util.page.Page;
 

@@ -105,6 +105,9 @@
 					</form>
 					
                <div class="workpage well well-lg"> 
+               <form class="form-horizontal" role="form"
+						action="${ctx }/marketing/plan-execute.action"
+						method="post">
                    	<table class="table table-bordered" align="center" valign="middle">
 						<tr>
 							<td align="center">日期</td>
@@ -115,16 +118,19 @@
 						<tr>
 							<td></td>
                             <td></td>
-							<td><input type="text" class="form-control" id="Text2">
+							<td><input type="text" class="form-control" 
+							name="development.deResult" 
+								value="${ development.deResult}">
 
 							</td>
 							<td align="center">
                               
-								 <a role="button" href="../marketing.plan/execute.jsp"class="btn btn-default"> <span class="  glyphicon glyphicon-save"></span>保存</a>
+								 <a role="button" href="${ctx }/marketing/plan-list.action" class="btn btn-default"> <span class="  glyphicon glyphicon-save"></span>保存</a>
 								
 							</td>
 						</tr>
 					</table>
+					</form>
                    </div>
 				</div>
 				<!-- 数据显示与交互内容结束 -->

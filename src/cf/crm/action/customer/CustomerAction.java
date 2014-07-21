@@ -8,10 +8,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
-import com.opensymphony.xwork2.ActionContext;
 import cf.crm.action.BaseAction;
 import cf.crm.entity.Customer;
-import cf.crm.entity.User;
 import cf.crm.service.CustomerService;
 import cf.crm.service.UserService;
 import cf.crm.util.page.Page;

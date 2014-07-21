@@ -11,7 +11,6 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import cf.crm.action.BaseAction;
-import cf.crm.action.util.MD5Util;
 import cf.crm.entity.Salechance;
 import cf.crm.entity.User;
 import cf.crm.service.SalechanceService;

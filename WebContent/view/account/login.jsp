@@ -37,10 +37,13 @@
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-3 control-label">验证码：</label>
 							<div class="col-sm-4">
-								<input type="email" class="form-control" id="" placeholder="验证码">
+								<input type="text" class="form-control" name="securityCode"
+									placeholder="验证码">
 							</div>
 							<div class="col-sm-2">
-								<a href="#"> <img alt="验证码" src="#"></a>
+								<a href="#"> <img
+									src="${ctx }/account/login-securityImage.action" id="verify"
+									alt="看不清，换一张" /></a>
 							</div>
 						</div>
 						<div class="form-group"></div>
@@ -56,6 +59,10 @@
 		$(document).ready(function() {
 			var pageInfo = new PageInfo(0);
 			pageInfo.generate();
+		});
+		$("#verify").click(function() {
+			var src = $(this).attr("src");
+			$(this).attr("src", src + "?timestamp=" + new Date().getTime());
 		});
 	</script>
 	<!-- js结束 -->

@@ -35,7 +35,7 @@
 							<div class="input-group">
 								<div class="input-group-addon">客户</div>
 								<input class="form-control" type="text" placeholder=""
-									name="condition.customer.cuname" value="${ condition.customer.cuName}">
+									name="condition.customer.cuName" value="${ condition.customer.cuName}">
 							</div>
 						</div>
 

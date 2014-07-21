@@ -57,9 +57,9 @@
 							<label for="" class="col-sm-3 col-sm-offset-1 control-label">用户角色：</label>
 							<div class="col-sm-4">
 								<select class="form-control" name="user.usRole">
-									<option>客户经理</option>
-									<option>高管</option>
-									<option>管理员</option>
+									<s:iterator value="roles" id="r">
+										<option>${r}</option>
+									</s:iterator>
 								</select>
 							</div>
 						</div>

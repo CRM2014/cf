@@ -63,4 +63,10 @@ public class UserDaoImpl extends DaoAdapter implements UserDao {
 	public List<User> findListByRole(String role) {
 		return (List<User>) super.findListByField(User.class, "usRole", role);
 	}
+
+	@Override
+	public void findByPage(Page<User> page, Map<String, Object> like,
+			Map<String, Object> not) {
+		super.findByPage(User.class, page, null, not, like);
+	}
 }

@@ -22,4 +22,7 @@ public interface UserDao extends Dao {
 	public void findByPage(Page<User> page, Map<String, Object> like);
 
 	public List<User> findListByRole(String role);
+
+	public void findByPage(Page<User> page, Map<String, Object> like,
+			Map<String, Object> not);
 }

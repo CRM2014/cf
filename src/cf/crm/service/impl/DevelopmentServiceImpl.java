@@ -10,7 +10,6 @@ import org.springframework.stereotype.Component;
 
 import cf.crm.dao.DevelopmentDao;
 import cf.crm.entity.Development;
-import cf.crm.entity.Servicecustomer;
 import cf.crm.service.DevelopmentService;
 import cf.crm.util.page.Page;
 

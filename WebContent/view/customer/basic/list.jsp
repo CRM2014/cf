@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -80,12 +80,12 @@
 											<%-- ${user.usName} --%>
 										</td>
 										<td>${cuZone}</td>
-										<td align="center">
-											<a role="button" href="${ctx }/customer/customer-view.action?customer.cuId=${cuId}" 
-											class="btn btn-default">查看</a> 
-											<a role="button" href="${ctx }/customer/customer-edit.action?customer.cuId=${cuId}" 
-											class="btn btn-default">修改</a>
-											<a role="button" href="#${ctx }/customer/customer-delete.action?customer.cuId=${cuId}"
+										<td align="center"><a role="button"
+											href="${ctx }/customer/customer-view.action?customer.cuId=${cuId}"
+											class="btn btn-default">查看</a> <a role="button"
+											href="${ctx }/customer/customer-edit.action?customer.cuId=${cuId}"
+											class="btn btn-default">修改</a> <a role="button"
+											href="#${ctx }/customer/customer-delete.action?customer.cuId=${cuId}"
 											onclick="comfirmDelete($(this))" class="btn btn-default">删除</a>
 										</td>
 									</tr>
@@ -98,7 +98,7 @@
 								<!-- 分页栏结束 -->
 							</div>
 						</div>
-				</div>
+					</div>
 				</form>
 				<!-- 数据显示与交互内容结束 -->
 

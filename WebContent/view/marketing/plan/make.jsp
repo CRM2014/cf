@@ -93,7 +93,11 @@
 						</div>
 					</form>
                <div class="workpage well well-lg"> 
-                   	<table class="table table-bordered" align="center" valign="middle">
+               	<form class="form-form-inline" role="form"
+                   	action="${ctx }/marketing/plan-addDevelopment.action"
+						method="post">
+                   	<table class="table table-bordered" align="center" valign="middle"
+                   	>
 						<tr>
 							<td align="center">日期</td>
 							<td align="center">计划项</td>
@@ -101,21 +105,25 @@
 						</tr>
 						<tr>
 							<td></td>
-							<td><input type="text" class="form-control" id="Text3" ></td>
+							<td><input type="text" class="form-control"
+							 name="development.dePlan" 
+								value="${ development.dePlan}" ></td>
 							<td align="center">
-								 <a role="button" href="../marketing.plan/execute.jsp" class="btn btn-default">修改</a>
-								 <a role="button" class="btn btn-default">删除</a>
+								 <a role="button" href="${ctx }/marketing/plan-make.action" class="btn btn-default">修改</a>
+								 <a role="button"href="${ctx }/marketing/plan-list.action" class="btn btn-default">删除</a>
 							</td>
 						</tr>
 					</table>
-                   	<form class="form-form-inline" role="form">
+                   
                            <div class="form-group">
 							<label for="" class="col-sm-2 control-label">计划项：</label>
 							<div class="col-sm-7">
-								<input type="text" class="form-control" id="Text2" >
+								<input type="text" class="form-control" 
+								name="development.dePlan" 
+								value="${ development.dePlan}">
 							</div>
                                
-						 <a role="button" href="../marketing.plan/make.jsp" class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-save"></span>保存</a>
+						 <a role="button" href="${ctx }/marketing/plan-list.action" class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-save"></span>保存</a>
 					
 						</div>
                            </form>
