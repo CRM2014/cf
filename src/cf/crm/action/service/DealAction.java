@@ -70,7 +70,7 @@ public class DealAction extends BaseAction {
 		}
 		List<String> empty = new ArrayList<String>();
 		empty.add("secuDeal");
-		servicecustomerservice.findByPage(page, null, null, like, empty);
+		servicecustomerservice.findDealByPage(page, like);
 		return "list";
 	}
 

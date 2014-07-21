@@ -84,7 +84,7 @@ public class AssignAction extends BaseAction {
 		}
 		List<String> empty = new ArrayList<String>();
 		empty.add("userByUsDealId");
-		servicecustomerservice.findByPage(page, null, null, like, empty);
+		servicecustomerservice.findAssignByPage(page, like);
 		return "list";
 	}
 

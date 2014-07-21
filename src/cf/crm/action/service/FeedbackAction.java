@@ -75,7 +75,7 @@ public class FeedbackAction extends BaseAction {
 		}
 		List<String> empty = new ArrayList<String>();
 		empty.add("secuDealResult");
-		servicecustomerservice.findByPage(page, null, null, like, empty);
+		servicecustomerservice.findFeedbackByPage(page, like);
 		return "list";
 	}
 

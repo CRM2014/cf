@@ -53,7 +53,6 @@ public class ServicecustomerDaoImpl extends DaoAdapter implements
 	public void findFeedbackByPage(Page<Servicecustomer> page,
 			Map<String, Object> like) {
 		List<Criterion> cri = new ArrayList<Criterion>();
-
 		cri.add(Restrictions.isNull("secuDealResult"));
 		cri.add(Restrictions.isNotNull("secuDeal"));
 		super.findByPage(Servicecustomer.class, page, like, cri);
@@ -62,22 +61,28 @@ public class ServicecustomerDaoImpl extends DaoAdapter implements
 	@Override
 	public void findArchiveByPage(Page<Servicecustomer> page,
 			Map<String, Object> like) {
-		// TODO Auto-generated method stub
-
+		List<Criterion> cri = new ArrayList<Criterion>();
+		cri.add(Restrictions.isNotNull("secuDealResult"));
+		cri.add(Restrictions.isNotNull("secuDeal"));
+		super.findByPage(Servicecustomer.class, page, like, cri);
 	}
 
 	@Override
 	public void findAssignByPage(Page<Servicecustomer> page,
 			Map<String, Object> like) {
-		// TODO Auto-generated method stub
+		List<Criterion> cri = new ArrayList<Criterion>();
 
+		cri.add(Restrictions.isNull("userByUsDealId"));
+		super.findByPage(Servicecustomer.class, page, like, cri);
 	}
 
 	@Override
 	public void findDealByPage(Page<Servicecustomer> page,
 			Map<String, Object> like) {
-		// TODO Auto-generated method stub
-
+		List<Criterion> cri = new ArrayList<Criterion>();
+		cri.add(Restrictions.isNull("secuDeal"));
+		cri.add(Restrictions.isNotNull("userByUsDealId"));
+		super.findByPage(Servicecustomer.class, page, like, cri);
 	}
 
 }

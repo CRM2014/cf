@@ -50,8 +50,11 @@ public class CustomerAction extends BaseAction {
 		page = PageHelper.generatePage();
 		customerService.findContributionByPage(page);
 		List<Object[]> list = page.getList();
+		
 		for (Object[] o : list)
 			log.info(o[0]);
+		
+		
 		if (page == null)
 			page = PageHelper.generatePage();
 		Map<String, Object> like = null;
