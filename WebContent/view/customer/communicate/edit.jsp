@@ -21,9 +21,9 @@
 				<h5 class="page-header">
 					<ol class="breadcrumb">
 						<li>客户管理</li>
-						<li><a href="${ctx }/customer/customer/customer-list.action">客户信息管理</a></li>
+						<li><a href="${ctx }/customer/customer-list.action">客户信息管理</a></li>
 						<li><a
-							href="${ctx }/customer/communicate/communicate-list.action?customer.cuId=${customer.cuId}">交往记录管理</a></li>
+							href="${ctx }/customer/communicate-list.action?customer.cuId=${customer.cuId}">交往记录管理</a></li>
 						<li>编辑交往记录</li>
 					</ol>
 				</h5>
@@ -32,19 +32,19 @@
 				<!-- 导航栏开始 -->
 				<ul class="nav nav-tabs col-sm-offset-6 " role="tablist">
 					<li><a
-						href="${ctx }/customer/customer/customer-list.action?customer.cuId=${customer.cuId}">基本信息</a></li>
+						href="${ctx }/customer/customer-list.action?customer.cuId=${customer.cuId}">基本信息</a></li>
 					<li><a
-						href="${ctx }/customer/contact/contact-list.action?customer.cuId=${customer.cuId}">联系人管理</a></li>
+						href="${ctx }/customer/contact-list.action?customer.cuId=${customer.cuId}">联系人管理</a></li>
 					<li><a
-						href="${ctx }/customer/history/history-list.action?customer.cuId=${customer.cuId}">历史订单管理</a></li>
+						href="${ctx }/customer/history-list.action?customer.cuId=${customer.cuId}">历史订单管理</a></li>
 					<li class="active"><a
-						href="${ctx }/customer/communicate/communicate-list.action?customer.cuId=${customer.cuId}">交往记录管理</a></li>
+						href="${ctx }/customer/communicate-list.action?customer.cuId=${customer.cuId}">交往记录管理</a></li>
 				</ul>
 				<!-- 导航栏结束 -->
 				<!-- 数据显示与交互内容开始 -->
 				<div class="workpage well well-lg">
 					<form class="form-horizontal" role="form"
-						action="${ctx }/customer/cummunicate/communicate-modifyUser.action"
+						action="${ctx }/customer/communicate-modifyUser.action"
 						method="post">
 						<div class="form-group">
 							<label for="" class="col-sm-2 control-label">编号：</label>
@@ -106,7 +106,7 @@
 							</div>
 							<div class="col-sm-6">
 								<a role="button"
-									href="${ctx }/customer/communicate/communicate-list.action?customer.cuId=${customer.cuId}"
+									href="${ctx }/customer/communicate-list.action?customer.cuId=${customer.cuId}"
 									class="btn btn-default">返回</a>
 							</div>
 						</div>
