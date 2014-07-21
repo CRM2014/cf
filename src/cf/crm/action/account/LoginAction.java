@@ -70,7 +70,7 @@ public class LoginAction extends BaseAction {
 			return "login-fail";
 		}
 		Map<String, Object> session = ActionContext.getContext().getSession();
-		if (!session.getOrDefault("SECURITY_CODE", "").toString()
+		if (!session.get("SECURITY_CODE").toString()
 				.equals(securityCode)) {
 			log.info("输入验证码：" + securityCode);
 			log.info("验证码错误！");
