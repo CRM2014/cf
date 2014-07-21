@@ -47,4 +47,9 @@ public class DevelopmentDaoImpl extends DaoAdapter implements DevelopmentDao {
 	public void findByPage(Page<Development> page, Map<String, Object> like) {
 		super.findByPage(Development.class, page, like);
 	}
+
+	@Override
+	public void findListByField(String name, Object value) {
+		super.findListByField(Development.class, name, value);
+	}
 }
