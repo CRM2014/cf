@@ -51,6 +51,9 @@ public class CustomerServiceImpl implements CustomerService {
 		customerDao.findByPage(page, like);
 	}
 
-
+	@Override
+	public void findContributionByPage(Page page) {
+		customerDao.findContributionByPage(page);
+	}
 
 }

@@ -46,5 +46,9 @@ public class CustomerDaoImpl extends DaoAdapter implements CustomerDao {
 		super.findByPage(Customer.class, page, like);
 	}
 
-	
+	@Override
+	public void findContributionByPage(Page page) {
+		String sql = "select * from customer";
+		super.findByPage(page, sql);
+	}
 }

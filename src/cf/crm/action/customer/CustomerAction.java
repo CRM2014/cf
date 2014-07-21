@@ -1,7 +1,10 @@
 package cf.crm.action.customer;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+
+import net.sf.json.JSONArray;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -32,18 +35,23 @@ public class CustomerAction extends BaseAction {
 	private Page page;
 	private Customer customer;
 	private Customer condition;
-	
-	public String view(){
+
+	public String view() {
 		customer = customerService.find(customer.getCuId());
 		return "view";
 	}
-	
+
 	public String edit() {
 		customer = customerService.find(customer.getCuId());
 		return "edit";
 	}
-	
+
 	public String list() {
+		page = PageHelper.generatePage();
+		customerService.findContributionByPage(page);
+		List<Object[]> list = page.getList();
+		for (Object[] o : list)
+			log.info(o[0]);
 		if (page == null)
 			page = PageHelper.generatePage();
 		Map<String, Object> like = null;
@@ -51,25 +59,27 @@ public class CustomerAction extends BaseAction {
 			like = new HashMap<String, Object>();
 			if (condition.getCuName() != null
 					&& !"".equals(condition.getCuName()))
-				like.put("cuName",  condition.getCuName() );
+				like.put("cuName", condition.getCuName());
 			if (condition.getCuLevel() != null
 					&& !"".equals(condition.getCuLevel()))
-				like.put("cuLevel",  condition.getCuLevel() );
-/*			if (condition.getUser().getUsName() != null
-					&& !"".equals(condition.getUser().getUsName()))
-				like.put("user.usName", condition.getUser().getUsName());*/
+				like.put("cuLevel", condition.getCuLevel());
+			/*
+			 * if (condition.getUser().getUsName() != null &&
+			 * !"".equals(condition.getUser().getUsName()))
+			 * like.put("user.usName", condition.getUser().getUsName());
+			 */
 		}
 		customerService.findByPage(page, like);
 		return "list";
 	}
-	
-	public String save(){
+
+	public String save() {
 		Customer origCustomer = customerService.find(customer.getCuId());
 		System.out.println(origCustomer.getCuName());
 		origCustomer.setCuName(customer.getCuName());
 		origCustomer.setCuZone(customer.getCuZone());
 		origCustomer.setCuLevel(customer.getCuLevel());
-		//origCustomer.setUser(currentUser);
+		// origCustomer.setUser(currentUser);
 		origCustomer.setUser(userService.find("123"));
 		origCustomer.setCuCredit(customer.getCuCredit());
 		origCustomer.setCuAddress(customer.getCuAddress());

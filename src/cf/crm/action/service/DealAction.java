@@ -1,6 +1,8 @@
 package cf.crm.action.service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -66,7 +68,9 @@ public class DealAction extends BaseAction {
 			 * like.put("seCreateTime", condition.getSeCreateTime());
 			 */
 		}
-		servicecustomerservice.findByPage(page, like);
+		List<String> empty = new ArrayList<String>();
+		empty.add("secuDeal");
+		servicecustomerservice.findByPage(page, null, null, like, empty);
 		return "list";
 	}
 

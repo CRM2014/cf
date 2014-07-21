@@ -1,6 +1,8 @@
 package cf.crm.action.service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,6 +54,7 @@ public class FeedbackAction extends BaseAction {
 		Map<String, Object> like = null;
 		if (condition != null) {
 			like = new HashMap<String, Object>();
+			like.put("secuDeal", "");
 			if (condition.getCustomer().getCuName() != null
 					&& !"".equals(condition.getCustomer().getCuName()))
 				like.put("customerName", condition.getCustomer().getCuName());
@@ -70,7 +73,9 @@ public class FeedbackAction extends BaseAction {
 			 * like.put("seCreateTime", condition.getSeCreateTime());
 			 */
 		}
-		servicecustomerservice.findByPage(page, like);
+		List<String> empty = new ArrayList<String>();
+		empty.add("secuDealResult");
+		servicecustomerservice.findByPage(page, null, null, like, empty);
 		return "list";
 	}
 

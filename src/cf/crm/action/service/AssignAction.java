@@ -1,5 +1,6 @@
 package cf.crm.action.service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -81,8 +82,9 @@ public class AssignAction extends BaseAction {
 			 * like.put("seCreateTime", condition.getSeCreateTime());
 			 */
 		}
-		servicecustomerservice.findByPage(page, like);
-		log.info(page.getList().size());
+		List<String> empty = new ArrayList<String>();
+		empty.add("userByUsDealId");
+		servicecustomerservice.findByPage(page, null, null, like, empty);
 		return "list";
 	}
 

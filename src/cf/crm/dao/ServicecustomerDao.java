@@ -16,7 +16,19 @@ public interface ServicecustomerDao extends Dao {
 	public Servicecustomer find(String id);
 
 	public List<Servicecustomer> findList();
-	
+
 	public void findByPage(Page<Servicecustomer> page, Map<String, Object> like);
-	
+
+	public void findFeedbackByPage(Page<Servicecustomer> page,
+			Map<String, Object> like);
+
+	public void findArchiveByPage(Page<Servicecustomer> page,
+			Map<String, Object> like);
+
+	public void findAssignByPage(Page<Servicecustomer> page,
+			Map<String, Object> like);
+
+	public void findDealByPage(Page<Servicecustomer> page,
+			Map<String, Object> like);
+
 }

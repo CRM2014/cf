@@ -16,12 +16,14 @@ import java.util.Map.Entry;
 import java.util.Random;
 
 import org.hibernate.Criteria;
+import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.Expression;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import cf.crm.dao.Dao;
+import cf.crm.entity.Servicecustomer;
 import cf.crm.util.page.Page;
 
 public class DaoAdapter extends HibernateDaoSupport implements Dao {
@@ -126,7 +128,7 @@ public class DaoAdapter extends HibernateDaoSupport implements Dao {
 	@Override
 	public void findByPage(Class<?> clazz, Page<?> page,
 			Map<String, Object> eq, Map<String, Object> like) {
-		findByPage(clazz, page, eq, null, like);
+		findByPage(clazz, page, eq, null, like, null);
 	}
 
 	@Override
@@ -139,7 +141,7 @@ public class DaoAdapter extends HibernateDaoSupport implements Dao {
 	@Override
 	public void findByPage(Class<?> clazz, Page<?> page,
 			Map<String, Object> eq, Map<String, Object> not,
-			Map<String, Object> like) {
+			Map<String, Object> like, List<String> empty) {
 		try {
 
 			Criteria cri = getSession().createCriteria(clazz);
@@ -159,6 +161,10 @@ public class DaoAdapter extends HibernateDaoSupport implements Dao {
 								entry.getValue()));
 				}
 			}
+			if (empty != null) {
+				for (String s : empty)
+					cri.add(Restrictions.isNull(s));
+			}
 			if (page.getOrder() != null && !"".equals(page.getOrder())) {
 				if (page.isDesc())
 					cri.addOrder(Order.desc(page.getOrder()));
@@ -173,5 +179,44 @@ public class DaoAdapter extends HibernateDaoSupport implements Dao {
 			page.setList(cri.list());
 		} finally {
 		}
+	}
+
+	@Override
+	public void findByPage(Class<?> clazz, Page<?> page,
+			Map<String, Object> like, List<Criterion> criterion) {
+		try {
+			Criteria cri = getSession().createCriteria(clazz);
+			if (like != null) {
+				for (Entry<String, Object> entry : like.entrySet()) {
+					if (entry.getValue() instanceof String)
+						cri.add(Restrictions.ilike(entry.getKey(),
+								entry.getValue()));
+					else
+						cri.add(Restrictions.like(entry.getKey(),
+								entry.getValue()));
+				}
+			}
+			if (criterion != null)
+				for (Criterion c : criterion)
+					cri.add(c);
+			if (page.getOrder() != null && !"".equals(page.getOrder())) {
+				if (page.isDesc())
+					cri.addOrder(Order.desc(page.getOrder()));
+				else {
+					cri.addOrder(Order.asc(page.getOrder()));
+				}
+			}
+			int count = cri.list().size();
+			cri.setFirstResult(page.getFirstRec());
+			cri.setMaxResults(page.getPageSize());
+			page.setCount(count);
+			page.setList(cri.list());
+		} finally {
+		}
+	}
+
+	@Override
+	public void findByPage(Page page, String sql) {
+		page.setList(getSession().createSQLQuery(sql).list());
 	}
 }
