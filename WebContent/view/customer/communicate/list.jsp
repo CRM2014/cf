@@ -37,7 +37,8 @@
 				<!-- 导航栏结束 -->
 				<!-- 数据显示与交互内容开始 -->
 				<div class="workpage well well-lg">
-					<form action="${ctx }/customer/communicate/communicate-list.action?customer.cuId=${customer.cuId}" method="post" id="main-form">
+					<form action="${ctx }/customer/communicate/communicate-list.action" method="post" id="main-form">
+					<input type="hidden" name="customer.cuId" value=${customer.cuId }>
 					<div class="form-inline">
 						<div class="form-group">
 							<div class="input-group">
