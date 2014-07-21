@@ -34,22 +34,30 @@ public class ContactAction extends BaseAction {
 	private Contactperson contactperson;
 	private Customer customer;
 	private Contactperson condition;
-	
-	public String view(){
+
+	public String view() {
 		contactperson = contactpersonService.find(contactperson.getCopeId());
 		return "view";
 	}
-	
-	public String edit(){
+
+	public String edit() {
 		contactperson = contactpersonService.find(contactperson.getCopeId());
 		return "edit";
 	}
-	
-	public String add(){
-		customer = customerService.find(customer.getCuId());
-		return "add";
+
+	@SuppressWarnings("null")
+	public String add() {
+		Contactperson origContact = null;
+		origContact.setCopeName(contactperson.getCopeName());
+		origContact.setCopeSex(contactperson.getCopeSex());
+		origContact.setCopePosition(contactperson.getCopePosition());
+		origContact.setCopeTel(contactperson.getCopeTel());
+		origContact.setCopePhone(contactperson.getCopePhone());
+		origContact.setCopeNote(contactperson.getCopeNote());
+		contactpersonService.add(origContact);
+		return "add-success";
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	public String list() {
 		if (page == null)
@@ -59,21 +67,22 @@ public class ContactAction extends BaseAction {
 			like = new HashMap<String, Object>();
 			if (condition.getCopeName() != null
 					&& !"".equals(condition.getCopeName()))
-				like.put("cuName",  condition.getCopeName() );
+				like.put("cuName", condition.getCopeName());
 			if (condition.getCopePosition() != null
 					&& !"".equals(condition.getCopePosition()))
-				like.put("cuLevel",  condition.getCopePosition() );
+				like.put("cuLevel", condition.getCopePosition());
 			if (condition.getCopePhone() != null
 					&& !"".equals(condition.getCopePhone()))
-				like.put("cuLevel",  condition.getCopePhone() );
+				like.put("cuLevel", condition.getCopePhone());
 		}
-		
+
 		contactpersonService.findByPage(page, like);
 		return "list";
 	}
-	
-	public String save(){
-		Contactperson origContact = contactpersonService.find(contactperson.getCopeId());
+
+	public String save() {
+		Contactperson origContact = contactpersonService.find(contactperson
+				.getCopeId());
 		origContact.setCopeName(contactperson.getCopeName());
 		origContact.setCopeSex(contactperson.getCopeSex());
 		origContact.setCopePosition(contactperson.getCopePosition());
@@ -81,7 +90,7 @@ public class ContactAction extends BaseAction {
 		origContact.setCopePhone(contactperson.getCopePhone());
 		origContact.setCopeNote(contactperson.getCopeNote());
 		contactpersonService.modify(origContact);
-		return "success";
+		return "modify-success";
 	}
 
 	public Page getPage() {
@@ -99,7 +108,7 @@ public class ContactAction extends BaseAction {
 	public void setContactperson(Contactperson contactperson) {
 		this.contactperson = contactperson;
 	}
-	
+
 	public Customer getCustomer() {
 		return customer;
 	}
@@ -115,6 +124,5 @@ public class ContactAction extends BaseAction {
 	public void setCondition(Contactperson condition) {
 		this.condition = condition;
 	}
-	
-}
 
+}

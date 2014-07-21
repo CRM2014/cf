@@ -21,16 +21,15 @@
 				<h5 class="page-header">
 					<ol class="breadcrumb">
 						<li>客户管理</li>
-						<li><a href="list.html">客户信息管理</a></li>
-						<li><a href="view.html">客户基本信息</a></li>
-						<li>编辑客户基本信息</li>
+						<li><a href="${ctx }/customer/customer/customer-list.action">客户信息管理</a></li>
+						<li>客户基本信息</li>
 					</ol>
 				</h5>
 				<!-- 页面路径结束 -->
-				<h3>XX客户基本信息</h3>
+				<h3>查看客户基本信息</h3>
 				<!-- 导航栏开始 -->
 				<ul class="nav nav-tabs col-sm-offset-6 " role="tablist">
-					<li class="active"><a href="${ctx }/customer/basic/basic-list.action?customer.cuId=${customer.cuId}">基本信息</a></li>
+					<li class="active"><a href="${ctx }/customer/customer/customer-view.action?customer.cuId=${customer.cuId}">基本信息</a></li>
 					<li><a href="${ctx }/customer/contact/contact-list.action?customer.cuId=${customer.cuId}">联系人管理</a></li>
 					<li><a href="${ctx }/customer/history/history-list.action?customer.cuId=${customer.cuId}">历史订单管理</a></li>
 					<li><a href="${ctx }/customer/communicate/communicate-list.action?customer.cuId=${customer.cuId}">交往记录管理</a></li>
