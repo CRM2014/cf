@@ -21,7 +21,7 @@
 				<h5 class="page-header">
 					<ol class="breadcrumb">
 						<li>客户管理</li>
-						<li><a href="${ctx }/customer/basic/customer-list.action">客户信息管理</a></li>
+						<li><a href="${ctx }/customer/customer-list.action">客户信息管理</a></li>
 						<li>客户历史订单</li>
 					</ol>
 				</h5>
@@ -29,15 +29,15 @@
 				<h3>${customer.cuName }历史订单管理</h3>
 				<!-- 导航栏开始 -->
 				<ul class="nav nav-tabs col-sm-offset-6 " role="tablist">
-					<li><a href="${ctx }/customer/basic/basic-list.action?customer.cuId=${customer.cuId}">基本信息</a></li>
-					<li><a href="${ctx }/customer/contact/contact-list.action?customer.cuId=${customer.cuId}">联系人管理</a></li>
-					<li class="active"><a href="${ctx }/customer/history/history-list.action?customer.cuId=${customer.cuId}">历史订单管理</a></li>
-					<li><a href="${ctx }/customer/communicate/communicate-list.action?customer.cuId=${customer.cuId}">交往记录管理</a></li>
+					<li><a href="${ctx }/customer/customer-list.action?customer.cuId=${customer.cuId}">基本信息</a></li>
+					<li><a href="${ctx }/customer/contact-list.action?customer.cuId=${customer.cuId}">联系人管理</a></li>
+					<li class="active"><a href="${ctx }/customer/history-list.action?customer.cuId=${customer.cuId}">历史订单管理</a></li>
+					<li><a href="${ctx }/customer/communicate-list.action?customer.cuId=${customer.cuId}">交往记录管理</a></li>
 				</ul>
 				<!-- 导航栏结束 -->
 				<!-- 数据显示与交互内容开始 -->
 				<div class="workpage well well-lg">
-					<form action="${ctx }/customer/history/history-list.action" method="post" id="main-form">
+					<form action="${ctx }/customer/history-list.action" method="post" id="main-form">
 					<input type="hidden" name="customer.cuId" value=${customer.cuId }>
 					<div class="form-inline">
 						<div class="form-group">
@@ -50,10 +50,13 @@
 						<div class="form-group">
 							<div class="input-group">
 								<div class="input-group-addon">订单状态</div>
-								<select class="form-control" name="orderStatus">
-									<s:iterator value="status" id="s">
-										<option value="${s }">${s }</option>
-									</s:iterator>
+								<select class="form-control" name="condition.orreStatus">
+									<option value="1">已下单，未付款</option>
+									<option value="2">已付款，待系统确认</option>
+									<option value="3">已确认，未发货</option>
+									<option value="4">已发货，未收到</option>
+									<option value="5">已收到，未签字</option>
+									<option value="6">订单完成</option>
 								</select>
 							</div>
 						</div>
@@ -79,9 +82,9 @@
 								<td>${orreStatus}</td>
 								<td align="center">
 									<a role="button" class="btn btn-default"
-									href="${ctx }/customer/history/history-view.action?orderRecord.orreId=${orreId}">查看
+									href="${ctx }/customer/history-view.action?orderRecord.orreId=${orreId}">查看
 									</a>
-									<a role="button" href="#${ctx }/customer/history/history-deleteUser.action?orderRecord.orreId=${orreId}"
+									<a role="button" href="#${ctx }/customer/history-deleteUser.action?orderRecord.orreId=${orreId}"
 									onclick="comfirmDelete($(this))" class="btn btn-default">删除
 									</a>
 								</td>

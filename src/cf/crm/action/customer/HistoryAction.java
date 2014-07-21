@@ -1,8 +1,6 @@
 package cf.crm.action.customer;
 
-import java.util.Date;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,9 +39,7 @@ public class HistoryAction extends BaseAction {
 	private Orderrecord condition;
 	private Orderrecord orderRecord;
 	private Customer customer;
-	private List<String> status;
-	private String orderStatus;
-
+	
 	@Override
 	public String execute() throws Exception {
 		return "fail";
@@ -127,4 +123,5 @@ public class HistoryAction extends BaseAction {
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
 	}
+
 }
