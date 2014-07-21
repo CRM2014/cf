@@ -92,6 +92,9 @@
 							</tr>
 						</s:iterator>
 					</table>
+					<!-- 分页栏开始 -->
+					<%@ include file="/view/common/page.jsp"%>
+					<!-- 分页栏结束 -->
 				</div>
 				<!-- 数据显示与交互内容结束 -->
 				</div>
