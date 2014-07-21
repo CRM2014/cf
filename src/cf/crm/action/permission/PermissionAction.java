@@ -41,7 +41,8 @@ public class PermissionAction extends BaseAction {
 		roles.add(Role.CUSTOMER);
 		roles.add(Role.SALES);
 		roles.add(Role.SENIOR);
-		roles.add(Role.SYSTEM);
+		if (Role.ROOT.equals(currentUser.getUsRole()))
+			roles.add(Role.SYSTEM);
 		return "add";
 	}
 
@@ -52,7 +53,8 @@ public class PermissionAction extends BaseAction {
 		roles.add(Role.CUSTOMER);
 		roles.add(Role.SALES);
 		roles.add(Role.SENIOR);
-		roles.add(Role.SYSTEM);
+		if (Role.ROOT.equals(currentUser.getUsRole()))
+			roles.add(Role.SYSTEM);
 		return "modify";
 	}
 
@@ -60,10 +62,6 @@ public class PermissionAction extends BaseAction {
 	public String list() {
 		if (page == null)
 			page = PageHelper.generatePage();
-		Map<String, Object> not = new HashMap<String, Object>();
-		not.put("usRole", Role.ROOT);
-		if (!Role.ROOT.equals(currentUser.getUsRole()))
-			not.put("usRole", Role.SYSTEM);
 
 		Map<String, Object> like = null;
 
@@ -76,7 +74,10 @@ public class PermissionAction extends BaseAction {
 					&& !"".equals(condition.getUsUserName()))
 				like.put("usUserName", condition.getUsUserName());
 		}
-		userService.findByPage(page, like, not);
+		if (Role.ROOT.equals(currentUser.getUsRole()))
+			userService.findByPageIncludeSystem(page, like);
+		else
+			userService.findByPageNoSystem(page, like);
 		return "list";
 	}
 

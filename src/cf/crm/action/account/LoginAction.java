@@ -80,6 +80,7 @@ public class LoginAction extends BaseAction {
 			warn = "验证码错误！";
 			return "login-fail";
 		}
+		session.put("SECURITY_CODE", "");
 		User existUser = userService.findByUserName(user.getUsUserName());
 		if (existUser == null) {
 			log.info("用户名不存在！");

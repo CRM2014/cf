@@ -1,15 +1,18 @@
 package cf.crm.dao.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 import org.hibernate.Criteria;
+import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import cf.crm.dao.UserDao;
 import cf.crm.entity.User;
+import cf.crm.util.Info.Role;
 import cf.crm.util.page.Page;
 
 @Component
@@ -68,5 +71,21 @@ public class UserDaoImpl extends DaoAdapter implements UserDao {
 	public void findByPage(Page<User> page, Map<String, Object> like,
 			Map<String, Object> not) {
 		super.findByPage(User.class, page, null, not, like, null);
+	}
+
+	@Override
+	public void findByPageIncludeSystem(Page<User> page,
+			Map<String, Object> like) {
+		List<Criterion> criterion = new ArrayList<Criterion>();
+		criterion.add(Restrictions.ne("usRole", Role.ROOT));
+		super.findByPage(User.class, page, like, criterion);
+	}
+
+	@Override
+	public void findByPageNoSystem(Page<User> page, Map<String, Object> like) {
+		List<Criterion> criterion = new ArrayList<Criterion>();
+		criterion.add(Restrictions.ne("usRole", Role.ROOT));
+		criterion.add(Restrictions.ne("usRole", Role.SYSTEM));
+		super.findByPage(User.class, page, like, criterion);
 	}
 }
