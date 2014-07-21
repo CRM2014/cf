@@ -85,6 +85,7 @@ public class CommunicateAction extends BaseAction {
 		contactRecord.setCustomer(customerService.find(customerId));
 		contactRecord.setCoreDate(new Date());
 		coreService.add(contactRecord);
+		customer = contactRecord.getCustomer();
 
 		warn = "添加成功";
 

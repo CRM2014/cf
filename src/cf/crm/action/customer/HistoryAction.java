@@ -1,5 +1,6 @@
 package cf.crm.action.customer;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -51,6 +52,10 @@ public class HistoryAction extends BaseAction {
 		if (page == null)
 			page = PageHelper.generatePage();
 		Map<String, Object> like = null;
+//		System.out.println(condition.getOrreDate());
+		/*if (condition.getOrreDate() != null && !"".equals(condition.getOrreDate())
+				&& condition.getOrreDate() instanceof Date)
+			System.out.println("~~~OK~~~");*/
 		if (condition != null) {
 			like = new HashMap<String, Object>();
 			if (condition.getOrreDate() != null
