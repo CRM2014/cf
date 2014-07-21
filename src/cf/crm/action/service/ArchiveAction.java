@@ -41,7 +41,6 @@ public class ArchiveAction extends BaseAction {
 		Map<String, Object> like = null;
 		if (condition != null) {
 			like = new HashMap<String, Object>();
-			like.put("secuSatisfy", "");
 			if (condition.getCustomer().getCuName() != null
 					&& !"".equals(condition.getCustomer().getCuName()))
 				like.put("customerName", condition.getCustomer().getCuName());
@@ -60,7 +59,7 @@ public class ArchiveAction extends BaseAction {
 			 * like.put("seCreateTime", condition.getSeCreateTime());
 			 */
 		}
-		servicecustomerservice.findByPage(page, like);
+		servicecustomerservice.findArchiveByPage(page, like);
 		return "list";
 	}
 
