@@ -16,7 +16,18 @@ public interface ServicecustomerService {
 	public Servicecustomer find(String id);
 
 	public List<Servicecustomer> findList();
-	
+
 	public void findByPage(Page<Servicecustomer> page, Map<String, Object> like);
-	
+
+	void findByPage(Page<Servicecustomer> page, Map<String, Object> eq,
+			Map<String, Object> not, Map<String, Object> like,
+			List<String> empty);
+
+	void findAssignByPage(Page<Servicecustomer> page, Map<String, Object> like);
+
+	void findDealByPage(Page<Servicecustomer> page, Map<String, Object> like);
+
+	void findFeedbackByPage(Page<Servicecustomer> page, Map<String, Object> like);
+
+	void findArchiveByPage(Page<Servicecustomer> page, Map<String, Object> like);
 }
