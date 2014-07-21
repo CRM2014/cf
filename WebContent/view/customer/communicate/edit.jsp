@@ -106,7 +106,7 @@
 							</div>
 							<div class="col-sm-6">
 								<a role="button"
-									href="${ctx }/customer/communicate/communicate-list.action"
+									href="${ctx }/customer/communicate/communicate-list.action?customer.cuId=${customer.cuId}"
 									class="btn btn-default">返回</a>
 							</div>
 						</div>

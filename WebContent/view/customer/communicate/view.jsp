@@ -74,7 +74,7 @@
 							</div>
 							<div class="col-sm-6">
 								<a role="button" class="btn btn-default"
-									href="${ctx }/customer/communicate/communicate-list.action?contactRecord.coreId=${contactRecord.coreId}">
+									href="${ctx }/customer/communicate/communicate-list.action?customer.cuId=${customer.cuId}">
 									返回
 								</a>
 							</div>

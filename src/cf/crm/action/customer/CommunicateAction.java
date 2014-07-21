@@ -67,8 +67,7 @@ public class CommunicateAction extends BaseAction {
 		Map<String, Object> like = new HashMap<String, Object>();;
 		
 		//condition中还差一个客户ID
-		condition = coreService.find(condition.getCoreId());
-		customer = condition.getCustomer();
+		customer = customerService.find(customer.getCuId());
 		
 		if (condition != null) {
 			if (condition.getCoreDate() != null
