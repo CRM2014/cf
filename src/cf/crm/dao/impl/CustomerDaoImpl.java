@@ -65,7 +65,7 @@ public class CustomerDaoImpl extends DaoAdapter implements CustomerDao {
 	//根据条目求出服务数量的
 	@Override
 	public void findServiceByPage(Page page) {
-		String sql = "select cuLevel,count(cuLevel) cuTotal from customer group by cuLevel";
+		String sql = "select seType,count(seType) seTotal from service group by seType";
 		super.findByPage(page, sql);
 	}
 	
