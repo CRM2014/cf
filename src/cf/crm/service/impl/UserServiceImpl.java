@@ -59,4 +59,10 @@ public class UserServiceImpl implements UserService {
 	public List<User> findListByRole(String role) {
 		return userDao.findListByRole(role);
 	}
+
+	@Override
+	public void findByPage(Page<User> page, Map<String, Object> like,
+			Map<String, Object> not) {
+		userDao.findByPage(page, like, not);
+	}
 }

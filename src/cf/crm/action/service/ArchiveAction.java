@@ -30,6 +30,10 @@ public class ArchiveAction extends BaseAction {
 	private Servicecustomer servicecustomer;
 	private Servicecustomer condition;
 
+	public String archive() {
+		return "archive";
+	}
+
 	@SuppressWarnings("unchecked")
 	public String list() {
 		if (page == null)

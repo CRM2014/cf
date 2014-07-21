@@ -60,7 +60,13 @@ public class PermissionAction extends BaseAction {
 	public String list() {
 		if (page == null)
 			page = PageHelper.generatePage();
+		Map<String, Object> not = new HashMap<String, Object>();
+		not.put("usRole", Role.ROOT);
+		if (!Role.ROOT.equals(currentUser.getUsRole()))
+			not.put("usRole", Role.SYSTEM);
+
 		Map<String, Object> like = null;
+
 		if (condition != null) {
 			like = new HashMap<String, Object>();
 			if (condition.getUsRole() != null
@@ -70,7 +76,7 @@ public class PermissionAction extends BaseAction {
 					&& !"".equals(condition.getUsUserName()))
 				like.put("usUserName", condition.getUsUserName());
 		}
-		userService.findByPage(page, like);
+		userService.findByPage(page, like, not);
 		return "list";
 	}
 

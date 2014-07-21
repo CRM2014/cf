@@ -30,7 +30,7 @@ public class FeedbackAction extends BaseAction {
 	private Servicecustomer servicecustomer;
 	private Servicecustomer condition;
 
-	public String feeedback() {
+	public String feedback() {
 		servicecustomer = servicecustomerservice.find(servicecustomer
 				.getSecuId());
 		return "feedback";
