@@ -18,6 +18,7 @@ PageInfo.prototype.generate = function() {
 	} finally {
 	}
 	permission();
+
 };
 
 function submitMain() {
@@ -66,5 +67,12 @@ function permission() {
 		}
 
 	}
+}
 
+function warn(msg) {
+	var content = $("#warn").html();
+	content += "<div class='alert alert-warning fade in' role='alert'>";
+	content += "<button type='button' class='close' data-dismiss='alert'><span aria-hidden='true'>×</span><span class='sr-only'>Close</span></button>"
+	content += "<strong>" + msg + "</strong></div>";
+	$("#warn").html(content);
 }

@@ -31,6 +31,8 @@ public class ArchiveAction extends BaseAction {
 	private Servicecustomer condition;
 
 	public String archive() {
+		servicecustomer = servicecustomerservice.find(servicecustomer
+				.getSecuId());
 		return "archive";
 	}
 

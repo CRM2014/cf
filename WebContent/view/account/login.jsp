@@ -20,6 +20,16 @@
 						<div class="container-fluid"></div>
 						<h2 class="form-signin-heading text-center">CF客户关系管理系统</h2>
 						<br>
+						<div id="warn">
+						</div>
+						<s:if test="%{warn!=null&&warn!=''}">
+							<div class="alert alert-warning fade in" role="alert">
+								<button type="button" class="close" data-dismiss="alert">
+									<span aria-hidden="true">×</span><span class="sr-only">Close</span>
+								</button>
+								<strong>${warn}</strong>
+							</div>
+						</s:if>
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-3 control-label">用户名：</label>
 							<div class="col-sm-8">

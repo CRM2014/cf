@@ -55,36 +55,42 @@ public class LoginAction extends BaseAction {
 	public String checkLogin() {
 		if (user == null) {
 			log.info("用户为空！");
+			warn = "用户名或密码错误！";
 			return "login-fail";
 		}
 		if (user.getUsUserName() == null) {
 			log.info("用户名为空！");
+			warn = "用户名或密码错误！";
 			return "login-fail";
 		}
 		if (user.getUsPassword() == null) {
 			log.info("密码为空！");
+			warn = "用户名或密码错误！";
 			return "login-fail";
 		}
 		if (securityCode == null) {
 			log.info("验证码为空！");
+			warn = "用户名或密码错误！";
 			return "login-fail";
 		}
 		Map<String, Object> session = ActionContext.getContext().getSession();
-		if (!session.get("SECURITY_CODE").toString()
-				.equals(securityCode)) {
+		if (!session.get("SECURITY_CODE").toString().equals(securityCode)) {
 			log.info("输入验证码：" + securityCode);
 			log.info("验证码错误！");
+			warn = "验证码错误！";
 			return "login-fail";
 		}
 		User existUser = userService.findByUserName(user.getUsUserName());
 		if (existUser == null) {
 			log.info("用户名不存在！");
+			warn = "用户名或密码错误！";
 			return "login-fail";
 		}
 
 		user.setUsPassword(MD5Util.getMD5String(user.getUsPassword()));
 		if (!existUser.getUsPassword().equals(user.getUsPassword())) {
 			log.info("密码错误！");
+			warn = "用户名或密码错误！";
 			return "login-fail";
 		} else {
 			session.put("USER_ID", existUser.getUsId());

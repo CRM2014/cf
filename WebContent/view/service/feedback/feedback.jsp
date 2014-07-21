@@ -33,32 +33,32 @@
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">编号：</label>
 							<div class="col-sm-3">
-								<input type="email" class="form-control" disabled
+								<input type="text" class="form-control" disabled
 									value="${ servicecustomer.secuId}"> <input type="hidden"
 									name="servicecustomer.secuId" value="${ servicecustomer.secuId}">
 							</div>
 							<label for="inputEmail3" class="col-sm-2 control-label">服务类型：</label>
 							<div class="col-sm-3">
-								<input type="email" class="form-control" disabled
+								<input type="text" class="form-control" disabled
 									value="${ servicecustomer.service.seType}">
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">客户：</label>
 							<div class="col-sm-3">
-								<input type="email" class="form-control" disabled
+								<input type="text" class="form-control" disabled
 									value="${ servicecustomer.customer.cuName}"> 
 							</div>
 							<label for="inputEmail3" class="col-sm-2 control-label">产品：</label>
 							<div class="col-sm-3">
-								<input type="email" class="form-control" disabled
+								<input type="text" class="form-control" disabled
 									value="${ servicecustomer.service.product.prName}"> 
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">概要：</label>
 							<div class="col-sm-8">
-								<input type="email" class="form-control" disabled
+								<input type="text" class="form-control" disabled
 									value="${ servicecustomer.service.seMain}"> 
 							</div>
 
@@ -66,12 +66,12 @@
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">创建人</label>
 							<div class="col-sm-3">
-								<input type="email" class="form-control" disabled
+								<input type="text" class="form-control" disabled
 									value="${ servicecustomer.userByUsAllocationId.usName}"> 
 							</div>
 							<label for="inputEmail3" class="col-sm-2 control-label">创建时间</label>
 							<div class="col-sm-3">
-								<input type="email" class="form-control" disabled
+								<input type="text" class="form-control" disabled
 									value="${ servicecustomer.service.seCreateTime}"> 
 							</div>
 						</div>
@@ -79,12 +79,12 @@
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">分配给</label>
 							<div class="col-sm-3">
-								<input type="email" class="form-control" disabled
+								<input type="text" class="form-control" disabled
 									value="${ servicecustomer.userByUsDealId.usName}">
 							</div>
 							<label for="inputEmail3" class="col-sm-2 control-label">分配时间</label>
 							<div class="col-sm-3">
-								<input type="email" class="form-control" disabled
+								<input type="text" class="form-control" disabled
 									value="${ servicecustomer.secuAllocationTime}">
 							</div>
 						</div>
@@ -97,12 +97,12 @@
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">处理人</label>
 							<div class="col-sm-3">
-								<input type="email" class="form-control" disabled
+								<input type="text" class="form-control" disabled
 									value="${ servicecustomer.userByUsDealId.usName}">
 							</div>
 							<label for="inputEmail3" class="col-sm-2 control-label">处理时间</label>
 							<div class="col-sm-3">
-								<input type="email" class="form-control" disabled
+								<input type="text" class="form-control" disabled
 									value="${ servicecustomer.secuDealTime}">
 							</div>
 						</div>
