@@ -47,7 +47,6 @@ public class CustomerServiceImpl implements CustomerService {
 
 	@Override
 	public void findByPage(Page<Customer> page, Map<String, Object> like) {
-		// TODO Auto-generated method stub
 		customerDao.findByPage(page, like);
 	}
 

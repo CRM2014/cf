@@ -1,6 +1,7 @@
 package cf.crm.dao.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
@@ -9,6 +10,8 @@ import org.springframework.stereotype.Component;
 
 import cf.crm.dao.OutflowDao;
 import cf.crm.entity.Outflow;
+import cf.crm.entity.Product;
+import cf.crm.util.page.Page;
 
 @Component
 @Scope("prototype")
@@ -38,6 +41,12 @@ public class OutflowDaoImpl extends DaoAdapter implements OutflowDao {
 	@Override
 	public List<Outflow> findList() {
 		return (List<Outflow>) super.findList(Outflow.class);
+	}
+
+	@Override
+	public void findByPage(Page<Outflow> page, Map<String, Object> like) {
+		super.findByPage(Outflow.class, page, like);
+		
 	}
 
 	

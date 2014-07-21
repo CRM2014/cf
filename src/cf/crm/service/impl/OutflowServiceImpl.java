@@ -1,6 +1,7 @@
 package cf.crm.service.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Component;
 import cf.crm.dao.OutflowDao;
 import cf.crm.entity.Outflow;
 import cf.crm.service.OutflowService;
+import cf.crm.util.page.Page;
 
 @Component
 @Scope("prototype")
@@ -41,6 +43,11 @@ public class OutflowServiceImpl implements OutflowService {
 	@Override
 	public List<Outflow> findList() {
 		return outflowDao.findList();
+	}
+
+	@Override
+	public void findByPage(Page<Outflow> page, Map<String, Object> like) {
+		outflowDao.findByPage(page, like);
 	}
 
 	
