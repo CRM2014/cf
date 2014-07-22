@@ -29,12 +29,13 @@
 				<!-- 数据显示与交互内容开始 -->
 				<div class="workpage well well-lg">
 
-					<form class="form-inline" role="form">
+				<form action="${ctx }/customer/customer-list.action" method="post"
+					id="main-form">
 						<div class="form-group">
 							<div class="input-group">
 								<div class="input-group-addon">客户名称</div>
-								<input class="form-control" type="text" placeholder=""
-								name="condition.usCustomerName" value="">
+									<input class="form-control" type="text" placeholder=""
+										name="condition.cuName" value="${condition.cuName}">
 							</div>
 						</div>
 
@@ -66,8 +67,8 @@
 							<td align="center">订单金额（元）</td>
 						</tr>
 						<tr>
-							<td align="center">1</td>
-							<td></td>
+							<td>${cuId}</td>
+							<td>${cuName}</td>
 							<td></td>
 						</tr>
 					</table>
