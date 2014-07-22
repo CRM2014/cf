@@ -68,6 +68,7 @@
 							<td align="center">创建时间</td>
 							<td align="center">操作</td>
 						</tr>
+							<s:iterator value="%{page.list}">
 						<tr>
 							<td>${sachId}</td>
 							<td>${usCustomerName}</td>
@@ -80,6 +81,7 @@
 							  	 <a role="button"href="${ctx }/marketing/plan-deletedevelopment.action?salechance.sachId=${deId}" class="btn btn-default">删除</a>
 							</td>
 						</tr>
+							</s:iterator>
 					</table>
 				</div>
 				<!-- 数据显示与交互内容结束 -->
