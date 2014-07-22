@@ -1,4 +1,4 @@
-﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -28,39 +28,33 @@
 				<h3>客户开发计划管理</h3>
 				<!-- 数据显示与交互内容开始 -->
 				<div class="workpage well well-lg">
-
-					<form class="form-inline" role="form"
-						action="${ctx }/marketing/plan-list.action" method="post">
+					
+					<form class="form-inline" role="form">
 						<div class="form-group">
 							<div class="input-group">
 								<div class="input-group-addon">客户名称</div>
-								<input class="form-control" type="text" placeholder=""
-									name="development.salechance.usCustomerName"
-									value="${ development.salechance.usCustomerName}">
+								<input class="form-control" type="text" placeholder="">
 							</div>
 						</div>
 
 						<div class="form-group">
 							<div class="input-group">
 								<div class="input-group-addon">概要</div>
-								<input class="form-control" type="text" placeholder=""
-									name="development.salechance.usMain"
-									value="${ development.salechance.usMain}">
+								<input class="form-control" type="text" placeholder="">
 							</div>
 						</div>
 
 						<div class="form-group">
 							<div class="input-group">
 								<div class="input-group-addon">联系人</div>
-								<input class="form-control" type="text" placeholder=""
-									name="development.salechance.usContanct"
-									value="${ development.salechance.usContanct}">
+								<input class="form-control" type="text" placeholder="">
 							</div>
 						</div>
 
-						<button type="submit" class="btn btn-default">
+						<a role="button" class="btn btn-default">
 							<span class="glyphicon glyphicon-search"></span> 查询
-						</button>
+						</a>
+						   
 
 					</form>
 
@@ -74,27 +68,28 @@
 							<td align="center">创建时间</td>
 							<td align="center">操作</td>
 						</tr>
-						<s:iterator value="%{page.list}">
-							<tr>
-								<td>${deId}</td>
-								<td>${salechance.usCustomerName}</td>
-								<td>${dePlan}</td>
-								<td>${deResult}</td>
-								<td>${deDate}</td>
-
-								<td align="center"><a role="button"
-									href="${ctx }/marketing/plan-execute.action?salechance.sachId=${salechance.sachId}"
-									class="btn btn-default">执行计划</a></td>
-							</tr>
-						</s:iterator>
+							<s:iterator value="%{page.list}">
+						<tr>
+							<td>${sachId}</td>
+							<td>${usCustomerName}</td>
+							<td>${dePlan}</td>
+							<td>${deResult}</td>	
+							<td>${deDate}</td>
+							<td align="center">
+                                <a role="button" href="${ctx }/marketing/plan-execute.action?salechance.sachId=${deId}"  class="btn btn-default">执行计划</a>
+							 	<a role="button" href="${ctx }/marketing/plan-modifydevelopment.action?salechance.sachId=${deId}"  class="btn btn-default">修改</a>
+							  	 <a role="button"href="${ctx }/marketing/plan-deletedevelopment.action?salechance.sachId=${deId}" class="btn btn-default">删除</a>
+							</td>
+						</tr>
+							</s:iterator>
 					</table>
 				</div>
 				<!-- 数据显示与交互内容结束 -->
-			</div>
+				</div>
 			<!-- 主要内容结束 -->
 		</div>
 	</div>
-
+	
 	<!-- js开始 -->
 	<%@ include file="/view/common/js.jsp"%>
 	<script type="text/javascript">

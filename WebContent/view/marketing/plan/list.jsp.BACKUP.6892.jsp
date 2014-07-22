@@ -1,4 +1,4 @@
-﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -74,6 +74,7 @@
 							<td align="center">创建时间</td>
 							<td align="center">操作</td>
 						</tr>
+<<<<<<< HEAD
 						<s:iterator value="%{page.list}">
 							<tr>
 								<td>${deId}</td>
@@ -87,6 +88,22 @@
 									class="btn btn-default">执行计划</a></td>
 							</tr>
 						</s:iterator>
+=======
+							<s:iterator value="%{page.list}">
+						<tr>
+							<td>${sachId}</td>
+							<td>${usCustomerName}</td>
+							<td>${dePlan}</td>
+							<td>${deResult}</td>	
+							<td>${deDate}</td>
+							<td align="center">
+                                <a role="button" href="${ctx }/marketing/plan-execute.action?salechance.sachId=${deId}"  class="btn btn-default">执行计划</a>
+							 	<a role="button" href="${ctx }/marketing/plan-modifydevelopment.action?salechance.sachId=${deId}"  class="btn btn-default">修改</a>
+							  	 <a role="button"href="${ctx }/marketing/plan-deletedevelopment.action?salechance.sachId=${deId}" class="btn btn-default">删除</a>
+							</td>
+						</tr>
+							</s:iterator>
+>>>>>>> origin/Csrr
 					</table>
 				</div>
 				<!-- 数据显示与交互内容结束 -->
