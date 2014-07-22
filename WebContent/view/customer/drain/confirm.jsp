@@ -76,7 +76,7 @@
 									class="btn btn-default ">保存</button>
 							<a role="button" class="btn btn-default" href="customer/drain-list.action">返回</a>
 							<a role="button" class="btn btn-default"
-									href="${ctx }/customer/drain-reprieve.action?outflow.ouflId=${ouflId}">暂缓流失</a>
+									href="${ctx }/customer/drain-reprieve.action?outflow.ouflId=${outflow.ouflId}">暂缓流失</a>
 						</div>
 
 					</form>

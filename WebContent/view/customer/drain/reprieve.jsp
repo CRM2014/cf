@@ -34,7 +34,6 @@
 						
 						
 						<input type="hidden" class="form-control" name="outflow.ouflId" value="${ outflow.ouflId}">
-						<input type="text" class="form-control" name="outflow.ouflId" value="${ outflow.ouflId}" disabled>
 						
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">客户ID</label>
@@ -67,7 +66,7 @@
 									class="btn btn-default ">保存</button>
 							<a role="button" class="btn btn-default" href="customer/drain-list.action">返回</a>
 							<a role="button" class="btn btn-default" 
-									href="${ctx }/customer/drain-confirm.action?outflow.ouflId=${ouflId}">确认流失</a>
+									href="${ctx }/customer/drain-confirm.action?outflow.ouflId=${outflow.ouflId}">确认流失</a>
 						</div>
 
 					</form>

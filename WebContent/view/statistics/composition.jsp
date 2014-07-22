@@ -64,16 +64,24 @@
 					</table>
 				</div>
 				<!-- 数据显示与交互内容结束 -->
-				</div>
+			</div>
 			<!-- 主要内容结束 -->
 		</div>
 	</div>
-	
+
 	<!-- js开始 -->
 	<%@ include file="/view/common/js.jsp"%>
 	<script type="text/javascript">
 		var pageInfo = new PageInfo(4);
 		pageInfo.generate();
+
+		$(document).ready(function() {
+			$.ajax({
+				url : "${ctx }/ajax/ajaxStatistice-modifySalechance.action",
+				success : function(data) {
+				}
+			});
+		});
 	</script>
 	<!-- js结束 -->
 
