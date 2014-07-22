@@ -1,8 +1,10 @@
 package cf.crm.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import cf.crm.entity.Outflow;
+import cf.crm.util.page.Page;
 
 public interface OutflowDao extends Dao {
 	public void add(Outflow outflow);
@@ -14,5 +16,7 @@ public interface OutflowDao extends Dao {
 	public Outflow find(String id);
 
 	public List<Outflow> findList();
+
+	public void findByPage(Page<Outflow> page, Map<String, Object> like);
 	
 }

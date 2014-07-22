@@ -35,14 +35,22 @@
 							<td align="center">客户状态</td>
 							<td align="center">操作</td>
 						</tr>
+						<s:iterator value="%{page.list}">
 						<tr>
-							<td></td>
-							<td></td>
-							<td align="center"><a role="button" class="btn btn-default"
-								href="customer/runoff-reprieve.action">暂缓流失</a> <a role="button"
-								class="btn btn-default" href="customer/runoff-confirm.action">确认流失</a>
-								<button type="button" class="btn btn-default">恢复正常</button></td>
+							<td>${customer.cuId}</td>
+							<td>${ouflStatus}</td>
+							<td align="center">
+								<a role="button" class="btn btn-default"
+									href="${ctx }/customer/drain-reprieve.action?outflow.ouflId=${ouflId}">暂缓流失</a> 
+								<a role="button" class="btn btn-default" 
+									href="${ctx }/customer/drain-confirm.action?outflow.ouflId=${ouflId}">确认流失</a>
+								<a role="button" class="btn btn-default" 
+								   href="#${ctx }/customer/drain-delete.action?outflow.ouflId=${ouflId}"
+								   onclick="comfirmDelete($(this))">回复正常</a>
+							</td>
+								
 						</tr>
+						</s:iterator>
 					</table>
 				</div>
 				<!-- 数据显示与交互内容结束 -->

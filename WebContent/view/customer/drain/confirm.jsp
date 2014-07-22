@@ -28,22 +28,36 @@
 				<h3>确认客户流失</h3>
 				<!-- 数据显示与交互内容开始 -->
 				<div class="workpage well well-lg">
-					<form class="form-horizontal" role="form">
+					<form class="form-horizontal" role="form"
+						action="${ctx }/customer/drain-confirmAdd.action"
+						method="post">
+						
+						<input type="hidden" class="form-control" name="outflow.ouflId" value="${ outflow.ouflId}">
+						
 
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">客户ID</label>
 							<div class="col-sm-3">
-								<input type="email" class="form-control" id="">
+								<input type="text" class="form-control" name="outflow.customer.cuId"
+									value="${ outflow.customer.cuId}" disabled>
+								<input type="hidden" class="form-control" name="outflow.customer.cuId"
+									value="${ outflow.customer.cuId}">
 							</div>
 							<label for="inputEmail3" class="col-sm-2 control-label">客户状态</label>
 							<div class="col-sm-3">
-								<input type="email" class="form-control" id="">
+								<input type="text" class="form-control" name="outflow.ouflStatus"
+									value="${ outflow.ouflStatus}" disabled>
+								<input type="hidden" class="form-control" name="outflow.ouflStatus"
+									value="${ outflow.ouflStatus}" disabled>
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">暂缓措施</label>
 							<div class="col-sm-8">
-								<textarea class="form-control" rows="3" disabled></textarea>
+								<input class="form-control" rows="3" name="outflow.ouflAction"
+									value="${ outflow.ouflAction}" disabled></input>
+								<input type="hidden" class="form-control" rows="3" name="outflow.ouflAction"
+									value="${ outflow.ouflAction}" ></input>
 							</div>
 
 						</div>
@@ -52,14 +66,17 @@
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">流失原因</label>
 							<div class="col-sm-8">
-								<textarea class="form-control" rows="3"></textarea>
+								<input class="form-control" rows="3" name="outflow.ouflReson"
+									value="${ outflow.ouflReson}"></input>
 							</div>
 
 						</div>
 						<div align="center">
-							<a type="button" class="btn btn-default" href="list.html">保存</a>
-							<a type="button" class="btn btn-default" href="list.html">返回</a>
-							<a type="button" class="btn btn-default" href="reprieve.html">暂缓流失</a>
+							<button type="submit"
+									class="btn btn-default ">保存</button>
+							<a role="button" class="btn btn-default" href="customer/drain-list.action">返回</a>
+							<a role="button" class="btn btn-default"
+									href="${ctx }/customer/drain-reprieve.action?outflow.ouflId=${ouflId}">暂缓流失</a>
 						</div>
 
 					</form>

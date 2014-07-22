@@ -1,9 +1,19 @@
 package cf.crm.action.customer;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import cf.crm.action.BaseAction;
+import cf.crm.entity.Datadictionary;
+import cf.crm.entity.Outflow;
+import cf.crm.service.OutflowService;
+import cf.crm.util.page.Page;
+import cf.crm.util.page.PageHelper;
 @Controller
 @Scope("prototype")
 public class DrainAction extends BaseAction {
@@ -13,6 +23,15 @@ public class DrainAction extends BaseAction {
 	 */
 	private static final long serialVersionUID = 1452512885255618539L;
 
+	@Autowired
+	@Qualifier("outflowServiceImpl")
+	private OutflowService OutflowService;
+	private Page<Outflow> page;
+
+	private Outflow outflow;
+	private Outflow condition;
+	
+	
 	@Override
 	public String execute() throws Exception {
 		return "fail";
@@ -21,12 +40,76 @@ public class DrainAction extends BaseAction {
 		return "init";
 	}
 	public String reprieve(){
+		outflow = OutflowService.find(outflow.getOuflId());
 		return "reprieve";
 	}
 	public String confirm(){
+		outflow = OutflowService.find(outflow.getOuflId());
 		return "confirm";
 	}
 	public String list(){
+		if (page == null)
+			page = PageHelper.generatePage();
+		Map<String, Object> like = null;
+		if (condition != null) {
+			like = new HashMap<String, Object>();
+		}
+		OutflowService.findByPage(page, like);
 		return "list";
 	}
+	
+	public String reprieveAdd(){
+		Outflow origOutFl = OutflowService.find(outflow.getOuflId());
+		origOutFl.setOuflAction(outflow.getOuflAction());
+		origOutFl.setOuflStatus("暂缓流失");
+		OutflowService.modify(origOutFl);
+
+		warn = " Success!";
+		return "reprieve-success";
+	}
+	
+	public String confirmAdd(){
+		Outflow origOutFl = OutflowService.find(outflow.getOuflId());
+		origOutFl.setOuflReson(outflow.getOuflReson());
+		origOutFl.setOuflStatus("确认流失");
+		OutflowService.modify(origOutFl);
+
+		warn = " Success!";
+		return "confirm-success";
+	}
+	
+	public String delete(){
+		outflow = OutflowService.find(outflow.getOuflId());
+		OutflowService.remove(outflow);
+		
+		warn = "Delete Success!";
+		return "delete-success";
+	}
+	
+	
+	public Outflow getCondition() {
+		return condition;
+	}
+
+	public void setCondition(Outflow condition) {
+		this.condition = condition;
+	}
+
+	public Page<Outflow> getPage() {
+		return page;
+	}
+
+	public void setPage(Page<Outflow> page) {
+		this.page = page;
+	}
+
+	public Outflow getOutflow() {
+		return outflow;
+	}
+
+	public void setOutflow(Outflow outflow) {
+		this.outflow = outflow;
+	}
+	
+	
 }
