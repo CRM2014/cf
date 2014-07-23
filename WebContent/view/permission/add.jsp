@@ -20,7 +20,8 @@
 				<!-- 页面路径开始 -->
 				<h5 class="page-header">
 					<ol class="breadcrumb">
-						<li>用户管理</li>
+						<li>权限管理</li>
+						<li>用户列表</li>
 						<li>新建用户</li>
 					</ol>
 				</h5>

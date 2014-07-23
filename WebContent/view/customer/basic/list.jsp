@@ -21,7 +21,7 @@
 				<h5 class="page-header">
 					<ol class="breadcrumb">
 						<li>客户管理</li>
-						<li><a href="${ctx }/customer/customer/customer-list.action">客户信息管理</a></li>
+						<li>客户信息管理</li>
 						<li>客户列表</li>
 					</ol>
 				</h5>

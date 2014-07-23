@@ -20,8 +20,9 @@
 				<!-- 页面路径开始 -->
 				<h5 class="page-header">
 					<ol class="breadcrumb">
-						<li>服务管理</li>
-						<li>服务创建</li>
+						<li>数据基础</li>
+						<li>数据字典管理</li>
+						<li>创建数据字典目录</li>
 					</ol>
 				</h5>
 				<!-- 页面路径结束 -->

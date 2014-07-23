@@ -20,8 +20,8 @@
 				<!-- 页面路径开始 -->
 				<h5 class="page-header">
 					<ol class="breadcrumb">
-						<li>服务管理</li>
-						<li>服务创建</li>
+						<li>统计报表</li>
+						<li>客户构成分析</li>
 					</ol>
 				</h5>
 				<!-- 页面路径结束 -->
