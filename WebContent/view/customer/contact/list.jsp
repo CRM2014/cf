@@ -65,7 +65,7 @@
 								<div class="input-group">
 									<div class="input-group-addon">手机</div>
 									<input class="form-control" type="text" placeholder=""
-										name="condition.copeTel" value="${condition.copePhone}">
+										name="condition.copePhone" value="${condition.copePhone}">
 								</div>
 							</div>
 
