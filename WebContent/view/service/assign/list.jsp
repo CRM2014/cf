@@ -29,7 +29,7 @@
 				<!-- 数据显示与交互内容开始 -->
 				<div class="workpage well well-lg">
 					<form class="form-inline" role="form"
-					action="${ctx }/service/assign-list.action" method="post">
+						action="${ctx }/service/assign-list.action" method="post">
 						<div class="form-group">
 							<div class="input-group">
 								<div class="input-group-addon">客户</div>
@@ -58,24 +58,20 @@
 						</div>
 						<br /> <br />
 						<div class="form-group">
-							<div class="input-group">
-								<div class="input-group-addon">创建时间</div>
-								<input class="form-control" type="text" placeholder="" name=""
-									value="">
+							<div class="input-group date form_date" data-date=""
+								data-date-format="yyyy MM dd" data-link-field="dtp_input2"
+								data-link-format="yyyy-mm-dd">
+								<div class="input-group-addon">日期</div>
+								<input class="form-control" size="16" type="text" value=""
+									readonly> <span class="input-group-addon"><span
+									class="glyphicon glyphicon-remove"></span></span> <span
+									class="input-group-addon"><span
+									class="glyphicon glyphicon-calendar"></span></span>
 							</div>
+							<input type="hidden" id="dtp_input2"
+								value="${ condition.service.seCreateTime}"
+								name="condition.service.seCreateTime"><br>
 						</div>
-						<div class="form-group">
-							<div class="input-group">
-								<label>-</label>
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="input-group">
-								<input class="form-control" type="text" placeholder="" name=""
-									value="">
-							</div>
-						</div>
-
 						<button type="submit" class="btn btn-default">
 							<span class="glyphicon glyphicon-search"></span> 查询
 						</button>
@@ -123,6 +119,18 @@
 	<script type="text/javascript">
 		var pageInfo = new PageInfo(3);
 		pageInfo.generate();
+	</script>
+	<script type="text/javascript">
+		$('.form_date').datetimepicker({
+			language : 'zh-CN',
+			weekStart : 1,
+			todayBtn : 1,
+			autoclose : 1,
+			todayHighlight : 1,
+			startView : 2,
+			minView : 2,
+			forceParse : 0
+		});
 	</script>
 	<!-- js结束 -->
 
