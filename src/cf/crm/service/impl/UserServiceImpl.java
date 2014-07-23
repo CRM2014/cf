@@ -61,12 +61,6 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public void findByPage(Page<User> page, Map<String, Object> like,
-			Map<String, Object> not) {
-		userDao.findByPage(page, like, not);
-	}
-
-	@Override
 	public void findByPageIncludeSystem(Page<User> page,
 			Map<String, Object> like) {
 		userDao.findByPageIncludeSystem(page, like);

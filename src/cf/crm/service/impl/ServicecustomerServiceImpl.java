@@ -52,14 +52,6 @@ public class ServicecustomerServiceImpl implements ServicecustomerService {
 	}
 
 	@Override
-	public void findByPage(Page<Servicecustomer> page, Map<String, Object> eq,
-			Map<String, Object> not, Map<String, Object> like,
-			List<String> empty) {
-		servicecustomerDao.findByPage(Servicecustomer.class, page, eq, not,
-				like, empty);
-	}
-
-	@Override
 	public void findAssignByPage(Page<Servicecustomer> page,
 			Map<String, Object> like) {
 		servicecustomerDao.findAssignByPage(page, like);

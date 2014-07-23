@@ -24,9 +24,6 @@ public interface UserService {
 
 	public List<User> findListByRole(String string);
 
-	public void findByPage(Page<User> page, Map<String, Object> like,
-			Map<String, Object> not);
-
 	public void findByPageIncludeSystem(Page<User> page,
 			Map<String, Object> like);
 

@@ -68,12 +68,6 @@ public class UserDaoImpl extends DaoAdapter implements UserDao {
 	}
 
 	@Override
-	public void findByPage(Page<User> page, Map<String, Object> like,
-			Map<String, Object> not) {
-		super.findByPage(User.class, page, null, not, like, null);
-	}
-
-	@Override
 	public void findByPageIncludeSystem(Page<User> page,
 			Map<String, Object> like) {
 		List<Criterion> criterion = new ArrayList<Criterion>();

@@ -20,10 +20,14 @@ public interface CustomerService {
 	public void findByPage(Page<Customer> page, Map<String, Object> like);
 
 	public void findContributionByPage(Page page);
-	
+
 	public void findCompositionByPage(Page page);
-	
+
 	public void findServiceByPage(Page page);
-	
+
 	public void findDrainByPage(Page page);
+
+	public Object getOrderNumber();
+
+	public List<Object> getCustomerNumber();
 }

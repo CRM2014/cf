@@ -29,7 +29,7 @@
 				<!-- 数据显示与交互内容开始 -->
 				<div class="workpage well well-lg">
 
-					<form class="form-inline" role="form">
+					<div class="form-inline">
 						<div class="form-group">
 							<div class="input-group">
 								<div class="input-group-addon">客户名称</div>
@@ -54,8 +54,9 @@
 						<button type="submit" class="btn btn-default">
 							<span class="glyphicon glyphicon-search"></span> 查询
 						</button>
-
-					</form>
+						<button class="btn btn-default" data-toggle="modal"
+							data-target="#chart">订单数量走势</button>
+					</div>
 
 					<br> <br>
 					<table class="table table-bordered" align="center" valign="middle">
@@ -80,14 +81,77 @@
 			<!-- 主要内容结束 -->
 		</div>
 	</div>
+	<!-- 统计图表开始 -->
+	<div class="modal fade" id="chart" tabindex="-1" role="dialog"
+		aria-labelledby="mySmallModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">×</span><span class="sr-only">Close</span>
+					</button>
+					<h4 class="modal-title" id="mySmallModalLabel">订单数量走势</h4>
+				</div>
 
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-md-offset-1 col-md-10">
+							<canvas id="canvas" style="height: 450px"></canvas>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 统计图表结束 -->
 	<!-- js开始 -->
 	<%@ include file="/view/common/js.jsp"%>
 	<script type="text/javascript">
 		var pageInfo = new PageInfo(4);
 		pageInfo.generate();
+
+		$('#chart')
+				.on(
+						'shown.bs.modal',
+						function(e) {
+							$
+									.ajax({
+										url : '${ctx }/ajax/statistics-contribution.action',
+										success : function(data, textStatus,
+												jqXHR) {
+											arr = eval("(" + data + ")");
+											var lineChartData = {
+												labels : [ "7月", "8月", "9月",
+														"10月", "11月", "12月",
+														"1月", "2月", "3月", "4月",
+														"5月", "6月", ],
+												datasets : [ {
+													label : "订单数量走势",
+													fillColor : "rgba(220,220,220,0.2)",
+													strokeColor : "rgba(220,220,220,1)",
+													pointColor : "rgba(220,220,220,1)",
+													pointStrokeColor : "#fff",
+													pointHighlightFill : "#fff",
+													pointHighlightStroke : "rgba(220,220,220,1)",
+													data : arr
+												} ]
+
+											};
+											var ctx = $("#canvas").get(0)
+													.getContext("2d");
+											window.myLine = new Chart(ctx)
+													.Line(lineChartData, {
+														responsive : true
+													});
+										},
+										error : function(jqXHR, textStatus,
+												errorThrown) {
+											alert(textStatus + errorThrown);
+										}
+									});
+						});
 	</script>
 	<!-- js结束 -->
-
 </body>
 </html>

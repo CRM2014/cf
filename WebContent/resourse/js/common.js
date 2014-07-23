@@ -76,3 +76,18 @@ function warn(msg) {
 	content += "<strong>" + msg + "</strong></div>";
 	$("#warn").html(content);
 }
+$(document).ajaxSend(function(event, jqXHR, ajaxOptions) {
+
+});
+
+$(document).ajaxError(function(event, jqXHR, ajaxSettings, thrownError) {
+
+});
+
+$(document).ajaxSuccess(function(event, jqXHR, ajaxOptions) {
+
+});
+
+$(document).ajaxComplete(function(event, jqXHR, ajaxOptions) {
+
+});
