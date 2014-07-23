@@ -170,12 +170,10 @@
 						<div class="form-group">
 							<label for="usName" class="col-sm-2 control-label">所属客户经理：</label>
 							<div class="col-sm-3">
-								<select class="form-control">
-									<option>小王</option>
-									<option>小李</option>
-									<option>小刘</option>
-									<option>小赵</option>
-									<option>小吴</option>
+								<select class="form-control" name="userId">
+									<s:iterator value="users" id="u">
+										<option value="${ u.usId}">${u.usName }</option>
+									</s:iterator>
 								</select>
 							</div>
 							<label for="satisfy" class="col-sm-2 control-label">客户满意度：</label>

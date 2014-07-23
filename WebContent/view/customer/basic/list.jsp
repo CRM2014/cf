@@ -52,7 +52,8 @@
 							<div class="form-group">
 								<div class="input-group">
 									<div class="input-group-addon">客户经理</div>
-									<input class="form-control" type="text" placeholder="">
+									<input class="form-control" type="text" placeholder=""
+									name="condition.user.usName" value="${condition.user.usName}">
 								</div>
 							</div>
 
@@ -76,10 +77,9 @@
 										<td>${cuId}</td>
 										<td>${cuName}</td>
 										<td>${cuLevel}</td>
-										<td>
-											<%-- ${user.usName} --%>
-										</td>
+										<td>${user.usName}</td>
 										<td>${cuZone}</td>
+										
 										<td align="center"><a role="button"
 											href="${ctx }/customer/customer-view.action?customer.cuId=${cuId}"
 											class="btn btn-default">查看</a> <a role="button"
