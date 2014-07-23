@@ -106,22 +106,6 @@ public interface Dao {
 			Map<String, Object> like);
 
 	/**
-	 * 查找一个实体列表，根据类型、等于条件、不等于条件、模糊查询条件
-	 * 
-	 * @param clazz
-	 *            类型
-	 * @param eq
-	 *            等于条件
-	 * @param not
-	 *            不等于条件
-	 * @param like
-	 *            模糊查询条件
-	 * @return 实体列表
-	 */
-	public List<?> findList(Class<?> clazz, Map<String, Object> eq,
-			Map<String, Object> not, Map<String, Object> like);
-
-	/**
 	 * 查找一个实体列表，根据类型、分页信息、模糊查询条件
 	 * 
 	 * @author qiyu
@@ -136,45 +120,6 @@ public interface Dao {
 	 */
 	public void findByPage(Class<?> clazz, Page<?> page,
 			Map<String, Object> like);
-
-	/**
-	 * 查找一个实体列表，根据类型、分页信息、等于条件、模糊查询条件
-	 * 
-	 * @author qiyu
-	 * 
-	 * @param clazz
-	 *            类型
-	 * @param page
-	 *            分页信息
-	 * @param eq
-	 *            等于条件
-	 * @param like
-	 *            模糊查询条件
-	 * @return 实体列表
-	 */
-	public void findByPage(Class<?> clazz, Page<?> page,
-			Map<String, Object> eq, Map<String, Object> like);
-
-	/**
-	 * 查找一个实体列表，根据类型、分页信息、等于条件、不等于条件、模糊查询条件
-	 * 
-	 * @author qiyu
-	 * 
-	 * @param clazz
-	 *            类型
-	 * @param page
-	 *            分页信息
-	 * @param eq
-	 *            等于条件
-	 * @param not
-	 *            不等于条件
-	 * @param like
-	 *            模糊查询条件
-	 * @return 实体列表
-	 */
-	public void findByPage(Class<?> clazz, Page<?> page,
-			Map<String, Object> eq, Map<String, Object> not,
-			Map<String, Object> like, List<String> empty);
 
 	public void findByPage(Class<?> clazz, Page<?> page,
 			Map<String, Object> like, List<Criterion> criterion);

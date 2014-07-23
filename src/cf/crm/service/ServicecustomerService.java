@@ -19,15 +19,15 @@ public interface ServicecustomerService {
 
 	public void findByPage(Page<Servicecustomer> page, Map<String, Object> like);
 
-	void findByPage(Page<Servicecustomer> page, Map<String, Object> eq,
-			Map<String, Object> not, Map<String, Object> like,
-			List<String> empty);
+	public void findAssignByPage(Page<Servicecustomer> page,
+			Map<String, Object> like);
 
-	void findAssignByPage(Page<Servicecustomer> page, Map<String, Object> like);
+	public void findDealByPage(Page<Servicecustomer> page,
+			Map<String, Object> like);
 
-	void findDealByPage(Page<Servicecustomer> page, Map<String, Object> like);
+	public void findFeedbackByPage(Page<Servicecustomer> page,
+			Map<String, Object> like);
 
-	void findFeedbackByPage(Page<Servicecustomer> page, Map<String, Object> like);
-
-	void findArchiveByPage(Page<Servicecustomer> page, Map<String, Object> like);
+	public void findArchiveByPage(Page<Servicecustomer> page,
+			Map<String, Object> like);
 }

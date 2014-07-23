@@ -26,4 +26,8 @@ public interface CustomerDao extends Dao {
 	public void findServiceByPage(Page page);
 
 	public void findDrainByPage(Page page);
+
+	public Object getOrderNumber();
+
+	public List<Object> getCustomerNumber();
 }

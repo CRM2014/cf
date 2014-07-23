@@ -78,4 +78,16 @@ public class CustomerDaoImpl extends DaoAdapter implements CustomerDao {
 				+ " where c.cuID=ou.cuID and u.usID=c.usID";
 		super.findByPage(page, sql);
 	}
+
+	@Override
+	public Object getOrderNumber() {
+		String sql = "select 1,2,3,4,5,6,7,8,9,10,11,12 from customer c";
+		return super.getSession().createSQLQuery(sql).uniqueResult();
+	}
+
+	@Override
+	public List<Object> getCustomerNumber() {
+		String sql = "select 1,2,3,4,5,6,7,8,9,10,11,12 from customer c";
+		return super.getSession().createSQLQuery(sql).list();
+	}
 }
