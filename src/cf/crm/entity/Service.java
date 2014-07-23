@@ -102,5 +102,4 @@ public class Service implements java.io.Serializable {
 		this.servicecustomers = servicecustomers;
 	}
 
-
 }
