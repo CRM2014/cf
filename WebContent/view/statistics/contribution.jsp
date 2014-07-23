@@ -29,11 +29,13 @@
 				<!-- 数据显示与交互内容开始 -->
 				<div class="workpage well well-lg">
 
-					<form class="form-inline" role="form">
+				<form action="${ctx }/customer/customer-list.action" method="post"
+					id="main-form">
 						<div class="form-group">
 							<div class="input-group">
 								<div class="input-group-addon">客户名称</div>
-								<input class="form-control" type="text" placeholder="">
+									<input class="form-control" type="text" placeholder=""
+										name="condition.cuName" value="${condition.cuName}">
 							</div>
 						</div>
 
@@ -60,27 +62,27 @@
 					<br> <br>
 					<table class="table table-bordered" align="center" valign="middle">
 						<tr>
-							<td align="center">编号</td>
+							<td align="center" >编号</td>
 							<td align="center">客户名称</td>
 							<td align="center">订单金额（元）</td>
 						</tr>
 						<s:iterator value="page.list" status="st">
-							<tr>
+						<tr>
 								<td align="center">${st.index+1 }</td>
 								<s:iterator value="page.list[#st.index]" id="i">
 									<td align="center">${i }</td>
 								</s:iterator>
 
-							</tr>
+						</tr>
 						</s:iterator>
 					</table>
 				</div>
 				<!-- 数据显示与交互内容结束 -->
-			</div>
+				</div>
 			<!-- 主要内容结束 -->
 		</div>
 	</div>
-
+	
 	<!-- js开始 -->
 	<%@ include file="/view/common/js.jsp"%>
 	<script type="text/javascript">

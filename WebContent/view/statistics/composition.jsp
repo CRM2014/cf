@@ -27,6 +27,8 @@
 				<!-- 页面路径结束 -->
 				<h3>客户构成分析</h3>
 				<!-- 数据显示与交互内容开始 -->
+				<form action="${ctx }/permission/permission-list.action"
+					method="post" id="main-form">
 				<div class="workpage well well-lg">
 
 					<div class="form-inline" role="form">
@@ -53,22 +55,23 @@
 							<td align="center">客户数量</td>
 						</tr>
 						<s:iterator value="page.list" status="st">
-							<tr>
+						<tr>
 								<td align="center">${st.index+1 }</td>
 								<s:iterator value="page.list[#st.index]" id="i">
 									<td align="center">${i }</td>
 								</s:iterator>
 
-							</tr>
+						</tr>
 						</s:iterator>
 					</table>
 				</div>
 				<!-- 数据显示与交互内容结束 -->
-			</div>
+				</form>
+				</div>
 			<!-- 主要内容结束 -->
 		</div>
 	</div>
-
+	
 	<!-- js开始 -->
 	<%@ include file="/view/common/js.jsp"%>
 	<script type="text/javascript">
