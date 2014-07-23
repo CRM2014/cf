@@ -32,7 +32,7 @@
 				<!-- 导航栏开始 -->
 				<ul class="nav nav-tabs col-sm-offset-6 " role="tablist">
 					<li><a
-						href="${ctx }/customer/customer-list.action?customer.cuId=${customer.cuId}">基本信息</a></li>
+						href="${ctx }/customer/customer-view.action?customer.cuId=${customer.cuId}">基本信息</a></li>
 					<li><a
 						href="${ctx }/customer/contact-list.action?customer.cuId=${customer.cuId}">联系人管理</a></li>
 					<li><a

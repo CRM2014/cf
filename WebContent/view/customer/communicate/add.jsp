@@ -30,7 +30,7 @@
 				<h3>添加${customer.cuName }交往记录</h3>
 				<!-- 导航栏开始 -->
 				<ul class="nav nav-tabs col-sm-offset-6 " role="tablist">
-					<li><a href="${ctx }/customer/customer-list.action?customer.cuId=${customer.cuId}">基本信息</a></li>
+					<li><a href="${ctx }/customer/customer-view.action?customer.cuId=${customer.cuId}">基本信息</a></li>
 					<li><a href="${ctx }/customer/contact-list.action?customer.cuId=${customer.cuId}">联系人管理</a></li>
 					<li><a href="${ctx }/customer/history-list.action?customer.cuId=${customer.cuId}">历史订单管理</a></li>
 					<li class="active"><a href="${ctx }/customer/communicate-list.action?customer.cuId=${customer.cuId}">交往记录管理</a></li>
