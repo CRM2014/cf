@@ -42,7 +42,8 @@
 				<!-- 数据显示与交互内容开始 -->
 				<div class="workpage well well-lg">
 					<form class="form-horizontal"
-						action="${ctx }/customer/contact-modify.action" role="form">
+						action="${ctx }/customer/contact-modify.action" role="form"
+						method="post">
 						<input type="hidden" name="contactperson.copeId"
 							value="${contactperson.copeId }">
 						<div class="form-group">
@@ -55,8 +56,10 @@
 
 							<label for="sex" class="col-sm-2 control-label">性别：</label>
 							<div class="col-sm-3">
-								<select class="form-control" name="contactperson.copeSex">
-									<option>男</option>
+								<input id="copeSex" type="hidden"
+									value="${contactperson.copeSex }"> <select
+									class="form-control" name="contactperson.copeSex">
+									<option value="男">男</option>
 									<option>女</option>
 								</select>
 							</div>
@@ -89,10 +92,7 @@
 						<div class="form-group">
 							<label for="note" class="col-sm-2 control-label">备注：</label>
 							<div class="col-sm-8">
-								<textarea type="text" class="form-control"
-									name="contactperson.copeNote"
-									value="${contactperson.copeNote }">
-							</textarea>
+								<textarea class="form-control" name="contactperson.copeNote">${contactperson.copeNote }</textarea>
 							</div>
 						</div>
 
@@ -102,7 +102,8 @@
 									class="btn btn-default btn-lg col-sm-offset-9">保存</button>
 							</div>
 							<div class="col-sm-6">
-								<a role="button" href="customer/contact-list.action?customer.cuId=${customer.cuId}"
+								<a role="button"
+									href="customer/contact-list.action?customer.cuId=${customer.cuId}"
 									class="btn btn-default btn-lg">返回</a>
 							</div>
 						</div>
@@ -120,7 +121,7 @@
 	<script type="text/javascript">
 		var pageInfo = new PageInfo(2);
 		pageInfo.generate();
-
+		$("[name='contactperson.copeSex']").val($("#copeSex").val());
 		$("form").submit(function() {
 			return check();
 		});

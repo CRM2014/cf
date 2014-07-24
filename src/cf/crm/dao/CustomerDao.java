@@ -29,5 +29,5 @@ public interface CustomerDao extends Dao {
 
 	public Object getOrderNumber();
 
-	public List<Object> getCustomerNumber();
+	public Object getCustomerNumber();
 }

@@ -76,7 +76,7 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	@Override
-	public List<Object> getCustomerNumber() {
+	public Object getCustomerNumber() {
 		return customerDao.getCustomerNumber();
 	}
 }

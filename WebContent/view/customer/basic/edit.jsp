@@ -87,12 +87,12 @@
 						<div class="form-group">
 							<label for="tel" class="col-sm-2 control-label">电 话：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control checkable" reg="/^(d{3,4}-)*[1-9]{6,8}$/" name="customer.cuTel"
+								<input type="text" class="form-control checkable"  name="customer.cuTel"
 									value="${customer.cuTel}">
 							</div>
 							<label for="fac" class="col-sm-2 control-label">传 真：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control checkable" reg="/^(d{3,4}-)*[1-9]{6,8}$/"
+								<input type="text" class="form-control checkable" 
 									name="customer.cuFacsimile" value="${customer.cuFacsimile}">
 							</div>
 						</div>
@@ -191,7 +191,7 @@
 							</div>
 							<div class="col-sm-6">
 								<a role="button" href="customer/customer-list.action"
-									class="btn btn-default btn-lg col-sm-offset-9">返回</a>
+									class="btn btn-default btn-lg">返回</a>
 							</div>
 						</div>
 					</form>

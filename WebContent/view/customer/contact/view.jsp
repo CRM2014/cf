@@ -47,7 +47,8 @@
 							<label for="name" class="col-sm-2 control-label">姓名：</label>
 							<div class="col-sm-3">
 								<input type="text" class="form-control" disabled="disabled"
-									name="contactperson.copeName" value="${contactperson.copeName }">
+									name="contactperson.copeName"
+									value="${contactperson.copeName }">
 							</div>
 
 							<label for="sex" class="col-sm-2 control-label">性别：</label>
@@ -61,7 +62,8 @@
 							<label for="level" class="col-sm-2 control-label">职位：</label>
 							<div class="col-sm-3">
 								<input type="text" class="form-control" disabled="disabled"
-									name="contactperson.copePosition" value="${contactperson.copePosition }">
+									name="contactperson.copePosition"
+									value="${contactperson.copePosition }">
 							</div>
 						</div>
 
@@ -74,26 +76,28 @@
 							<label for="phone" class="col-sm-2 control-label">手机：</label>
 							<div class="col-sm-3">
 								<input type="text" class="form-control" disabled="disabled"
-									name="contactperson.copePhone" value="${contactperson.copePhone }">
+									name="contactperson.copePhone"
+									value="${contactperson.copePhone }">
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label for="note" class="col-sm-2 control-label">备注：</label>
 							<div class="col-sm-8">
-								<textarea type="text" class="form-control" disabled="disabled"
-								name="contactperson.copeNote" value="${contactperson.copeNote }">
-							</textarea>
+								<textarea class="form-control" disabled="disabled"
+									name="contactperson.copeNote">${contactperson.copeNote }</textarea>
 							</div>
 						</div>
 
 						<div class="form-group">
 							<div class="col-sm-6">
-								<a role="button" href="customer/contact-edit.action?contactperson.copeId=${contactperson.copeId}"
+								<a role="button"
+									href="customer/contact-edit.action?contactperson.copeId=${contactperson.copeId}"
 									class="btn btn-default btn-lg col-sm-offset-9">编辑</a>
 							</div>
 							<div class="col-sm-6">
-								<a role="button" href="customer/contact-list.action?customer.cuId=${customer.cuId}"
+								<a role="button"
+									href="customer/contact-list.action?customer.cuId=${customer.cuId}"
 									class="btn btn-default btn-lg">返回</a>
 							</div>
 						</div>

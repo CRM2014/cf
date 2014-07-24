@@ -86,7 +86,7 @@
 						<div class="form-group">
 							<label for="note" class="col-sm-2 control-label">备注：</label>
 							<div class="col-sm-8">
-								<textarea type="text" class="form-control" rows="3"
+								<textarea class="form-control" rows="3"
 									name="contactperson.copeNote"></textarea>
 							</div>
 						</div>

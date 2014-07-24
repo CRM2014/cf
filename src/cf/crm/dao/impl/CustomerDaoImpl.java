@@ -1,5 +1,9 @@
 package cf.crm.dao.impl;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -8,7 +12,6 @@ import org.springframework.stereotype.Component;
 
 import cf.crm.dao.CustomerDao;
 import cf.crm.entity.Customer;
-import cf.crm.entity.User;
 import cf.crm.util.page.Page;
 
 @Component
@@ -81,13 +84,36 @@ public class CustomerDaoImpl extends DaoAdapter implements CustomerDao {
 
 	@Override
 	public Object getOrderNumber() {
-		String sql = "select 1,2,3,4,5,6,7,8,9,10,11,12 from customer c";
-		return super.getSession().createSQLQuery(sql).uniqueResult();
+		List<List<String>> lists = new ArrayList<List<String>>();
+		List<String> valueList = new ArrayList<String>();
+		List<String> titleList = new ArrayList<String>();
+		for (int i = 12; i > 0; i--) {
+			String sql = "SELECT COUNT(*), DATE_FORMAT(NOW(),'%Y%m')-"
+					+ i
+					+ " FROM OrderRecord o WHERE DATE_FORMAT(o.orreDate,'%Y%m')= DATE_FORMAT(NOW(),'%Y%m')-"
+					+ i;
+			Object[] s = (Object[]) super.getSession().createSQLQuery(sql)
+					.uniqueResult();
+			valueList.add(s[0].toString());
+			titleList.add(s[1].toString());
+		}
+		lists.add(titleList);
+		lists.add(valueList);
+		return lists;
 	}
 
 	@Override
-	public List<Object> getCustomerNumber() {
-		String sql = "select 1,2,3,4,5,6,7,8,9,10,11,12 from customer c";
-		return super.getSession().createSQLQuery(sql).list();
+	public Object getCustomerNumber() {
+		List<List<String>> lists = new ArrayList<List<String>>();
+		List<String> valueList = new ArrayList<String>();
+		for (int i = 1; i <= 5; i++) {
+			String sql = "SELECT COUNT(*),c.cuLevel FROM customer c WHERE c.cuLevel ="
+					+ i;
+			Object[] s = (Object[]) super.getSession().createSQLQuery(sql)
+					.uniqueResult();
+			valueList.add(s[0].toString());
+		}
+		lists.add(valueList);
+		return lists;
 	}
 }

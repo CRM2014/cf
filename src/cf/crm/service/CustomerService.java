@@ -29,5 +29,5 @@ public interface CustomerService {
 
 	public Object getOrderNumber();
 
-	public List<Object> getCustomerNumber();
+	public Object getCustomerNumber();
 }

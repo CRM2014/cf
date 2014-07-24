@@ -54,15 +54,8 @@ public class ContactAction extends BaseAction {
 
 	public String save() {
 		customer = customerService.find(customer.getCuId());
-		Contactperson origContact = new Contactperson();
-		origContact.setCustomer(customer);
-		origContact.setCopeName(contactperson.getCopeName());
-		origContact.setCopeSex(contactperson.getCopeSex());
-		origContact.setCopePosition(contactperson.getCopePosition());
-		origContact.setCopeTel(contactperson.getCopeTel());
-		origContact.setCopePhone(contactperson.getCopePhone());
-		origContact.setCopeNote(contactperson.getCopeNote());
-		contactpersonService.add(origContact);
+		contactperson.setCustomer(customer);
+		contactpersonService.add(contactperson);
 		return "add-success";
 	}
 
@@ -101,6 +94,13 @@ public class ContactAction extends BaseAction {
 		contactpersonService.modify(origContact);
 		customer = origContact.getCustomer();
 		return "modify-success";
+	}
+
+	public String delete() {
+		contactperson = contactpersonService.find(contactperson.getCopeId());
+		contactpersonService.remove(contactperson);
+		customer = contactperson.getCustomer();
+		return "delete-success";
 	}
 
 	public Page getPage() {

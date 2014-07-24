@@ -102,7 +102,7 @@
 											href="${ctx }/customer/contact-edit.action?contactperson.copeId=${copeId}">编辑</a>
 											<a role="button" class="btn btn-default"
 											onclick="comfirmDelete($(this))"
-											href="${ctx }/customer/contact-edit.action?contactperson.copeId=${copeId}">删除</a>
+											href="#${ctx }/customer/contact-delete.action?contactperson.copeId=${copeId}">删除</a>
 										</td>
 									</tr>
 								</s:iterator>
