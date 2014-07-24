@@ -26,12 +26,12 @@ function submitMain() {
 }
 function pre() {
 	var e = $("[name='page.currentPage']");
-	e.val(parseInt(e.val()) - 1);
+	e.val(parseInt($("#currentPage").val()) - 1);
 	$('#main-form').submit();
 }
 function next() {
 	var e = $("[name='page.currentPage']");
-	e.val(parseInt(e.val()) + 1);
+	e.val(parseInt($("#currentPage").val()) + 1);
 	$('#main-form').submit();
 }
 
