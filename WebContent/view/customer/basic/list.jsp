@@ -1,4 +1,4 @@
-﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -21,7 +21,7 @@
 				<h5 class="page-header">
 					<ol class="breadcrumb">
 						<li>客户管理</li>
-						<li><a href="${ctx }/customer/customer/customer-list.action">客户信息管理</a></li>
+						<li><a href="${ctx }/customer/customer/customer-list.action">客户信息管理</a>
 						<li>客户列表</li>
 					</ol>
 				</h5>

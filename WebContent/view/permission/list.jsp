@@ -20,12 +20,12 @@
 				<!-- 页面路径开始 -->
 				<h5 class="page-header">
 					<ol class="breadcrumb">
-						<li>用户管理</li>
-						<li>查看用户</li>
+						<li>权限列表</li>
+						<li>用户列表</li>
 					</ol>
 				</h5>
 				<!-- 页面路径结束 -->
-				<h3>查看用户</h3>
+				<h3>用户列表</h3>
 				<!-- 提示开始 -->
 				<%@ include file="/view/common/message.jsp"%>
 				<!-- 提示结束 -->
