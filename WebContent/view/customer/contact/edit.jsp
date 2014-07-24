@@ -48,22 +48,24 @@
 						<div class="form-group">
 							<label for="name" class="col-sm-2 control-label">姓名：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control checkable"
+								<input type="text" class="form-control checkable" reg="^\S{1-20}$"
 									name="contactperson.copeName"
 									value="${contactperson.copeName }">
 							</div>
 
 							<label for="sex" class="col-sm-2 control-label">性别：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control checkable"
-									name="contactperson.copeSex" value="${contactperson.copeSex }">
+							   <select class="form-control checkable" name="contactperson.copeSex">
+										<option>男</option>
+										<option>女</option>
+								</select>
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label for="level" class="col-sm-2 control-label">职位：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control checkable"
+								<input type="text" class="form-control checkable" reg="^\S{1-20}$"
 									name="contactperson.copePosition"
 									value="${contactperson.copePosition }">
 							</div>
