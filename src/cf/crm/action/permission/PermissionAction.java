@@ -62,9 +62,7 @@ public class PermissionAction extends BaseAction {
 	public String list() {
 		if (page == null)
 			page = PageHelper.generatePage();
-
 		Map<String, Object> like = null;
-
 		if (condition != null) {
 			like = new HashMap<String, Object>();
 			if (condition.getUsRole() != null

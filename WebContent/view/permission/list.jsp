@@ -50,8 +50,9 @@
 								</div>
 							</div>
 
-							<button type="submit" class="btn btn-default">
-								<span class="glyphicon glyphicon-search"></span> 查询
+							<button type="submit" class="btn btn-default"
+								onclick="$('#currentPage').val(1)">
+								<span class="glyphicon glyphicon-search"></span>查询
 							</button>
 							<a role="button" class="btn btn-default"
 								href="${ctx }/permission/permission-add.action" type="button">

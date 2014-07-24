@@ -9,7 +9,7 @@
 		type="hidden" value="${page.pageSize }" id="pageSize">
 	<li>
 	<li><input style="width: 30px" type="text"
-		value="${page.currentPage}" name="page.currentPage">
+		value="${page.currentPage}" name="page.currentPage" id="currentPage">
 		<button type="submit">跳转</button></li>
 	<s:if test="%{page.currentPage > 1}">
 		<li><a href="#" onclick="pre()">上一页</a></li>
