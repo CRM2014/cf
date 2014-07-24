@@ -46,7 +46,14 @@ public class ContactAction extends BaseAction {
 	}
 
 	public String add() {
+		customer = customerService.find(customer.getCuId());
+		return "add";
+	}
+
+	public String save() {
+		customer = customerService.find(customer.getCuId());
 		Contactperson origContact = new Contactperson();
+		origContact.setCustomer(customer);
 		origContact.setCopeName(contactperson.getCopeName());
 		origContact.setCopeSex(contactperson.getCopeSex());
 		origContact.setCopePosition(contactperson.getCopePosition());

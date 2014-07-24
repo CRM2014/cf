@@ -73,7 +73,7 @@
 								<span class="glyphicon glyphicon-search"></span> 查询
 							</button>
 							<a role="button" class="btn btn-default" 
-								href="${ctx }/customer/contact-add.action">添加联系人</a>							<br> <br>
+								href="${ctx }/customer/contact-add.action?customer.cuId=${customer.cuId}">添加联系人</a>							<br> <br>
 							<table class="table table-bordered" align="center"
 								valign="middle">
 								<tr>
