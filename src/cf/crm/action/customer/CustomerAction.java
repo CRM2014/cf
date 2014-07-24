@@ -16,6 +16,7 @@ import cf.crm.entity.Customer;
 import cf.crm.entity.User;
 import cf.crm.service.CustomerService;
 import cf.crm.service.UserService;
+import cf.crm.util.Info.Role;
 import cf.crm.util.page.Page;
 import cf.crm.util.page.PageHelper;
 
@@ -41,13 +42,13 @@ public class CustomerAction extends BaseAction {
 
 	public String view() {
 		customer = customerService.find(customer.getCuId());
-		users = userService.findListByRole("客户经理");
+		users = userService.findListByRole(Role.CUSTOMER);
 		return "view";
 	}
 
 	public String edit() {
 		customer = customerService.find(customer.getCuId());
-		users = userService.findListByRole("客户经理");
+		users = userService.findListByRole(Role.CUSTOMER);
 		return "edit";
 	}
 
@@ -84,7 +85,7 @@ public class CustomerAction extends BaseAction {
 		origCustomer.setCuName(customer.getCuName());
 		origCustomer.setCuZone(customer.getCuZone());
 		origCustomer.setCuLevel(customer.getCuLevel());
-		origCustomer.setUser(userService.find("123"));
+		origCustomer.setUser(userService.find(userId));
 		origCustomer.setCuCredit(customer.getCuCredit());
 		origCustomer.setCuAddress(customer.getCuAddress());
 		origCustomer.setCuPostal(customer.getCuPostal());
@@ -135,6 +136,14 @@ public class CustomerAction extends BaseAction {
 
 	public void setUsers(List<User> users) {
 		this.users = users;
+	}
+
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
 
 }
