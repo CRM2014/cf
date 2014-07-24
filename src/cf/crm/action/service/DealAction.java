@@ -1,6 +1,7 @@
 package cf.crm.action.service;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -24,26 +25,29 @@ public class DealAction extends BaseAction {
 	 * 
 	 */
 	private static final long serialVersionUID = -5655494816627785760L;
-	
+
 	@Autowired
 	@Qualifier("servicecustomerServiceImpl")
 	private ServicecustomerService servicecustomerservice;
 	private Page<Servicecustomer> page;
 	private Servicecustomer servicecustomer;
 	private Servicecustomer condition;
-	
-	public String deal(){
-		servicecustomer = servicecustomerservice.find(servicecustomer.getSecuId());
+
+	public String deal() {
+		servicecustomer = servicecustomerservice.find(servicecustomer
+				.getSecuId());
 		return "deal";
 	}
-	
+
 	public String dealService() {
-		Servicecustomer origService = servicecustomerservice.find(servicecustomer.getSecuId());
+		Servicecustomer origService = servicecustomerservice
+				.find(servicecustomer.getSecuId());
 		origService.setSecuDeal(servicecustomer.getSecuDeal());
+		origService.setSecuDealTime(new Date());
 		servicecustomerservice.modify(origService);
 		return "deal-success";
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	public String list() {
 		if (page == null)
@@ -72,7 +76,7 @@ public class DealAction extends BaseAction {
 	public Servicecustomer getCondition() {
 		return condition;
 	}
-	
+
 	public void setCondition(Servicecustomer condition) {
 		this.condition = condition;
 	}

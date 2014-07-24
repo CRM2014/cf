@@ -39,10 +39,19 @@ public class FeedbackAction extends BaseAction {
 	}
 
 	public String feedbackService() {
+
 		Servicecustomer origService = servicecustomerservice
 				.find(servicecustomer.getSecuId());
-		origService.setSecuDealResult(servicecustomer.getSecuDealResult());
-		origService.setSecuSatisfy(servicecustomer.getSecuSatisfy());
+		if (servicecustomer.getSecuSatisfy() >= 3) {
+			origService.setSecuDealResult(servicecustomer.getSecuDealResult());
+			origService.setSecuSatisfy(servicecustomer.getSecuSatisfy());
+			warn = "服务已归档";
+		} else {
+			origService.setSecuDeal(null);
+			origService.setSecuDealTime(null);
+			warn = "服务重新进行处理";
+		}
+
 		servicecustomerservice.modify(origService);
 		return "feedback-success";
 	}

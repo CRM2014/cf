@@ -65,6 +65,9 @@ public class DictionaryAction extends BaseAction {
 			if (condition.getDadiValue() != null
 					&& !"".equals(condition.getDadiValue()))
 				like.put("dadiValue", condition.getDadiValue());
+			if (condition.getDadiItem() != null
+					&& !"".equals(condition.getDadiItem()))
+				like.put("dadiItem", condition.getDadiItem());
 		}
 		DatadictionaryService.findByPage(page, like);
 		return "list";
@@ -74,25 +77,25 @@ public class DictionaryAction extends BaseAction {
 		DatadictionaryService.add(dictionary);
 		return "add-success";
 	}
-	
-	public String modifyData(){
-		
-		Datadictionary origData = DatadictionaryService.find(dictionary.getDadiId());
+
+	public String modifyData() {
+
+		Datadictionary origData = DatadictionaryService.find(dictionary
+				.getDadiId());
 		origData.setDadiItem(dictionary.getDadiItem());
 		origData.setDadiType(dictionary.getDadiType());
 		origData.setDadiEnableEdit(dictionary.isDadiEnableEdit());
 		DatadictionaryService.modify(origData);
 
 		warn = "修改 Success!";
-		
+
 		return "modify-success";
 	}
-	
-	
-	public String deleteData(){
+
+	public String deleteData() {
 		dictionary = DatadictionaryService.find(dictionary.getDadiId());
 		DatadictionaryService.remove(dictionary);
-		
+
 		warn = "Delete Success!";
 		return "delete-success";
 	}

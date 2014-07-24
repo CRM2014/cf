@@ -170,6 +170,7 @@
 						<div class="form-group">
 							<label for="usName" class="col-sm-2 control-label">所属客户经理：</label>
 							<div class="col-sm-3">
+								<input type="hidden" id="userId" value="${customer.user.usId}">
 								<select class="form-control" name="userId">
 									<s:iterator value="users" id="u">
 										<option value="${ u.usId}">${u.usName }</option>
@@ -206,6 +207,8 @@
 	<script type="text/javascript">
 		var pageInfo = new PageInfo(2);
 		pageInfo.generate();
+
+		$("[name='userId']").val($("#userId").val());
 	</script>
 	<!-- js结束 -->
 

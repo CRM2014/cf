@@ -3,7 +3,6 @@ package cf.crm.dao.impl;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 
 import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.Restrictions;
