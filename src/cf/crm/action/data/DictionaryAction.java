@@ -84,6 +84,7 @@ public class DictionaryAction extends BaseAction {
 				.getDadiId());
 		origData.setDadiItem(dictionary.getDadiItem());
 		origData.setDadiType(dictionary.getDadiType());
+		origData.setDadiValue(dictionary.getDadiValue());
 		origData.setDadiEnableEdit(dictionary.isDadiEnableEdit());
 		DatadictionaryService.modify(origData);
 

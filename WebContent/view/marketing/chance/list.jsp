@@ -30,8 +30,7 @@
 				<div class="workpage well well-lg">
 
 					<form class="form-inline" role="form"
-					action="${ctx }/marketing/chance-list.action"
-						method="post">
+						action="${ctx }/marketing/chance-list.action" method="post">
 						<div class="form-group">
 							<div class="input-group">
 								<div class="input-group-addon">客户名称</div>
@@ -61,8 +60,8 @@
 							<span class="glyphicon glyphicon-search"></span> 查询
 						</button>
 						<a role="button" class="btn btn-default"
-							href="${ctx }/marketing/chance-add.action"
-							type="button"> <span class="glyphicon glyphicon-plus"></span>新建
+							href="${ctx }/marketing/chance-add.action" type="button"> <span
+							class="glyphicon glyphicon-plus"></span>新建
 						</a>
 
 					</form>
@@ -97,6 +96,11 @@
 							</tr>
 						</s:iterator>
 					</table>
+					<div class="text-center">
+						<!-- 分页栏开始 -->
+						<%@ include file="/view/common/page.jsp"%>
+						<!-- 分页栏结束 -->
+					</div>
 				</div>
 				<!-- 数据显示与交互内容结束 -->
 			</div>

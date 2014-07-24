@@ -32,10 +32,7 @@ public class ProductAction extends BaseAction {
 	private Product condition;
 	
 	
-	@Override
-	public String execute() throws Exception {
-		return "fail";
-	}
+	@SuppressWarnings("unchecked")
 	public String list(){
 		if (page == null)
 			page = PageHelper.generatePage();
@@ -50,7 +47,6 @@ public class ProductAction extends BaseAction {
 				like.put("prName", condition.getPrName());
 		}
 		ProductService.findByPage(page, like);
-		log.info(page.getList().size());
 		return "list";
 	}
 	

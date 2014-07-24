@@ -10,8 +10,6 @@
 	<div class="container-fluid">
 		<div class="space"></div>
 		<div class="row">
-
-			<div class="col-md-4"></div>
 			<div class="col-md-4">
 				<br> <br> <br> <br> <br>
 				<div class="workpage well">
@@ -20,8 +18,7 @@
 						<div class="container-fluid"></div>
 						<h2 class="form-signin-heading text-center">CF客户关系管理系统</h2>
 						<br>
-						<div id="warn">
-						</div>
+						<div id="warn"></div>
 						<s:if test="%{warn!=null&&warn!=''}">
 							<div class="alert alert-warning fade in" role="alert">
 								<button type="button" class="close" data-dismiss="alert">

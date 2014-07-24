@@ -29,8 +29,7 @@
 				<!-- 数据显示与交互内容开始 -->
 				<div class="workpage well well-lg">
 					<form class="form-horizontal" role="form"
-						action="${ctx }/data/data-modifyData.action"
-						method="post">
+						action="${ctx }/data/data-modifyData.action" method="post">
 						<div class="form-group">
 							<label for="inputEmail3"
 								class="col-sm-3 col-sm-offset-1 control-label">编号：</label>
@@ -41,27 +40,36 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="inputEmail3" class="col-sm-2 control-label">类别</label>
-							<div class="col-sm-3">
-								<input type="text" class="form-control" name="dictionary.dadiType"
-									value="${ dictionary.dadiType}">
-							</div>
-							<label for="inputEmail3" class="col-sm-2 control-label">条目</label>
-							<div class="col-sm-3">
-								<input type="text" class="form-control" name="dictionary.dadiItem"
-									value="${ dictionary.dadiItem}">
+							<label for="inputEmail3"
+								class="col-sm-3 col-sm-offset-1 control-label">类别：</label>
+							<div class="col-sm-4">
+								<input type="text" class="form-control"
+									name="dictionary.dadiType" value="${ dictionary.dadiType}">
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="inputEmail3" class="col-sm-2 control-label">值</label>
-							<div class="col-sm-3">
-								<input type="text" class="form-control" name="dictionary.dadiValue"
-									value="${ dictionary.dadiValue}">
+							<label for="inputEmail3"
+								class="col-sm-3 col-sm-offset-1 control-label">条目：</label>
+							<div class="col-sm-4">
+								<input type="text" class="form-control"
+									name="dictionary.dadiItem" value="${ dictionary.dadiItem}">
 							</div>
-							<label for="inputEmail3" class="col-sm-2 control-label">是否可编辑</label>
-							<div class="col-sm-3">
-								<input type="hidden" value="${ dictionary.dadiEnableEdit}" id="dadiEnableEdit">
-								<select class="form-control" name="dictionary.dadiEnableEdit">
+						</div>
+						<div class="form-group">
+							<label for="inputEmail3"
+								class="col-sm-3 col-sm-offset-1 control-label">值：</label>
+							<div class="col-sm-4">
+								<input type="text" class="form-control"
+									name="dictionary.dadiValue" value="${ dictionary.dadiValue}">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputEmail3"
+								class="col-sm-3 col-sm-offset-1 control-label">是否可编辑：</label>
+							<div class="col-sm-4">
+								<input type="hidden" value="${ dictionary.dadiEnableEdit}"
+									id="dadiEnableEdit"> <select class="form-control"
+									name="dictionary.dadiEnableEdit">
 									<option value="true">可以</option>
 									<option value="false">不能</option>
 								</select>
@@ -74,27 +82,25 @@
 									class="btn btn-default btn-lg col-sm-offset-9">保存</button>
 							</div>
 							<div class="col-sm-6">
-								<a role="button"
-									href="${ctx }/data/data-list.action"
+								<a role="button" href="${ctx }/data/data-list.action"
 									class="btn btn-default btn-lg">返回</a>
 							</div>
 						</div>
 
 					</form>
 					<!-- 数据显示与交互内容结束 -->
-				
-				</div>
-			<!-- 主要内容结束 -->
-		</div>
-	</div>
-	
-	<!-- js开始 -->
-	<%@ include file="/view/common/js.jsp"%>
-	<script type="text/javascript">
-		var pageInfo = new PageInfo(5);
-		pageInfo.generate();
-	</script>
-	<!-- js结束 -->
 
+				</div>
+				<!-- 主要内容结束 -->
+			</div>
+		</div>
+
+		<!-- js开始 -->
+		<%@ include file="/view/common/js.jsp"%>
+		<script type="text/javascript">
+			var pageInfo = new PageInfo(5);
+			pageInfo.generate();
+		</script>
+		<!-- js结束 -->
 </body>
 </html>

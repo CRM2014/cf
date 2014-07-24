@@ -105,9 +105,13 @@
 										class="btn btn-default"
 										href="${ctx }/service/assign-assign.action?servicecustomer.secuId=${secuId}">分配</a></td>
 							</s:iterator>
-
 						</tr>
 					</table>
+					<div class="text-center">
+						<!-- 分页栏开始 -->
+						<%@ include file="/view/common/page.jsp"%>
+						<!-- 分页栏结束 -->
+					</div>
 				</div>
 				<!-- 数据显示与交互内容结束 -->
 			</div>

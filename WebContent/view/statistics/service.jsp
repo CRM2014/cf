@@ -58,13 +58,18 @@
 							</tr>
 						</s:iterator>
 					</table>
+					<div class="text-center">
+						<!-- 分页栏开始 -->
+						<%@ include file="/view/common/page.jsp"%>
+						<!-- 分页栏结束 -->
+					</div>
 				</div>
 				<!-- 数据显示与交互内容结束 -->
-				</div>
+			</div>
 			<!-- 主要内容结束 -->
 		</div>
 	</div>
-	
+
 	<!-- js开始 -->
 	<%@ include file="/view/common/js.jsp"%>
 	<script type="text/javascript">

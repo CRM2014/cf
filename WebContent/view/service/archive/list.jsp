@@ -30,7 +30,7 @@
 				<div class="workpage well well-lg">
 
 					<form class="form-inline" role="form"
-					action="${ctx }/service/archive-list.action" method="post">
+						action="${ctx }/service/archive-list.action" method="post">
 						<div class="form-group">
 							<div class="input-group">
 								<div class="input-group-addon">客户</div>
@@ -112,6 +112,11 @@
 
 						</tr>
 					</table>
+					<div class="text-center">
+						<!-- 分页栏开始 -->
+						<%@ include file="/view/common/page.jsp"%>
+						<!-- 分页栏结束 -->
+					</div>
 				</div>
 				<!-- 数据显示与交互内容结束 -->
 			</div>

@@ -34,30 +34,39 @@
 						method="post">
 
 						<div class="form-group">
-							<label for="inputEmail3" class="col-sm-2 control-label">类别</label>
-							<div class="col-sm-3">
+							<label for="inputEmail3"
+								class="col-sm-3 col-sm-offset-1 control-label">类别：</label>
+							<div class="col-sm-4">
 								<input type="text" class="form-control"
-									name="dictionary.dadiType" value="${ dataDictionary.dadiType}">
-							</div>
-							<label for="inputEmail3" class="col-sm-2 control-label">条目</label>
-							<div class="col-sm-3">
-								<input type="text" class="form-control"
-									name="dictionary.dadiItem" value="${ dictionary.dadiItem}">
+									name="dictionary.dadiType">
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="inputEmail3" class="col-sm-2 control-label">值</label>
-							<div class="col-sm-3">
+							<label for="inputEmail3"
+								class="col-sm-3 col-sm-offset-1 control-label">条目：</label>
+							<div class="col-sm-4">
 								<input type="text" class="form-control"
-									name="dictionary.dadiValue" value="${ dictionary.dadiValue}">
+									name="dictionary.dadiItem">
 							</div>
-							<label for="inputEmail3" class="col-sm-2 control-label">是否可编辑</label>
-							<div class="col-sm-3">
-								<select class="form-control" name="dictionary.dadiEnableEdit">
+						</div>
+						<div class="form-group">
+							<label for="inputEmail3"
+								class="col-sm-3 col-sm-offset-1 control-label">值：</label>
+							<div class="col-sm-4">
+								<input type="text" class="form-control"
+									name="dictionary.dadiValue">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputEmail3"
+								class="col-sm-3 col-sm-offset-1 control-label">是否可编辑：</label>
+							<div class="col-sm-4">
+								<input type="hidden" id="dadiEnableEdit"> <select
+									class="form-control" name="dictionary.dadiEnableEdit">
 									<option value="true">可以</option>
 									<option value="false">不能</option>
 								</select>
-							</div> 
+							</div>
 						</div>
 						<div class="form-group">
 							<div class="col-sm-6">

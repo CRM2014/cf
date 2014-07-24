@@ -27,52 +27,58 @@
 				<!-- 页面路径结束 -->
 				<h3>仓库信息查询</h3>
 				<!-- 数据显示与交互内容开始 -->
-				<div class="workpage well well-lg">
-
-					<form class="form-inline" role="form"
-							action="${ctx }/data/stock-list.action"
-							method="post" id="main-form">
-						<div class="form-group">
-							<div class="input-group">
-								<div class="input-group-addon">产品名称</div>
-								<input class="form-control" type="text" placeholder=""
+				<form class="form-inline" role="form"
+					action="${ctx }/data/stock-list.action" method="post"
+					id="main-form">
+					<div class="workpage well well-lg">
+						<div class="form-inline">
+							<div class="form-group">
+								<div class="input-group">
+									<div class="input-group-addon">产品名称</div>
+									<input class="form-control" type="text" placeholder=""
 										name="condition.prName" value="${condition.prName}">
+								</div>
 							</div>
+
+							<button type="submit" class="btn btn-default">
+								<span class="glyphicon glyphicon-search"></span> 查询
+							</button>
 						</div>
 
-						<button type="submit" class="btn btn-default">
-								<span class="glyphicon glyphicon-search"></span> 查询
-						</button>
-					</form>
-
-					<br> <br>
-					<table class="table table-bordered" align="center" valign="middle">
-						<tr>
-							<td align="center">产品编号</td>
-							<td align="center">产品名称</td>
-							<td align="center">仓库名称</td>
-							<td align="center">货位</td>
-							<td align="center">件数</td>
-							<td align="center">备注</td>
-						</tr>
-						<s:iterator value="%{page.list}">
-						<tr>
-							<td>${prId}</td>
-							<td>${prName}</td>
-							<td>${storage.stName}</td>
-							<td>${prPosition}</td>
-							<td>${prNumber}</td>
-							<td>${prRemark}</td>
-						</tr>
-						</s:iterator>
-					</table>
-				</div>
+						<br> <br>
+						<table class="table table-bordered" align="center" valign="middle">
+							<tr>
+								<td align="center">产品编号</td>
+								<td align="center">产品名称</td>
+								<td align="center">仓库名称</td>
+								<td align="center">货位</td>
+								<td align="center">件数</td>
+								<td align="center">备注</td>
+							</tr>
+							<s:iterator value="%{page.list}">
+								<tr>
+									<td>${prId}</td>
+									<td>${prName}</td>
+									<td>${storage.stName}</td>
+									<td>${prPosition}</td>
+									<td>${prNumber}</td>
+									<td>${prRemark}</td>
+								</tr>
+							</s:iterator>
+						</table>
+						<div class="text-center">
+							<!-- 分页栏开始 -->
+							<%@ include file="/view/common/page.jsp"%>
+							<!-- 分页栏结束 -->
+						</div>
+					</div>
+				</form>
 				<!-- 数据显示与交互内容结束 -->
-				</div>
+			</div>
 			<!-- 主要内容结束 -->
 		</div>
 	</div>
-	
+
 	<!-- js开始 -->
 	<%@ include file="/view/common/js.jsp"%>
 	<script type="text/javascript">
