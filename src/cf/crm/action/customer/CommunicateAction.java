@@ -40,11 +40,6 @@ public class CommunicateAction extends BaseAction {
 	private List<Customer> customers;
 	private String customerId;
 
-	@Override
-	public String execute() throws Exception {
-		return "fail";
-	}
-
 	public String add() {
 		customers = customerService.findList();
 		return "add";
@@ -93,7 +88,9 @@ public class CommunicateAction extends BaseAction {
 	}
 
 	public String modifyUser() {
+
 		Contactrecord origCore = coreService.find(contactRecord.getCoreId());
+		customer = origCore.getCustomer();
 		origCore.setCorePlace(contactRecord.getCorePlace());
 		origCore.setCoreMain(contactRecord.getCoreMain());
 		origCore.setCoreDescription(contactRecord.getCoreDescription());
@@ -104,10 +101,9 @@ public class CommunicateAction extends BaseAction {
 
 	public String deleteUser() {
 		contactRecord = coreService.find(contactRecord.getCoreId());
+		customer = contactRecord.getCustomer();
 		coreService.remove(contactRecord);
-
 		warn = "Delete Success!";
-
 		return "delete-success";
 	}
 

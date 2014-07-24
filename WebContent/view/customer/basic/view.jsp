@@ -15,7 +15,7 @@
 			<!-- 菜单开始 -->
 			<%@ include file="/view/common/menu.jsp"%>
 			<!-- 菜单结束 -->
-		<!-- 主要内容开始 -->
+			<!-- 主要内容开始 -->
 			<div class="col-md-10 col-md-offset-2 main">
 				<!-- 页面路径开始 -->
 				<h5 class="page-header">
@@ -29,41 +29,44 @@
 				<h3>查看客户基本信息</h3>
 				<!-- 导航栏开始 -->
 				<ul class="nav nav-tabs col-sm-offset-6 " role="tablist">
-					<li class="active"><a href="${ctx }/customer/customer/customer-view.action?customer.cuId=${customer.cuId}">基本信息</a></li>
-					<li><a href="${ctx }/customer/contact/contact-list.action?customer.cuId=${customer.cuId}">联系人管理</a></li>
-					<li><a href="${ctx }/customer/history/history-list.action?customer.cuId=${customer.cuId}">历史订单管理</a></li>
-					<li><a href="${ctx }/customer/communicate/communicate-list.action?customer.cuId=${customer.cuId}">交往记录管理</a></li>
+					<li class="active"><a
+						href="${ctx }/customer/customer/customer-view.action?customer.cuId=${customer.cuId}">基本信息</a></li>
+					<li><a
+						href="${ctx }/customer/contact/contact-list.action?customer.cuId=${customer.cuId}">联系人管理</a></li>
+					<li><a
+						href="${ctx }/customer/history/history-list.action?customer.cuId=${customer.cuId}">历史订单管理</a></li>
+					<li><a
+						href="${ctx }/customer/communicate/communicate-list.action?customer.cuId=${customer.cuId}">交往记录管理</a></li>
 				</ul>
 				<!-- 导航栏结束 -->
 				<!-- 数据显示与交互内容开始 -->
 				<div class="workpage well well-lg">
 					<form class="form-horizontal" role="form"
-					action="${ctx}/customer/customer-edit.action"
-					method="post">
+						action="${ctx}/customer/customer-edit.action" method="post">
 						<div class="form-group">
 							<label for="name" class="col-sm-2 control-label">客户名称：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control" 
-								name = "customer.cuName" value="${customer.cuName}" disabled="disabled">
+								<input type="text" class="form-control" name="customer.cuName"
+									value="${customer.cuName}" disabled="disabled">
 							</div>
 
 							<label for="zone" class="col-sm-2 control-label">所在地区：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control" 
-								name = "customer.cuZone" value="${customer.cuZone}" disabled="disabled">
+								<input type="text" class="form-control" name="customer.cuZone"
+									value="${customer.cuZone}" disabled="disabled">
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label for="level" class="col-sm-2 control-label">客户等级：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control" 
-								name = "customer.cuLevel" value="${customer.cuLevel}" disabled="disabled">
+								<input type="text" class="form-control" name="customer.cuLevel"
+									value="${customer.cuLevel}" disabled="disabled">
 							</div>
 							<label for="credit" class="col-sm-2 control-label">信 用 度：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control" 
-								name = "customer.cuCredit" value="${customer.cuCredit}" disabled="disabled">
+								<input type="text" class="form-control" name="customer.cuCredit"
+									value="${customer.cuCredit}" disabled="disabled">
 							</div>
 						</div>
 
@@ -71,117 +74,128 @@
 							<label for="addr" class="col-sm-2 control-label">地 址：</label>
 							<div class="col-sm-3">
 								<input type="text" class="form-control"
-								name = "customer.cuAddress" value="${customer.cuAddress}" disabled="disabled">
+									name="customer.cuAddress" value="${customer.cuAddress}"
+									disabled="disabled">
 							</div>
 							<label for="postal" class="col-sm-2 control-label">邮政编码：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control" 
-								name = "customer.cuPostal" value="${customer.cuPostal}" disabled="disabled">
+								<input type="text" class="form-control" name="customer.cuPostal"
+									value="${customer.cuPostal}" disabled="disabled">
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label for="tel" class="col-sm-2 control-label">电 话：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control" 
-								name = "customer.cuTel" value="${customer.cuTel}" disabled="disabled">
+								<input type="text" class="form-control" name="customer.cuTel"
+									value="${customer.cuTel}" disabled="disabled">
 							</div>
 							<label for="fac" class="col-sm-2 control-label">传 真：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control" 
-								name = "customer.cuFacsimile" value="${customer.cuFacsimile}" disabled="disabled">
+								<input type="text" class="form-control"
+									name="customer.cuFacsimile" value="${customer.cuFacsimile}"
+									disabled="disabled">
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label for="relation" class="col-sm-2 control-label">联系方式：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control" 
-								name = "customer.cuRelation" value="${customer.cuRelation}" disabled="disabled">
+								<input type="text" class="form-control"
+									name="customer.cuRelation" value="${customer.cuRelation}"
+									disabled="disabled">
 							</div>
 							<label for="legal" class="col-sm-2 control-label">法 人：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control" 
-								name = "customer.cuLegal" value="${customer.cuLegal}" disabled="disabled">
+								<input type="text" class="form-control" name="customer.cuLegal"
+									value="${customer.cuLegal}" disabled="disabled">
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label for="web" class="col-sm-2 control-label">公司网址：</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" 
-								name = "customer.cuWeb" value="${customer.cuWeb}" disabled="disabled">
+								<input type="text" class="form-control" name="customer.cuWeb"
+									value="${customer.cuWeb}" disabled="disabled">
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label for="bank" class="col-sm-2 control-label">开户银行：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control" 
-								name = "customer.cuBank" value="${customer.cuBank}" disabled="disabled">
+								<input type="text" class="form-control" name="customer.cuBank"
+									value="${customer.cuBank}" disabled="disabled">
 							</div>
 							<label for="bankAccount" class="col-sm-2 control-label">银行账号：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control" 
-								name = "customer.cuBankAccount" value="${customer.cuBankAccount}" disabled="disabled">
+								<input type="text" class="form-control"
+									name="customer.cuBankAccount" value="${customer.cuBankAccount}"
+									disabled="disabled">
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label for="registerCapital" class="col-sm-2 control-label">注册资金：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control" 
-								name = "customer.cuRegisterCapital" value="${customer.cuRegisterCapital}" disabled="disabled">
+								<input type="text" class="form-control"
+									name="customer.cuRegisterCapital"
+									value="${customer.cuRegisterCapital}" disabled="disabled">
 							</div>
 							<label for="turnoverNum" class="col-sm-2 control-label">年营业额：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control" 
-								name = "customer.cuTurnover" value="${customer.cuTurnover}" disabled="disabled">
+								<input type="text" class="form-control"
+									name="customer.cuTurnover" value="${customer.cuTurnover}"
+									disabled="disabled">
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label for="landTaxNum" class="col-sm-2 control-label">营业执照注册号：</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" 
-								name = "customer.cuTurnoverNum" value="${customer.cuTurnoverNum}" disabled="disabled">
+								<input type="text" class="form-control"
+									name="customer.cuTurnoverNum" value="${customer.cuTurnoverNum}"
+									disabled="disabled">
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label for="landTaxNum" class="col-sm-2 control-label">地税登记号：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control" 
-								name = "customer.cuLandTaxNum" value="${customer.cuLandTaxNum}" disabled="disabled">
+								<input type="text" class="form-control"
+									name="customer.cuLandTaxNum" value="${customer.cuLandTaxNum}"
+									disabled="disabled">
 							</div>
 							<label for="NationTaxNum" class="col-sm-2 control-label">国税登记号：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control" 
-								name = "customer.cuNationTaxNum" value="${customer.cuNationTaxNum}" disabled="disabled">
+								<input type="text" class="form-control"
+									name="customer.cuNationTaxNum"
+									value="${customer.cuNationTaxNum}" disabled="disabled">
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label for="usName" class="col-sm-2 control-label">所属客户经理：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control" 
-								name="user.usName" value="${customer.user.usName}" disabled="disabled">
+								<input type="text" class="form-control" name="user.usName"
+									value="${customer.user.usName}" disabled="disabled">
 							</div>
 							<label for="satisfy" class="col-sm-2 control-label">客户满意度：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control" 
-								name = "customer.cuSatisfy" value="${customer.cuSatisfy}" disabled="disabled">
+								<input type="text" class="form-control"
+									name="customer.cuSatisfy" value="${customer.cuSatisfy}"
+									disabled="disabled">
 							</div>
 						</div>
 
 						<div class="form-group">
-					<div class="col-sm-6">
-								<a role="button" href="${ctx }/customer/customer-edit.action?customer.cuId=${customer.cuId}"
+							<div class="col-sm-6">
+								<a role="button"
+									href="${ctx }/customer/customer-edit.action?customer.cuId=${customer.cuId}"
 									class="btn btn-default btn-lg col-sm-offset-9">编辑</a>
 							</div>
-					<div class="col-sm-6">
+							<div class="col-sm-6">
 								<a role="button" href="customer/customer-list.action"
-									class="btn btn-default btn-lg col-sm-offset-9">返回</a>
+									class="btn btn-default btn-lg">返回</a>
 							</div>
 						</div>
 					</form>
@@ -191,7 +205,7 @@
 			<!-- 主要内容结束 -->
 		</div>
 	</div>
-	
+
 	<!-- js开始 -->
 	<%@ include file="/view/common/js.jsp"%>
 	<script type="text/javascript">

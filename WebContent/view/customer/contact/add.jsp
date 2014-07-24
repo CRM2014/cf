@@ -43,19 +43,18 @@
 				<div class="workpage well well-lg">
 					<form class="form-horizontal" role="form"
 						action="${ctx}/customer/contact-save.action" method="post">
-						<input type="hidden" class="form-control" name="customer.cuId}"
+						<input type="hidden" class="form-control" name="customer.cuId"
 							value="${customer.cuId}">
 						<div class="form-group">
 							<label for="name" class="col-sm-2 control-label">姓名：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control checkable" reg="/^\S{1,20}$/"
-									name="contactperson.copeName">
+								<input type="text" class="form-control checkable"
+									reg="/^\S{1,20}$/" name="contactperson.copeName">
 							</div>
 
 							<label for="sex" class="col-sm-2 control-label">性别：</label>
 							<div class="col-sm-3">
-								<select class="form-control"
-									name="contactperson.copeSex">
+								<select class="form-control" name="contactperson.copeSex">
 									<option>男</option>
 									<option>女</option>
 								</select>
@@ -75,7 +74,7 @@
 							<label for="tel" class="col-sm-2 control-label">办公室电话：</label>
 							<div class="col-sm-3">
 								<input type="text" class="form-control checkable"
-									reg="/^(d{3,4}-)*[1-9]{6,8}$/" name="contactperson.copeTel">
+									reg="/^\d{6,11}$/" name="contactperson.copeTel">
 							</div>
 							<label for="phone" class="col-sm-2 control-label">手机：</label>
 							<div class="col-sm-3">
@@ -98,7 +97,8 @@
 									class="btn btn-default btn-lg col-sm-offset-9">保存</button>
 							</div>
 							<div class="col-sm-6">
-								<a role="button" href="customer/contact-list.action"
+								<a role="button"
+									href="customer/contact-list.action?customer.cuId=${customer.cuId}"
 									class="btn btn-default btn-lg">返回</a>
 							</div>
 						</div>

@@ -22,7 +22,8 @@
 					<ol class="breadcrumb">
 						<li>客户管理</li>
 						<li><a href="${ctx }/customer/customer-list.action">客户信息管理</a></li>
-						<li><a href="${ctx }/customer/history-list.action?customer.cuId=${customer.cuId}">客户信息管理</a></li>
+						<li><a
+							href="${ctx }/customer/history-list.action?customer.cuId=${customer.cuId}">客户信息管理</a></li>
 						<li>历史订单详情</li>
 					</ol>
 				</h5>
@@ -32,16 +33,18 @@
 				<ul class="nav nav-tabs col-sm-offset-6 " role="tablist">
 					<li><a
 						href="${ctx }/customer/customer/customer-view.action?customer.cuId=${customer.cuId}">基本信息</a></li>
-					<li><a href="${ctx }/customer/contact-list.action?customer.cuId=${customer.cuId}">联系人管理</a></li>
-					<li class="active"><a href="${ctx }/customer/history-list.action?customer.cuId=${customer.cuId}">历史订单管理</a></li>
-					<li><a href="${ctx }/customer/communicate-list.action?customer.cuId=${customer.cuId}">交往记录管理</a></li>
+					<li><a
+						href="${ctx }/customer/contact-list.action?customer.cuId=${customer.cuId}">联系人管理</a></li>
+					<li class="active"><a
+						href="${ctx }/customer/history-list.action?customer.cuId=${customer.cuId}">历史订单管理</a></li>
+					<li><a
+						href="${ctx }/customer/communicate-list.action?customer.cuId=${customer.cuId}">交往记录管理</a></li>
 				</ul>
 				<!-- 导航栏结束 -->
 				<!-- 数据显示与交互内容开始 -->
 				<div class="workpage well well-lg">
 					<form class="form-horizontal" role="form"
-						action="${ctx }/customer/history-view.action"
-						method="post">
+						action="${ctx }/customer/history-view.action" method="post">
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">编号：</label>
 							<div class="col-sm-3">${orderRecord.orreId}</div>
@@ -80,16 +83,17 @@
 							</div>
 						</div>
 						<div align="center">
-							<a role="button" class="btn btn-default" href="customer/history-list.action?customer.cuId=${customer.cuId}">返回</a>
+							<a role="button" class="btn btn-default btn-lg"
+								href="customer/history-list.action?customer.cuId=${customer.cuId}">返回</a>
 						</div>
 					</form>
 				</div>
 				<!-- 数据显示与交互内容结束 -->
-				</div>
+			</div>
 			<!-- 主要内容结束 -->
 		</div>
 	</div>
-	
+
 	<!-- js开始 -->
 	<%@ include file="/view/common/js.jsp"%>
 	<script type="text/javascript">

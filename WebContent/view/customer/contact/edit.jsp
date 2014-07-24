@@ -48,16 +48,16 @@
 						<div class="form-group">
 							<label for="name" class="col-sm-2 control-label">姓名：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control checkable" reg="/^\S{1,20}$/"
-									name="contactperson.copeName"
+								<input type="text" class="form-control checkable"
+									reg="/^\S{1,20}$/" name="contactperson.copeName"
 									value="${contactperson.copeName }">
 							</div>
 
 							<label for="sex" class="col-sm-2 control-label">性别：</label>
 							<div class="col-sm-3">
-							   <select class="form-control" name="contactperson.copeSex">
-										<option>男</option>
-										<option>女</option>
+								<select class="form-control" name="contactperson.copeSex">
+									<option>男</option>
+									<option>女</option>
 								</select>
 							</div>
 						</div>
@@ -65,8 +65,8 @@
 						<div class="form-group">
 							<label for="level" class="col-sm-2 control-label">职位：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control checkable" reg="/^\S{1,20}$/"
-									name="contactperson.copePosition"
+								<input type="text" class="form-control checkable"
+									reg="/^\S{1,20}$/" name="contactperson.copePosition"
 									value="${contactperson.copePosition }">
 							</div>
 						</div>
@@ -74,13 +74,14 @@
 						<div class="form-group">
 							<label for="tel" class="col-sm-2 control-label">办公室电话：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control checkable" reg="/^(d{3,4}-)*[1-9]{6,8}$/"
-									name="contactperson.copeTel" value="${contactperson.copeTel }">
+								<input type="text" class="form-control checkable"
+									reg="/^[0-9]{6,11}$/" name="contactperson.copeTel"
+									value="${contactperson.copeTel }">
 							</div>
 							<label for="phone" class="col-sm-2 control-label">手机：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control checkable" reg="/^(\d{2,3}-)?\d{11}$/"
-									name="contactperson.copePhone"
+								<input type="text" class="form-control checkable"
+									reg="/^(\d{2,3}-)?\d{11}$/" name="contactperson.copePhone"
 									value="${contactperson.copePhone }">
 							</div>
 						</div>
@@ -101,7 +102,7 @@
 									class="btn btn-default btn-lg col-sm-offset-9">保存</button>
 							</div>
 							<div class="col-sm-6">
-								<a role="button" href="customer/contact-list.action"
+								<a role="button" href="customer/contact-list.action?customer.cuId=${customer.cuId}"
 									class="btn btn-default btn-lg">返回</a>
 							</div>
 						</div>

@@ -93,7 +93,7 @@
 									class="btn btn-default btn-lg col-sm-offset-9">编辑</a>
 							</div>
 							<div class="col-sm-6">
-								<a role="button" href="customer/contact-list.action"
+								<a role="button" href="customer/contact-list.action?customer.cuId=${customer.cuId}"
 									class="btn btn-default btn-lg">返回</a>
 							</div>
 						</div>

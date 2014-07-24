@@ -37,11 +37,13 @@ public class ContactAction extends BaseAction {
 
 	public String view() {
 		contactperson = contactpersonService.find(contactperson.getCopeId());
+		customer = contactperson.getCustomer();
 		return "view";
 	}
 
 	public String edit() {
 		contactperson = contactpersonService.find(contactperson.getCopeId());
+		customer = contactperson.getCustomer();
 		return "edit";
 	}
 
@@ -68,9 +70,10 @@ public class ContactAction extends BaseAction {
 	public String list() {
 		if (page == null)
 			page = PageHelper.generatePage();
-		Map<String, Object> like = null;
+		Map<String, Object> like = new HashMap<String, Object>();
+		customer = customerService.find(customer.getCuId());
+		like.put("customer", customer);
 		if (condition != null) {
-			like = new HashMap<String, Object>();
 			if (condition.getCopeName() != null
 					&& !"".equals(condition.getCopeName()))
 				like.put("copeName", condition.getCopeName());
@@ -96,6 +99,7 @@ public class ContactAction extends BaseAction {
 		origContact.setCopePhone(contactperson.getCopePhone());
 		origContact.setCopeNote(contactperson.getCopeNote());
 		contactpersonService.modify(origContact);
+		customer = origContact.getCustomer();
 		return "modify-success";
 	}
 
