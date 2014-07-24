@@ -98,7 +98,7 @@ $(".checkable").each(function() {
 	if ($(this).attr("data-trigger") == undefined)
 		$(this).attr("data-trigger", "focus");
 	if ($(this).attr("data-content") == undefined)
-		$(this).attr("data-content", "空");
+		$(this).attr("data-content", "！");
 	if ($(this).attr("data-placement") == undefined)
 		$(this).attr("data-placement", "right");
 	if ($(this).attr("reg") == undefined)
@@ -109,7 +109,6 @@ function check() {
 	var b = true;
 	$(".checkable").each(function() {
 		var reg = eval($(this).attr("reg"));
-		alert(reg);
 		if (!reg.test($(this).val())) {
 			b = false;
 			$(this).popover('show');
