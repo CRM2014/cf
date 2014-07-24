@@ -42,41 +42,50 @@
 				<!-- 数据显示与交互内容开始 -->
 				<div class="workpage well well-lg">
 					<form class="form-horizontal" role="form"
- 				action="${ctx}/customer/contact-add.action" method="post">
+						action="${ctx}/customer/contact-save.action" method="post">
+						<input type="hidden" class="form-control" name="customer.cuId}"
+							value="${customer.cuId}">
 						<div class="form-group">
 							<label for="name" class="col-sm-2 control-label">姓名：</label>
 							<div class="col-sm-3">
-								<input type="email" class="form-control" id="customerName">
+								<input type="text" class="form-control"
+									name="contactperson.copeName">
 							</div>
 
 							<label for="sex" class="col-sm-2 control-label">性别：</label>
 							<div class="col-sm-3">
-								<input type="email" class="form-control" id="">
+								<input type="text" class="form-control checkable"
+									name="contactperson.copeSex">
+
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label for="level" class="col-sm-2 control-label">职位：</label>
 							<div class="col-sm-3">
-								<input type="email" class="form-control" id="">
+								<input type="text" class="form-control checkable"
+									name="contactperson.copePosition">
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label for="tel" class="col-sm-2 control-label">办公室电话：</label>
 							<div class="col-sm-3">
-								<input type="email" class="form-control" id="">
+								<input type="text" class="form-control checkable"
+									reg="/^(d{3,4}-)?[1-9]d{6,7}$/" name="contactperson.copeTel">
 							</div>
 							<label for="phone" class="col-sm-2 control-label">手机：</label>
 							<div class="col-sm-3">
-								<input type="email" class="form-control" id="">
+								<input type="text" class="form-control checkable"
+									reg="/^(+d{2,3}-)?d{11}$/" name="contactperson.copePhone">
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label for="note" class="col-sm-2 control-label">备注：</label>
 							<div class="col-sm-8">
-								<textarea type="email" class="form-control" rows="3"></textarea>
+								<textarea type="text" class="form-control" rows="3"
+									name="contactperson.copeNote"></textarea>
 							</div>
 						</div>
 
@@ -104,6 +113,10 @@
 	<script type="text/javascript">
 		var pageInfo = new PageInfo(2);
 		pageInfo.generate();
+		
+		$("form").submit(function() {
+			return check();
+		});
 	</script>
 	<!-- js结束 -->
 
