@@ -46,30 +46,30 @@
 						<div class="form-group">
 							<label for="name" class="col-sm-2 control-label">姓名：</label>
 							<div class="col-sm-3">
-								<input type="email" class="form-control" id="customerName">
+								<input type="email" class="form-control checkable" id="customerName">
 							</div>
 
 							<label for="sex" class="col-sm-2 control-label">性别：</label>
 							<div class="col-sm-3">
-								<input type="email" class="form-control" id="">
+								<input type="email" class="form-control checkable" id="">
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label for="level" class="col-sm-2 control-label">职位：</label>
 							<div class="col-sm-3">
-								<input type="email" class="form-control" id="">
+								<input type="email" class="form-control checkable" id="">
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label for="tel" class="col-sm-2 control-label">办公室电话：</label>
 							<div class="col-sm-3">
-								<input type="email" class="form-control" id="">
+								<input type="email" class="form-control checkable" reg="/^(d{3,4}-)?[1-9]d{6,7}$/" id="">
 							</div>
 							<label for="phone" class="col-sm-2 control-label">手机：</label>
 							<div class="col-sm-3">
-								<input type="email" class="form-control" id="">
+								<input type="email" class="form-control checkable" reg="/^(+d{2,3}-)?d{11}$/ id="">
 							</div>
 						</div>
 
@@ -104,6 +104,10 @@
 	<script type="text/javascript">
 		var pageInfo = new PageInfo(2);
 		pageInfo.generate();
+		
+		$("form").submit(function() {
+			return check();
+		});
 	</script>
 	<!-- js结束 -->
 

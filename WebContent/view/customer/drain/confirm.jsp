@@ -66,7 +66,7 @@
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">流失原因</label>
 							<div class="col-sm-8">
-								<input class="form-control" rows="3" name="outflow.ouflReson"
+								<input class="form-control checkable" rows="3" name="outflow.ouflReson"
 									value="${ outflow.ouflReson}"></input>
 							</div>
 
@@ -92,6 +92,10 @@
 	<script type="text/javascript">
 		var pageInfo = new PageInfo(2);
 		pageInfo.generate();
+		
+		$("form").submit(function() {
+			return check();
+		});
 	</script>
 	<!-- js结束 -->
 

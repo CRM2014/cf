@@ -44,21 +44,21 @@
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">客户：</label>
 							<div class="col-sm-3">
-								<select class="form-control" name="customerId">
+								<select class="form-control checkable" name="customerId">
 								<s:iterator value="customers" id="c">
 								<option value="${ c.cuId}">${c.cuName }</option></s:iterator>
 								</select>
 							</div>
 							<label for="inputEmail3" class="col-sm-2 control-label">交往地点：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control" name="contactRecord.corePlace"
+								<input type="text" class="form-control checkable" name="contactRecord.corePlace"
 									value="${ contactRecord.corePlace}">
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">概要：</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" name="contactRecord.coreMain"
+								<input type="text" class="form-control checkable" name="contactRecord.coreMain"
 									value="${ contactRecord.coreMain}">
 							</div>
 						</div>
@@ -100,6 +100,10 @@
 	<script type="text/javascript">
 		var pageInfo = new PageInfo(2);
 		pageInfo.generate();
+		
+		$("form").submit(function() {
+			return check();
+		});
 	</script>
 	<!-- js结束 -->
 

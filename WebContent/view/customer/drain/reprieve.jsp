@@ -54,7 +54,7 @@
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">暂缓措施</label>
 							<div class="col-sm-8">
-								<input class="form-control" rows="3" name="outflow.ouflAction"
+								<input class="form-control checkable" rows="3" name="outflow.ouflAction"
 									value="${ outflow.ouflAction}"></input>
 							</div>
 
@@ -82,6 +82,10 @@
 	<script type="text/javascript">
 		var pageInfo = new PageInfo(2);
 		pageInfo.generate();
+		
+		$("form").submit(function() {
+			return check();
+		});
 	</script>
 	<!-- js结束 -->
 

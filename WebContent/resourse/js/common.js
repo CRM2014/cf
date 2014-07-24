@@ -108,6 +108,7 @@ $(".checkable").each(function() {
 function check() {
 	var b = true;
 	$(".checkable").each(function() {
+		
 		var reg = eval($(this).attr("reg"));
 		if (!reg.test($(this).val())) {
 			b = false;
