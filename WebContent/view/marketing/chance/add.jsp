@@ -36,7 +36,7 @@
 						<div class="form-group">
 							<label for="inputtext3" class="col-sm-2 control-label">机会来源：</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control checkable" reg="^\S{0,100}$"
+								<input type="text" class="form-control checkable" reg="/^\S{0,100}$/"
 									name="salechance.usOrigin" value="${ salechance.usOrigin}">
 							</div>
 
@@ -50,7 +50,7 @@
 							</div>
 							<label for="inputEmail3" class="col-sm-2 control-label">成功几率：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control checkable"
+								<input type="text" class="form-control checkable" reg="/^0\.\d{1,2}$/"
 									name="salechance.usProbability"
 									value="${ salechance.usProbability}">
 							</div>
@@ -108,6 +108,10 @@
 	<script type="text/javascript">
 		var pageInfo = new PageInfo(1);
 		pageInfo.generate();
+		
+		$("form").submit(function() {
+			return check();
+		});
 	</script>
 	<!-- js结束 -->
 
