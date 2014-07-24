@@ -134,7 +134,7 @@
 							<div class="form-group">
 								<label for="" class="col-sm-2 control-label">计划项：</label>
 								<div class="col-sm-7">
-									<input type="text" class="form-control"
+									<input type="text" class="form-control checkable" reg="^\S{1,100}$"
 										name="development.dePlan" value="${ development.dePlan}">
 								</div>
 								<button type="submit" class="btn btn-default btn-lg">保存</button>

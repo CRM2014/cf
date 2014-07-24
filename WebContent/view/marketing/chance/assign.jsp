@@ -88,7 +88,7 @@
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">指派给：</label>
 							<div class="col-sm-3">
-							    <select class="form-control" name="userId">
+							    <select class="form-control checkable" name="userId">
 									<s:iterator value="users" id="u">
 										<option value="${ u.usId}">${u.usName }</option>
 									</s:iterator>
