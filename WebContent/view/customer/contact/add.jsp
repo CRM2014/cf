@@ -48,15 +48,16 @@
 						<div class="form-group">
 							<label for="name" class="col-sm-2 control-label">姓名：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control checkable" reg="^\S{1-20}$"
+								<input type="text" class="form-control checkable"
 									name="contactperson.copeName">
 							</div>
 
 							<label for="sex" class="col-sm-2 control-label">性别：</label>
 							<div class="col-sm-3">
-								 <select class="form-control checkable" name="contactperson.copeSex">
-										<option>男</option>
-										<option>女</option>
+								<select class="form-control checkable"
+									name="contactperson.copeSex">
+									<option>男</option>
+									<option>女</option>
 								</select>
 
 							</div>
@@ -65,8 +66,8 @@
 						<div class="form-group">
 							<label for="level" class="col-sm-2 control-label">职位：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control checkable" reg="^\S{1-20}$"
-									name="contactperson.copePosition">
+								<input type="text" class="form-control checkable"
+									reg="^\S{1-20}$" name="contactperson.copePosition">
 							</div>
 						</div>
 
@@ -93,8 +94,8 @@
 
 						<div class="form-group">
 							<div class="col-sm-6">
-								<a role="button" href="customer/contact-view.action"
-									class="btn btn-default btn-lg col-sm-offset-9">保存</a>
+								<button type="submit"
+									class="btn btn-default btn-lg col-sm-offset-9">保存</button>
 							</div>
 							<div class="col-sm-6">
 								<a role="button" href="customer/contact-list.action"
@@ -104,18 +105,18 @@
 					</form>
 				</div>
 				<!-- 数据显示与交互内容结束 -->
-				
-				</div>
+
+			</div>
 			<!-- 主要内容结束 -->
 		</div>
 	</div>
-	
+
 	<!-- js开始 -->
 	<%@ include file="/view/common/js.jsp"%>
 	<script type="text/javascript">
 		var pageInfo = new PageInfo(2);
 		pageInfo.generate();
-		
+
 		$("form").submit(function() {
 			return check();
 		});

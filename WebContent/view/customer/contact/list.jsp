@@ -42,6 +42,7 @@
 				<!-- 数据显示与交互内容开始 -->
 				<form action="${ctx }/customer/contact-list.action" method="post"
 					id="main-form">
+					<input type="hidden" name="customer.cuId" value="${customer.cuId}">
 					<div class="workpage well well-lg">
 						<div class="form-inline">
 							<div class="form-group">
@@ -72,8 +73,9 @@
 							<button type="submit" class="btn btn-default">
 								<span class="glyphicon glyphicon-search"></span> 查询
 							</button>
-							<a role="button" class="btn btn-default" 
-								href="${ctx }/customer/contact-add.action?customer.cuId=${customer.cuId}">添加联系人</a>							<br> <br>
+							<a role="button" class="btn btn-default"
+								href="${ctx }/customer/contact-add.action?customer.cuId=${customer.cuId}">添加联系人</a>
+							<br> <br>
 							<table class="table table-bordered" align="center"
 								valign="middle">
 								<tr>

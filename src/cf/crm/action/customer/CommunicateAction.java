@@ -39,38 +39,37 @@ public class CommunicateAction extends BaseAction {
 	private Customer customer;
 	private List<Customer> customers;
 	private String customerId;
-	
+
 	@Override
 	public String execute() throws Exception {
 		return "fail";
 	}
-	
-	public String add(){
+
+	public String add() {
 		customers = customerService.findList();
 		return "add";
 	}
-	public String edit(){
+
+	public String edit() {
 		contactRecord = coreService.find(contactRecord.getCoreId());
-		contactRecord.getCustomer();
+		customer = contactRecord.getCustomer();
 		return "edit";
 	}
-	public String view(){
+
+	public String view() {
 		contactRecord = coreService.find(contactRecord.getCoreId());
-		contactRecord.getCustomer();
+		customer = contactRecord.getCustomer();
 		return "view";
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	public String list() {
 		if (page == null)
 			page = PageHelper.generatePage();
-		Map<String, Object> like = null;
-		
-		//condition中还差一个客户ID
+		Map<String, Object> like = new HashMap<String, Object>();
 		customer = customerService.find(customer.getCuId());
-		
+		like.put("customer", customer);
 		if (condition != null) {
-			like = new HashMap<String, Object>();
 			if (condition.getCoreDate() != null
 					&& !"".equals(condition.getCoreDate()))
 				like.put("coreDate", condition.getCoreDate());
@@ -81,6 +80,7 @@ public class CommunicateAction extends BaseAction {
 		coreService.findByPage(page, like);
 		return "list";
 	}
+
 	public String addUser() {
 		contactRecord.setCustomer(customerService.find(customerId));
 		contactRecord.setCoreDate(new Date());
@@ -91,7 +91,8 @@ public class CommunicateAction extends BaseAction {
 
 		return "add-success";
 	}
-	public String modifyUser(){
+
+	public String modifyUser() {
 		Contactrecord origCore = coreService.find(contactRecord.getCoreId());
 		origCore.setCorePlace(contactRecord.getCorePlace());
 		origCore.setCoreMain(contactRecord.getCoreMain());
@@ -100,15 +101,17 @@ public class CommunicateAction extends BaseAction {
 		coreService.modify(origCore);
 		return "modify-success";
 	}
-	public String deleteUser(){
+
+	public String deleteUser() {
 		contactRecord = coreService.find(contactRecord.getCoreId());
 		coreService.remove(contactRecord);
-		
+
 		warn = "Delete Success!";
-		
+
 		return "delete-success";
 	}
-	public String init(){
+
+	public String init() {
 		return "init";
 	}
 

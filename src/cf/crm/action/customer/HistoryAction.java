@@ -31,7 +31,7 @@ public class HistoryAction extends BaseAction {
 	private OrderrecordService orreService;
 	@Autowired
 	@Qualifier("customerServiceImpl")
-	private CustomerService cuService;
+	private CustomerService customerService;
 	@Autowired
 	@Qualifier("orderrecordproductServiceImpl")
 	private OrderrecordproductService orreprService;
@@ -39,20 +39,15 @@ public class HistoryAction extends BaseAction {
 	private Orderrecord condition;
 	private Orderrecord orderRecord;
 	private Customer customer;
-	
-	@Override
-	public String execute() throws Exception {
-		return "fail";
-	}
 
 	@SuppressWarnings("unchecked")
 	public String list() {
-		customer = cuService.find(customer.getCuId());
 		if (page == null)
 			page = PageHelper.generatePage();
-		Map<String, Object> like = null;
+		Map<String, Object> like = new HashMap<String, Object>();
+		customer = customerService.find(customer.getCuId());
+		like.put("customer", customer);
 		if (condition != null) {
-			like = new HashMap<String, Object>();
 			if (condition.getOrreDate() != null
 					&& !"".equals(condition.getOrreDate()))
 				like.put("orreDate", condition.getOrreDate());
@@ -73,13 +68,13 @@ public class HistoryAction extends BaseAction {
 	public String deleteUser() {
 		orderRecord = orreService.find(orderRecord.getOrreId());
 		customer = orderRecord.getCustomer();
-		for(Object o: orderRecord.getOrderrecordproducts()){
+		for (Object o : orderRecord.getOrderrecordproducts()) {
 			Orderrecordproduct orp = (Orderrecordproduct) o;
 			orreprService.remove(orp);
 		}
 		orreService.remove(orderRecord);
 
-		warn = "Delete Success!";
+		warn = "删除成功!";
 
 		return "delete-success";
 	}

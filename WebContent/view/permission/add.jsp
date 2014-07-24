@@ -49,8 +49,9 @@
 							<label for="inputEmail3"
 								class="col-sm-3 col-sm-offset-1 control-label">用户姓名：</label>
 							<div class="col-sm-4">
-								<input type="text" class="form-control checkable" reg="/^[A-Za-z0-9]+$/" data-content="2131"
-									name="user.usName" value="${ user.usName}">
+								<input type="text" class="form-control checkable"
+									reg="/^[A-Za-z0-9]+$/" data-content="2131" name="user.usName"
+									value="${ user.usName}">
 							</div>
 						</div>
 
