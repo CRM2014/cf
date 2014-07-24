@@ -117,6 +117,7 @@ function check() {
 		} catch (e) {
 			b = false;
 			$(this).popover('show');
+			alert($(this).attr("reg"));
 		}
 	});
 	return b;

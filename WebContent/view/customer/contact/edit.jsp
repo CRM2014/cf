@@ -48,14 +48,14 @@
 						<div class="form-group">
 							<label for="name" class="col-sm-2 control-label">姓名：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control checkable" reg="^\S{1-20}$"
+								<input type="text" class="form-control checkable" reg="/^\S{1,20}$/"
 									name="contactperson.copeName"
 									value="${contactperson.copeName }">
 							</div>
 
 							<label for="sex" class="col-sm-2 control-label">性别：</label>
 							<div class="col-sm-3">
-							   <select class="form-control checkable" name="contactperson.copeSex">
+							   <select class="form-control" name="contactperson.copeSex">
 										<option>男</option>
 										<option>女</option>
 								</select>
@@ -65,7 +65,7 @@
 						<div class="form-group">
 							<label for="level" class="col-sm-2 control-label">职位：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control checkable" reg="^\S{1-20}$"
+								<input type="text" class="form-control checkable" reg="/^\S{1,20}$/"
 									name="contactperson.copePosition"
 									value="${contactperson.copePosition }">
 							</div>
@@ -74,12 +74,12 @@
 						<div class="form-group">
 							<label for="tel" class="col-sm-2 control-label">办公室电话：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control checkable" reg="/^(d{3,4}-)?[1-9]d{6,7}$/"
+								<input type="text" class="form-control checkable" reg="/^(d{3,4}-)*[1-9]{6,8}$/"
 									name="contactperson.copeTel" value="${contactperson.copeTel }">
 							</div>
 							<label for="phone" class="col-sm-2 control-label">手机：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control checkable" reg="/^(+d{2,3}-)?d{11}$/
+								<input type="text" class="form-control checkable" reg="/^(\d{2,3}-)?\d{11}$/"
 									name="contactperson.copePhone"
 									value="${contactperson.copePhone }">
 							</div>
