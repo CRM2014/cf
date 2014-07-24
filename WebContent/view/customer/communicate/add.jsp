@@ -44,14 +44,14 @@
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">客户：</label>
 							<div class="col-sm-3">
-								<select class="form-control checkable" name="customerId">
+								<select class="form-control checkable" reg="^\S{1-20}$" name="customerId">
 								<s:iterator value="customers" id="c">
 								<option value="${ c.cuId}">${c.cuName }</option></s:iterator>
 								</select>
 							</div>
 							<label for="inputEmail3" class="col-sm-2 control-label">交往地点：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control checkable" name="contactRecord.corePlace"
+								<input type="text" class="form-control checkable" reg="^\S{1-30}$" name="contactRecord.corePlace"
 									value="${ contactRecord.corePlace}">
 							</div>
 						</div>

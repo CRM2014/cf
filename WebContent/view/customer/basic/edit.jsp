@@ -46,14 +46,14 @@
 						<div class="form-group">
 							<label for="name" class="col-sm-2 control-label">客户名称：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control checkable" name="customer.cuName"
+								<input type="text" class="form-control checkable" reg="^\S{1-20}$"name="customer.cuName"
 									value="${customer.cuName}"> <input type="hidden"
 									name="customer.cuId" value="${customer.cuId}">
 							</div>
 
 							<label for="zone" class="col-sm-2 control-label">所在地区：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control checkable" name="customer.cuZone"
+								<input type="text" class="form-control checkable" reg="^\S{1-20}$" name="customer.cuZone"
 									value="${customer.cuZone}">
 							</div>
 						</div>
@@ -61,7 +61,7 @@
 						<div class="form-group">
 							<label for="level" class="col-sm-2 control-label">客户等级：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control checkable" name="customer.cuLevel"
+								<input type="text" class="form-control checkable"  reg="^\d{1-9}$" name="customer.cuLevel"
 									value="${customer.cuLevel}">
 							</div>
 							<label for="credit" class="col-sm-2 control-label">信 用 度：</label>
@@ -74,12 +74,12 @@
 						<div class="form-group">
 							<label for="addr" class="col-sm-2 control-label">地 址：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control checkable"
+								<input type="text" class="form-control checkable" reg="^\S{1-30}$"
 									name="customer.cuAddress" value="${customer.cuAddress}">
 							</div>
 							<label for="postal" class="col-sm-2 control-label">邮政编码：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control checkable" name="customer.cuPostal"
+								<input type="text" class="form-control checkable" reg="^\d{6}$" name="customer.cuPostal"
 									value="${customer.cuPostal}">
 							</div>
 						</div>
@@ -92,7 +92,7 @@
 							</div>
 							<label for="fac" class="col-sm-2 control-label">传 真：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control"
+								<input type="text" class="form-control checkable" reg="^\d{11}$"
 									name="customer.cuFacsimile" value="${customer.cuFacsimile}">
 							</div>
 						</div>
@@ -105,7 +105,7 @@
 							</div>
 							<label for="legal" class="col-sm-2 control-label">法 人：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control checkable" name="customer.cuLegal"
+								<input type="text" class="form-control checkable" reg="^\S{1-10}$" name="customer.cuLegal"
 									value="${customer.cuLegal}">
 							</div>
 						</div>
@@ -113,7 +113,7 @@
 						<div class="form-group">
 							<label for="web" class="col-sm-2 control-label">公司网址：</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control checkable" name="customer.cuWeb"
+								<input type="text" class="form-control checkable" reg="^\S{1-30}$" name="customer.cuWeb"
 									value="${customer.cuWeb}">
 							</div>
 						</div>
@@ -121,12 +121,12 @@
 						<div class="form-group">
 							<label for="bank" class="col-sm-2 control-label">开户银行：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control checkable" name="customer.cuBank"
+								<input type="text" class="form-control checkable" reg="^\S{1-30}$" name="customer.cuBank"
 									value="${customer.cuBank}">
 							</div>
 							<label for="bankAccount" class="col-sm-2 control-label">银行账号：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control checkable" reg="^\S{0,19}$"
+								<input type="text" class="form-control checkable" reg="^\d{19}$"
 									name="customer.cuBankAccount" value="${customer.cuBankAccount}">
 							</div>
 						</div>
@@ -134,13 +134,13 @@
 						<div class="form-group">
 							<label for="registerCapital" class="col-sm-2 control-label">注册资金：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control"
+								<input type="text" class="form-control checkable" reg="^\d{0-20}$"
 									name="customer.cuRegisterCapital"
 									value="${customer.cuRegisterCapital}">
 							</div>
 							<label for="turnoverNum" class="col-sm-2 control-label">年营业额：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control"
+								<input type="text" class="form-control checkable" reg="^\d{0-20}$"
 									name="customer.cuTurnover" value="${customer.cuTurnover}">
 							</div>
 						</div>
@@ -148,7 +148,7 @@
 						<div class="form-group">
 							<label for="landTaxNum" class="col-sm-2 control-label">营业执照注册号：</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control checkable"
+								<input type="text" class="form-control checkable" reg="^\S{0-20}$"
 									name="customer.cuTurnoverNum" value="${customer.cuTurnoverNum}">
 							</div>
 						</div>
@@ -156,12 +156,12 @@
 						<div class="form-group">
 							<label for="landTaxNum" class="col-sm-2 control-label">地税登记号：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control checkable"
+								<input type="text" class="form-control checkable" reg="^\S{0-20}$"
 									name="customer.cuLandTaxNum" value="${customer.cuLandTaxNum}">
 							</div>
 							<label for="NationTaxNum" class="col-sm-2 control-label">国税登记号：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control checkable"
+								<input type="text" class="form-control checkable" reg="^\S{0-20}$"
 									name="customer.cuNationTaxNum"
 									value="${customer.cuNationTaxNum}">
 							</div>
@@ -179,7 +179,7 @@
 							</div>
 							<label for="satisfy" class="col-sm-2 control-label">客户满意度：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control"
+								<input type="text" class="form-control checkable" reg="^\S{0-10}$"
 									name="customer.cuSatisfy" value="${customer.cuSatisfy}">
 							</div>
 						</div>
