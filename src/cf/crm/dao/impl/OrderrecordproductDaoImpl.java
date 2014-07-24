@@ -9,10 +9,12 @@ import org.springframework.stereotype.Component;
 
 import cf.crm.dao.OrderrecordproductDao;
 import cf.crm.entity.Orderrecordproduct;
+import cf.crm.entity.Product;
 
 @Component
 @Scope("prototype")
-public class OrderrecordproductDaoImpl extends DaoAdapter implements OrderrecordproductDao {
+public class OrderrecordproductDaoImpl extends DaoAdapter implements
+		OrderrecordproductDao {
 	@Override
 	public void add(Orderrecordproduct orderrecordproduct) {
 		orderrecordproduct.setOrreprId(super.generateKey());
@@ -37,8 +39,14 @@ public class OrderrecordproductDaoImpl extends DaoAdapter implements Orderrecord
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Orderrecordproduct> findList() {
-		return (List<Orderrecordproduct>) super.findList(Orderrecordproduct.class);
+		return (List<Orderrecordproduct>) super
+				.findList(Orderrecordproduct.class);
 	}
 
-	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Orderrecordproduct> findListByProduct(Product product) {
+		return (List<Orderrecordproduct>) super.findListByField(
+				Orderrecordproduct.class, "product", product);
+	}
 }

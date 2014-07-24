@@ -62,14 +62,14 @@ public class PlanAction extends BaseAction {
 			like = new HashMap<String, Object>();
 			if (condition.getSalechance().getUsCustomerName() != null
 					&& !"".equals(condition.getSalechance().getUsCustomerName()))
-				like.put("usCustomerName", condition.getSalechance()
+				like.put("salechance.usCustomerName", condition.getSalechance()
 						.getUsCustomerName());
 			if (condition.getSalechance().getUsMain() != null
 					&& !"".equals(condition.getSalechance().getUsMain()))
-				like.put("usMain", condition.getSalechance().getUsMain());
+				like.put("salechance.usMain", condition.getSalechance().getUsMain());
 			if (condition.getSalechance().getUsContanct() != null
 					&& !"".equals(condition.getSalechance().getUsContanct()))
-				like.put("usContanct", condition.getSalechance()
+				like.put("salechance.usContanct", condition.getSalechance()
 						.getUsContanct());
 		}
 		developmentService.findByPage(page, like);

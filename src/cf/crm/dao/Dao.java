@@ -81,6 +81,8 @@ public interface Dao {
 	 */
 	public List<?> findListByField(Class<?> clazz, String name, Object value);
 
+	public List<?> findLikeListByField(Class<?> clazz, String name, Object value);
+
 	/**
 	 * 查找实体列表，根据类型
 	 * 

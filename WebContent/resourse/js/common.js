@@ -91,3 +91,33 @@ $(document).ajaxSuccess(function(event, jqXHR, ajaxOptions) {
 $(document).ajaxComplete(function(event, jqXHR, ajaxOptions) {
 
 });
+
+$(".checkable").each(function() {
+	if ($(this).attr("data-toggle") == undefined)
+		$(this).attr("data-toggle", "popover");
+	if ($(this).attr("data-trigger") == undefined)
+		$(this).attr("data-trigger", "focus");
+	if ($(this).attr("data-content") == undefined)
+		$(this).attr("data-content", "空");
+	if ($(this).attr("data-placement") == undefined)
+		$(this).attr("data-placement", "right");
+	if ($(this).attr("reg") == undefined)
+		$(this).attr("reg", "/^[A-Za-z0-9]+$/");
+});
+
+function check() {
+	var b = true;
+	$(".checkable").each(function() {
+		var reg = eval($(this).attr("reg"));
+		alert(reg);
+		if (!reg.test($(this).val())) {
+			b = false;
+			$(this).popover('show');
+		}
+	});
+	return b;
+}
+
+$(".checkable").blur(function() {
+	$(this).popover('destroy');
+});

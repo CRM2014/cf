@@ -66,13 +66,13 @@ public class ContactAction extends BaseAction {
 			like = new HashMap<String, Object>();
 			if (condition.getCopeName() != null
 					&& !"".equals(condition.getCopeName()))
-				like.put("cuName", condition.getCopeName());
+				like.put("copeName", condition.getCopeName());
 			if (condition.getCopePosition() != null
 					&& !"".equals(condition.getCopePosition()))
-				like.put("cuLevel", condition.getCopePosition());
+				like.put("copePosition", condition.getCopePosition());
 			if (condition.getCopePhone() != null
 					&& !"".equals(condition.getCopePhone()))
-				like.put("cuLevel", condition.getCopePhone());
+				like.put("copePhone", condition.getCopePhone());
 		}
 
 		contactpersonService.findByPage(page, like);

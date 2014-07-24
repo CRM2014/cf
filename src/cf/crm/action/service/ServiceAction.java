@@ -9,10 +9,16 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import cf.crm.action.BaseAction;
+import cf.crm.dao.impl.DaoAdapter;
+import cf.crm.entity.Orderrecordproduct;
 import cf.crm.entity.Product;
 import cf.crm.entity.Service;
+import cf.crm.entity.Servicecustomer;
+import cf.crm.service.OrderrecordService;
+import cf.crm.service.OrderrecordproductService;
 import cf.crm.service.ProductService;
 import cf.crm.service.ServiceService;
+import cf.crm.service.ServicecustomerService;
 import cf.crm.util.page.Page;
 
 @Controller
@@ -28,8 +34,14 @@ public class ServiceAction extends BaseAction {
 	@Qualifier("productServiceImpl")
 	private ProductService productService;
 	@Autowired
+	@Qualifier("orderrecordproductServiceImpl")
+	private OrderrecordproductService orderrecordproductService;
+	@Autowired
 	@Qualifier("serviceServiceImpl")
 	private ServiceService serviceService;
+	@Autowired
+	@Qualifier("servicecustomerServiceImpl")
+	private ServicecustomerService servicecustomerService;
 	private Page<Service> page;
 	private Service service;
 	private Service condition;
@@ -48,7 +60,14 @@ public class ServiceAction extends BaseAction {
 		service.setUser(currentUser);
 		service.setSeCreateTime(new Date());
 		serviceService.add(service);
-
+		for (Orderrecordproduct orderrecordproduct : orderrecordproductService
+				.findListByProduct(service.getProduct())) {
+			Servicecustomer servicecustomer = new Servicecustomer();
+			servicecustomer.setCustomer(orderrecordproduct.getOrderrecord()
+					.getCustomer());
+			servicecustomer.setService(service);
+			servicecustomerService.add(servicecustomer);
+		}
 		warn = "添加成功";
 
 		return "add-success";

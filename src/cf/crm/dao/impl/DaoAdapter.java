@@ -17,13 +17,12 @@ import java.util.Random;
 
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Criterion;
-import org.hibernate.criterion.Expression;
+import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import cf.crm.dao.Dao;
-import cf.crm.entity.Servicecustomer;
 import cf.crm.util.page.Page;
 
 public class DaoAdapter extends HibernateDaoSupport implements Dao {
@@ -108,6 +107,17 @@ public class DaoAdapter extends HibernateDaoSupport implements Dao {
 	}
 
 	@Override
+	public List<?> findLikeListByField(Class<?> clazz, String name, Object value) {
+		try {
+			Criteria cri = getSession().createCriteria(clazz);
+			cri.add(Restrictions.like(name, value.toString(),
+					MatchMode.ANYWHERE));
+			return cri.list();
+		} finally {
+		}
+	}
+
+	@Override
 	public List<?> findList(Class<?> clazz, Map<String, Object> eq,
 			Map<String, Object> like) {
 		try {
@@ -131,9 +141,30 @@ public class DaoAdapter extends HibernateDaoSupport implements Dao {
 			Criteria cri = getSession().createCriteria(clazz);
 			if (like != null) {
 				for (Entry<String, Object> entry : like.entrySet()) {
+					String arr[] = entry.getKey().split("\\.");
+					if (arr.length == 2) {
+						try {
+							String first = arr[0].substring(0, 1).toUpperCase();
+							String rest = arr[0].substring(1, arr[0].length());
+							String newStr = new StringBuffer("cf.crm.entity."
+									+ first).append(rest).toString();
+							List l = findLikeListByField(Class.forName(newStr),
+									arr[1], entry.getValue());
+							if (l != null && l.size() != 0)
+								cri.add(Restrictions.in(arr[0], l));
+							else
+								return;
+						} catch (ClassNotFoundException e) {
+							e.printStackTrace();
+						}
+						like.remove(entry.getKey());
+					}
+
+				}
+				for (Entry<String, Object> entry : like.entrySet()) {
 					if (entry.getValue() instanceof String)
-						cri.add(Restrictions.ilike(entry.getKey(),
-								entry.getValue()));
+						cri.add(Restrictions.like(entry.getKey(), entry
+								.getValue().toString(), MatchMode.ANYWHERE));
 					else
 						cri.add(Restrictions.like(entry.getKey(),
 								entry.getValue()));

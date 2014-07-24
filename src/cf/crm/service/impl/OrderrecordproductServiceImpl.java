@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 
 import cf.crm.dao.OrderrecordproductDao;
 import cf.crm.entity.Orderrecordproduct;
+import cf.crm.entity.Product;
 import cf.crm.service.OrderrecordproductService;
 
 @Component
@@ -43,6 +44,9 @@ public class OrderrecordproductServiceImpl implements OrderrecordproductService 
 		return orderrecordproductDao.findList();
 	}
 
-
+	@Override
+	public List<Orderrecordproduct> findListByProduct(Product product) {
+		return orderrecordproductDao.findListByProduct(product);
+	}
 
 }

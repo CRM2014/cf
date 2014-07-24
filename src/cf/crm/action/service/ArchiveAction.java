@@ -43,23 +43,17 @@ public class ArchiveAction extends BaseAction {
 		Map<String, Object> like = null;
 		if (condition != null) {
 			like = new HashMap<String, Object>();
+
 			if (condition.getCustomer().getCuName() != null
 					&& !"".equals(condition.getCustomer().getCuName()))
-				like.put("customerName", condition.getCustomer().getCuName());
+				like.put("customer.cuName", condition.getCustomer().getCuName());
+
 			if (condition.getService().getSeMain() != null
 					&& !"".equals(condition.getService().getSeMain()))
-				;
-			like.put("seMain", condition.getService().getSeMain());
+				like.put("service.seMain", condition.getService().getSeMain());
 			if (condition.getService().getSeType() != null
 					&& !"".equals(condition.getService().getSeType()))
-				like.put("seType", condition.getService().getSeType());
-			/*
-			 * if (condition.getSecuAllocationTime() != null &&
-			 * !"".equals(condition.getSeCreateTime())) like.put("seCreateTime",
-			 * condition.getSeCreateTime()); if (condition.getSeCreateTime() !=
-			 * null && !"".equals(condition.getSeCreateTime()))
-			 * like.put("seCreateTime", condition.getSeCreateTime());
-			 */
+				like.put("service.seType", condition.getService().getSeType());
 		}
 		servicecustomerservice.findArchiveByPage(page, like);
 		return "list";

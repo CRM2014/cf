@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 
 import cf.crm.action.BaseAction;
 import cf.crm.entity.Customer;
+import cf.crm.entity.User;
 import cf.crm.service.CustomerService;
 import cf.crm.service.UserService;
 import cf.crm.util.page.Page;
@@ -35,14 +36,18 @@ public class CustomerAction extends BaseAction {
 	private Page page;
 	private Customer customer;
 	private Customer condition;
+	private List<User> users;
+	private String userId;
 
 	public String view() {
 		customer = customerService.find(customer.getCuId());
+		users = userService.findListByRole("客户经理");
 		return "view";
 	}
 
 	public String edit() {
 		customer = customerService.find(customer.getCuId());
+		users = userService.findListByRole("客户经理");
 		return "edit";
 	}
 
@@ -50,11 +55,10 @@ public class CustomerAction extends BaseAction {
 		page = PageHelper.generatePage();
 		customerService.findContributionByPage(page);
 		List<Object[]> list = page.getList();
-		
+
 		for (Object[] o : list)
 			log.info(o[0]);
-		
-		
+
 		if (page == null)
 			page = PageHelper.generatePage();
 		Map<String, Object> like = null;
@@ -66,11 +70,10 @@ public class CustomerAction extends BaseAction {
 			if (condition.getCuLevel() != null
 					&& !"".equals(condition.getCuLevel()))
 				like.put("cuLevel", condition.getCuLevel());
-			/*
-			 * if (condition.getUser().getUsName() != null &&
-			 * !"".equals(condition.getUser().getUsName()))
-			 * like.put("user.usName", condition.getUser().getUsName());
-			 */
+
+			if (condition.getUser().getUsName() != null
+					&& !"".equals(condition.getUser().getUsName()))
+				like.put("user.usName", condition.getUser().getUsName());
 		}
 		customerService.findByPage(page, like);
 		return "list";
@@ -78,11 +81,9 @@ public class CustomerAction extends BaseAction {
 
 	public String save() {
 		Customer origCustomer = customerService.find(customer.getCuId());
-		System.out.println(origCustomer.getCuName());
 		origCustomer.setCuName(customer.getCuName());
 		origCustomer.setCuZone(customer.getCuZone());
 		origCustomer.setCuLevel(customer.getCuLevel());
-		// origCustomer.setUser(currentUser);
 		origCustomer.setUser(userService.find("123"));
 		origCustomer.setCuCredit(customer.getCuCredit());
 		origCustomer.setCuAddress(customer.getCuAddress());
@@ -103,8 +104,6 @@ public class CustomerAction extends BaseAction {
 		customerService.modify(origCustomer);
 		return "modify-success";
 	}
-	
-	
 
 	public Page getPage() {
 		return page;
@@ -128,6 +127,14 @@ public class CustomerAction extends BaseAction {
 
 	public void setCondition(Customer condition) {
 		this.condition = condition;
+	}
+
+	public List<User> getUsers() {
+		return users;
+	}
+
+	public void setUsers(List<User> users) {
+		this.users = users;
 	}
 
 }

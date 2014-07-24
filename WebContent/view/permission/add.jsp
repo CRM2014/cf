@@ -39,8 +39,8 @@
 							<label for="inputEmail3"
 								class="col-sm-3 col-sm-offset-1 control-label">用户名：</label>
 							<div class="col-sm-4">
-								<input type="text" class="form-control" name="user.usUserName"
-									value="${ user.usUserName}">
+								<input type="text" class="form-control checkable"
+									name="user.usUserName" value="${ user.usUserName}">
 							</div>
 						</div>
 
@@ -48,8 +48,8 @@
 							<label for="inputEmail3"
 								class="col-sm-3 col-sm-offset-1 control-label">用户姓名：</label>
 							<div class="col-sm-4">
-								<input type="text" class="form-control" name="user.usName"
-									value="${ user.usName}">
+								<input type="text" class="form-control checkable"
+									name="user.usName" value="${ user.usName}">
 							</div>
 						</div>
 
@@ -66,7 +66,7 @@
 
 						<div class="form-group">
 							<div class="col-sm-6">
-								<button type="submit"
+								<button type="submit" id="save"
 									class="btn btn-default btn-lg col-sm-offset-9">保存</button>
 							</div>
 							<div class="col-sm-6">
@@ -88,6 +88,10 @@
 	<script type="text/javascript">
 		var pageInfo = new PageInfo(6);
 		pageInfo.generate();
+
+		$("form").submit(function() {
+			return check();
+		});
 	</script>
 	<!-- js结束 -->
 

@@ -164,13 +164,8 @@
 						<div class="form-group">
 							<label for="usName" class="col-sm-2 control-label">所属客户经理：</label>
 							<div class="col-sm-3">
-								<select class="form-control">
-									<option>小王</option>
-									<option>小李</option>
-									<option>小刘</option>
-									<option>小赵</option>
-									<option>小吴</option>
-								</select>
+								<input type="text" class="form-control" 
+								name="user.usName" value="${customer.user.usName}" disabled="disabled">
 							</div>
 							<label for="satisfy" class="col-sm-2 control-label">客户满意度：</label>
 							<div class="col-sm-3">
