@@ -121,7 +121,7 @@
 									<tr>
 										<td>${deDate}</td>
 										<td>${dePlan}</td>
-										<td><input type="text" value="${deResult}"></td>
+										<td><input type="text" value="${deResult}" class="checkable" reg="^\S{1,100}$"></td>
 
 										<td align="center">
 											<button type="submit" class="btn btn-default btn-lg">保存</button>

@@ -35,7 +35,7 @@
 						<div class="form-group">
 							<label for="inputtext3" class="col-sm-2 control-label">机会来源：</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control"
+								<input type="text" class="form-control checkable" reg="^\S{0,100}$"
 									name="salechance.usOrigin" value="${ salechance.usOrigin}">
 							</div>
 
@@ -43,13 +43,13 @@
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">客户名称：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control"
+								<input type="text" class="form-control checkable"
 									name="salechance.usCustomerName"
 									value="${ salechance.usCustomerName}">
 							</div>
 							<label for="inputEmail3" class="col-sm-2 control-label">成功几率：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control"
+								<input type="text" class="form-control checkable"
 									name="salechance.usProbability"
 									value="${ salechance.usProbability}">
 							</div>
@@ -57,7 +57,7 @@
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">概要：</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" name="salechance.usMain"
+								<input type="text" class="form-control checkable" reg="^\S{0,100}$" name="salechance.usMain"
 									value="${ salechance.usMain}">
 							</div>
 
@@ -65,12 +65,12 @@
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">联系人：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control"
+								<input type="text" class="form-control checkable" reg="^\S{0,100}$"
 									name="salechance.usContanct" value="${ salechance.usContanct}">
 							</div>
 							<label for="inputEmail3" class="col-sm-2 control-label">联系电话：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control"
+								<input type="text" class="form-control checkable" reg="/^(+d{2,3}-)?d{11}$/"
 									name="salechance.usContanctTel"
 									value="${ salechance.usContanctTel}">
 							</div>
@@ -78,7 +78,7 @@
 						<div class="form-group">
 							<label for="inputtext3" class="col-sm-2 control-label">机会描述：</label>
 							<div class="col-sm-8">
-								<textarea class="form-control" rows="3"
+								<textarea class="form-control checkable" reg="^\S{0,100}$" rows="3"
 									name="salechance.usChanceDescribe"
 									value="${ salechance.usChanceDescribe}"></textarea>
 							</div>
