@@ -3,11 +3,12 @@
  */
 
 /** 
- * <h2>dao原有方法类<h2> 
+ * <h2>控制器基础类<h2> 
  *
  * @author 齐宇 
  * @version 1.0, 2014-7-15 
  */
+
 package cf.crm.dao.impl;
 
 import java.util.List;
@@ -20,11 +21,15 @@ import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
+import org.springframework.context.annotation.Scope;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+import org.springframework.stereotype.Component;
 
 import cf.crm.dao.Dao;
 import cf.crm.util.page.Page;
 
+@Component
+@Scope("prototype")
 public class DaoAdapter extends HibernateDaoSupport implements Dao {
 
 	public String generateKey() {
