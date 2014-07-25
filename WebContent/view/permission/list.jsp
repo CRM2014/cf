@@ -79,7 +79,7 @@
 									<td>${usRole }</td>
 									<td align="center"><a role="button"
 										href="${ctx }/permission/permission-modify.action?user.usId=${usId}"
-										class="btn btn-default">修改</a> <a role="button"
+										class="btn btn-default">编辑</a> <a role="button"
 										href="#${ctx }/permission/permission-deleteUser.action?user.usId=${usId}"
 										onclick="comfirmDelete($(this))" class="btn btn-default">删除</a></td>
 								</tr>

@@ -84,7 +84,7 @@
 											href="${ctx }/customer/customer-view.action?customer.cuId=${cuId}"
 											class="btn btn-default">查看</a> <a role="button"
 											href="${ctx }/customer/customer-edit.action?customer.cuId=${cuId}"
-											class="btn btn-default">修改</a> <a role="button"
+											class="btn btn-default">编辑</a> <a role="button"
 											href="#${ctx }/customer/customer-delete.action?customer.cuId=${cuId}"
 											onclick="comfirmDelete($(this))" class="btn btn-default">删除</a>
 										</td>

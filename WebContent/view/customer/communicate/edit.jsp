@@ -102,12 +102,12 @@
 						<div class="form-group">
 							<div class="col-sm-6">
 								<button type="submit"
-									class="btn btn-default col-sm-offset-9">保存</button>
+									class="btn btn-default btn-lg col-sm-offset-9">保存</button>
 							</div>
 							<div class="col-sm-6">
 								<a role="button"
 									href="${ctx }/customer/communicate-list.action?customer.cuId=${customer.cuId}"
-									class="btn btn-default">返回</a>
+									class="btn btn-default  btn-lg">返回</a>
 							</div>
 						</div>
 					</form>

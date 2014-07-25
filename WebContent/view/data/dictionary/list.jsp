@@ -84,7 +84,7 @@
 									<td>${dadiEnableEdit}</td>
 									<td align="center"><a role="button"
 										class="btn btn-default"
-										href="${ctx }/data/data-modify.action?dictionary.dadiId=${dadiId}">修改</a>
+										href="${ctx }/data/data-modify.action?dictionary.dadiId=${dadiId}">编辑</a>
 										<a role="button" class="btn btn-default"
 										href="#${ctx }/data/data-deleteData.action?dictionary.dadiId=${dadiId}"
 										onclick="comfirmDelete($(this))">删除</a></td>

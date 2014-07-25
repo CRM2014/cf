@@ -121,14 +121,14 @@
 								<tr>
 									<td>${deDate}</td>
 									<td><input value="${dePlan}" name="development.dePlan"></td>
-									<td align="center"><input value="${deId}"
-										name="development.deId" type="hidden">
-										<button type="submit" class="btn btn-default">修改</button> <a
-										role="button"
-										href="#${ctx }/marketing/plan-deleteDevelopment.action?development.deId=${deId}"
-										onclick="comfirmDelete($(this))" class="btn btn-default">删除</a>
-									</td>
-								</tr>
+										<td align="center"><input value="${deId}"
+											name="development.deId" type="hidden">
+											<button type="submit" class="btn btn-default">编辑</button> <a
+											role="button"
+											href="#${ctx }/marketing/plan-deleteDevelopment.action?development.deId=${deId}"
+											onclick="comfirmDelete($(this))" class="btn btn-default">删除</a>
+										</td>
+									</tr>
 								</form>
 							</s:iterator>
 						</table>

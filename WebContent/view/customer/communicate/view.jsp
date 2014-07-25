@@ -22,7 +22,8 @@
 					<ol class="breadcrumb">
 						<li>客户管理</li>
 						<li><a href="${ctx }/customer/customer-list.action">客户信息管理</a></li>
-						<li><a href="${ctx }/customer/communicate-list.action?customer.cuId=${customer.cuId}">交往记录管理</a></li>
+						<li><a
+							href="${ctx }/customer/communicate-list.action?customer.cuId=${customer.cuId}">交往记录管理</a></li>
 						<li>查看交往记录详情</li>
 					</ol>
 				</h5>
@@ -30,10 +31,14 @@
 				<h3>${customer.cuName }交往记录详情</h3>
 				<!-- 导航栏开始 -->
 				<ul class="nav nav-tabs col-sm-offset-6 " role="tablist">
-					<li><a href="${ctx }/customer/customer-view.action?customer.cuId=${customer.cuId}">基本信息</a></li>
-					<li><a href="${ctx }/customer/contact-list.action?customer.cuId=${customer.cuId}">联系人管理</a></li>
-					<li><a href="${ctx }/customer/history-list.action?customer.cuId=${customer.cuId}">历史订单管理</a></li>
-					<li class="active"><a href="${ctx }/customer/communicate-list.action?customer.cuId=${customer.cuId}">交往记录管理</a></li>
+					<li><a
+						href="${ctx }/customer/customer-view.action?customer.cuId=${customer.cuId}">基本信息</a></li>
+					<li><a
+						href="${ctx }/customer/contact-list.action?customer.cuId=${customer.cuId}">联系人管理</a></li>
+					<li><a
+						href="${ctx }/customer/history-list.action?customer.cuId=${customer.cuId}">历史订单管理</a></li>
+					<li class="active"><a
+						href="${ctx }/customer/communicate-list.action?customer.cuId=${customer.cuId}">交往记录管理</a></li>
 				</ul>
 				<!-- 导航栏结束 -->
 				<!-- 数据显示与交互内容开始 -->
@@ -67,27 +72,25 @@
 						</div>
 						<div class="form-group">
 							<div class="col-sm-6">
-								<a role="button" class="btn btn-default"
+								<a role="button" class="btn btn-default btn-lg col-sm-offset-9"
 									href="${ctx }/customer/communicate-edit.action?contactRecord.coreId=${contactRecord.coreId}">
-									编辑
-								</a>
+									编辑 </a>
 							</div>
 							<div class="col-sm-6">
-								<a role="button" class="btn btn-default"
+								<a role="button" class="btn btn-default btn-lg"
 									href="${ctx }/customer/communicate-list.action?customer.cuId=${customer.cuId}">
-									返回
-								</a>
+									返回 </a>
 							</div>
 						</div>
 					</form>
 				</div>
 				<!-- 数据显示与交互内容结束 -->
-				
-				</div>
+
+			</div>
 			<!-- 主要内容结束 -->
 		</div>
 	</div>
-	
+
 	<!-- js开始 -->
 	<%@ include file="/view/common/js.jsp"%>
 	<script type="text/javascript">

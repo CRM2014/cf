@@ -84,7 +84,7 @@
 									href="${ctx }/customer/communicate-view.action?contactRecord.coreId=${coreId}">查看
 									</a>
 									<a role="button" class="btn btn-default"
-									href="${ctx }/customer/communicate-edit.action?contactRecord.coreId=${coreId}">修改
+									href="${ctx }/customer/communicate-edit.action?contactRecord.coreId=${coreId}">编辑
 									</a>
 									<a role="button" href="#${ctx }/customer/communicate-deleteUser.action?contactRecord.coreId=${coreId}"
 									onclick="comfirmDelete($(this))" class="btn btn-default">删除

@@ -129,7 +129,7 @@
 											reg="^\S{1,100}$"></td>
 										<td align="center"><input type="hidden" value="${deId}"
 											name="development.deId">
-											<button type="submit" class="btn btn-default">修改</button></td>
+											<button type="submit" class="btn btn-default">编辑</button></td>
 									</tr>
 									</form>
 								</s:iterator>

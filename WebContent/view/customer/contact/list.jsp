@@ -26,7 +26,7 @@
 					</ol>
 				</h5>
 				<!-- 页面路径结束 -->
-				<h3>联系人列表</h3>
+				<h3>${customer.cuName }联系人列表</h3>
 				<!-- 导航栏开始 -->
 				<ul class="nav nav-tabs col-sm-offset-6 " role="tablist">
 					<li><a
