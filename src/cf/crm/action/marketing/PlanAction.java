@@ -66,7 +66,8 @@ public class PlanAction extends BaseAction {
 						.getUsCustomerName());
 			if (condition.getSalechance().getUsMain() != null
 					&& !"".equals(condition.getSalechance().getUsMain()))
-				like.put("salechance.usMain", condition.getSalechance().getUsMain());
+				like.put("salechance.usMain", condition.getSalechance()
+						.getUsMain());
 			if (condition.getSalechance().getUsContanct() != null
 					&& !"".equals(condition.getSalechance().getUsContanct()))
 				like.put("salechance.usContanct", condition.getSalechance()
@@ -97,9 +98,9 @@ public class PlanAction extends BaseAction {
 	public String modifyDevelopment() {
 		Development origDevelopment = developmentService.find(development
 				.getDeId());
-		origDevelopment.setDePlan(origDevelopment.getDePlan());
+		origDevelopment.setDePlan(development.getDePlan());
 		developmentService.modify(origDevelopment);
-
+		salechance = origDevelopment.getSalechance();
 		warn = "modify Success!";
 		return "make-modify-success";
 	}
@@ -108,11 +109,11 @@ public class PlanAction extends BaseAction {
 		Development origDevelopmentexecute = developmentService
 				.find(development.getDeId());
 		origDevelopmentexecute
-				.setDeResult(origDevelopmentexecute.getDeResult());
+				.setDeResult(development.getDeResult());
 		developmentService.modify(origDevelopmentexecute);
-
+		salechance = origDevelopmentexecute.getSalechance();
 		warn = "modify Success!";
-		return "modify-execute-success";
+		return "execute-modify-success";
 	}
 
 	public Development getCondition() {

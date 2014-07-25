@@ -27,79 +27,80 @@
 				<!-- 页面路径结束 -->
 				<!-- 数据显示与交互内容开始 -->
 				<div class="workpage well well-lg">
-					<diiv class="form-horizontal" role="form">
-					<div class="form-group">
-						<label for="inputEmail3" class="col-sm-2 control-label">编号：</label>
-						<div class="col-sm-3">
-							<input type="text" class="form-control" disabled
-								value="${ salechance.sachId}">
+					<div class="form-horizontal" role="form">
+						<div class="form-group">
+							<label for="inputEmail3" class="col-sm-2 control-label">编号：</label>
+							<div class="col-sm-3">
+								<input type="text" class="form-control" disabled
+									value="${ salechance.sachId}">
+							</div>
+							<label for="inputEmail3" class="col-sm-2 control-label">机会来源：</label>
+							<div class="col-sm-3">
+								<input type="text" class="form-control" disabled
+									value="${ salechance.usOrigin}">
+							</div>
 						</div>
-						<label for="inputEmail3" class="col-sm-2 control-label">机会来源：</label>
-						<div class="col-sm-3">
-							<input type="text" class="form-control" disabled
-								value="${ salechance.usOrigin}">
+						<div class="form-group">
+							<label for="inputEmail3" class="col-sm-2 control-label">客户名称：</label>
+							<div class="col-sm-3">
+								<input type="text" class="form-control" disabled
+									value="${ salechance.usCustomerName}">
+							</div>
+							<label for="inputEmail3" class="col-sm-2 control-label">成功几率：</label>
+							<div class="col-sm-3">
+								<input type="text" class="form-control" disabled
+									value="${ salechance.usProbability}">
+							</div>
 						</div>
-					</div>
-					<div class="form-group">
-						<label for="inputEmail3" class="col-sm-2 control-label">客户名称：</label>
-						<div class="col-sm-3">
-							<input type="text" class="form-control" disabled
-								value="${ salechance.usCustomerName}">
+						<div class="form-group">
+							<label for="inputEmail3" class="col-sm-2 control-label">概要：</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" disabled
+									value="${ salechance.usMain}">
+							</div>
 						</div>
-						<label for="inputEmail3" class="col-sm-2 control-label">成功几率：</label>
-						<div class="col-sm-3">
-							<input type="text" class="form-control" disabled
-								value="${ salechance.usProbability}">
+						<div class="form-group">
+							<label for="inputEmail3" class="col-sm-2 control-label">联系人：</label>
+							<div class="col-sm-3">
+								<input type="text" class="form-control" disabled
+									value="${ salechance.usContanct}">
+							</div>
+							<label for="inputEmail3" class="col-sm-2 control-label">联系电话：</label>
+							<div class="col-sm-3">
+								<input type="text" class="form-control" disabled
+									value="${ salechance.usContanctTel}">
+							</div>
 						</div>
-					</div>
-					<div class="form-group">
-						<label for="inputEmail3" class="col-sm-2 control-label">概要：</label>
-						<div class="col-sm-8">
-							<input type="text" class="form-control" disabled
-								value="${ salechance.usMain}">
+						<div class="form-group">
+							<label for="inputEmail3" class="col-sm-2 control-label">机会描述：</label>
+							<div class="col-sm-8">
+								<textarea class="form-control" rows="3" disabled
+									value="${ salechance.usChanceDescribe}"></textarea>
+							</div>
 						</div>
-					</div>
-					<div class="form-group">
-						<label for="inputEmail3" class="col-sm-2 control-label">联系人：</label>
-						<div class="col-sm-3">
-							<input type="text" class="form-control" disabled
-								value="${ salechance.usContanct}">
+						<div class="form-group">
+							<label for="inputEmail3" class="col-sm-2 control-label">创建人：</label>
+							<div class="col-sm-3">
+								<input type="text" class="form-control" disabled
+									value="${ salechance.userByUsCreateId.usName}">
+							</div>
+							<label for="inputEmail3" class="col-sm-2 control-label">创建时间：</label>
+							<div class="col-sm-3">
+								<input type="text" class="form-control" disabled
+									value="${ salechance.usCreateTime}">
+							</div>
 						</div>
-						<label for="inputEmail3" class="col-sm-2 control-label">联系电话：</label>
-						<div class="col-sm-3">
-							<input type="text" class="form-control" disabled
-								value="${ salechance.usContanctTel}">
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="inputEmail3" class="col-sm-2 control-label">机会描述：</label>
-						<div class="col-sm-8">
-							<textarea class="form-control" rows="3" disabled
-								value="${ salechance.usChanceDescribe}"></textarea>
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="inputEmail3" class="col-sm-2 control-label">创建人：</label>
-						<div class="col-sm-3">
-							<input type="text" class="form-control" disabled
-								value="${ salechance.userByUsCreateId.usName}">
-						</div>
-						<label for="inputEmail3" class="col-sm-2 control-label">创建时间：</label>
-						<div class="col-sm-3">
-							<input type="text" class="form-control" disabled
-								value="${ salechance.usCreateTime}">
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="inputEmail3" class="col-sm-2 control-label">指派给：</label>
-						<div class="col-sm-3">
-							<input type="text" class="form-control" disabled
-								value="${ salechance.userByUsDesignationId.usName}">
-						</div>
-						<label for="" class="col-sm-2 control-label">创建时间：</label>
-						<div class="col-sm-3">
-							<input type="text" class="form-control" disabled
-								value="${ salechance.usCreateTime}">
+						<div class="form-group">
+							<label for="inputEmail3" class="col-sm-2 control-label">指派给：</label>
+							<div class="col-sm-3">
+								<input type="text" class="form-control" disabled
+									value="${ salechance.userByUsDesignationId.usName}">
+							</div>
+							<label for="" class="col-sm-2 control-label">创建时间：</label>
+							<div class="col-sm-3">
+								<input type="text" class="form-control" disabled
+									value="${ salechance.usCreateTime}">
+							</div>
 						</div>
 					</div>
 				</div>
@@ -115,40 +116,46 @@
 							</tr>
 
 							<s:iterator value="%{developments}">
+								<form action="${ctx }/marketing/plan-modifyDevelopment.action"
+									method="post">
 								<tr>
 									<td>${deDate}</td>
-									<td><input value="${dePlan}"></td>
-									<td align="center"><a role="button"
-										href="#${ctx }/marketing/plan-make.action?development.deId=${deId}"
-										class="btn btn-default">修改</a> <a role="button"
+									<td><input value="${dePlan}" name="development.dePlan"></td>
+									<td align="center"><input value="${deId}"
+										name="development.deId" type="hidden">
+										<button type="submit" class="btn btn-default">修改</button> <a
+										role="button"
 										href="#${ctx }/marketing/plan-deleteDevelopment.action?development.deId=${deId}"
 										onclick="comfirmDelete($(this))" class="btn btn-default">删除</a>
 									</td>
 								</tr>
+								</form>
 							</s:iterator>
 						</table>
-						<form action="${ctx }/marketing/plan-addDevelopment.action"
+
+						<form class="form-inline" role="form"
+							action="${ctx }/marketing/plan-addDevelopment.action"
 							method="post">
 							<input type="hidden" name="salechance.sachId"
 								value="${salechance.sachId }">
 							<div class="form-group">
-								<label for="" class="col-sm-2 control-label">计划项：</label>
+								<label for="" class="col-sm-3 control-label ">计划项：</label>
 								<div class="col-sm-7">
-									<input type="text" class="form-control checkable" reg="^\S{1,100}$"
-										name="development.dePlan" value="${ development.dePlan}">
+									<input type="text" class="form-control checkable"
+										reg="^\S{1,100}$" name="development.dePlan">
 								</div>
-								<button type="submit" class="btn btn-default btn-lg">保存</button>
+
+								<button type="submit" class="btn btn-default">新增</button>
 							</div>
+							<div class="form-group"></div>
 						</form>
 					</div>
 				</div>
+				<!-- 数据显示与交互内容结束 -->
+				<!-- 主要内容结束 -->
 			</div>
-			<!-- 数据显示与交互内容结束 -->
 		</div>
-		<!-- 主要内容结束 -->
 	</div>
-	</div>
-
 	<!-- js开始 -->
 	<%@ include file="/view/common/js.jsp"%>
 	<script type="text/javascript">
@@ -156,6 +163,5 @@
 		pageInfo.generate();
 	</script>
 	<!-- js结束 -->
-
 </body>
 </html>
