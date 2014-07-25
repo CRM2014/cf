@@ -26,6 +26,9 @@
 				</h5>
 				<!-- 页面路径结束 -->
 				<h3>服务反馈列表</h3>
+								<!-- 提示开始 -->
+				<%@ include file="/view/common/message.jsp"%>
+				<!-- 提示结束 -->
 				<!-- 数据显示与交互内容开始 -->
 				<div class="workpage well well-lg">
 

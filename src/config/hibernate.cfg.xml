@@ -8,7 +8,7 @@
 		<!-- Enable Hibernate's current session context -->
 
 		<!-- Echo all executed SQL to stdout -->
-		<property name="show_sql">true</property>
+		<property name="show_sql">false</property>
 
 		<!-- 映射文件 -->
 		<mapping resource="cf/crm/entity/mapping/Service.hbm.xml" />

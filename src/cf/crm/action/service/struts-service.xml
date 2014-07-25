@@ -16,6 +16,7 @@
 				<param name="namespace">/service </param>
 				<param name="error">${error} </param>
 				<param name="warn">${warn} </param>
+				<param name="encode">true</param>
 			</result>
 		</action>
 
@@ -33,6 +34,7 @@
 				<param name="namespace">/service </param>
 				<param name="error">${error} </param>
 				<param name="warn">${warn} </param>
+				<param name="encode">true</param>
 			</result>
 		</action>
 
@@ -45,6 +47,7 @@
 				<param name="namespace">/service </param>
 				<param name="error">${error} </param>
 				<param name="warn">${warn} </param>
+				<param name="encode">true</param>
 			</result>
 		</action>
 		<action name="feedback-*" class="feedbackAction" method="{1}">
@@ -56,6 +59,7 @@
 				<param name="namespace">/service </param>
 				<param name="error">${error} </param>
 				<param name="warn">${warn} </param>
+				<param name="encode">true</param>
 			</result>
 		</action>
 	</package>
