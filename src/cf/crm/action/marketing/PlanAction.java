@@ -82,7 +82,7 @@ public class PlanAction extends BaseAction {
 		development.setSalechance(salechance);
 		development.setDeDate(new Date());
 		developmentService.add(development);
-		warn = "Save Success!";
+		warn = "保存成功!";
 		return "make-add-success";
 	}
 
@@ -91,7 +91,7 @@ public class PlanAction extends BaseAction {
 		development = developmentService.find(development.getDeId());
 		developmentService.remove(development);
 		salechance = development.getSalechance();
-		warn = "Delete Success!";
+		warn = "删除成功!";
 		return "make-delete-success";
 	}
 

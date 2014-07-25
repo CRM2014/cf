@@ -103,7 +103,7 @@ public class CommunicateAction extends BaseAction {
 		contactRecord = coreService.find(contactRecord.getCoreId());
 		customer = contactRecord.getCustomer();
 		coreService.remove(contactRecord);
-		warn = "Delete Success!";
+		warn = "删除成功!";
 		return "delete-success";
 	}
 

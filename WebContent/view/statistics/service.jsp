@@ -29,18 +29,6 @@
 				<!-- 数据显示与交互内容开始 -->
 				<div class="workpage well well-lg">
 
-					<form class="form-inline" role="form">
-						<select class="form-control">
-							<option>全部</option>
-							<option>按编号</option>
-							<option>按条目</option>
-							<option>按服务数量</option>
-						</select>
-
-						<button type="submit" class="btn btn-default">
-							<span class="glyphicon glyphicon-search"></span> 查询
-						</button>
-					</form>
 					<br> <br>
 					<table class="table table-bordered" align="center" valign="middle">
 						<tr>

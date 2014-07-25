@@ -76,7 +76,7 @@ public class ChanceAction extends BaseAction {
 		salechance.setUsCreateTime(new Date());
 		salechance.setUserByUsCreateId(currentUser);
 		salechanceService.add(salechance);
-		warn = "Save Success!";
+		warn = "保存成功!";
 
 		return "add-success";
 	}
@@ -85,7 +85,7 @@ public class ChanceAction extends BaseAction {
 		
 		salechance = salechanceService.find(salechance.getSachId());
 		salechanceService.remove(salechance);
-		warn = "Delete Success!";
+		warn = "删除成功!";
 		
 		return "delete-success";
 	}

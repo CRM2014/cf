@@ -39,13 +39,6 @@
 								</div>
 							</div>
 
-							<div class="form-group">
-								<div class="input-group">
-									<div class="input-group-addon">年份</div>
-									<input class="form-control" type="text" placeholder="">
-								</div>
-							</div>
-
 							<button type="submit" class="btn btn-default">
 								<span class="glyphicon glyphicon-search"></span> 查询
 							</button>

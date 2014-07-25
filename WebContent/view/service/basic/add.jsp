@@ -47,11 +47,9 @@
 								class="col-sm-3 col-sm-offset-1 control-label">服务类型：</label>
 							<div class="col-sm-4">
 								<select class="form-control" name="service.seType">
-									<option>咨询</option>
-									<option>建议</option>
-									<option>购买</option>
-									<option>培训</option>
-									<option>合作</option>
+									<s:iterator value="dictionarys">
+										<option value="${dadiValue}">${dadiItem}</option>
+									</s:iterator>
 								</select>
 							</div>
 						</div>
@@ -59,7 +57,8 @@
 							<label for="inputEmail3"
 								class="col-sm-3 col-sm-offset-1 control-label">概要：</label>
 							<div class="col-sm-4">
-								<input type="text" class="form-control checkable" reg="/^\S{1,30}$/" name="service.seMain"
+								<input type="text" class="form-control checkable"
+									reg="/^\S{1,30}$/" name="service.seMain"
 									value="${ service.seMain}">
 							</div>
 
@@ -88,7 +87,7 @@
 	<script type="text/javascript">
 		var pageInfo = new PageInfo(3);
 		pageInfo.generate();
-		
+
 		$("form").submit(function() {
 			return check();
 		});
