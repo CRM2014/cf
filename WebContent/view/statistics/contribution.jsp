@@ -62,11 +62,6 @@
 								</tr>
 							</s:iterator>
 						</table>
-						<div class="text-center">
-							<!-- 分页栏开始 -->
-							<%@ include file="/view/common/page.jsp"%>
-							<!-- 分页栏结束 -->
-						</div>
 					</div>
 				</form>
 				<!-- 数据显示与交互内容结束 -->

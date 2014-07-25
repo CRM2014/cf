@@ -75,7 +75,8 @@ public class UserDaoImpl extends DaoAdapter implements UserDao {
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<User> findListByRole(String role) {
-		return (List<User>) super.findListByField(User.class, "usRole", role);
+		return (List<User>) super.findListByField(User.class, "usRole", role,
+				null);
 	}
 
 	@Override

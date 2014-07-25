@@ -57,12 +57,14 @@ public class ServicecustomerDaoImpl extends DaoAdapter implements
 
 	@Override
 	public void findByPage(Page<Servicecustomer> page, Map<String, Object> like) {
+		page.setOrder("secuId");
 		super.findByPage(Servicecustomer.class, page, like);
 	}
 
 	@Override
 	public void findFeedbackByPage(Page<Servicecustomer> page,
 			Map<String, Object> like) {
+		page.setOrder("secuId");
 		List<Criterion> cri = new ArrayList<Criterion>();
 		cri.add(Restrictions.isNull("secuDealResult"));
 		cri.add(Restrictions.isNotNull("secuDeal"));
@@ -72,6 +74,7 @@ public class ServicecustomerDaoImpl extends DaoAdapter implements
 	@Override
 	public void findArchiveByPage(Page<Servicecustomer> page,
 			Map<String, Object> like) {
+		page.setOrder("secuId");
 		List<Criterion> cri = new ArrayList<Criterion>();
 		cri.add(Restrictions.isNotNull("secuDealResult"));
 		cri.add(Restrictions.isNotNull("secuDeal"));
@@ -81,8 +84,8 @@ public class ServicecustomerDaoImpl extends DaoAdapter implements
 	@Override
 	public void findAssignByPage(Page<Servicecustomer> page,
 			Map<String, Object> like) {
+		page.setOrder("secuId");
 		List<Criterion> cri = new ArrayList<Criterion>();
-
 		cri.add(Restrictions.isNull("userByUsDealId"));
 		super.findByPage(Servicecustomer.class, page, like, cri);
 	}
@@ -90,6 +93,7 @@ public class ServicecustomerDaoImpl extends DaoAdapter implements
 	@Override
 	public void findDealByPage(Page<Servicecustomer> page,
 			Map<String, Object> like) {
+		page.setOrder("secuId");
 		List<Criterion> cri = new ArrayList<Criterion>();
 		cri.add(Restrictions.isNull("secuDeal"));
 		cri.add(Restrictions.isNotNull("userByUsDealId"));

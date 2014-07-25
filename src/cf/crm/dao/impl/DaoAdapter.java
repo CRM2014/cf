@@ -102,9 +102,12 @@ public class DaoAdapter extends HibernateDaoSupport implements Dao {
 	}
 
 	@Override
-	public List<?> findListByField(Class<?> clazz, String name, Object value) {
+	public List<?> findListByField(Class<?> clazz, String name, Object value,
+			Order order) {
 		try {
 			Criteria cri = getSession().createCriteria(clazz);
+			if (order != null)
+				cri.addOrder(order);
 			cri.add(Restrictions.eq(name, value));
 			return cri.list();
 		} finally {
@@ -115,6 +118,7 @@ public class DaoAdapter extends HibernateDaoSupport implements Dao {
 	public List<?> findLikeListByField(Class<?> clazz, String name, Object value) {
 		try {
 			Criteria cri = getSession().createCriteria(clazz);
+			cri.addOrder(Order.desc(name));
 			cri.add(Restrictions.like(name, value.toString(),
 					MatchMode.ANYWHERE));
 			return cri.list();
@@ -175,9 +179,10 @@ public class DaoAdapter extends HibernateDaoSupport implements Dao {
 								entry.getValue()));
 				}
 			}
-			if (criterion != null)
+			if (criterion != null) {
 				for (Criterion c : criterion)
 					cri.add(c);
+			}
 			if (page.getOrder() != null && !"".equals(page.getOrder())) {
 				if (page.isDesc())
 					cri.addOrder(Order.desc(page.getOrder()));

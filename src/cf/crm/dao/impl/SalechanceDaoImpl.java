@@ -56,6 +56,7 @@ public class SalechanceDaoImpl extends DaoAdapter implements SalechanceDao {
 
 	@Override
 	public void findByPage(Page<Salechance> page, Map<String, Object> like) {
+		page.setOrder("sachId");
 		super.findByPage(Salechance.class, page, like);
 	}
 	

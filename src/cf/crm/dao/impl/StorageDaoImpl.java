@@ -56,6 +56,7 @@ public class StorageDaoImpl extends DaoAdapter implements StorageDao {
 
 	@Override
 	public void findByPage(Page<Storage> page, Map<String, Object> like) {
+		page.setOrder("stId");
 		super.findByPage(Storage.class, page, like);
 	}
 

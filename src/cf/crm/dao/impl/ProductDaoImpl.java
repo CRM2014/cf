@@ -56,8 +56,8 @@ public class ProductDaoImpl extends DaoAdapter implements ProductDao {
 
 	@Override
 	public void findByPage(Page<Product> page, Map<String, Object> like) {
+		page.setOrder("prId");
 		super.findByPage(Product.class, page, like);
 	}
 
-	
 }

@@ -57,6 +57,7 @@ public class CustomerDaoImpl extends DaoAdapter implements CustomerDao {
 
 	@Override
 	public void findByPage(Page<Customer> page, Map<String, Object> like) {
+		page.setOrder("cuId");
 		super.findByPage(Customer.class, page, like);
 	}
 
@@ -72,15 +73,14 @@ public class CustomerDaoImpl extends DaoAdapter implements CustomerDao {
 
 	// 根据等级求出出客户数量的
 	@Override
-	public void findCompositionByPage(Page page,String compositionType) {
-		
+	public void findCompositionByPage(Page page, String compositionType) {
 		String sql;
-		if(compositionType=="1")
+		if ("1".equals(compositionType))
 			sql = "select cuLevel,count(cuLevel) cuTotal from customer group by cuLevel";
-		else if(compositionType=="2")
-			sql = "select cuLevel,count(cuCredit) cuTotal from customer group by cuLevel";
-		else if(compositionType=="3")
-			sql = "select cuLevel,count(cuSatisfy) cuTotal from customer group by cuLevel";
+		else if ("2".equals(compositionType))
+			sql = "select cuLevel,count(cuCredit) cuTotal from customer group by cuCredit";
+		else if ("3".equals(compositionType))
+			sql = "select cuLevel,count(cuSatisfy) cuTotal from customer group by cuSatisfy";
 		else
 			sql = "select cuLevel,count(cuLevel) cuTotal from customer group by cuLevel";
 		super.findByPage(page, sql);

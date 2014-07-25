@@ -15,8 +15,8 @@ import java.util.List;
 import java.util.Map;
 
 import org.hibernate.criterion.Criterion;
+import org.hibernate.criterion.Order;
 
-import cf.crm.entity.Servicecustomer;
 import cf.crm.util.page.Page;
 
 public interface Dao {
@@ -90,7 +90,8 @@ public interface Dao {
 	 *            参数值
 	 * @return 实体列表
 	 */
-	public List<?> findListByField(Class<?> clazz, String name, Object value);
+	public List<?> findListByField(Class<?> clazz, String name, Object value,
+			Order order);
 
 	public List<?> findLikeListByField(Class<?> clazz, String name, Object value);
 

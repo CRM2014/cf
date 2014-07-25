@@ -58,6 +58,7 @@ public class DatadictionaryDaoImpl extends DaoAdapter implements
 
 	@Override
 	public void findByPage(Page<Datadictionary> page, Map<String, Object> like) {
+		page.setOrder("dadiId");
 		super.findByPage(Datadictionary.class, page, like);
 
 	}
@@ -66,7 +67,7 @@ public class DatadictionaryDaoImpl extends DaoAdapter implements
 	@Override
 	public List<Datadictionary> findServiceList() {
 		return (List<Datadictionary>) super.findListByField(
-				Datadictionary.class, "dadiType", Dictionary.SERVICETYPE);
+				Datadictionary.class, "dadiType", Dictionary.SERVICETYPE, null);
 	}
 
 }
