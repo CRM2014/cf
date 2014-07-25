@@ -61,8 +61,17 @@ public class CustomerDaoImpl extends DaoAdapter implements CustomerDao {
 
 	// 根据等级求出出客户数量的
 	@Override
-	public void findCompositionByPage(Page page) {
-		String sql = "select cuLevel,count(cuLevel) cuTotal from customer group by cuLevel";
+	public void findCompositionByPage(Page page,String compositionType) {
+		
+		String sql;
+		if(compositionType=="1")
+			sql = "select cuLevel,count(cuLevel) cuTotal from customer group by cuLevel";
+		else if(compositionType=="2")
+			sql = "select cuLevel,count(cuCredit) cuTotal from customer group by cuLevel";
+		else if(compositionType=="3")
+			sql = "select cuLevel,count(cuSatisfy) cuTotal from customer group by cuLevel";
+		else
+			sql = "select cuLevel,count(cuLevel) cuTotal from customer group by cuLevel";
 		super.findByPage(page, sql);
 	}
 

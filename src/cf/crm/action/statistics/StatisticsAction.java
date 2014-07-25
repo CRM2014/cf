@@ -24,6 +24,7 @@ public class StatisticsAction extends BaseAction {
 	@Autowired
 	@Qualifier("customerServiceImpl")
 	private CustomerService customerService;
+	private String compositionType;
 	private Page page;
 
 	public String contribution() {
@@ -37,8 +38,11 @@ public class StatisticsAction extends BaseAction {
 	public String composition() {
 		if (page == null)
 			page = PageHelper.generatePage();
-		customerService.findCompositionByPage(page);
+		customerService.findCompositionByPage(page,compositionType);
+		
 		log.info(JSONArray.fromObject(page.getList()));
+		log.info("=====================================");
+		log.info(compositionType);
 		return "composition";
 	}
 
@@ -64,6 +68,17 @@ public class StatisticsAction extends BaseAction {
 
 	public void setPage(Page page) {
 		this.page = page;
+	}
+	
+	public String getCompositionType(){
+		if(null==compositionType||"".equals(compositionType)){
+			compositionType="1";
+		}
+		return compositionType;
+	}
+	
+	public void setCompositionType(String compositionType){
+		this.compositionType = compositionType;
 	}
 
 }

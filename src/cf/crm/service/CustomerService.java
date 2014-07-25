@@ -21,8 +21,6 @@ public interface CustomerService {
 
 	public void findContributionByPage(Page page);
 
-	public void findCompositionByPage(Page page);
-
 	public void findServiceByPage(Page page);
 
 	public void findDrainByPage(Page page);
@@ -30,4 +28,7 @@ public interface CustomerService {
 	public Object getOrderNumber();
 
 	public Object getCustomerNumber();
+
+	public void findCompositionByPage(Page page, String compositionType);
+
 }
