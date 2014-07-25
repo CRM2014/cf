@@ -27,11 +27,11 @@
 				<!-- 页面路径结束 -->
 				<h3>客户构成分析</h3>
 				<!-- 数据显示与交互内容开始 -->
-				<form action="${ctx }/permission/permission-list.action"
+				<form action="${ctx }/statistics/statistics-composition.action"
 					method="post" id="main-form">
 					<div class="workpage well well-lg">
 
-						<div class="form-inline" role="form">
+						<div class="form-inline">
 
 							<select class="form-control">
 								<option>全部</option>
@@ -44,7 +44,8 @@
 								<span class="glyphicon glyphicon-search"></span> 查询
 							</button>
 							<a role="button" class="btn btn-default" data-toggle="modal"
-								data-target="#chart">客户构成比例</a>
+								data-target="#chart">客户构成比例</a> <a role="button"
+								class="btn btn-default" data-toggle="modal" data-target="#chart">客户构成比例</a>
 						</div>
 
 						<br> <br>
@@ -114,7 +115,6 @@
 							<h4>
 								5级客户：<span id="cuNum-5"></span>
 							</h4>
-
 						</div>
 					</div>
 				</div>

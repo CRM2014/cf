@@ -27,28 +27,32 @@ public class StatisticsAction extends BaseAction {
 	private Page page;
 
 	public String contribution() {
-		page = PageHelper.generatePage();
+		if (page == null)
+			page = PageHelper.generatePage();
 		customerService.findContributionByPage(page);
 		log.info(JSONArray.fromObject(page.getList()));
 		return "contribution";
 	}
 
 	public String composition() {
-		page = PageHelper.generatePage();
+		if (page == null)
+			page = PageHelper.generatePage();
 		customerService.findCompositionByPage(page);
 		log.info(JSONArray.fromObject(page.getList()));
 		return "composition";
 	}
 
 	public String service() {
-		page = PageHelper.generatePage();
+		if (page == null)
+			page = PageHelper.generatePage();
 		customerService.findServiceByPage(page);
 		log.info(JSONArray.fromObject(page.getList()));
 		return "service";
 	}
 
 	public String drain() {
-		page = PageHelper.generatePage();
+		if (page == null)
+			page = PageHelper.generatePage();
 		customerService.findDrainByPage(page);
 		log.info(JSONArray.fromObject(page.getList()));
 		return "drain";

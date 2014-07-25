@@ -10,7 +10,7 @@
 	<div class="container-fluid">
 		<div class="space"></div>
 		<div class="row">
-			<div class="col-md-4">
+			<div class="col-md-4 col-md-offset-4">
 				<br> <br> <br> <br> <br>
 				<div class="workpage well">
 					<form class="form-horizontal" role="form"

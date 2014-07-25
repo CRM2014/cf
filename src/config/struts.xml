@@ -47,4 +47,5 @@
 	<include file="/cf/crm/action/account/struts-account.xml"></include>
 	<include file="/cf/crm/action/customer/struts-customer.xml"></include>
 	<include file="/cf/crm/action/ajax/struts-ajax.xml"></include>
+	<include file="/cf/crm/action/excel/struts-excel.xml"></include>
 </struts>

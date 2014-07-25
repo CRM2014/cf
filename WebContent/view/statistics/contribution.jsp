@@ -26,12 +26,10 @@
 				</h5>
 				<!-- 页面路径结束 -->
 				<h3>客户贡献分析</h3>
-				<form action="${ctx }/customer/customer-list.action" method="post"
-					id="main-form">
+				<form action="${ctx }/statistics/statistics-contribution.action"
+					method="post" id="main-form">
 					<!-- 数据显示与交互内容开始 -->
 					<div class="workpage well well-lg">
-
-
 						<div class="form-inline">
 							<div class="form-group">
 								<div class="input-group">
@@ -52,7 +50,8 @@
 								<span class="glyphicon glyphicon-search"></span> 查询
 							</button>
 							<a role="button" class="btn btn-default" data-toggle="modal"
-								data-target="#chart">订单数量走势</a>
+								data-target="#chart">订单数量走势</a> <a role="button"
+								href="${ctx }/excel/contribution.action" class="btn btn-default">导出Excel</a>
 						</div>
 						<br> <br>
 						<table class="table table-bordered" align="center" valign="middle">
