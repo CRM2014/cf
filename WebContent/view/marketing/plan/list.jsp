@@ -35,26 +35,17 @@
 							<div class="input-group">
 								<div class="input-group-addon">客户名称</div>
 								<input class="form-control" type="text" placeholder=""
-									name="development.salechance.usCustomerName"
-									value="${ development.salechance.usCustomerName}">
+									name="condition.salechance.usCustomerName"
+									value="${ condition.salechance.usCustomerName}">
 							</div>
 						</div>
 
 						<div class="form-group">
 							<div class="input-group">
-								<div class="input-group-addon">概要</div>
+								<div class="input-group-addon">计划项</div>
 								<input class="form-control" type="text" placeholder=""
-									name="development.salechance.usMain"
-									value="${ development.salechance.usMain}">
-							</div>
-						</div>
-
-						<div class="form-group">
-							<div class="input-group">
-								<div class="input-group-addon">联系人</div>
-								<input class="form-control" type="text" placeholder=""
-									name="development.salechance.usContanct"
-									value="${ development.salechance.usContanct}">
+									name="condition.dePlan"
+									value="${ condition.dePlan}">
 							</div>
 						</div>
 

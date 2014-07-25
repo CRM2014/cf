@@ -71,7 +71,7 @@
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">机会描述：</label>
 							<div class="col-sm-8">
-								<textarea class="form-control" rows="3" disabled value="${ salechance.usChanceDescribe}"></textarea>
+								<textarea class="form-control" rows="3" disabled>${ salechance.usChanceDescribe}</textarea>
 							</div>
 
 						</div>
@@ -88,7 +88,7 @@
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">指派给：</label>
 							<div class="col-sm-3">
-							    <select class="form-control checkable" name="userId">
+							    <select class="form-control" name="userId">
 									<s:iterator value="users" id="u">
 										<option value="${ u.usId}">${u.usName }</option>
 									</s:iterator>

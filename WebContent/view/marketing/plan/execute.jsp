@@ -75,8 +75,7 @@
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">机会描述：</label>
 							<div class="col-sm-8">
-								<textarea class="form-control" rows="3" disabled
-									value="${ salechance.usChanceDescribe}"></textarea>
+								<textarea class="form-control" rows="3" disabled>${ salechance.usChanceDescribe}</textarea>
 							</div>
 						</div>
 						<div class="form-group">
@@ -121,21 +120,24 @@
 									<form
 										action="${ctx }/marketing/plan-modifyDevelopmentExecute.action"
 										method="post">
-									<tr>
-										<td>${deDate}</td>
-										<td>${dePlan}</td>
-										<td><input type="text" value="${deResult}"
-											name="development.deResult" class="checkable"
-											reg="^\S{1,100}$"></td>
-										<td align="center"><input type="hidden" value="${deId}"
-											name="development.deId">
-											<button type="submit" class="btn btn-default">编辑</button></td>
-									</tr>
+										<tr>
+											<td>${deDate}</td>
+											<td>${dePlan}</td>
+											<td><input type="text" value="${deResult}"
+												name="development.deResult"></td>
+											<td align="center"><input type="hidden" value="${deId}"
+												name="development.deId">
+												<button type="submit" class="btn btn-default">编辑</button></td>
+										</tr>
 									</form>
 								</s:iterator>
+
 							</table>
 						</div>
+
+
 					</div>
+
 				</div>
 				<!-- 数据显示与交互内容结束 -->
 			</div>
@@ -148,6 +150,10 @@
 	<script type="text/javascript">
 		var pageInfo = new PageInfo(1);
 		pageInfo.generate();
+
+		$("form").submit(function() {
+			return check();
+		});
 	</script>
 	<!-- js结束 -->
 

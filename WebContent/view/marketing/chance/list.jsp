@@ -35,8 +35,8 @@
 							<div class="input-group">
 								<div class="input-group-addon">客户名称</div>
 								<input class="form-control" type="text" placeholder=""
-									name="salechance.usCustomerName"
-									value="${ salechance.usCustomerName}">
+									name="condition.usCustomerName"
+									value="${ condition.usCustomerName}">
 							</div>
 						</div>
 
@@ -44,7 +44,7 @@
 							<div class="input-group">
 								<div class="input-group-addon">概要</div>
 								<input class="form-control" type="text" placeholder=""
-									name="salechance.usMain" value="${ salechance.usMain}">
+									name="condition.usMain" value="${ condition.usMain}">
 							</div>
 						</div>
 
@@ -52,7 +52,7 @@
 							<div class="input-group">
 								<div class="input-group-addon">联系人</div>
 								<input class="form-control" type="text" placeholder=""
-									name="salechance.usContanct" value="${ salechance.usContanct}">
+									name="condition.usContanct" value="${ condition.usContanct}">
 							</div>
 						</div>
 

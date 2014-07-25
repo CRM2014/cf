@@ -64,14 +64,9 @@ public class PlanAction extends BaseAction {
 					&& !"".equals(condition.getSalechance().getUsCustomerName()))
 				like.put("salechance.usCustomerName", condition.getSalechance()
 						.getUsCustomerName());
-			if (condition.getSalechance().getUsMain() != null
-					&& !"".equals(condition.getSalechance().getUsMain()))
-				like.put("salechance.usMain", condition.getSalechance()
-						.getUsMain());
-			if (condition.getSalechance().getUsContanct() != null
-					&& !"".equals(condition.getSalechance().getUsContanct()))
-				like.put("salechance.usContanct", condition.getSalechance()
-						.getUsContanct());
+			if (condition.getDePlan() != null
+					&& !"".equals(condition.getDePlan()))
+				like.put("dePlan", condition.getDePlan());
 		}
 		developmentService.findByPage(page, like);
 		return "list";
