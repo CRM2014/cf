@@ -32,17 +32,15 @@
 					<div class="workpage well well-lg">
 
 						<div class="form-inline">
+							
+							<input type="hidden" id="compositionType" value="${compositionType}">
 
-							<select class="form-control">
-								<option>全部</option>
-								<option>按编号</option>
-								<option>按等级</option>
-								<option>按客户数量</option>
+							<select class="form-control" name="compositionType">
+								<option value="1">按等级</option>
+								<option value="2">按信用度</option>
+								<option value="3">按满意度</option>
 							</select>
 
-							<button type="submit" class="btn btn-default">
-								<span class="glyphicon glyphicon-search"></span> 查询
-							</button>
 							<a role="button" class="btn btn-default" data-toggle="modal"
 								data-target="#chart">客户构成比例</a> <a role="button"
 								class="btn btn-default" data-toggle="modal" data-target="#chart">客户构成比例</a>
@@ -52,7 +50,7 @@
 						<table class="table table-bordered" align="center" valign="middle">
 							<tr>
 								<td align="center">编号</td>
-								<td align="center">等级</td>
+								<td align="center" id="compositionTypeTitle">等级</td>
 								<td align="center">客户数量</td>
 							</tr>
 							<s:iterator value="page.list" status="st">
@@ -65,6 +63,8 @@
 								</tr>
 							</s:iterator>
 						</table>
+						
+						
 						<div class="text-center">
 							<!-- 分页栏开始 -->
 							<%@ include file="/view/common/page.jsp"%>
@@ -127,6 +127,21 @@
 	<script type="text/javascript">
 		var pageInfo = new PageInfo(4);
 		pageInfo.generate();
+$("[name='compositionType']").val($("#compositionType").val());
+var v = $("[name='compositionType']").val();
+if(v=="1")
+	$("#compositionTypeTitle").html("等级");
+	else if(v=="2")
+		$("#compositionTypeTitle").html("信用度");
+	else if(v=="3")$("#compositionTypeTitle").html("满意度");
+	
+$("[name='compositionType']").change(function(){
+	
+	
+	
+	$("form").submit();
+	
+});
 
 		$('#chart').on('shown.bs.modal', function(e) {
 			$.ajax({

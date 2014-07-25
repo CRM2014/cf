@@ -21,8 +21,6 @@ public interface CustomerDao extends Dao {
 
 	public void findContributionByPage(Page page);
 
-	public void findCompositionByPage(Page page);
-
 	public void findServiceByPage(Page page);
 
 	public void findDrainByPage(Page page);
@@ -30,4 +28,6 @@ public interface CustomerDao extends Dao {
 	public Object getOrderNumber();
 
 	public Object getCustomerNumber();
+
+	public void findCompositionByPage(Page page, String compositionType);
 }

@@ -56,8 +56,8 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	@Override
-	public void findCompositionByPage(Page page) {
-		customerDao.findCompositionByPage(page);
+	public void findCompositionByPage(Page page, String compositionType) {
+		customerDao.findCompositionByPage(page, compositionType);
 	}
 
 	@Override
@@ -79,4 +79,5 @@ public class CustomerServiceImpl implements CustomerService {
 	public Object getCustomerNumber() {
 		return customerDao.getCustomerNumber();
 	}
+
 }
