@@ -18,5 +18,7 @@ public interface DatadictionaryDao extends Dao {
 	public List<Datadictionary> findList();
 
 	public void findByPage(Page<Datadictionary> page, Map<String, Object> like);
+
+	public List<Datadictionary> findServiceList();
 	
 }

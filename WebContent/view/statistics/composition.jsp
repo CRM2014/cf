@@ -42,8 +42,7 @@
 							</select>
 
 							<a role="button" class="btn btn-default" data-toggle="modal"
-								data-target="#chart">客户构成比例</a> <a role="button"
-								class="btn btn-default" data-toggle="modal" data-target="#chart">客户构成比例</a>
+								data-target="#chart">客户构成比例</a>
 						</div>
 
 						<br> <br>

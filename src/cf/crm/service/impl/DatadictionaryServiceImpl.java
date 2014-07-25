@@ -44,10 +44,14 @@ public class DatadictionaryServiceImpl implements DatadictionaryService {
 	public List<Datadictionary> findList() {
 		return datadictionaryDao.findList();
 	}
-	
-	
+
 	public void findByPage(Page<Datadictionary> page, Map<String, Object> like) {
 		datadictionaryDao.findByPage(page, like);
+	}
+
+	@Override
+	public List<Datadictionary> findServiceList() {
+		return datadictionaryDao.findServiceList();
 	}
 
 }

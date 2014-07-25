@@ -31,26 +31,13 @@ public class DictionaryAction extends BaseAction {
 	private Datadictionary dictionary;
 	private Datadictionary condition;
 
-	@Override
-	public String execute() throws Exception {
-		return "fail";
-	}
-
 	public String add() {
 		return "add";
-	}
-
-	public String delete() {
-		return "delete";
 	}
 
 	public String modify() {
 		dictionary = DatadictionaryService.find(dictionary.getDadiId());
 		return "modify";
-	}
-
-	public String inquiry() {
-		return "inquiry";
 	}
 
 	public String list() {
@@ -82,14 +69,15 @@ public class DictionaryAction extends BaseAction {
 
 		Datadictionary origData = DatadictionaryService.find(dictionary
 				.getDadiId());
-		origData.setDadiItem(dictionary.getDadiItem());
-		origData.setDadiType(dictionary.getDadiType());
-		origData.setDadiValue(dictionary.getDadiValue());
-		origData.setDadiEnableEdit(dictionary.isDadiEnableEdit());
-		DatadictionaryService.modify(origData);
-
-		warn = "修改 Success!";
-
+		if (origData.isDadiEnableEdit()) {
+			origData.setDadiItem(dictionary.getDadiItem());
+			origData.setDadiType(dictionary.getDadiType());
+			origData.setDadiValue(dictionary.getDadiValue());
+			origData.setDadiEnableEdit(dictionary.isDadiEnableEdit());
+			DatadictionaryService.modify(origData);
+			warn = "修改成功!";
+		} else
+			warn = "不能编辑!";
 		return "modify-success";
 	}
 
@@ -97,7 +85,7 @@ public class DictionaryAction extends BaseAction {
 		dictionary = DatadictionaryService.find(dictionary.getDadiId());
 		DatadictionaryService.remove(dictionary);
 
-		warn = "Delete Success!";
+		warn = "删除成功!";
 		return "delete-success";
 	}
 

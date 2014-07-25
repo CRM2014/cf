@@ -90,7 +90,7 @@
 									href="${ctx }/marketing/chance-assign.action?salechance.sachId=${sachId}"
 									class="btn btn-default">分配</a> <a role="button"
 									href="${ctx }/marketing/plan-make.action?salechance.sachId=${sachId}"
-									class="btn btn-default">制定计划</a> <a role="button"
+									class="btn btn-default">制定</a> <a role="button"
 									href="#${ctx }/marketing/chance-deleteSalechance.action?salechance.sachId=${sachId}"
 									onclick="comfirmDelete($(this))" class="btn btn-default">删除</a></td>
 							</tr>
