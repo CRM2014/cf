@@ -1,6 +1,7 @@
 package cf.crm.action.service;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -49,6 +50,7 @@ public class AssignAction extends BaseAction {
 		Servicecustomer origService = servicecustomerservice
 				.find(servicecustomer.getSecuId());
 		origService.setUserByUsDealId(userService.find(userId));
+		origService.setSecuAllocationTime(new Date());
 		servicecustomerservice.modify(origService);
 		return "assign-success";
 	}

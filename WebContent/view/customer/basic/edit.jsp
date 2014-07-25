@@ -46,7 +46,7 @@
 						<div class="form-group">
 							<label for="name" class="col-sm-2 control-label">客户名称：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control checkable" reg="/^\S{1,20}$/"name="customer.cuName"
+								<input type="text" class="form-control checkable" reg="/^\S{1,20}$/" name="customer.cuName"
 									value="${customer.cuName}"> <input type="hidden"
 									name="customer.cuId" value="${customer.cuId}">
 							</div>

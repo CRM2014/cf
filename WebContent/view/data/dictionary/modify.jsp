@@ -43,7 +43,7 @@
 							<label for="inputEmail3"
 								class="col-sm-3 col-sm-offset-1 control-label">类别：</label>
 							<div class="col-sm-4">
-								<input type="text" class="form-control"
+								<input type="text" class="form-control checkable" reg="/^\S{1,20}$/"
 									name="dictionary.dadiType" value="${ dictionary.dadiType}">
 							</div>
 						</div>
@@ -51,7 +51,7 @@
 							<label for="inputEmail3"
 								class="col-sm-3 col-sm-offset-1 control-label">条目：</label>
 							<div class="col-sm-4">
-								<input type="text" class="form-control"
+								<input type="text" class="form-control checkable" reg="/^\S{1,20}$/"
 									name="dictionary.dadiItem" value="${ dictionary.dadiItem}">
 							</div>
 						</div>
@@ -59,7 +59,7 @@
 							<label for="inputEmail3"
 								class="col-sm-3 col-sm-offset-1 control-label">值：</label>
 							<div class="col-sm-4">
-								<input type="text" class="form-control"
+								<input type="text" class="form-control checkable" reg="/^\d{1,20}$/"
 									name="dictionary.dadiValue" value="${ dictionary.dadiValue}">
 							</div>
 						</div>
@@ -100,6 +100,10 @@
 		<script type="text/javascript">
 			var pageInfo = new PageInfo(5);
 			pageInfo.generate();
+			
+			$("form").submit(function() {
+				return check();
+			});
 		</script>
 		<!-- js结束 -->
 </body>

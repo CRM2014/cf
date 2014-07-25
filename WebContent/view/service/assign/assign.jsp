@@ -68,10 +68,7 @@
 							<label for="inputEmail3" class="col-sm-2 control-label">创建人</label>
 							<div class="col-sm-3">
 								<input type="text" class="form-control" disabled
-									value="${ servicecustomer.userByUsAllocationId.usName}">
-								<input type="hidden"
-									name="servicecustomer.userByUsAllocationId.usname"
-									value="${ servicecustomer.userByUsAllocationId.usName}">
+									value="${ servicecustomer.service.user.usName}">
 							</div>
 							<label for="inputEmail3" class="col-sm-2 control-label">创建时间</label>
 							<div class="col-sm-3">

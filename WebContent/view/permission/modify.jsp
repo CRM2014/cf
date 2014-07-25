@@ -47,7 +47,8 @@
 							<label for="inputEmail3"
 								class="col-sm-3 col-sm-offset-1 control-label">用户名：</label>
 							<div class="col-sm-4">
-								<input type="text" class="form-control" name="user.usUserName"
+								<input type="text" class="form-control checkable" 
+								 name="user.usUserName"
 									value="${ user.usUserName}">
 							</div>
 						</div>
@@ -56,7 +57,8 @@
 							<label for="inputEmail3"
 								class="col-sm-3 col-sm-offset-1 control-label">用户姓名：</label>
 							<div class="col-sm-4">
-								<input type="text" class="form-control" name="user.usName"
+								<input type="text" class="form-control checkable"
+								reg="/^[A-Za-z0-9]+$/" data-content="2131" name="user.usName"
 									value="${ user.usName}">
 							</div>
 						</div>
@@ -97,6 +99,10 @@
 		var pageInfo = new PageInfo(6);
 		pageInfo.generate();
 		$("[name='user.usRole']").val($("#usRole").val());
+		
+		$("form").submit(function() {
+			return check();
+		});
 	</script>
 	<!-- js结束 -->
 

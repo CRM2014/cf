@@ -67,7 +67,7 @@
 							<label for="inputEmail3" class="col-sm-2 control-label">创建人</label>
 							<div class="col-sm-3">
 								<input type="text" class="form-control" disabled
-									value="${ servicecustomer.userByUsAllocationId.usName}"> 
+									value="${ servicecustomer.service.user.usName}"> 
 							</div>
 							<label for="inputEmail3" class="col-sm-2 control-label">创建时间</label>
 							<div class="col-sm-3">
@@ -91,7 +91,7 @@
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">服务处理：</label>
 							<div class="col-sm-8">
-								<textarea class="form-control" disabled rows="3" value="${ servicecustomer.secuDeal}"></textarea>
+								<textarea class="form-control" disabled rows="3">${ servicecustomer.secuDeal}</textarea>
 							</div>
 						</div>
 						<div class="form-group">
