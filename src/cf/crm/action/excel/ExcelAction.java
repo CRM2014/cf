@@ -46,7 +46,7 @@ public class ExcelAction extends BaseExcelAction {
 		customerService.findContributionByPage(page);
 		Poi poi = new Poi();
 		poi.createExcel();
-		poi.fromStringArray(page.getList(), new String[] { "客户名称", "订单金额（元）" });
+		poi.fromStringArray(page.getList(), new String[] { "客户名称", "订单金额" });
 		excelName = "客户贡献分析.xlsx";
 		excelStream = poi.toInputStream();
 		return SUCCESS;
