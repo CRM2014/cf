@@ -118,15 +118,20 @@
 									<td align="center">操作</td>
 								</tr>
 								<s:iterator value="%{developments}">
+									<form
+										action="${ctx }/marketing/plan-modifyDevelopmentExecute.action"
+										method="post">
 									<tr>
 										<td>${deDate}</td>
 										<td>${dePlan}</td>
-										<td><input type="text" value="${deResult}" class="checkable" reg="^\S{1,100}$"></td>
-
-										<td align="center">
-											<button type="submit" class="btn btn-default btn-lg">保存</button>
-										</td>
+										<td><input type="text" value="${deResult}"
+											name="development.deResult" class="checkable"
+											reg="^\S{1,100}$"></td>
+										<td align="center"><input type="hidden" value="${deId}"
+											name="development.deId">
+											<button type="submit" class="btn btn-default">修改</button></td>
 									</tr>
+									</form>
 								</s:iterator>
 							</table>
 						</div>
