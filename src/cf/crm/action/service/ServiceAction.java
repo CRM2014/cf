@@ -10,10 +10,12 @@ import org.springframework.stereotype.Controller;
 
 import cf.crm.action.BaseAction;
 import cf.crm.dao.impl.DaoAdapter;
+import cf.crm.entity.Datadictionary;
 import cf.crm.entity.Orderrecordproduct;
 import cf.crm.entity.Product;
 import cf.crm.entity.Service;
 import cf.crm.entity.Servicecustomer;
+import cf.crm.service.DatadictionaryService;
 import cf.crm.service.OrderrecordService;
 import cf.crm.service.OrderrecordproductService;
 import cf.crm.service.ProductService;
@@ -42,13 +44,18 @@ public class ServiceAction extends BaseAction {
 	@Autowired
 	@Qualifier("servicecustomerServiceImpl")
 	private ServicecustomerService servicecustomerService;
+	@Autowired
+	@Qualifier("datadictionaryServiceImpl")
+	private DatadictionaryService datadictionaryService;
 	private Page<Service> page;
 	private Service service;
 	private Service condition;
 	private List<Product> products;
 	private String productId;
+	private List<Datadictionary> dictionarys;
 
 	public String add() {
+		dictionarys = datadictionaryService.findServiceList();
 		products = productService.findList();
 		return "add";
 	}
@@ -111,6 +118,14 @@ public class ServiceAction extends BaseAction {
 
 	public void setProductId(String productId) {
 		this.productId = productId;
+	}
+
+	public List<Datadictionary> getDictionarys() {
+		return dictionarys;
+	}
+
+	public void setDictionarys(List<Datadictionary> dictionarys) {
+		this.dictionarys = dictionarys;
 	}
 
 }

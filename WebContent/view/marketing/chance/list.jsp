@@ -35,8 +35,8 @@
 							<div class="input-group">
 								<div class="input-group-addon">客户名称</div>
 								<input class="form-control" type="text" placeholder=""
-									name="salechance.usCustomerName"
-									value="${ salechance.usCustomerName}">
+									name="condition.usCustomerName"
+									value="${ condition.usCustomerName}">
 							</div>
 						</div>
 
@@ -44,7 +44,7 @@
 							<div class="input-group">
 								<div class="input-group-addon">概要</div>
 								<input class="form-control" type="text" placeholder=""
-									name="salechance.usMain" value="${ salechance.usMain}">
+									name="condition.usMain" value="${ condition.usMain}">
 							</div>
 						</div>
 
@@ -52,7 +52,7 @@
 							<div class="input-group">
 								<div class="input-group-addon">联系人</div>
 								<input class="form-control" type="text" placeholder=""
-									name="salechance.usContanct" value="${ salechance.usContanct}">
+									name="condition.usContanct" value="${ condition.usContanct}">
 							</div>
 						</div>
 
@@ -90,7 +90,7 @@
 									href="${ctx }/marketing/chance-assign.action?salechance.sachId=${sachId}"
 									class="btn btn-default">分配</a> <a role="button"
 									href="${ctx }/marketing/plan-make.action?salechance.sachId=${sachId}"
-									class="btn btn-default">制定计划</a> <a role="button"
+									class="btn btn-default">制定</a> <a role="button"
 									href="#${ctx }/marketing/chance-deleteSalechance.action?salechance.sachId=${sachId}"
 									onclick="comfirmDelete($(this))" class="btn btn-default">删除</a></td>
 							</tr>

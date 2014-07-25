@@ -64,14 +64,9 @@ public class PlanAction extends BaseAction {
 					&& !"".equals(condition.getSalechance().getUsCustomerName()))
 				like.put("salechance.usCustomerName", condition.getSalechance()
 						.getUsCustomerName());
-			if (condition.getSalechance().getUsMain() != null
-					&& !"".equals(condition.getSalechance().getUsMain()))
-				like.put("salechance.usMain", condition.getSalechance()
-						.getUsMain());
-			if (condition.getSalechance().getUsContanct() != null
-					&& !"".equals(condition.getSalechance().getUsContanct()))
-				like.put("salechance.usContanct", condition.getSalechance()
-						.getUsContanct());
+			if (condition.getDePlan() != null
+					&& !"".equals(condition.getDePlan()))
+				like.put("dePlan", condition.getDePlan());
 		}
 		developmentService.findByPage(page, like);
 		return "list";
@@ -82,7 +77,7 @@ public class PlanAction extends BaseAction {
 		development.setSalechance(salechance);
 		development.setDeDate(new Date());
 		developmentService.add(development);
-		warn = "Save Success!";
+		warn = "保存成功!";
 		return "make-add-success";
 	}
 
@@ -91,7 +86,7 @@ public class PlanAction extends BaseAction {
 		development = developmentService.find(development.getDeId());
 		developmentService.remove(development);
 		salechance = development.getSalechance();
-		warn = "Delete Success!";
+		warn = "删除成功!";
 		return "make-delete-success";
 	}
 

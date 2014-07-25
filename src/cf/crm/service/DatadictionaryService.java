@@ -18,5 +18,7 @@ public interface DatadictionaryService {
 	public List<Datadictionary> findList();
 
 	public void findByPage(Page<Datadictionary> page, Map<String, Object> like);
+
+	public List<Datadictionary> findServiceList();
 	
 }

@@ -74,8 +74,7 @@
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">机会描述：</label>
 							<div class="col-sm-8">
-								<textarea class="form-control" rows="3" disabled
-									value="${ salechance.usChanceDescribe}"></textarea>
+								<textarea class="form-control" rows="3" disabled>${ salechance.usChanceDescribe}</textarea>
 							</div>
 						</div>
 						<div class="form-group">
@@ -141,8 +140,7 @@
 							<div class="form-group">
 								<label for="" class="col-sm-3 control-label ">计划项：</label>
 								<div class="col-sm-7">
-									<input type="text" class="form-control checkable"
-										reg="^\S{1,100}$" name="development.dePlan">
+									<input type="text" class="form-control"name="development.dePlan">
 								</div>
 
 								<button type="submit" class="btn btn-default">新增</button>
@@ -161,6 +159,10 @@
 	<script type="text/javascript">
 		var pageInfo = new PageInfo(1);
 		pageInfo.generate();
+		
+		$("form").submit(function() {
+			return check();
+		});
 	</script>
 	<!-- js结束 -->
 </body>

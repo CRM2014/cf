@@ -82,7 +82,7 @@ public class DrainAction extends BaseAction {
 		outflow = OutflowService.find(outflow.getOuflId());
 		OutflowService.remove(outflow);
 		
-		warn = "Delete Success!";
+		warn = "删除成功!";
 		return "delete-success";
 	}
 	
