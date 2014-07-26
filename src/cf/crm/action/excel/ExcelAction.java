@@ -59,15 +59,20 @@ public class ExcelAction extends BaseExcelAction {
 		customerService.findCompositionByPage(page, compositionType);
 		Poi poi = new Poi();
 		poi.createExcel();
-		if ("1".equals(compositionType))
+		if ("1".equals(compositionType)) {
 			poi.fromStringArray(page.getList(), new String[] { "等级", "客户数量" });
-		else if ("2".equals(compositionType))
+			excelName = "客户构成分析-按等级.xlsx";
+		} else if ("2".equals(compositionType)) {
 			poi.fromStringArray(page.getList(), new String[] { "信用度", "客户数量" });
-		else if ("3".equals(compositionType))
+			excelName = "客户构成分析-信用度.xlsx";
+		} else if ("3".equals(compositionType)) {
 			poi.fromStringArray(page.getList(), new String[] { "满意度", "客户数量" });
-		else
+			excelName = "客户构成分析-按满意度.xlsx";
+		} else {
 			poi.fromStringArray(page.getList(), new String[] { "等级", "客户数量" });
-		excelName = "客户构成分析.xlsx";
+			excelName = "客户构成分析-按等级.xlsx";
+		}
+
 		excelStream = poi.toInputStream();
 		return SUCCESS;
 	}
