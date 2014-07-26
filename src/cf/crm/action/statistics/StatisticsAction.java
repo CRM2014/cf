@@ -19,6 +19,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import cf.crm.action.BaseAction;
+import cf.crm.entity.Customer;
 import cf.crm.service.CustomerService;
 import cf.crm.util.page.Page;
 import cf.crm.util.page.PageHelper;
@@ -36,12 +37,13 @@ public class StatisticsAction extends BaseAction {
 	@Qualifier("customerServiceImpl")
 	private CustomerService customerService;
 	private String compositionType;
+	private Customer condition;
 	private Page page;
 
 	public String contribution() {
 		if (page == null)
 			page = PageHelper.generatePage();
-		customerService.findContributionByPage(page,compositionType);
+		customerService.findContributionByPage(page, compositionType);
 		log.info(JSONArray.fromObject(page.getList()));
 		return "contribution";
 	}
@@ -49,8 +51,7 @@ public class StatisticsAction extends BaseAction {
 	public String composition() {
 		if (page == null)
 			page = PageHelper.generatePage();
-		customerService.findCompositionByPage(page,compositionType);
-		
+		customerService.findCompositionByPage(page, compositionType);
 		log.info(JSONArray.fromObject(page.getList()));
 		return "composition";
 	}
@@ -78,16 +79,24 @@ public class StatisticsAction extends BaseAction {
 	public void setPage(Page page) {
 		this.page = page;
 	}
-	
-	public String getCompositionType(){
-		if(null==compositionType||"".equals(compositionType)){
-			compositionType="1";
+
+	public String getCompositionType() {
+		if (null == compositionType || "".equals(compositionType)) {
+			compositionType = "1";
 		}
 		return compositionType;
 	}
-	
-	public void setCompositionType(String compositionType){
+
+	public void setCompositionType(String compositionType) {
 		this.compositionType = compositionType;
+	}
+
+	public Customer getCondition() {
+		return condition;
+	}
+
+	public void setCondition(Customer condition) {
+		this.condition = condition;
 	}
 
 }

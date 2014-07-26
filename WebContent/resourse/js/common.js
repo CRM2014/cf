@@ -92,18 +92,25 @@ $(document).ajaxComplete(function(event, jqXHR, ajaxOptions) {
 
 });
 
-$(".checkable").each(function() {
-	if ($(this).attr("data-toggle") == undefined)
-		$(this).attr("data-toggle", "popover");
-	if ($(this).attr("data-trigger") == undefined)
-		$(this).attr("data-trigger", "focus");
-	if ($(this).attr("data-content") == undefined)
-		$(this).attr("data-content", "！");
-	if ($(this).attr("data-placement") == undefined)
-		$(this).attr("data-placement", "right");
-	if ($(this).attr("reg") == undefined)
-		$(this).attr("reg", "/^[A-Za-z0-9]+$/");
-});
+$(".checkable")
+		.each(
+				function() {
+					if ($(this).attr("data-toggle") == undefined)
+						$(this).attr("data-toggle", "popover");
+					if ($(this).attr("data-trigger") == undefined)
+						$(this).attr("data-trigger", "focus");
+					if ($(this).attr("data-content") == undefined)
+						$(this).attr("data-content", "格式不正确");
+					if ($(this).attr("data-placement") == undefined)
+						$(this).attr("data-placement", "right");
+					if ($(this).attr("data-template") == undefined)
+						$(this)
+								.attr(
+										"data-template",
+										'<div class="popover col-sm-6"  role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>');
+					if ($(this).attr("reg") == undefined)
+						$(this).attr("reg", "/^[A-Za-z0-9]+$/");
+				});
 
 function check() {
 	var b = true;
