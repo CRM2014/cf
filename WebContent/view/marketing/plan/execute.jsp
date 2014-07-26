@@ -25,7 +25,7 @@
 					</ol>
 				</h5>
 				<!-- 页面路径结束 -->
-								<!-- 提示开始 -->
+				<!-- 提示开始 -->
 				<%@ include file="/view/common/message.jsp"%>
 				<!-- 提示结束 -->
 				<!-- 数据显示与交互内容开始 -->
@@ -136,6 +136,16 @@
 								</s:iterator>
 
 							</table>
+							<form class="form-inline" role="form"
+								action="${ctx }/marketing/plan-developmentExecute.action"
+								method="post">
+								<input type="hidden" name="salechance.sachId"
+									value="${salechance.sachId }">
+								<div class="form-group">
+									<button type="submit" class="btn btn-default">开发成功</button>
+								</div>
+								<div class="form-group"></div>
+							</form>
 						</div>
 
 
