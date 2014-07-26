@@ -46,7 +46,7 @@ public class ExcelAction extends BaseExcelAction {
 	public String contribution() throws IOException {
 		if (page == null)
 			page = PageHelper.generatePage();
-		customerService.findContributionByPage(page);
+		customerService.findContributionByPage(page, compositionType);
 		Poi poi = new Poi();
 		poi.createExcel();
 		poi.fromStringArray(page.getList(), new String[] { "客户名称", "订单金额" });

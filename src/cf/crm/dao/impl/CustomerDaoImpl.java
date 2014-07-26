@@ -63,11 +63,16 @@ public class CustomerDaoImpl extends DaoAdapter implements CustomerDao {
 
 	// 求订单金额的
 	@Override
-	public void findContributionByPage(Page page) {
+	public void findContributionByPage(Page page, String compositionType) {
 		String sql = "SELECT c.cuName, o.orreprNum*p.prPrice as orderAmount"
 				+ " FROM orderrecordproduct o, product p, customer c, OrderRecord od"
-				+ " WHERE o.prId=p.prID and c.cuId=od.cuID and od.orreID = o.orreID";
-
+				+ " WHERE o.prId=p.prID and c.cuId=od.cuID and od.orreID = o.orreID order by ";
+		if ("1".equals(compositionType))
+			sql += "cuName";
+		else if ("2".equals(compositionType))
+			sql += "orderAmount";
+		else
+			sql += "cuName";
 		super.findByPage(page, sql);
 	}
 
