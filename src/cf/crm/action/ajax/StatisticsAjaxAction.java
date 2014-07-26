@@ -38,7 +38,7 @@ public class StatisticsAjaxAction extends BaseAjaxAction {
 		output(JSONArray.fromObject(customerService.getOrderNumber()));
 	}
 
-	public void conposition() {
+	public void composition() {
 		output(JSONArray.fromObject(customerService.getCustomerNumber()));
 	}
 }
