@@ -17,6 +17,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import cf.crm.action.BaseAjaxAction;
+import cf.crm.entity.User;
 import cf.crm.service.UserService;
 
 @Controller
