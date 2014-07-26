@@ -38,7 +38,6 @@ public class PermissionAjaxAction extends BaseAjaxAction {
 			output("false");
 			return;
 		}
-		log.warn(userName);
 		User user = userService.findByUserName(userName);
 		if (user != null)
 		output(false);

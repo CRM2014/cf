@@ -36,7 +36,6 @@ public class UrlFilter implements Filter {
 
 		String url = httpRequest.getRequestURI();
 		if (url.endsWith("jsp")) {
-			System.out.println(url);
 			HttpServletResponse httpResponse = (HttpServletResponse) servletResponse;
 			httpResponse.sendRedirect(httpRequest.getContextPath()
 					+ "/404.action");
