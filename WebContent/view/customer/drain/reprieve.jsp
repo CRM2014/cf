@@ -57,7 +57,7 @@
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">暂缓措施</label>
 							<div class="col-sm-8">
-								<input class="form-control checkable" rows="3" name="outflow.ouflAction"
+								<input class="form-control checkable" reg="/^[\s\S]{1,}$/" rows="3" name="outflow.ouflAction"
 									value="${ outflow.ouflAction}"></input>
 							</div>
 

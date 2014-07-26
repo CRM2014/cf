@@ -40,7 +40,7 @@
 							<label for="inputEmail3"
 								class="col-sm-3 col-sm-offset-1 control-label">用户名：</label>
 							<div class="col-sm-4">
-								<input type="text" class="form-control checkable"
+								<input type="text" class="form-control checkable" data-content="非空"
 									name="user.usUserName" value="${ user.usUserName}">
 							</div>
 						</div>

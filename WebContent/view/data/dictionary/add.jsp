@@ -40,15 +40,15 @@
 							<label for="inputEmail3"
 								class="col-sm-3 col-sm-offset-1 control-label">类别：</label>
 							<div class="col-sm-4">
-								<input type="text" class="form-control checkable" reg="/^\S{1,20}$/"
+								<input type="text" class="form-control checkable" reg="/^\S{1,20}$/" data-content="非空"
 									name="dictionary.dadiType">
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="inputEmail3"
-								class="col-sm-3 col-sm-offset-1 control-label">条目：</label>
+								class="col-sm-3 col-sm-offset-1 control-label">条目：</label> 
 							<div class="col-sm-4">
-								<input type="text" class="form-control checkable" reg="/^\S{1,20}$/"
+								<input type="text" class="form-control checkable" reg="/^[\s\S]{1,20}$/" data-content="非空"
 									name="dictionary.dadiItem">
 							</div>
 						</div>
@@ -56,7 +56,7 @@
 							<label for="inputEmail3"
 								class="col-sm-3 col-sm-offset-1 control-label">值：</label>
 							<div class="col-sm-4">
-								<input type="text" class="form-control checkable" reg="/^\d{1,20}$/"
+								<input type="text" class="form-control checkable" reg="/^\d{1,20}$/" data-content="数字"
 									name="dictionary.dadiValue">
 							</div>
 						</div>

@@ -69,7 +69,7 @@
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">流失原因</label>
 							<div class="col-sm-8">
-								<input class="form-control checkable" rows="3" name="outflow.ouflReson"
+								<input class="form-control checkable" reg="/^[\s\S]{1,}$/" rows="3" name="outflow.ouflReson"
 									value="${ outflow.ouflReson}"></input>
 							</div>
 

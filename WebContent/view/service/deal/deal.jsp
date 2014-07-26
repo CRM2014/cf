@@ -94,7 +94,8 @@
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">服务处理：</label>
 							<div class="col-sm-8">
-								<textarea class="form-control checkable" rows="3" name="servicecustomer.secuDeal" value="${ servicecustomer.secuDeal}"></textarea>
+								<textarea class="form-control checkable" reg="/^[\s\S]{1,}$/" data-content="非空"
+								 rows="3" name="servicecustomer.secuDeal" value="${ servicecustomer.secuDeal}"></textarea>
 							</div>
 						</div>
 						<div class="form-group">
