@@ -20,11 +20,14 @@ import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
 import cf.crm.entity.Storage;
+import cf.crm.entity.User;
+import cf.crm.util.page.Page;
+import cf.crm.util.page.PageHelper;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "classpath:config/applicationContext.xml")
 @Transactional
-@TransactionConfiguration(transactionManager = "transactionManager", defaultRollback = false)
+@TransactionConfiguration(transactionManager = "transactionManager", defaultRollback = true)
 public class DaoAdapterTest {
 	@Autowired
 	private DaoAdapter daoAdapter;
@@ -34,6 +37,48 @@ public class DaoAdapterTest {
 		Storage storage = new Storage();
 		storage.setStId("1");
 		storage.setStName("2");
-		daoAdapter.add(storage);
+		daoAdapter.add(storage);		
 	}
+	@Test
+	public void removeTest() {
+		Storage storage = new Storage();
+		storage.setStId("1");
+		storage.setStName("2");
+		daoAdapter.remove(storage);		
+	}
+	@Test
+	public void findTest() {
+		Storage storage = new Storage();
+		storage.setStId("1");
+		storage.setStName("2");
+		daoAdapter.remove(storage);		
+	}
+	@Test
+	public void modifyTest() {
+		Storage storage = new Storage();
+		storage.setStId("5");
+		storage.setStName("2");
+		daoAdapter.modify(storage);		
+	}
+	@Test
+	public void findByPageTest() {
+
+		Page page = PageHelper.generatePage();
+		daoAdapter.findByPage(User.class,page,null);		
+	}
+	@Test
+	public void findListByFieldTest() {
+		Storage storage = new Storage();
+		storage.setStId("1");
+		storage.setStName("2");
+		daoAdapter.findByField(Storage.class,"stId","1");		
+	}
+	@Test
+	public void  findLikeListByFieldTest() {
+		Storage storage = new Storage();
+		storage.setStId("1");
+		storage.setStName("2");
+		daoAdapter. findLikeListByField(Storage.class,"stId","1");		
+	}
+	
 }
