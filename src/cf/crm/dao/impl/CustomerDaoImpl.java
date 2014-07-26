@@ -108,10 +108,10 @@ public class CustomerDaoImpl extends DaoAdapter implements CustomerDao {
 		List<String> valueList = new ArrayList<String>();
 		List<String> titleList = new ArrayList<String>();
 		for (int i = 12; i > 0; i--) {
-			String sql = "SELECT COUNT(*), DATE_FORMAT(NOW(),'%Y%m')-"
+			String sql = "SELECT COUNT(*), extract(year_month  from date_add(NOW(), interval-"
 					+ i
-					+ " FROM OrderRecord o WHERE DATE_FORMAT(o.orreDate,'%Y%m')= DATE_FORMAT(NOW(),'%Y%m')-"
-					+ i;
+					+ " month)) FROM OrderRecord o WHERE DATE_FORMAT(o.orreDate,'%Y%m')= extract(year_month  from date_add(NOW(), interval-"
+					+ i + " month))";
 			Object[] s = (Object[]) super.getSession().createSQLQuery(sql)
 					.uniqueResult();
 			valueList.add(s[0].toString());

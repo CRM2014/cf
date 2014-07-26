@@ -15,7 +15,13 @@
 		   http://www.springframework.org/schema/aop/spring-aop-3.0.xsd"
 	default-autowire="byName">
 
-	<context:component-scan base-package="*">
+	<context:component-scan base-package="cf.crm.action">
+	</context:component-scan>
+
+	<context:component-scan base-package="cf.crm.service.impl">
+	</context:component-scan>
+
+	<context:component-scan base-package="cf.crm.dao.impl">
 	</context:component-scan>
 
 	<import resource="classpath:config/applicationContext-common.xml" />
