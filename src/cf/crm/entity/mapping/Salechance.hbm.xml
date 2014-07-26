@@ -3,49 +3,54 @@
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- Generated 2014-7-12 22:54:45 by Hibernate Tools 3.6.0 -->
 <hibernate-mapping>
-    <class name="cf.crm.entity.Salechance" table="salechance" catalog="crm">
-        <id name="sachId" type="string">
-            <column name="sachID" length="20" />
-            <generator class="assigned" />
-        </id>
-        <many-to-one name="userByUsCreateId" class="cf.crm.entity.User" fetch="select">
-            <column name="usCreateID" length="20" not-null="true" />
-        </many-to-one>
-        <many-to-one name="userByUsDesignationId" class="cf.crm.entity.User" fetch="select">
-            <column name="usDesignationID" length="20" />
-        </many-to-one>
-        <property name="usOrigin" type="string">
-            <column name="usOrigin" length="50" />
-        </property>
-        <property name="usProbability" type="float">
-            <column name="usProbability" precision="12" scale="0" not-null="true" />
-        </property>
-        <property name="usMain" type="string">
-            <column name="usMain" length="50" not-null="true" />
-        </property>
-        <property name="usCustomerName" type="string">
-            <column name="usCustomerName" length="20" not-null="true" />
-        </property>
-        <property name="usContanct" type="string">
-            <column name="usContanct" length="20" />
-        </property>
-        <property name="usContanctTel" type="string">
-            <column name="usContanctTel" length="20" />
-        </property>
-        <property name="usChanceDescribe" type="string">
-            <column name="usChanceDescribe" length="100" not-null="true" />
-        </property>
-        <property name="usCreateTime" type="timestamp">
-            <column name="usCreateTime" length="0" not-null="true" />
-        </property>
-        <property name="usDesignationTime" type="timestamp">
-            <column name="usDesignationTime" length="0" />
-        </property>
-        <set name="developments" table="development" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="sachID" length="20" not-null="true" />
-            </key>
-            <one-to-many class="cf.crm.entity.Development" />
-        </set>
-    </class>
+	<class name="cf.crm.entity.Salechance" table="salechance"
+		catalog="crm">
+		<id name="sachId" type="string">
+			<column name="sachID" length="20" />
+			<generator class="assigned" />
+		</id>
+		<many-to-one name="userByUsCreateId" class="cf.crm.entity.User"
+			fetch="select">
+			<column name="usCreateID" length="20" not-null="true" />
+		</many-to-one>
+		<many-to-one name="userByUsDesignationId" class="cf.crm.entity.User"
+			fetch="select">
+			<column name="usDesignationID" length="20" />
+		</many-to-one>
+		<property name="usOrigin" type="string">
+			<column name="usOrigin" length="50" />
+		</property>
+		<property name="usProbability" type="float">
+			<column name="usProbability" precision="12" scale="0"
+				not-null="true" />
+		</property>
+		<property name="usMain" type="string">
+			<column name="usMain" length="50" not-null="true" />
+		</property>
+		<property name="usCustomerName" type="string">
+			<column name="usCustomerName" length="20" not-null="true" />
+		</property>
+		<property name="usContanct" type="string">
+			<column name="usContanct" length="20" />
+		</property>
+		<property name="usContanctTel" type="string">
+			<column name="usContanctTel" length="20" />
+		</property>
+		<property name="usChanceDescribe" type="string">
+			<column name="usChanceDescribe" length="100" not-null="true" />
+		</property>
+		<property name="usCreateTime" type="timestamp">
+			<column name="usCreateTime" length="0" not-null="true" />
+		</property>
+		<property name="usDesignationTime" type="timestamp">
+			<column name="usDesignationTime" length="0" />
+		</property>
+		<set name="developments" table="development" inverse="true" lazy="true"
+			fetch="select" order-by="deId desc">
+			<key>
+				<column name="sachID" length="20" not-null="true" />
+			</key>
+			<one-to-many class="cf.crm.entity.Development" />
+		</set>
+	</class>
 </hibernate-mapping>

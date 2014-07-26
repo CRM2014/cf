@@ -39,6 +39,9 @@
 						href="${ctx }/customer/communicate/communicate-list.action?customer.cuId=${customer.cuId}">交往记录管理</a></li>
 				</ul>
 				<!-- 导航栏结束 -->
+								<!-- 提示开始 -->
+				<%@ include file="/view/common/message.jsp"%>
+				<!-- 提示结束 -->
 				<!-- 数据显示与交互内容开始 -->
 				<div class="workpage well well-lg">
 					<form class="form-horizontal"

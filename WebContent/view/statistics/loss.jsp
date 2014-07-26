@@ -26,6 +26,9 @@
 				</h5>
 				<!-- 页面路径结束 -->
 				<h3>客户流失分析</h3>
+								<!-- 提示开始 -->
+				<%@ include file="/view/common/message.jsp"%>
+				<!-- 提示结束 -->
 				<!-- 数据显示与交互内容开始 -->
 				<div class="workpage well well-lg">
 

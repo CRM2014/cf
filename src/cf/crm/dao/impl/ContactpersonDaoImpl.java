@@ -1,3 +1,14 @@
+/** 
+ * <p>Copyright® 2014 CodeFactory版权所有。</p> 
+ */
+
+/** 
+ * <h2>控制器基础类<h2> 
+ *
+ * @author 齐宇 
+ * @version 1.0, 2014-7-15 
+ */
+
 package cf.crm.dao.impl;
 
 import java.util.List;
@@ -15,7 +26,8 @@ import cf.crm.util.page.Page;
 
 @Component
 @Scope("prototype")
-public class ContactpersonDaoImpl extends DaoAdapter implements ContactpersonDao {
+public class ContactpersonDaoImpl extends DaoAdapter implements
+		ContactpersonDao {
 	@Override
 	public void add(Contactperson contactperson) {
 		contactperson.setCopeId(super.generateKey());
@@ -45,9 +57,7 @@ public class ContactpersonDaoImpl extends DaoAdapter implements ContactpersonDao
 
 	@Override
 	public void findByPage(Page<Contactperson> page, Map<String, Object> like) {
-		// TODO Auto-generated method stub
-		super.findByPage(Contactperson.class, page, like);		
+		page.setOrder("copeId");
+		super.findByPage(Contactperson.class, page, like);
 	}
-
-	
 }

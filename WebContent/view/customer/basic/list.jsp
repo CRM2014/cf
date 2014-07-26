@@ -28,6 +28,9 @@
 				<!-- 页面路径结束 -->
 				<h3>客户列表</h3>
 
+												<!-- 提示开始 -->
+				<%@ include file="/view/common/message.jsp"%>
+				<!-- 提示结束 -->
 				<!-- 数据显示与交互内容开始 -->
 				<form action="${ctx }/customer/customer-list.action" method="post"
 					id="main-form">

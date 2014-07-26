@@ -1,3 +1,14 @@
+/** 
+ * <p>Copyright® 2014 CodeFactory版权所有。</p> 
+ */
+
+/** 
+ * <h2>控制器基础类<h2> 
+ *
+ * @author 齐宇 
+ * @version 1.0, 2014-7-15 
+ */
+
 package cf.crm.action.marketing;
 
 import java.util.ArrayList;
@@ -47,6 +58,7 @@ public class PlanAction extends BaseAction {
 		return "make";
 	}
 
+	@SuppressWarnings("unchecked")
 	public String execute() {
 		salechance = salechanceService.find(salechance.getSachId());
 		developments = new ArrayList<Development>(salechance.getDevelopments());
@@ -96,18 +108,17 @@ public class PlanAction extends BaseAction {
 		origDevelopment.setDePlan(development.getDePlan());
 		developmentService.modify(origDevelopment);
 		salechance = origDevelopment.getSalechance();
-		warn = "modify Success!";
+		warn = "修改成功!";
 		return "make-modify-success";
 	}
 
 	public String modifyDevelopmentExecute() {
 		Development origDevelopmentexecute = developmentService
 				.find(development.getDeId());
-		origDevelopmentexecute
-				.setDeResult(development.getDeResult());
+		origDevelopmentexecute.setDeResult(development.getDeResult());
 		developmentService.modify(origDevelopmentexecute);
 		salechance = origDevelopmentexecute.getSalechance();
-		warn = "modify Success!";
+		warn = "修改成功!";
 		return "execute-modify-success";
 	}
 

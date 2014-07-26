@@ -1,3 +1,14 @@
+/** 
+ * <p>Copyright® 2014 CodeFactory版权所有。</p> 
+ */
+
+/** 
+ * <h2>控制器基础类<h2> 
+ *
+ * @author 齐宇 
+ * @version 1.0, 2014-7-15 
+ */
+
 package cf.crm.service.impl;
 
 import java.util.List;
@@ -47,7 +58,6 @@ public class ContactpersonServiceImpl implements ContactpersonService {
 
 	@Override
 	public void findByPage(Page<Contactperson> page, Map<String, Object> like) {
-		// TODO Auto-generated method stub
 		contactpersonDao.findByPage(page, like);
 	}
 

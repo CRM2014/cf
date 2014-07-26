@@ -19,6 +19,7 @@
 				<param name="error">${error} </param>
 				<param name="warn">${warn} </param>
 				<param name="salechance.sachId">${salechance.sachId}</param>
+				<param name="encode">true</param>
 			</result>
 			<result name="make-delete-success" type="redirectAction">
 				<param name="actionName">plan-make</param>
@@ -26,6 +27,7 @@
 				<param name="error">${error} </param>
 				<param name="warn">${warn} </param>
 				<param name="salechance.sachId">${salechance.sachId}</param>
+				<param name="encode">true</param>
 			</result>
 			<result name="make-add-success" type="redirectAction">
 				<param name="actionName">plan-make</param>
@@ -33,6 +35,7 @@
 				<param name="error">${error} </param>
 				<param name="warn">${warn} </param>
 				<param name="salechance.sachId">${salechance.sachId}</param>
+				<param name="encode">true</param>
 			</result>
 			<result name="execute-modify-success" type="redirectAction">
 				<param name="actionName">plan-execute</param>
@@ -40,6 +43,7 @@
 				<param name="error">${error} </param>
 				<param name="warn">${warn} </param>
 				<param name="salechance.sachId">${salechance.sachId}</param>
+				<param name="encode">true</param>
 			</result>
 
 		</action>
@@ -53,6 +57,7 @@
 				<param name="namespace">/marketing </param>
 				<param name="error">${error} </param>
 				<param name="warn">${warn} </param>
+				<param name="encode">true</param>
 			</result>
 
 			<result name="delete-success" type="redirectAction">
@@ -60,6 +65,7 @@
 				<param name="namespace">/marketing </param>
 				<param name="error">${error} </param>
 				<param name="warn">${warn} </param>
+				<param name="encode">true</param>
 			</result>
 
 			<result name="assign-modify-success" type="redirectAction">
@@ -67,6 +73,7 @@
 				<param name="namespace">/marketing </param>
 				<param name="error">${error} </param>
 				<param name="warn">${warn} </param>
+				<param name="encode">true</param>
 			</result>
 		</action>
 	</package>

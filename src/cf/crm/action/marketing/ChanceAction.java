@@ -1,3 +1,14 @@
+/** 
+ * <p>Copyright® 2014 CodeFactory版权所有。</p> 
+ */
+
+/** 
+ * <h2>控制器基础类<h2> 
+ *
+ * @author 齐宇 
+ * @version 1.0, 2014-7-15 
+ */
+
 package cf.crm.action.marketing;
 
 import java.util.Date;
@@ -95,7 +106,7 @@ public class ChanceAction extends BaseAction {
 		origSalechance.setUserByUsDesignationId(userService.find(userId));
 		salechanceService.modify(origSalechance);
 		
-		warn = "Modify Success!";
+		warn = "修改成功!";
 		return "assign-modify-success";
 	}
 

@@ -26,22 +26,23 @@
 				</h5>
 				<!-- 页面路径结束 -->
 				<h3>客户构成分析</h3>
+								<!-- 提示开始 -->
+				<%@ include file="/view/common/message.jsp"%>
+				<!-- 提示结束 -->
 				<!-- 数据显示与交互内容开始 -->
 				<form action="${ctx }/statistics/statistics-composition.action"
 					method="post" id="main-form">
 					<div class="workpage well well-lg">
 
 						<div class="form-inline">
-							
-							<input type="hidden" id="compositionType" value="${compositionType}">
 
-							<select class="form-control" name="compositionType">
+							<input type="hidden" id="compositionType"
+								value="${compositionType}"> <select class="form-control"
+								name="compositionType">
 								<option value="1">按等级</option>
 								<option value="2">按信用度</option>
 								<option value="3">按满意度</option>
-							</select>
-
-							<a role="button" class="btn btn-default" data-toggle="modal"
+							</select> <a role="button" class="btn btn-default" data-toggle="modal"
 								data-target="#chart">客户构成比例</a>
 						</div>
 
@@ -62,13 +63,6 @@
 								</tr>
 							</s:iterator>
 						</table>
-						
-						
-						<div class="text-center">
-							<!-- 分页栏开始 -->
-							<%@ include file="/view/common/page.jsp"%>
-							<!-- 分页栏结束 -->
-						</div>
 					</div>
 					<!-- 数据显示与交互内容结束 -->
 				</form>
@@ -126,21 +120,20 @@
 	<script type="text/javascript">
 		var pageInfo = new PageInfo(4);
 		pageInfo.generate();
-$("[name='compositionType']").val($("#compositionType").val());
-var v = $("[name='compositionType']").val();
-if(v=="1")
-	$("#compositionTypeTitle").html("等级");
-	else if(v=="2")
-		$("#compositionTypeTitle").html("信用度");
-	else if(v=="3")$("#compositionTypeTitle").html("满意度");
-	
-$("[name='compositionType']").change(function(){
-	
-	
-	
-	$("form").submit();
-	
-});
+		$("[name='compositionType']").val($("#compositionType").val());
+		var v = $("[name='compositionType']").val();
+		if (v == "1")
+			$("#compositionTypeTitle").html("等级");
+		else if (v == "2")
+			$("#compositionTypeTitle").html("信用度");
+		else if (v == "3")
+			$("#compositionTypeTitle").html("满意度");
+
+		$("[name='compositionType']").change(function() {
+
+			$("form").submit();
+
+		});
 
 		$('#chart').on('shown.bs.modal', function(e) {
 			$.ajax({

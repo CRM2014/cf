@@ -1,3 +1,14 @@
+/** 
+ * <p>Copyright® 2014 CodeFactory版权所有。</p> 
+ */
+
+/** 
+ * <h2>控制器基础类<h2> 
+ *
+ * @author 齐宇 
+ * @version 1.0, 2014-7-15 
+ */
+
 package cf.crm.action.customer;
 
 import java.util.HashMap;
@@ -53,7 +64,6 @@ public class CustomerAction extends BaseAction {
 	}
 
 	public String list() {
-		page = PageHelper.generatePage();
 		if (page == null)
 			page = PageHelper.generatePage();
 		Map<String, Object> like = null;

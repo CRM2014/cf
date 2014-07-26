@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC
-    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
-    "http://struts.apache.org/dtds/struts-2.0.dtd">
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
+	<!-- 将Action的创建交给spring来管理 -->
+	<constant name="struts.objectFactory" value="spring" />
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.action.extension" value="action,," />
 
-	<!-- 更改struts2请求Action的后缀名，默认为action。若想去掉后缀，设为","即可 -->
-	<constant name="struts.action.extension" value="action"></constant>
-	
 	<package name="struts_base" extends="struts-default" namespace="/">
 
 		<interceptors>
@@ -17,22 +19,33 @@
 				<interceptor-ref name="defaultStack" />
 			</interceptor-stack>
 		</interceptors>
-
-
-		<default-action-ref name="index.action"></default-action-ref>
-
-
+		<default-interceptor-ref name="checkLoginInterceptor" />
+		<default-action-ref name="index.action" />
 		<global-results>
-			<result name="checkLoginFail">/view/account/login.jsp</result>
+			<result name="404">/view/error/404.jsp</result>
+			<result name="checkLoginFail" type="redirectAction">
+				<param name="actionName">login-login</param>
+				<param name="namespace">/account </param>
+			</result>
 		</global-results>
 
 		<action name="index">
 			<result>/view/account/login.jsp</result>
 		</action>
+
+		<action name="404">
+			<result>/view/error/404.jsp</result>
+		</action>
 	</package>
 
 	<!-- 包含的配置文件 -->
-	<include file="/cf/crm/action/account/struts-account.xml"></include>
+	<include file="/cf/crm/action/permission/struts-permission.xml"></include>
 	<include file="/cf/crm/action/marketing/struts-marketing.xml"></include>
-
+	<include file="/cf/crm/action/statistics/struts-statistics.xml"></include>
+	<include file="/cf/crm/action/data/struts-data.xml"></include>
+	<include file="/cf/crm/action/service/struts-service.xml"></include>
+	<include file="/cf/crm/action/account/struts-account.xml"></include>
+	<include file="/cf/crm/action/customer/struts-customer.xml"></include>
+	<include file="/cf/crm/action/ajax/struts-ajax.xml"></include>
+	<include file="/cf/crm/action/excel/struts-excel.xml"></include>
 </struts>

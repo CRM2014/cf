@@ -1,3 +1,14 @@
+/** 
+ * <p>Copyright® 2014 CodeFactory版权所有。</p> 
+ */
+
+/** 
+ * <h2>控制器基础类<h2> 
+ *
+ * @author 齐宇 
+ * @version 1.0, 2014-7-15 
+ */
+
 package cf.crm.util.page;
 
 import java.util.List;
@@ -15,11 +26,17 @@ public class Page<T> {
 	}
 
 	public int getFirstRec() {
-		return (currentPage - 1) * pageSize;
+		if (pageSize == 0)
+			return 0;
+		else
+			return (currentPage - 1) * pageSize;
 	}
 
 	public int getCountPage() {
-		countPage = count / pageSize + 1;
+		if (pageSize == 0)
+			countPage = 1;
+		else
+			countPage = count / pageSize + 1;
 		return countPage;
 	}
 

@@ -1,9 +1,21 @@
+/** 
+ * <p>Copyright® 2014 CodeFactory版权所有。</p> 
+ */
+
+/** 
+ * <h2>控制器基础类<h2> 
+ *
+ * @author 齐宇 
+ * @version 1.0, 2014-7-15 
+ */
+
 package cf.crm.dao.impl;
 
 import java.util.List;
 import java.util.Map;
 
 import org.hibernate.Criteria;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -45,11 +57,13 @@ public class DevelopmentDaoImpl extends DaoAdapter implements DevelopmentDao {
 
 	@Override
 	public void findByPage(Page<Development> page, Map<String, Object> like) {
+		page.setOrder("deId");
 		super.findByPage(Development.class, page, like);
 	}
 
 	@Override
 	public void findListByField(String name, Object value) {
-		super.findListByField(Development.class, name, value);
+		super.findListByField(Development.class, name, value,
+				Order.desc("deId"));
 	}
 }

@@ -1,3 +1,14 @@
+/** 
+ * <p>Copyright® 2014 CodeFactory版权所有。</p> 
+ */
+
+/** 
+ * <h2>控制器基础类<h2> 
+ *
+ * @author 齐宇 
+ * @version 1.0, 2014-7-15 
+ */
+
 package cf.crm.dao.impl;
 
 import java.util.ArrayList;
@@ -46,12 +57,14 @@ public class ServicecustomerDaoImpl extends DaoAdapter implements
 
 	@Override
 	public void findByPage(Page<Servicecustomer> page, Map<String, Object> like) {
+		page.setOrder("secuId");
 		super.findByPage(Servicecustomer.class, page, like);
 	}
 
 	@Override
 	public void findFeedbackByPage(Page<Servicecustomer> page,
 			Map<String, Object> like) {
+		page.setOrder("secuId");
 		List<Criterion> cri = new ArrayList<Criterion>();
 		cri.add(Restrictions.isNull("secuDealResult"));
 		cri.add(Restrictions.isNotNull("secuDeal"));
@@ -61,6 +74,7 @@ public class ServicecustomerDaoImpl extends DaoAdapter implements
 	@Override
 	public void findArchiveByPage(Page<Servicecustomer> page,
 			Map<String, Object> like) {
+		page.setOrder("secuId");
 		List<Criterion> cri = new ArrayList<Criterion>();
 		cri.add(Restrictions.isNotNull("secuDealResult"));
 		cri.add(Restrictions.isNotNull("secuDeal"));
@@ -70,8 +84,8 @@ public class ServicecustomerDaoImpl extends DaoAdapter implements
 	@Override
 	public void findAssignByPage(Page<Servicecustomer> page,
 			Map<String, Object> like) {
+		page.setOrder("secuId");
 		List<Criterion> cri = new ArrayList<Criterion>();
-
 		cri.add(Restrictions.isNull("userByUsDealId"));
 		super.findByPage(Servicecustomer.class, page, like, cri);
 	}
@@ -79,6 +93,7 @@ public class ServicecustomerDaoImpl extends DaoAdapter implements
 	@Override
 	public void findDealByPage(Page<Servicecustomer> page,
 			Map<String, Object> like) {
+		page.setOrder("secuId");
 		List<Criterion> cri = new ArrayList<Criterion>();
 		cri.add(Restrictions.isNull("secuDeal"));
 		cri.add(Restrictions.isNotNull("userByUsDealId"));

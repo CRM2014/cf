@@ -1,3 +1,14 @@
+/** 
+ * <p>Copyright® 2014 CodeFactory版权所有。</p> 
+ */
+
+/** 
+ * <h2>控制器基础类<h2> 
+ *
+ * @author 齐宇 
+ * @version 1.0, 2014-7-15 
+ */
+
 package cf.crm.dao.impl;
 
 import java.util.List;
@@ -45,6 +56,7 @@ public class SalechanceDaoImpl extends DaoAdapter implements SalechanceDao {
 
 	@Override
 	public void findByPage(Page<Salechance> page, Map<String, Object> like) {
+		page.setOrder("sachId");
 		super.findByPage(Salechance.class, page, like);
 	}
 	
