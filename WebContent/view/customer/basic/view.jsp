@@ -191,15 +191,21 @@
 						</div>
 
 						<div class="form-group">
-							<div class="col-sm-6">
+							<div class="col-sm-4">
 								<a role="button"
 									href="${ctx }/customer/customer-edit.action?customer.cuId=${customer.cuId}"
 									class="btn btn-default btn-lg col-sm-offset-9">编辑</a>
 							</div>
-							<div class="col-sm-6">
+							<div class="col-sm-2">
+								<a role="button"
+									href="${ctx }/customer/drain-add.action?cuID=${customer.cuId}"
+									class="btn btn-default btn-lg col-sm-offset-1">流失预警</a>
+							</div>
+							<div class="col-sm-4">
 								<a role="button" href="customer/customer-list.action"
 									class="btn btn-default btn-lg">返回</a>
 							</div>
+							
 						</div>
 					</form>
 				</div>

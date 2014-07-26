@@ -22,6 +22,7 @@ import org.springframework.stereotype.Controller;
 import cf.crm.action.BaseAction;
 import cf.crm.entity.Outflow;
 import cf.crm.service.OutflowService;
+import cf.crm.service.CustomerService;
 import cf.crm.util.page.Page;
 import cf.crm.util.page.PageHelper;
 @Controller
@@ -37,10 +38,13 @@ public class DrainAction extends BaseAction {
 	@Qualifier("outflowServiceImpl")
 	private OutflowService OutflowService;
 	private Page<Outflow> page;
+	@Autowired
+	@Qualifier("customerServiceImpl")
+	private CustomerService CustomerService;
 
 	private Outflow outflow;
 	private Outflow condition;
-	
+	private String cuID;
 	
 	@Override
 	public String execute() throws Exception {
@@ -49,6 +53,15 @@ public class DrainAction extends BaseAction {
 	public String init(){
 		return "init";
 	}
+	public String add(){
+		Outflow outf = new Outflow();
+		outf.setCustomer(CustomerService.find(cuID));
+		outf.setOuflStatus("暂缓流失");
+		outf.setOuflAction("");
+		OutflowService.add(outf);
+		return "add";
+	}
+	
 	public String reprieve(){
 		outflow = OutflowService.find(outflow.getOuflId());
 		return "reprieve";
@@ -119,6 +132,12 @@ public class DrainAction extends BaseAction {
 
 	public void setOutflow(Outflow outflow) {
 		this.outflow = outflow;
+	}
+	public String getCuID() {
+		return cuID;
+	}
+	public void setCuID(String cuID) {
+		this.cuID = cuID;
 	}
 	
 	

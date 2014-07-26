@@ -109,6 +109,7 @@
 		<action name="drain-*" class="drainAction" method="{1}">
 			<result name="confirm">/view/customer/drain/confirm.jsp</result>
 			<result name="list">/view/customer/drain/list.jsp</result>
+			<result name="add">/view/customer/drain/list.jsp</result>
 			<result name="reprieve">/view/customer/drain/reprieve.jsp</result>
 			<result name="reprieve-success" type="redirectAction">
 				<param name="actionName">drain-list</param>
