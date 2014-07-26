@@ -35,6 +35,8 @@ public class Page<T> {
 	public int getCountPage() {
 		if (pageSize == 0)
 			countPage = 1;
+		else if (count % pageSize == 0)
+			countPage = count / pageSize;
 		else
 			countPage = count / pageSize + 1;
 		return countPage;
