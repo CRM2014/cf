@@ -34,7 +34,6 @@ public class PermissionInfo {
 		permission = new Permission();
 		permission.setRole(Role.SALES);
 		permission.getOpen().add("3");
-		permission.getOpen().add("2");
 		permission.getOpen().add("1");
 		permission.getOpen().add("4");
 		permissions.add(permission);

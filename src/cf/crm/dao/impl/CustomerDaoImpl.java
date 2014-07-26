@@ -67,7 +67,7 @@ public class CustomerDaoImpl extends DaoAdapter implements CustomerDao {
 		if ("1".equals(compositionType))
 			sql += "cuName";
 		else if ("2".equals(compositionType))
-			sql += "orderAmount";
+			sql += "orderAmount desc";
 		else
 			sql += "cuName";
 		super.findByPage(page, sql);
