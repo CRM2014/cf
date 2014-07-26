@@ -51,7 +51,7 @@
 						<div class="form-group">
 							<label for="name" class="col-sm-2 control-label">姓名：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control checkable"
+								<input type="text" class="form-control checkable" data-content="非空"
 									reg="/^\S{1,20}$/" name="contactperson.copeName">
 							</div>
 
@@ -68,8 +68,8 @@
 						<div class="form-group">
 							<label for="level" class="col-sm-2 control-label">职位：</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control checkable"
-									reg="/^\S{1,20}$/" name="contactperson.copePosition">
+								<input type="text" class="form-control checkable" data-content="非空"
+									reg="/^[\s\S]{1,20}$/" name="contactperson.copePosition">
 							</div>
 						</div>
 

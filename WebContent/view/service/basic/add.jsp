@@ -60,8 +60,8 @@
 							<label for="inputEmail3"
 								class="col-sm-3 col-sm-offset-1 control-label">概要：</label>
 							<div class="col-sm-4">
-								<input type="text" class="form-control checkable"
-									reg="/^\S{1,30}$/" name="service.seMain"
+								<input type="text" class="form-control checkable" data-content="非空"
+									reg="/^[\s\S]{1,30}$/" name="service.seMain"
 									value="${ service.seMain}">
 							</div>
 

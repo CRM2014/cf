@@ -90,7 +90,8 @@
 								<label for="inputEmail3"
 									class="col-sm-3 col-sm-offset-1 control-label">原密码：</label>
 								<div class="col-sm-4">
-									<input type="password" class="form-control checkable" name="oldPassword">
+									<input type="password" class="form-control checkable"
+									data-content="非空" name="oldPassword">
 								</div>
 							</div>
 
@@ -98,14 +99,15 @@
 								<label for="inputEmail3"
 									class="col-sm-3 col-sm-offset-1 control-label">新密码：</label>
 								<div class="col-sm-4">
-									<input type="password" class="form-control checkable" reg="/^[A-Za-z0-9]{6,20}$/" name="newPassword">
+									<input type="password" class="form-control checkable" reg="/^[A-Za-z0-9]{6,20}$/"
+									data-content="只包含字母和数字" name="newPassword">
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="inputEmail3"
 									class="col-sm-3 col-sm-offset-1 control-label">确认密码：</label>
 								<div class="col-sm-4">
-									<input type="password" class="form-control checkable" name="rePassword">
+									<input type="password" class="form-control" name="rePassword">
 								</div>
 							</div>
 							<div class="form-group">
