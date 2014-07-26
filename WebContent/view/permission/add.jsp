@@ -28,7 +28,7 @@
 				<!-- 页面路径结束 -->
 
 				<h3>新建用户</h3>
-								<!-- 提示开始 -->
+				<!-- 提示开始 -->
 				<%@ include file="/view/common/message.jsp"%>
 				<!-- 提示结束 -->
 				<!-- 数据显示与交互内容开始 -->
@@ -50,8 +50,8 @@
 								class="col-sm-3 col-sm-offset-1 control-label">用户姓名：</label>
 							<div class="col-sm-4">
 								<input type="text" class="form-control checkable"
-									reg="/^[A-Za-z0-9]+$/" data-content="用户姓名不正确" name="user.usName"
-									value="${ user.usName}">
+									reg="/^[A-Za-z0-9]+$/" data-content="用户姓名不正确"
+									name="user.usName" value="${ user.usName}">
 							</div>
 						</div>
 
@@ -92,7 +92,31 @@
 		pageInfo.generate();
 
 		$("form").submit(function() {
-			return check();
+			var b = check();
+			if (b) {
+				$.ajax({
+					url : '${ctx }/ajax/permission-checkExistUserName.action;',
+					async : false,
+					data : {
+						data : $("[name='user.usUserName']").val()
+					},
+					success : function(data, textStatus, jqXHR) {
+						alert(1);
+						var obj = eval(data);
+						if (obj == true) {
+							b = true;
+						} else {
+							b = false;
+							var e = $("[name='user.usUserName']");
+							var orig = e.attr("data-content");
+							e.attr("data-content", "用户名已存在");
+							e.popover('show');
+							e.attr("data-content", orig);
+						}
+					}
+				});
+			}
+			return b;
 		});
 	</script>
 	<!-- js结束 -->

@@ -35,7 +35,9 @@ public class BaseAjaxAction extends ActionSupport implements Preparable {
 
 	@Override
 	public void prepare() throws Exception {
+		request = ServletActionContext.getRequest();
 		response = ServletActionContext.getResponse();
+
 	}
 
 	protected String input(String name) {

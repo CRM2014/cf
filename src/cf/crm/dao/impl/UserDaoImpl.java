@@ -61,9 +61,12 @@ public class UserDaoImpl extends DaoAdapter implements UserDao {
 		try {
 			Criteria cri = getSession().createCriteria(User.class);
 			cri.add(Restrictions.eq("usUserName", userName));
-			return (User) cri.uniqueResult();
+			List<?> list = cri.list();
+			if (list.size() == 1)
+				return (User) list.get(0);
+			else
+				return null;
 		} finally {
-
 		}
 	}
 

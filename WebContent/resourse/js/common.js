@@ -133,3 +133,7 @@ function check() {
 $(".checkable").blur(function() {
 	$(this).popover('destroy');
 });
+
+$(".checkable").change(function() {
+	$(this).popover('destroy');
+});

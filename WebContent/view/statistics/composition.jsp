@@ -138,7 +138,7 @@
 
 		$('#chart').on('shown.bs.modal', function(e) {
 			$.ajax({
-				url : '${ctx }/ajax/statistics-conposition.action;',
+				url : '${ctx }/ajax/statistics-composition.action;',
 				success : function(data, textStatus, jqXHR) {
 					console.info(data);
 					value = eval("(" + data + ")");
