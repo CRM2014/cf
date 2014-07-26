@@ -41,7 +41,7 @@ public class StatisticsAction extends BaseAction {
 	public String contribution() {
 		if (page == null)
 			page = PageHelper.generatePage();
-		customerService.findContributionByPage(page);
+		customerService.findContributionByPage(page,compositionType);
 		log.info(JSONArray.fromObject(page.getList()));
 		return "contribution";
 	}

@@ -30,7 +30,7 @@ public interface CustomerDao extends Dao {
 
 	public void findByPage(Page<Customer> page, Map<String, Object> like);
 
-	public void findContributionByPage(Page page);
+	public void findContributionByPage(Page page, String compositionType);
 
 	public void findServiceByPage(Page page);
 

@@ -37,9 +37,8 @@
 							<input type="hidden" id="compositionType"
 								value="${compositionType}"> <select class="form-control"
 								name="compositionType">
-								<option value="1">按编号排序</option>
-								<option value="2">按客户名称排序</option>
-								<option value="3">按订单金额排序</option>
+								<option value="1">按客户名称排序</option>
+								<option value="2">按订单金额排序</option>
 							</select>
 							<div class="form-group">
 								<div class="input-group">
@@ -109,18 +108,8 @@
 		var pageInfo = new PageInfo(4);
 		pageInfo.generate();
 		$("[name='compositionType']").val($("#compositionType").val());
-		var v = $("[name='compositionType']").val();
-		if (v == "1")
-			$("#compositionTypeTitle").html("等级");
-		else if (v == "2")
-			$("#compositionTypeTitle").html("信用度");
-		else if (v == "3")
-			$("#compositionTypeTitle").html("满意度");
-
 		$("[name='compositionType']").change(function() {
-
 			$("form").submit();
-
 		});
 
 		$('#chart').on('shown.bs.modal', function(e) {

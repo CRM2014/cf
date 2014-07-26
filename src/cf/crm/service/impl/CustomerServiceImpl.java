@@ -62,8 +62,8 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	@Override
-	public void findContributionByPage(Page page) {
-		customerDao.findContributionByPage(page);
+	public void findContributionByPage(Page page, String compositionType) {
+		customerDao.findContributionByPage(page, compositionType);
 	}
 
 	@Override
