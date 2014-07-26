@@ -28,12 +28,19 @@
 				<h3>客户贡献分析</h3>
 				<form action="${ctx }/statistics/statistics-contribution.action"
 					method="post" id="main-form">
-									<!-- 提示开始 -->
-				<%@ include file="/view/common/message.jsp"%>
-				<!-- 提示结束 -->
-				<!-- 数据显示与交互内容开始 -->
+					<!-- 提示开始 -->
+					<%@ include file="/view/common/message.jsp"%>
+					<!-- 提示结束 -->
+					<!-- 数据显示与交互内容开始 -->
 					<div class="workpage well well-lg">
 						<div class="form-inline">
+							<input type="hidden" id="compositionType"
+								value="${compositionType}"> <select class="form-control"
+								name="compositionType">
+								<option value="1">按编号排序</option>
+								<option value="2">按客户名称排序</option>
+								<option value="3">按订单金额排序</option>
+							</select>
 							<div class="form-group">
 								<div class="input-group">
 									<div class="input-group-addon">客户名称</div>
@@ -101,6 +108,20 @@
 	<script type="text/javascript">
 		var pageInfo = new PageInfo(4);
 		pageInfo.generate();
+		$("[name='compositionType']").val($("#compositionType").val());
+		var v = $("[name='compositionType']").val();
+		if (v == "1")
+			$("#compositionTypeTitle").html("等级");
+		else if (v == "2")
+			$("#compositionTypeTitle").html("信用度");
+		else if (v == "3")
+			$("#compositionTypeTitle").html("满意度");
+
+		$("[name='compositionType']").change(function() {
+
+			$("form").submit();
+
+		});
 
 		$('#chart').on('shown.bs.modal', function(e) {
 			$.ajax({

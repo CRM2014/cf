@@ -14,6 +14,8 @@ package cf.crm.action.excel;
 import java.io.IOException;
 import java.io.InputStream;
 
+import net.sf.json.JSONArray;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
@@ -39,6 +41,7 @@ public class ExcelAction extends BaseExcelAction {
 	private String excelName;
 	private InputStream excelStream;
 	private Page page;
+	private String compositionType;
 
 	public String contribution() throws IOException {
 		if (page == null)
@@ -48,6 +51,50 @@ public class ExcelAction extends BaseExcelAction {
 		poi.createExcel();
 		poi.fromStringArray(page.getList(), new String[] { "客户名称", "订单金额" });
 		excelName = "客户贡献分析.xlsx";
+		excelStream = poi.toInputStream();
+		return SUCCESS;
+	}
+
+	public String composition() throws IOException {
+		if (page == null)
+			page = PageHelper.generatePage();
+		customerService.findCompositionByPage(page, compositionType);
+		Poi poi = new Poi();
+		poi.createExcel();
+		if ("1".equals(compositionType))
+			poi.fromStringArray(page.getList(), new String[] { "等级", "客户数量" });
+		else if ("2".equals(compositionType))
+			poi.fromStringArray(page.getList(), new String[] { "信用度", "客户数量" });
+		else if ("3".equals(compositionType))
+			poi.fromStringArray(page.getList(), new String[] { "满意度", "客户数量" });
+		else
+			poi.fromStringArray(page.getList(), new String[] { "等级", "客户数量" });
+		excelName = "客户构成分析.xlsx";
+		excelStream = poi.toInputStream();
+		return SUCCESS;
+	}
+
+	public String service() throws IOException {
+		if (page == null)
+			page = PageHelper.generatePage();
+		customerService.findServiceByPage(page);
+		Poi poi = new Poi();
+		poi.createExcel();
+		poi.fromStringArray(page.getList(), new String[] { "服务类型", "服务数量" });
+		excelName = "客户服务分析.xlsx";
+		excelStream = poi.toInputStream();
+		return SUCCESS;
+	}
+
+	public String drain() throws IOException {
+		if (page == null)
+			page = PageHelper.generatePage();
+		customerService.findDrainByPage(page);
+		Poi poi = new Poi();
+		poi.createExcel();
+		poi.fromStringArray(page.getList(), new String[] { "年份", "客户", "客户经理",
+				"客户", "流失原因" });
+		excelName = "客户流失分析.xlsx";
 		excelStream = poi.toInputStream();
 		return SUCCESS;
 	}
@@ -74,5 +121,13 @@ public class ExcelAction extends BaseExcelAction {
 
 	public void setPage(Page page) {
 		this.page = page;
+	}
+
+	public String getCompositionType() {
+		return compositionType;
+	}
+
+	public void setCompositionType(String compositionType) {
+		this.compositionType = compositionType;
 	}
 }

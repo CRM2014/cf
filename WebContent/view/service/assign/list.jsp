@@ -26,7 +26,7 @@
 				</h5>
 				<!-- 页面路径结束 -->
 				<h3>服务分配列表</h3>
-								<!-- 提示开始 -->
+				<!-- 提示开始 -->
 				<%@ include file="/view/common/message.jsp"%>
 				<!-- 提示结束 -->
 				<!-- 数据显示与交互内容开始 -->
@@ -59,22 +59,7 @@
 									value="${ condition.service.seType}">
 							</div>
 						</div>
-						<br /> <br />
-						<div class="form-group">
-							<div class="input-group date form_date" data-date=""
-								data-date-format="yyyy MM dd" data-link-field="dtp_input2"
-								data-link-format="yyyy-mm-dd">
-								<div class="input-group-addon">日期</div>
-								<input class="form-control" size="16" type="text" value=""
-									readonly> <span class="input-group-addon"><span
-									class="glyphicon glyphicon-remove"></span></span> <span
-									class="input-group-addon"><span
-									class="glyphicon glyphicon-calendar"></span></span>
-							</div>
-							<input type="hidden" id="dtp_input2"
-								value="${ condition.service.seCreateTime}"
-								name="condition.service.seCreateTime"><br>
-						</div>
+
 						<button type="submit" class="btn btn-default">
 							<span class="glyphicon glyphicon-search"></span> 查询
 						</button>

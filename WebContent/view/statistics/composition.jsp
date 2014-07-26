@@ -26,7 +26,7 @@
 				</h5>
 				<!-- 页面路径结束 -->
 				<h3>客户构成分析</h3>
-								<!-- 提示开始 -->
+				<!-- 提示开始 -->
 				<%@ include file="/view/common/message.jsp"%>
 				<!-- 提示结束 -->
 				<!-- 数据显示与交互内容开始 -->
@@ -43,7 +43,9 @@
 								<option value="2">按信用度</option>
 								<option value="3">按满意度</option>
 							</select> <a role="button" class="btn btn-default" data-toggle="modal"
-								data-target="#chart">客户构成比例</a>
+								data-target="#chart">客户构成比例</a><a role="button"
+								href="${ctx }/excel/composition.action?compositionType=${compositionType}"
+								class="btn btn-default">导出Excel</a>
 						</div>
 
 						<br> <br>
@@ -59,7 +61,6 @@
 									<s:iterator value="page.list[#st.index]" id="i">
 										<td align="center">${i }</td>
 									</s:iterator>
-
 								</tr>
 							</s:iterator>
 						</table>

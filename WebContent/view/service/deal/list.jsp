@@ -26,19 +26,20 @@
 				</h5>
 				<!-- 页面路径结束 -->
 				<h3>服务处理列表</h3>
-								<!-- 提示开始 -->
+				<!-- 提示开始 -->
 				<%@ include file="/view/common/message.jsp"%>
 				<!-- 提示结束 -->
 				<!-- 数据显示与交互内容开始 -->
 				<div class="workpage well well-lg">
 
 					<form class="form-inline" role="form"
-					action="${ctx }/service/deal-list.action" method="post">
+						action="${ctx }/service/deal-list.action" method="post">
 						<div class="form-group">
 							<div class="input-group">
 								<div class="input-group-addon">客户</div>
 								<input class="form-control" type="text" placeholder=""
-									name="condition.customer.cuName" value="${ condition.customer.cuName}">
+									name="condition.customer.cuName"
+									value="${ condition.customer.cuName}">
 							</div>
 						</div>
 
@@ -46,7 +47,8 @@
 							<div class="input-group">
 								<div class="input-group-addon">概要</div>
 								<input class="form-control" type="text" placeholder=""
-									name="condition.service.seMain" value="${ condition.service.seMain}">
+									name="condition.service.seMain"
+									value="${ condition.service.seMain}">
 							</div>
 						</div>
 
@@ -54,30 +56,11 @@
 							<div class="input-group">
 								<div class="input-group-addon">服务类型</div>
 								<input class="form-control" type="text" placeholder=""
-									name="condition.service.seType" value="${ condition.service.seType}">
+									name="condition.service.seType"
+									value="${ condition.service.seType}">
 							</div>
 						</div>
-						<br /> <br />
-						<div class="form-group">
-							<div class="input-group">
-								<div class="input-group-addon">创建时间</div>
-								<input class="form-control" type="text" placeholder=""
-									name=""
-									value="${1}">
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="input-group">
-								<label>-</label>
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="input-group">
-								<input class="form-control" type="text" placeholder=""
-									name=""
-									value="${1}">
-							</div>
-						</div>
+
 
 						<button type="submit" class="btn btn-default">
 							<span class="glyphicon glyphicon-search"></span> 查询
@@ -97,8 +80,8 @@
 							<td align="center">操作</td>
 						</tr>
 						<tr>
-						
-						<s:iterator value="%{page.list}">
+
+							<s:iterator value="%{page.list}">
 								<tr>
 									<td>${secuId}</td>
 									<td>${service.product.prName}</td>
@@ -107,17 +90,18 @@
 									<td>${service.seType}</td>
 									<td>${service.user.usName}</td>
 									<td>${service.seCreateTime}</td>
-									<td align="center"><a role="button" class="btn btn-default"
-								href="${ctx }/service/deal-deal.action?servicecustomer.secuId=${secuId}">查看</a></td> 
+									<td align="center"><a role="button"
+										class="btn btn-default"
+										href="${ctx }/service/deal-deal.action?servicecustomer.secuId=${secuId}">查看</a></td>
 							</s:iterator>
-							
+
 						</tr>
 					</table>
 					<div class="text-center">
-							<!-- 分页栏开始 -->
-							<%@ include file="/view/common/page.jsp"%>
-							<!-- 分页栏结束 -->
-						</div>
+						<!-- 分页栏开始 -->
+						<%@ include file="/view/common/page.jsp"%>
+						<!-- 分页栏结束 -->
+					</div>
 				</div>
 				<!-- 数据显示与交互内容结束 -->
 			</div>

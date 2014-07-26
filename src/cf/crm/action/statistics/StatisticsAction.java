@@ -52,8 +52,6 @@ public class StatisticsAction extends BaseAction {
 		customerService.findCompositionByPage(page,compositionType);
 		
 		log.info(JSONArray.fromObject(page.getList()));
-		log.info("=====================================");
-		log.info(compositionType);
 		return "composition";
 	}
 

@@ -57,27 +57,7 @@
 									name="condition.service.seType" value="${ condition.service.seType}">
 							</div>
 						</div>
-						<br /> <br />
-						<div class="form-group">
-							<div class="input-group">
-								<div class="input-group-addon">创建时间</div>
-								<input class="form-control" type="text" placeholder=""
-									name=""
-									value="${1}">
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="input-group">
-								<label>-</label>
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="input-group">
-								<input class="form-control" type="text" placeholder=""
-									name=""
-									value="${1}">
-							</div>
-						</div>
+						
 
 						<button type="submit" class="btn btn-default">
 							<span class="glyphicon glyphicon-search"></span> 查询

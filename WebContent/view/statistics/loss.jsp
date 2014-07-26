@@ -26,7 +26,7 @@
 				</h5>
 				<!-- 页面路径结束 -->
 				<h3>客户流失分析</h3>
-								<!-- 提示开始 -->
+				<!-- 提示开始 -->
 				<%@ include file="/view/common/message.jsp"%>
 				<!-- 提示结束 -->
 				<!-- 数据显示与交互内容开始 -->
@@ -50,7 +50,8 @@
 						<button type="submit" class="btn btn-default">
 							<span class="glyphicon glyphicon-search"></span> 查询
 						</button>
-
+						<a role="button" href="${ctx }/excel/drain.action"
+							class="btn btn-default">导出Excel</a>
 					</form>
 
 					<br> <br>
@@ -73,17 +74,17 @@
 						</s:iterator>
 					</table>
 					<div class="text-center">
-							<!-- 分页栏开始 -->
-							<%@ include file="/view/common/page.jsp"%>
-							<!-- 分页栏结束 -->
-						</div>
+						<!-- 分页栏开始 -->
+						<%@ include file="/view/common/page.jsp"%>
+						<!-- 分页栏结束 -->
+					</div>
 				</div>
 				<!-- 数据显示与交互内容结束 -->
-				</div>
+			</div>
 			<!-- 主要内容结束 -->
 		</div>
 	</div>
-	
+
 	<!-- js开始 -->
 	<%@ include file="/view/common/js.jsp"%>
 	<script type="text/javascript">

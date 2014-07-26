@@ -217,7 +217,7 @@ public class Poi {
 	}
 
 	public void fromStringArray(List list, String[] title) {
-		setValue(0, 0, "序号");
+		setValue(0, 0, "编号");
 		for (int j = 0; j < title.length; j++) {
 			setValue(0, j + 1, title[j]);
 		}
