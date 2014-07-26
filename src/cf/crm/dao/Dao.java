@@ -15,8 +15,8 @@ import java.util.List;
 import java.util.Map;
 
 import org.hibernate.criterion.Criterion;
+import org.hibernate.criterion.Order;
 
-import cf.crm.entity.Servicecustomer;
 import cf.crm.util.page.Page;
 
 public interface Dao {
@@ -31,6 +31,16 @@ public interface Dao {
 	public void add(Object entity);
 
 	/**
+	 * 添加多个实体
+	 * 
+	 * @author qiyu
+	 * 
+	 * @param entities
+	 *            实体
+	 */
+	public void add(List<?> entities);
+
+	/**
 	 * 删除一个实体
 	 * 
 	 * @author qiyu
@@ -38,6 +48,7 @@ public interface Dao {
 	 * @param entity
 	 *            实体
 	 */
+
 	public void remove(Object entity);
 
 	/**
@@ -90,8 +101,22 @@ public interface Dao {
 	 *            参数值
 	 * @return 实体列表
 	 */
-	public List<?> findListByField(Class<?> clazz, String name, Object value);
+	public List<?> findListByField(Class<?> clazz, String name, Object value,
+			Order order);
 
+	/**
+	 * 查找一个实体列表，根据类型、参数名、参数值
+	 * 
+	 * @author qiyu
+	 * 
+	 * @param clazz
+	 *            类型
+	 * @param name
+	 *            参数名
+	 * @param value
+	 *            参数值
+	 * @return 实体列表
+	 */
 	public List<?> findLikeListByField(Class<?> clazz, String name, Object value);
 
 	/**
@@ -134,8 +159,34 @@ public interface Dao {
 	public void findByPage(Class<?> clazz, Page<?> page,
 			Map<String, Object> like);
 
+	/**
+	 * 查找一个实体列表，根据类型、分页信息、模糊查询条件
+	 * 
+	 * @author qiyu
+	 * 
+	 * @param clazz
+	 *            类型
+	 * @param page
+	 *            分页信息
+	 * @param like
+	 *            模糊查询条件
+	 * @return 实体列表
+	 */
 	public void findByPage(Class<?> clazz, Page<?> page,
 			Map<String, Object> like, List<Criterion> criterion);
 
+	/**
+	 * 查找一个实体列表，根据类型、分页信息、模糊查询条件
+	 * 
+	 * @author qiyu
+	 * 
+	 * @param clazz
+	 *            类型
+	 * @param page
+	 *            分页信息
+	 * @param like
+	 *            模糊查询条件
+	 * @return 实体列表
+	 */
 	public void findByPage(Page page, String sql);
 }

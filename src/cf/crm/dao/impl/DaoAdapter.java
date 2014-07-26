@@ -17,6 +17,7 @@ import java.util.Map.Entry;
 import java.util.Random;
 
 import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Order;
@@ -33,7 +34,10 @@ import cf.crm.util.page.Page;
 public class DaoAdapter extends HibernateDaoSupport implements Dao {
 
 	public String generateKey() {
-		int length = 10;
+		return generateKey(10);
+	}
+
+	public String generateKey(int length) {
 		String base = "0123456789";
 		Random random = new Random();
 		StringBuffer sb = new StringBuffer();
@@ -102,7 +106,8 @@ public class DaoAdapter extends HibernateDaoSupport implements Dao {
 	}
 
 	@Override
-	public List<?> findListByField(Class<?> clazz, String name, Object value) {
+	public List<?> findListByField(Class<?> clazz, String name, Object value,
+			Order order) {
 		try {
 			Criteria cri = getSession().createCriteria(clazz);
 			cri.add(Restrictions.eq(name, value));
@@ -115,6 +120,7 @@ public class DaoAdapter extends HibernateDaoSupport implements Dao {
 	public List<?> findLikeListByField(Class<?> clazz, String name, Object value) {
 		try {
 			Criteria cri = getSession().createCriteria(clazz);
+			cri.addOrder(Order.desc(name));
 			cri.add(Restrictions.like(name, value.toString(),
 					MatchMode.ANYWHERE));
 			return cri.list();
@@ -175,9 +181,10 @@ public class DaoAdapter extends HibernateDaoSupport implements Dao {
 								entry.getValue()));
 				}
 			}
-			if (criterion != null)
+			if (criterion != null) {
 				for (Criterion c : criterion)
 					cri.add(c);
+			}
 			if (page.getOrder() != null && !"".equals(page.getOrder())) {
 				if (page.isDesc())
 					cri.addOrder(Order.desc(page.getOrder()));
@@ -185,9 +192,13 @@ public class DaoAdapter extends HibernateDaoSupport implements Dao {
 					cri.addOrder(Order.asc(page.getOrder()));
 				}
 			}
-			int count = cri.list().size();
+
+			String hql = "select count(*) from " + clazz.getSimpleName();
+			Query query = getSession().createQuery(hql);
+			int count = ((Long) query.uniqueResult()).intValue();
 			cri.setFirstResult(page.getFirstRec());
-			cri.setMaxResults(page.getPageSize());
+			if (page.getPageSize() != 0)
+				cri.setMaxResults(page.getPageSize());
 			page.setCount(count);
 			page.setList(cri.list());
 		} finally {
@@ -197,5 +208,15 @@ public class DaoAdapter extends HibernateDaoSupport implements Dao {
 	@Override
 	public void findByPage(Page page, String sql) {
 		page.setList(getSession().createSQLQuery(sql).list());
+	}
+
+	@Override
+	public void add(List<?> entities) {
+		for (Object entity : entities) {
+			try {
+				getSession().save(entity);
+			} finally {
+			}
+		}
 	}
 }

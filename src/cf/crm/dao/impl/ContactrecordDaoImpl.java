@@ -53,6 +53,7 @@ public class ContactrecordDaoImpl extends DaoAdapter implements ContactrecordDao
 
 	@Override
 	public void findByPage(Page<Contactrecord> page, Map<String, Object> like) {
+		page.setOrder("coreId");
 		super.findByPage(Contactrecord.class, page, like);
 	}
 

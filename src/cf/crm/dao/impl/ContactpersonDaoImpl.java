@@ -26,7 +26,8 @@ import cf.crm.util.page.Page;
 
 @Component
 @Scope("prototype")
-public class ContactpersonDaoImpl extends DaoAdapter implements ContactpersonDao {
+public class ContactpersonDaoImpl extends DaoAdapter implements
+		ContactpersonDao {
 	@Override
 	public void add(Contactperson contactperson) {
 		contactperson.setCopeId(super.generateKey());
@@ -56,8 +57,7 @@ public class ContactpersonDaoImpl extends DaoAdapter implements ContactpersonDao
 
 	@Override
 	public void findByPage(Page<Contactperson> page, Map<String, Object> like) {
-		super.findByPage(Contactperson.class, page, like);		
+		page.setOrder("copeId");
+		super.findByPage(Contactperson.class, page, like);
 	}
-
-	
 }

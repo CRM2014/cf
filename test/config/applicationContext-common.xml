@@ -15,19 +15,22 @@
 		   http://www.springframework.org/schema/aop/spring-aop-3.0.xsd"
 	default-autowire="byName">
 
+	<!-- <jee:jndi-lookup id="dataSource" jndi-name="java:comp/env/jdbc/crm" 
+		/> -->
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName">
 			<value>com.mysql.jdbc.Driver</value>
 		</property>
 		<property name="url">
-			<value>jdbc:mysql://localhost:3306/crm</value>
+			<value>jdbc:mysql://192.168.23.3:3306/crm?characterEncoding=UTF-8
+			</value>
 		</property>
 		<property name="username">
 			<value>root</value>
 		</property>
 		<property name="password">
-			<value></value>
+			<value>root</value>
 		</property>
 	</bean>
 	<bean id="sessionFactory"
@@ -45,6 +48,7 @@
 	<!-- Spring管理Struts2的Interceptor -->
 	<bean name="checkLoginInterceptor" class="cf.crm.interceptor.CheckLogin"
 		scope="prototype"></bean>
+
 	<!-- 配置事务管理器 -->
 	<bean id="transactionManager"
 		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
@@ -54,11 +58,11 @@
 	<!-- 事务的传播特性 -->
 	<tx:advice id="txadvice" transaction-manager="transactionManager">
 		<tx:attributes>
-			<tx:method name="save*" propagation="REQUIRED" />
-			<tx:method name="delete*" propagation="REQUIRED" />
+			<tx:method name="add*" propagation="REQUIRED" />
+			<tx:method name="remove*" propagation="REQUIRED" />
 			<tx:method name="modify*" propagation="REQUIRED" />
+			<tx:method name="*" propagation="SUPPORTS" />
 
-			<tx:method name="*" propagation="REQUIRED" read-only="true" />
 		</tx:attributes>
 	</tx:advice>
 

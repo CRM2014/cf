@@ -56,8 +56,8 @@ public class OutflowDaoImpl extends DaoAdapter implements OutflowDao {
 
 	@Override
 	public void findByPage(Page<Outflow> page, Map<String, Object> like) {
+		page.setOrder("ouflId");
 		super.findByPage(Outflow.class, page, like);
-		
 	}
 
 	

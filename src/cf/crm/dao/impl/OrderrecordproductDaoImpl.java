@@ -58,6 +58,6 @@ public class OrderrecordproductDaoImpl extends DaoAdapter implements
 	@Override
 	public List<Orderrecordproduct> findListByProduct(Product product) {
 		return (List<Orderrecordproduct>) super.findListByField(
-				Orderrecordproduct.class, "product", product);
+				Orderrecordproduct.class, "product", product, null);
 	}
 }

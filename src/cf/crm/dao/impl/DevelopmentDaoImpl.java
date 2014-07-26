@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.hibernate.Criteria;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -56,11 +57,13 @@ public class DevelopmentDaoImpl extends DaoAdapter implements DevelopmentDao {
 
 	@Override
 	public void findByPage(Page<Development> page, Map<String, Object> like) {
+		page.setOrder("deId");
 		super.findByPage(Development.class, page, like);
 	}
 
 	@Override
 	public void findListByField(String name, Object value) {
-		super.findListByField(Development.class, name, value);
+		super.findListByField(Development.class, name, value,
+				Order.desc("deId"));
 	}
 }

@@ -26,6 +26,9 @@
 				</h5>
 				<!-- 页面路径结束 -->
 				<h3>仓库信息查询</h3>
+								<!-- 提示开始 -->
+				<%@ include file="/view/common/message.jsp"%>
+				<!-- 提示结束 -->
 				<!-- 数据显示与交互内容开始 -->
 				<form class="form-inline" role="form"
 					action="${ctx }/data/stock-list.action" method="post"

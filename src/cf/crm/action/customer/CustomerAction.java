@@ -64,7 +64,6 @@ public class CustomerAction extends BaseAction {
 	}
 
 	public String list() {
-		page = PageHelper.generatePage();
 		if (page == null)
 			page = PageHelper.generatePage();
 		Map<String, Object> like = null;

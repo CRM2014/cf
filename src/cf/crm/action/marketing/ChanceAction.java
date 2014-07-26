@@ -106,7 +106,7 @@ public class ChanceAction extends BaseAction {
 		origSalechance.setUserByUsDesignationId(userService.find(userId));
 		salechanceService.modify(origSalechance);
 		
-		warn = "Modify Success!";
+		warn = "修改成功!";
 		return "assign-modify-success";
 	}
 

@@ -28,7 +28,10 @@
 				<h3>客户贡献分析</h3>
 				<form action="${ctx }/statistics/statistics-contribution.action"
 					method="post" id="main-form">
-					<!-- 数据显示与交互内容开始 -->
+									<!-- 提示开始 -->
+				<%@ include file="/view/common/message.jsp"%>
+				<!-- 提示结束 -->
+				<!-- 数据显示与交互内容开始 -->
 					<div class="workpage well well-lg">
 						<div class="form-inline">
 							<div class="form-group">
@@ -62,11 +65,6 @@
 								</tr>
 							</s:iterator>
 						</table>
-						<div class="text-center">
-							<!-- 分页栏开始 -->
-							<%@ include file="/view/common/page.jsp"%>
-							<!-- 分页栏结束 -->
-						</div>
 					</div>
 				</form>
 				<!-- 数据显示与交互内容结束 -->

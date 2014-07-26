@@ -53,6 +53,7 @@ public class OrderrecordDaoImpl extends DaoAdapter implements OrderrecordDao {
 
 	@Override
 	public void findByPage(Page<Orderrecord> page, Map<String, Object> like) {
+		page.setOrder("orreId");
 		super.findByPage(Orderrecord.class, page, like);
 	}
 

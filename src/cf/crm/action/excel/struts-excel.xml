@@ -8,14 +8,12 @@
 		<action name="*" class="excelAction" method="{1}">
 			<result type="stream">
 				<param name="contentType">application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</param>
-				<param name="contentDisposition">fileName="${excelName}"</param>
+				<param name="contentDisposition">attachment;fileName="${excelName}"</param> 
 				<param name="inputName">excelStream</param>
 				<param name="bufferSize">4096</param>
+				<param name="encode">true</param>
 			</result>
 		</action>
 	</package>
-
-	<!-- Add packages here -->
-
 </struts>
 

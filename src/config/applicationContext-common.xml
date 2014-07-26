@@ -15,8 +15,24 @@
 		   http://www.springframework.org/schema/aop/spring-aop-3.0.xsd"
 	default-autowire="byName">
 
-	<jee:jndi-lookup id="dataSource" jndi-name="java:comp/env/jdbc/crm" />
-
+	<!-- <jee:jndi-lookup id="dataSource" jndi-name="java:comp/env/jdbc/crm" 
+		/> -->
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName">
+			<value>com.mysql.jdbc.Driver</value>
+		</property>
+		<property name="url">
+			<value>jdbc:mysql://192.168.23.3:3306/crm?characterEncoding=UTF-8
+			</value>
+		</property>
+		<property name="username">
+			<value>root</value>
+		</property>
+		<property name="password">
+			<value></value>
+		</property>
+	</bean>
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
 		<property name="dataSource">
@@ -45,7 +61,7 @@
 			<tx:method name="add*" propagation="REQUIRED" />
 			<tx:method name="remove*" propagation="REQUIRED" />
 			<tx:method name="modify*" propagation="REQUIRED" />
-			<tx:method name="*" propagation="SUPPORTS"/>
+			<tx:method name="*" propagation="SUPPORTS" />
 
 		</tx:attributes>
 	</tx:advice>

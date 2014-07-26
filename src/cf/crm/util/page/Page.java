@@ -26,11 +26,17 @@ public class Page<T> {
 	}
 
 	public int getFirstRec() {
-		return (currentPage - 1) * pageSize;
+		if (pageSize == 0)
+			return 0;
+		else
+			return (currentPage - 1) * pageSize;
 	}
 
 	public int getCountPage() {
-		countPage = count / pageSize + 1;
+		if (pageSize == 0)
+			countPage = 1;
+		else
+			countPage = count / pageSize + 1;
 		return countPage;
 	}
 
