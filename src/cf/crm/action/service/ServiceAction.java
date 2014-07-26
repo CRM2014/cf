@@ -20,14 +20,12 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import cf.crm.action.BaseAction;
-import cf.crm.dao.impl.DaoAdapter;
 import cf.crm.entity.Datadictionary;
 import cf.crm.entity.Orderrecordproduct;
 import cf.crm.entity.Product;
 import cf.crm.entity.Service;
 import cf.crm.entity.Servicecustomer;
 import cf.crm.service.DatadictionaryService;
-import cf.crm.service.OrderrecordService;
 import cf.crm.service.OrderrecordproductService;
 import cf.crm.service.ProductService;
 import cf.crm.service.ServiceService;
