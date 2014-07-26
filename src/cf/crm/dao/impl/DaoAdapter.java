@@ -193,9 +193,9 @@ public class DaoAdapter extends HibernateDaoSupport implements Dao {
 				}
 			}
 
-			String hql = "select count(*) from " + clazz.getSimpleName();
-			Query query = getSession().createQuery(hql);
-			int count = ((Long) query.uniqueResult()).intValue();
+			int count = 0;
+
+			count = cri.list().size();
 			cri.setFirstResult(page.getFirstRec());
 			if (page.getPageSize() != 0)
 				cri.setMaxResults(page.getPageSize());

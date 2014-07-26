@@ -4,9 +4,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>403</title>
+<title>404</title>
+<%@ include file="/view/common/header.jsp"%>
 </head>
 <body>
-	<h2>403 Forbidden!</h2>
+	<h2>
+		404 Not Found!<a href="${ctx}">返回主页</a>
+	</h2>
 </body>
 </html>
