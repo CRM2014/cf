@@ -12,11 +12,8 @@
 package cf.crm.action.ajax;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 import net.sf.json.JSONArray;
-import net.sf.json.JSONObject;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;

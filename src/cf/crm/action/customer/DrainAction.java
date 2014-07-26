@@ -20,7 +20,6 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import cf.crm.action.BaseAction;
-import cf.crm.entity.Datadictionary;
 import cf.crm.entity.Outflow;
 import cf.crm.service.OutflowService;
 import cf.crm.util.page.Page;

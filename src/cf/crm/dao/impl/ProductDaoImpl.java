@@ -14,13 +14,10 @@ package cf.crm.dao.impl;
 import java.util.List;
 import java.util.Map;
 
-import org.hibernate.Criteria;
-import org.hibernate.criterion.Restrictions;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import cf.crm.dao.ProductDao;
-import cf.crm.entity.Datadictionary;
 import cf.crm.entity.Product;
 import cf.crm.util.page.Page;
 
