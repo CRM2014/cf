@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <ul class="pager">
-	<li class="col-md-6">共有<label>${page.count}</label>条记录 每页显示<select
+	<li class="col-md-8">共有<label>${page.count}</label>条记录 每页显示<select
 		onchange="submitMain()" name="page.pageSize"><option>10</option>
 			<option>20</option>
 			<option>30</option>

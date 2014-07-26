@@ -178,8 +178,8 @@ body {
 }
 
 .accordion-inner {
-	margin-left:10px;
+	margin-left:0;
 	cursor: pointer;
-	padding: 9px 15px;
+	padding: 9px 0;
 	border-top: 1px solid #e5e5e5;
 }

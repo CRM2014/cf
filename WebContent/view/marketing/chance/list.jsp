@@ -43,17 +43,10 @@
 							</div>
 						</div>
 
-						<div class="form-group">
-							<div class="input-group">
-								<div class="input-group-addon">概要</div>
-								<input class="form-control" type="text" placeholder=""
-									name="condition.usMain" value="${ condition.usMain}">
-							</div>
-						</div>
 
 						<div class="form-group">
 							<div class="input-group">
-								<div class="input-group-addon">联系人</div>
+								<div class="input-group-addon">联系人 </div>
 								<input class="form-control" type="text" placeholder=""
 									name="condition.usContanct" value="${ condition.usContanct}">
 							</div>

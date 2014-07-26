@@ -43,14 +43,6 @@
 							</div>
 						</div>
 
-						<div class="form-group">
-							<div class="input-group">
-								<div class="input-group-addon">概要</div>
-								<input class="form-control" type="text" placeholder=""
-									name="condition.service.seMain"
-									value="${ condition.service.seMain}">
-							</div>
-						</div>
 
 						<div class="form-group">
 							<div class="input-group">
