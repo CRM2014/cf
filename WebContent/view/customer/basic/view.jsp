@@ -47,13 +47,13 @@
 					<form class="form-horizontal" role="form"
 						action="${ctx}/customer/customer-edit.action" method="post">
 						<div class="form-group">
-							<label for="name" class="col-sm-2 control-label">客户名称：</label>
+							<label  class="col-sm-2 control-label">客户名称：</label>
 							<div class="col-sm-3">
 								<input type="text" class="form-control" name="customer.cuName"
 									value="${customer.cuName}" disabled="disabled">
 							</div>
 
-							<label for="zone" class="col-sm-2 control-label">所在地区：</label>
+							<label  class="col-sm-2 control-label">所在地区：</label>
 							<div class="col-sm-3">
 								<input type="text" class="form-control" name="customer.cuZone"
 									value="${customer.cuZone}" disabled="disabled">
@@ -61,12 +61,12 @@
 						</div>
 
 						<div class="form-group">
-							<label for="level" class="col-sm-2 control-label">客户等级：</label>
+							<label  class="col-sm-2 control-label">客户等级：</label>
 							<div class="col-sm-3">
 								<input type="text" class="form-control" name="customer.cuLevel"
 									value="${customer.cuLevel}" disabled="disabled">
 							</div>
-							<label for="credit" class="col-sm-2 control-label">信 用 度：</label>
+							<label  class="col-sm-2 control-label">信 用 度：</label>
 							<div class="col-sm-3">
 								<input type="text" class="form-control" name="customer.cuCredit"
 									value="${customer.cuCredit}" disabled="disabled">
@@ -74,13 +74,13 @@
 						</div>
 
 						<div class="form-group">
-							<label for="addr" class="col-sm-2 control-label">地 址：</label>
+							<label  class="col-sm-2 control-label">地 址：</label>
 							<div class="col-sm-3">
 								<input type="text" class="form-control"
 									name="customer.cuAddress" value="${customer.cuAddress}"
 									disabled="disabled">
 							</div>
-							<label for="postal" class="col-sm-2 control-label">邮政编码：</label>
+							<label  class="col-sm-2 control-label">邮政编码：</label>
 							<div class="col-sm-3">
 								<input type="text" class="form-control" name="customer.cuPostal"
 									value="${customer.cuPostal}" disabled="disabled">
@@ -88,12 +88,12 @@
 						</div>
 
 						<div class="form-group">
-							<label for="tel" class="col-sm-2 control-label">电 话：</label>
+							<label  class="col-sm-2 control-label">电 话：</label>
 							<div class="col-sm-3">
 								<input type="text" class="form-control" name="customer.cuTel"
 									value="${customer.cuTel}" disabled="disabled">
 							</div>
-							<label for="fac" class="col-sm-2 control-label">传 真：</label>
+							<label  class="col-sm-2 control-label">传 真：</label>
 							<div class="col-sm-3">
 								<input type="text" class="form-control"
 									name="customer.cuFacsimile" value="${customer.cuFacsimile}"
@@ -102,13 +102,13 @@
 						</div>
 
 						<div class="form-group">
-							<label for="relation" class="col-sm-2 control-label">联系方式：</label>
+							<label  class="col-sm-2 control-label">联系方式：</label>
 							<div class="col-sm-3">
 								<input type="text" class="form-control"
 									name="customer.cuRelation" value="${customer.cuRelation}"
 									disabled="disabled">
 							</div>
-							<label for="legal" class="col-sm-2 control-label">法 人：</label>
+							<label  class="col-sm-2 control-label">法 人：</label>
 							<div class="col-sm-3">
 								<input type="text" class="form-control" name="customer.cuLegal"
 									value="${customer.cuLegal}" disabled="disabled">
@@ -116,7 +116,7 @@
 						</div>
 
 						<div class="form-group">
-							<label for="web" class="col-sm-2 control-label">公司网址：</label>
+							<label  class="col-sm-2 control-label">公司网址：</label>
 							<div class="col-sm-8">
 								<input type="text" class="form-control" name="customer.cuWeb"
 									value="${customer.cuWeb}" disabled="disabled">
@@ -124,12 +124,12 @@
 						</div>
 
 						<div class="form-group">
-							<label for="bank" class="col-sm-2 control-label">开户银行：</label>
+							<label  class="col-sm-2 control-label">开户银行：</label>
 							<div class="col-sm-3">
 								<input type="text" class="form-control" name="customer.cuBank"
 									value="${customer.cuBank}" disabled="disabled">
 							</div>
-							<label for="bankAccount" class="col-sm-2 control-label">银行账号：</label>
+							<label  class="col-sm-2 control-label">银行账号：</label>
 							<div class="col-sm-3">
 								<input type="text" class="form-control"
 									name="customer.cuBankAccount" value="${customer.cuBankAccount}"
@@ -138,13 +138,13 @@
 						</div>
 
 						<div class="form-group">
-							<label for="registerCapital" class="col-sm-2 control-label">注册资金：</label>
+							<label  class="col-sm-2 control-label">注册资金：</label>
 							<div class="col-sm-3">
 								<input type="text" class="form-control"
 									name="customer.cuRegisterCapital"
 									value="${customer.cuRegisterCapital}" disabled="disabled">
 							</div>
-							<label for="turnoverNum" class="col-sm-2 control-label">年营业额：</label>
+							<label  class="col-sm-2 control-label">年营业额：</label>
 							<div class="col-sm-3">
 								<input type="text" class="form-control"
 									name="customer.cuTurnover" value="${customer.cuTurnover}"
@@ -153,7 +153,7 @@
 						</div>
 
 						<div class="form-group">
-							<label for="landTaxNum" class="col-sm-2 control-label">营业执照注册号：</label>
+							<label  class="col-sm-2 control-label">营业执照注册号：</label>
 							<div class="col-sm-8">
 								<input type="text" class="form-control"
 									name="customer.cuTurnoverNum" value="${customer.cuTurnoverNum}"
@@ -162,13 +162,13 @@
 						</div>
 
 						<div class="form-group">
-							<label for="landTaxNum" class="col-sm-2 control-label">地税登记号：</label>
+							<label  class="col-sm-2 control-label">地税登记号：</label>
 							<div class="col-sm-3">
 								<input type="text" class="form-control"
 									name="customer.cuLandTaxNum" value="${customer.cuLandTaxNum}"
 									disabled="disabled">
 							</div>
-							<label for="NationTaxNum" class="col-sm-2 control-label">国税登记号：</label>
+							<label  class="col-sm-2 control-label">国税登记号：</label>
 							<div class="col-sm-3">
 								<input type="text" class="form-control"
 									name="customer.cuNationTaxNum"
@@ -177,12 +177,12 @@
 						</div>
 
 						<div class="form-group">
-							<label for="usName" class="col-sm-2 control-label">所属客户经理：</label>
+							<label  class="col-sm-2 control-label">所属客户经理：</label>
 							<div class="col-sm-3">
 								<input type="text" class="form-control" name="user.usName"
 									value="${customer.user.usName}" disabled="disabled">
 							</div>
-							<label for="satisfy" class="col-sm-2 control-label">客户满意度：</label>
+							<label  class="col-sm-2 control-label">客户满意度：</label>
 							<div class="col-sm-3">
 								<input type="text" class="form-control"
 									name="customer.cuSatisfy" value="${customer.cuSatisfy}"

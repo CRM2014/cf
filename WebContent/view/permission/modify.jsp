@@ -26,7 +26,7 @@
 				</h5>
 				<!-- 页面路径结束 -->
 				<h3>编辑用户</h3>
-								<!-- 提示开始 -->
+				<!-- 提示开始 -->
 				<%@ include file="/view/common/message.jsp"%>
 				<!-- 提示结束 -->
 				<!-- 数据显示与交互内容开始 -->
@@ -35,8 +35,7 @@
 						action="${ctx }/permission/permission-modifyUser.action"
 						method="post">
 						<div class="form-group">
-							<label for="inputEmail3"
-								class="col-sm-3 col-sm-offset-1 control-label">编号：</label>
+							<label class="col-sm-3 col-sm-offset-1 control-label">编号：</label>
 							<div class="col-sm-4">
 								<input type="text" class="form-control" disabled
 									value="${ user.usId}"> <input type="hidden"
@@ -44,26 +43,24 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="inputEmail3"
-								class="col-sm-3 col-sm-offset-1 control-label">用户名：</label>
+							<label class="col-sm-3 col-sm-offset-1 control-label">用户名：</label>
 							<div class="col-sm-4">
-								<input type="text" class="form-control checkable" data-content="非空"
-								 name="user.usUserName"
-									value="${ user.usUserName}">
+								<input type="text" class="form-control checkable"
+									reg="/^[a-zA-Z0-9]{2,10}$/" data-content="2-10个字母或数字"
+									name="user.usUserName" value="${ user.usUserName}">
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label for="inputEmail3"
-								class="col-sm-3 col-sm-offset-1 control-label">用户姓名：</label>
+							<label class="col-sm-3 col-sm-offset-1 control-label">用户姓名：</label>
 							<div class="col-sm-4">
 								<input type="text" class="form-control checkable"
-								reg="/^[A-Za-z0-9]+$/" data-content="用户姓名不正确" name="user.usName"
-									value="${ user.usName}">
+									reg="/^[\s\S]{2,10}$/" data-content="2-10个字符"
+									name="user.usName" value="${ user.usName}">
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="" class="col-sm-3 col-sm-offset-1 control-label">用户角色：</label>
+							<label class="col-sm-3 col-sm-offset-1 control-label">用户角色：</label>
 							<div class="col-sm-4">
 								<input type="hidden" value="${ user.usRole}" id="usRole">
 								<select class="form-control" name="user.usRole">
@@ -99,9 +96,32 @@
 		var pageInfo = new PageInfo(6);
 		pageInfo.generate();
 		$("[name='user.usRole']").val($("#usRole").val());
-		
+
 		$("form").submit(function() {
-			return check();
+			var b = check();
+			if (b) {
+				$.ajax({
+					url : '${ctx }/ajax/permission-checkExistUserName.action;',
+					async : false,
+					data : {
+						data : $("[name='user.usUserName']").val()
+					},
+					success : function(data, textStatus, jqXHR) {
+						var obj = eval(data);
+						if (obj == true) {
+							b = true;
+						} else {
+							b = false;
+							var e = $("[name='user.usUserName']");
+							var orig = e.attr("data-content");
+							e.attr("data-content", "用户名已存在");
+							e.popover('show');
+							e.attr("data-content", orig);
+						}
+					}
+				});
+			}
+			return b;
 		});
 	</script>
 	<!-- js结束 -->

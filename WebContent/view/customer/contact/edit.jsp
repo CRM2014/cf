@@ -50,14 +50,14 @@
 						<input type="hidden" name="contactperson.copeId"
 							value="${contactperson.copeId }">
 						<div class="form-group">
-							<label for="name" class="col-sm-2 control-label">姓名：</label>
+							<label  class="col-sm-2 control-label">姓名：</label>
 							<div class="col-sm-3">
 								<input type="text" class="form-control checkable" data-content="非空"
 									reg="/^\S{1,20}$/" name="contactperson.copeName"
 									value="${contactperson.copeName }">
 							</div>
 
-							<label for="sex" class="col-sm-2 control-label">性别：</label>
+							<label  class="col-sm-2 control-label">性别：</label>
 							<div class="col-sm-3">
 								<input id="copeSex" type="hidden"
 									value="${contactperson.copeSex }"> <select
@@ -69,7 +69,7 @@
 						</div>
 
 						<div class="form-group">
-							<label for="level" class="col-sm-2 control-label">职位：</label>
+							<label  class="col-sm-2 control-label">职位：</label>
 							<div class="col-sm-3">
 								<input type="text" class="form-control checkable" data-content="非空"
 									reg="/^[\s\S]{1,20}$/" name="contactperson.copePosition"
@@ -78,13 +78,13 @@
 						</div>
 
 						<div class="form-group">
-							<label for="tel" class="col-sm-2 control-label">办公室电话：</label>
+							<label  class="col-sm-2 control-label">办公室电话：</label>
 							<div class="col-sm-3">
 								<input type="text" class="form-control checkable"
 									reg="/^[0-9]{6,11}$/" name="contactperson.copeTel"
 									value="${contactperson.copeTel }">
 							</div>
-							<label for="phone" class="col-sm-2 control-label">手机：</label>
+							<label  class="col-sm-2 control-label">手机：</label>
 							<div class="col-sm-3">
 								<input type="text" class="form-control checkable"
 									reg="/^(\d{2,3}-)?\d{11}$/" name="contactperson.copePhone"
@@ -93,7 +93,7 @@
 						</div>
 
 						<div class="form-group">
-							<label for="note" class="col-sm-2 control-label">备注：</label>
+							<label  class="col-sm-2 control-label">备注：</label>
 							<div class="col-sm-8">
 								<textarea class="form-control" name="contactperson.copeNote">${contactperson.copeNote }</textarea>
 							</div>

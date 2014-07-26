@@ -47,14 +47,14 @@
 					<form class="form-horizontal" role="form">
 
 						<div class="form-group">
-							<label for="name" class="col-sm-2 control-label">姓名：</label>
+							<label  class="col-sm-2 control-label">姓名：</label>
 							<div class="col-sm-3">
 								<input type="text" class="form-control" disabled="disabled"
 									name="contactperson.copeName"
 									value="${contactperson.copeName }">
 							</div>
 
-							<label for="sex" class="col-sm-2 control-label">性别：</label>
+							<label  class="col-sm-2 control-label">性别：</label>
 							<div class="col-sm-3">
 								<input type="text" class="form-control" disabled="disabled"
 									name="contactperson.copeSex" value="${contactperson.copeSex }">
@@ -62,7 +62,7 @@
 						</div>
 
 						<div class="form-group">
-							<label for="level" class="col-sm-2 control-label">职位：</label>
+							<label  class="col-sm-2 control-label">职位：</label>
 							<div class="col-sm-3">
 								<input type="text" class="form-control" disabled="disabled"
 									name="contactperson.copePosition"
@@ -71,12 +71,12 @@
 						</div>
 
 						<div class="form-group">
-							<label for="tel" class="col-sm-2 control-label">办公室电话：</label>
+							<label  class="col-sm-2 control-label">办公室电话：</label>
 							<div class="col-sm-3">
 								<input type="text" class="form-control" disabled="disabled"
 									name="contactperson.copeTel" value="${contactperson.copeTel }">
 							</div>
-							<label for="phone" class="col-sm-2 control-label">手机：</label>
+							<label  class="col-sm-2 control-label">手机：</label>
 							<div class="col-sm-3">
 								<input type="text" class="form-control" disabled="disabled"
 									name="contactperson.copePhone"
@@ -85,7 +85,7 @@
 						</div>
 
 						<div class="form-group">
-							<label for="note" class="col-sm-2 control-label">备注：</label>
+							<label  class="col-sm-2 control-label">备注：</label>
 							<div class="col-sm-8">
 								<textarea class="form-control" disabled="disabled"
 									name="contactperson.copeNote">${contactperson.copeNote }</textarea>

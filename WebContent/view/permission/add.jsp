@@ -37,26 +37,25 @@
 						action="${ctx }/permission/permission-addUser.action"
 						method="post">
 						<div class="form-group">
-							<label for="inputEmail3"
-								class="col-sm-3 col-sm-offset-1 control-label">用户名：</label>
+							<label class="col-sm-3 col-sm-offset-1 control-label">用户名：</label>
 							<div class="col-sm-4">
-								<input type="text" class="form-control checkable" data-content="非空"
+								<input type="text" class="form-control checkable"
+									reg="/^[a-zA-Z0-9]{2,10}$/" data-content="2-10个字母或数字"
 									name="user.usUserName" value="${ user.usUserName}">
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label for="inputEmail3"
-								class="col-sm-3 col-sm-offset-1 control-label">用户姓名：</label>
+							<label class="col-sm-3 col-sm-offset-1 control-label">用户姓名：</label>
 							<div class="col-sm-4">
 								<input type="text" class="form-control checkable"
-									reg="/^[A-Za-z0-9]+$/" data-content="用户姓名不正确"
+									reg="/^[\s\S]{2,10}$/" data-content="2-10个字符"
 									name="user.usName" value="${ user.usName}">
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label for="" class="col-sm-3 col-sm-offset-1 control-label">用户角色：</label>
+							<label class="col-sm-3 col-sm-offset-1 control-label">用户角色：</label>
 							<div class="col-sm-4">
 								<select class="form-control" name="user.usRole">
 									<s:iterator value="roles" id="r">
@@ -101,7 +100,6 @@
 						data : $("[name='user.usUserName']").val()
 					},
 					success : function(data, textStatus, jqXHR) {
-						alert(1);
 						var obj = eval(data);
 						if (obj == true) {
 							b = true;

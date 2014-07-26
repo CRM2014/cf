@@ -49,24 +49,24 @@
 					<form class="form-horizontal" role="form"
 						action="${ctx }/customer/history-view.action" method="post">
 						<div class="form-group">
-							<label for="inputEmail3" class="col-sm-2 control-label">编号：</label>
+							<label  class="col-sm-2 control-label">编号：</label>
 							<div class="col-sm-3">${orderRecord.orreId}</div>
-							<label for="inputEmail3" class="col-sm-2 control-label">客户：</label>
+							<label  class="col-sm-2 control-label">客户：</label>
 							<div class="col-sm-3">${orderRecord.customer.cuName}</div>
 						</div>
 						<div class="form-group">
-							<label for="inputEmail3" class="col-sm-2 control-label">下单时间：</label>
+							<label  class="col-sm-2 control-label">下单时间：</label>
 							<div class="col-sm-3">${orderRecord.orreDate}</div>
-							<label for="inputEmail3" class="col-sm-2 control-label">订单状态：</label>
+							<label  class="col-sm-2 control-label">订单状态：</label>
 							<div class="col-sm-3">${orderRecord.orreStatus}</div>
 						</div>
 						<div class="form-group">
-							<label for="inputEmail3" class="col-sm-2 control-label">送货地址：</label>
+							<label  class="col-sm-2 control-label">送货地址：</label>
 							<div class="col-sm-8">${orderRecord.orrePlace}</div>
 						</div>
 						<br>
 						<div class="form-group">
-							<label for="inputEmail3" class="col-sm-2 control-label">订单明细：</label>
+							<label  class="col-sm-2 control-label">订单明细：</label>
 							<div class="panel panel-default">
 								<!-- Table -->
 								<table class="table">

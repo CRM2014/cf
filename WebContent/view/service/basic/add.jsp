@@ -35,7 +35,7 @@
 						action="${ctx }/service/service-addService.action" method="post">
 
 						<div class="form-group">
-							<label for="inputEmail3"
+							<label 
 								class="col-sm-3 col-sm-offset-1 control-label">产品：</label>
 							<div class="col-sm-4">
 								<select class="form-control" name="productId">
@@ -46,7 +46,7 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="inputEmail3"
+							<label 
 								class="col-sm-3 col-sm-offset-1 control-label">服务类型：</label>
 							<div class="col-sm-4">
 								<select class="form-control" name="service.seType">
@@ -57,7 +57,7 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="inputEmail3"
+							<label 
 								class="col-sm-3 col-sm-offset-1 control-label">概要：</label>
 							<div class="col-sm-4">
 								<input type="text" class="form-control checkable" data-content="非空"

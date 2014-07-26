@@ -39,14 +39,14 @@
 						
 
 						<div class="form-group">
-							<label for="inputEmail3" class="col-sm-2 control-label">客户ID</label>
+							<label  class="col-sm-2 control-label">客户ID</label>
 							<div class="col-sm-3">
 								<input type="text" class="form-control" name="outflow.customer.cuId"
 									value="${ outflow.customer.cuId}" disabled>
 								<input type="hidden" class="form-control" name="outflow.customer.cuId"
 									value="${ outflow.customer.cuId}">
 							</div>
-							<label for="inputEmail3" class="col-sm-2 control-label">客户状态</label>
+							<label  class="col-sm-2 control-label">客户状态</label>
 							<div class="col-sm-3">
 								<input type="text" class="form-control" name="outflow.ouflStatus"
 									value="${ outflow.ouflStatus}" disabled>
@@ -55,7 +55,7 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="inputEmail3" class="col-sm-2 control-label">暂缓措施</label>
+							<label  class="col-sm-2 control-label">暂缓措施</label>
 							<div class="col-sm-8">
 								<input class="form-control" rows="3" name="outflow.ouflAction"
 									value="${ outflow.ouflAction}" disabled></input>
@@ -67,7 +67,7 @@
 
 
 						<div class="form-group">
-							<label for="inputEmail3" class="col-sm-2 control-label">流失原因</label>
+							<label  class="col-sm-2 control-label">流失原因</label>
 							<div class="col-sm-8">
 								<input class="form-control checkable" reg="/^[\s\S]{1,}$/" rows="3" name="outflow.ouflReson"
 									value="${ outflow.ouflReson}"></input>

@@ -50,28 +50,28 @@
 						action="${ctx }/customer/communicate-modifyUser.action"
 						method="post">
 						<div class="form-group">
-							<label for="" class="col-sm-2 control-label">编号：</label>
+							<label  class="col-sm-2 control-label">编号：</label>
 							<div class="col-sm-3">
 								<input type="text" class="form-control" disabled
 									value="${ contactRecord.coreId}"> <input type="hidden"
 									name="contactRecord.coreId" value="${ contactRecord.coreId}">
 							</div>
 
-							<label for="" class="col-sm-2 control-label">客户：</label>
+							<label  class="col-sm-2 control-label">客户：</label>
 							<div class="col-sm-3">
 								<input type="text" class="form-control" disabled
 									value="${ contactRecord.customer.cuName}">
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="inputEmail3" class="col-sm-2 control-label">交往时间：</label>
+							<label  class="col-sm-2 control-label">交往时间：</label>
 							<div class="col-sm-3">
 								<input type="text" class="form-control" disabled
 									value="${ contactRecord.coreDate}"> <input
 									type="hidden" name="contactRecord.coreDate"
 									value="${ contactRecord.coreDate}">
 							</div>
-							<label for="inputEmail3" class="col-sm-2 control-label">交往地点：</label>
+							<label  class="col-sm-2 control-label">交往地点：</label>
 							<div class="col-sm-3">
 								<input type="text" class="form-control checkable" reg="/^[\s\S]{1,30}$/" data-content="非空"
 									name="contactRecord.corePlace"
@@ -79,7 +79,7 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="inputEmail3" class="col-sm-2 control-label">概要：</label>
+							<label  class="col-sm-2 control-label">概要：</label>
 							<div class="col-sm-8">
 								<input type="text" class="form-control checkable" reg="/^[\s\S]{1,30}$/" data-content="非空"
 									name="contactRecord.coreMain"
@@ -87,7 +87,7 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="inputEmail3" class="col-sm-2 control-label">描述：</label>
+							<label  class="col-sm-2 control-label">描述：</label>
 							<div class="col-sm-8">
 								<input type="text" class="form-control"
 									name="contactRecord.coreDescription"
@@ -95,7 +95,7 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="inputEmail3" class="col-sm-2 control-label">详情：</label>
+							<label  class="col-sm-2 control-label">详情：</label>
 							<div class="col-sm-8">
 								<input type="text" class="form-control"
 									name="contactRecord.coreDetail"

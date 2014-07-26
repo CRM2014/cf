@@ -30,32 +30,32 @@
 				<!-- 数据显示与交互内容开始 -->
 				<div class="form-horizontal">
 					<div class="form-group">
-						<label for="inputEmail3" class="col-sm-4 control-label">编号：</label>
-						<label for="inputEmail3" class="col-sm--3 control-label">${currentUser.usId }</label>
+						<label  class="col-sm-4 control-label">编号：</label>
+						<label  class="col-sm--3 control-label">${currentUser.usId }</label>
 					</div>
 					<div class="form-group">
-						<label for="inputEmail3" class="col-sm-4 control-label">用户名：</label>
-						<label for="inputEmail3" class="col-sm--3 control-label">${currentUser.usUserName }</label>
+						<label  class="col-sm-4 control-label">用户名：</label>
+						<label  class="col-sm--3 control-label">${currentUser.usUserName }</label>
 					</div>
 					<div class="form-group">
-						<label for="inputEmail3" class="col-sm-4 control-label">用户姓名：</label>
-						<label for="inputEmail3" class="col-sm--3 control-label">${currentUser.usName }</label>
+						<label  class="col-sm-4 control-label">用户姓名：</label>
+						<label  class="col-sm--3 control-label">${currentUser.usName }</label>
 					</div>
 					<div class="form-group">
-						<label for="inputEmail3" class="col-sm-4 control-label">用户角色：</label>
-						<label for="inputEmail3" class="col-sm--3 control-label">${currentUser.usRole }</label>
+						<label  class="col-sm-4 control-label">用户角色：</label>
+						<label  class="col-sm--3 control-label">${currentUser.usRole }</label>
 					</div>
 					<div class="form-group">
-						<label for="inputEmail3" class="col-sm-4 control-label">本次登录时间：</label>
-						<label for="inputEmail3" class="col-sm--3 control-label">${currentUser.usLoginTime }</label>
+						<label  class="col-sm-4 control-label">本次登录时间：</label>
+						<label  class="col-sm--3 control-label">${currentUser.usLoginTime }</label>
 					</div>
 					<div class="form-group">
-						<label for="inputEmail3" class="col-sm-4 control-label">上次登录时间：</label>
-						<label for="inputEmail3" class="col-sm--3 control-label">${currentUser.usLastLoginTime }</label>
+						<label  class="col-sm-4 control-label">上次登录时间：</label>
+						<label  class="col-sm--3 control-label">${currentUser.usLastLoginTime }</label>
 					</div>
 					<div class="form-group">
-						<label for="inputEmail3" class="col-sm-4 control-label">用户创建时间：</label>
-						<label for="inputEmail3" class="col-sm--3 control-label">${currentUser.usCreateTime }</label>
+						<label  class="col-sm-4 control-label">用户创建时间：</label>
+						<label  class="col-sm--3 control-label">${currentUser.usCreateTime }</label>
 					</div>
 					<div class="form-group">
 						<div class="col-sm-6">
@@ -87,7 +87,7 @@
 							action="${ctx }/account/account-passwordModify.action">
 
 							<div class="form-group">
-								<label for="inputEmail3"
+								<label 
 									class="col-sm-3 col-sm-offset-1 control-label">原密码：</label>
 								<div class="col-sm-4">
 									<input type="password" class="form-control checkable"
@@ -96,7 +96,7 @@
 							</div>
 
 							<div class="form-group">
-								<label for="inputEmail3"
+								<label 
 									class="col-sm-3 col-sm-offset-1 control-label">新密码：</label>
 								<div class="col-sm-4">
 									<input type="password" class="form-control checkable" reg="/^[A-Za-z0-9]{6,20}$/"
@@ -104,7 +104,7 @@
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="inputEmail3"
+								<label 
 									class="col-sm-3 col-sm-offset-1 control-label">确认密码：</label>
 								<div class="col-sm-4">
 									<input type="password" class="form-control" name="rePassword">

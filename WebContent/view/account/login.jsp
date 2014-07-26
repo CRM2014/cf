@@ -28,21 +28,21 @@
 							</div>
 						</s:if>
 						<div class="form-group">
-							<label for="inputEmail3" class="col-sm-3 control-label">用户名：</label>
+							<label  class="col-sm-3 control-label">用户名：</label>
 							<div class="col-sm-8">
 								<input type="text" class="form-control" name="user.usUserName"
 									placeholder="用户名">
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="inputEmail3" class="col-sm-3 control-label">密码：</label>
+							<label  class="col-sm-3 control-label">密码：</label>
 							<div class="col-sm-8">
 								<input type="password" class="form-control"
 									name="user.usPassword" placeholder="密码">
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="inputEmail3" class="col-sm-3 control-label">验证码：</label>
+							<label  class="col-sm-3 control-label">验证码：</label>
 							<div class="col-sm-4">
 								<input type="text" class="form-control" name="securityCode"
 									placeholder="验证码">
