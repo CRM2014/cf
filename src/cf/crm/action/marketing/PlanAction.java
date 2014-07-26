@@ -23,8 +23,10 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import cf.crm.action.BaseAction;
+import cf.crm.entity.Customer;
 import cf.crm.entity.Development;
 import cf.crm.entity.Salechance;
+import cf.crm.service.CustomerService;
 import cf.crm.service.DevelopmentService;
 import cf.crm.service.SalechanceService;
 import cf.crm.util.page.Page;
@@ -44,6 +46,9 @@ public class PlanAction extends BaseAction {
 	@Autowired
 	@Qualifier("salechanceServiceImpl")
 	private SalechanceService salechanceService;
+	@Autowired
+	@Qualifier("customerServiceImpl")
+	private CustomerService customerService;
 
 	private Page<Development> page;
 	private List<Development> developments;
@@ -120,6 +125,34 @@ public class PlanAction extends BaseAction {
 		salechance = origDevelopmentexecute.getSalechance();
 		warn = "修改成功!";
 		return "execute-modify-success";
+	}
+
+	public String developmentExecute() {
+		salechance = salechanceService.find(salechance.getSachId());
+		Customer customer = new Customer();
+		customer.setCuAddress("");
+		customer.setCuBank("");
+		customer.setCuBankAccount("");
+		customer.setCuCredit(1);
+		customer.setCuFacsimile("");
+		customer.setCuLandTaxNum("");
+		customer.setCuLegal("");
+		customer.setCuLevel("1");
+		customer.setCuName(salechance.getUsCustomerName());
+		customer.setCuNationTaxNum("");
+		customer.setCuPostal("");
+		customer.setCuRelation("");
+		customer.setCuSatisfy(1);
+		customer.setCuTel("");
+		customer.setCuTurnover(0);
+		customer.setCuTurnoverNum("");
+		customer.setCuWeb("");
+		customer.setCuZone("");
+		customer.setUser(salechance.getUserByUsDesignationId());
+		customerService.add(customer);
+		salechanceService.remove(salechance);
+		warn = "开发成功!";
+		return "execute-success";
 	}
 
 	public Development getCondition() {
