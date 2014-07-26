@@ -39,19 +39,7 @@
 								name="compositionType">
 								<option value="1">按客户名称排序</option>
 								<option value="2">按订单金额排序</option>
-							</select>
-							<div class="form-group">
-								<div class="input-group">
-									<div class="input-group-addon">客户名称</div>
-									<input class="form-control" type="text" placeholder=""
-										name="condition.cuName" value="${condition.cuName}">
-								</div>
-							</div>
-
-							<button type="submit" class="btn btn-default">
-								<span class="glyphicon glyphicon-search"></span> 查询
-							</button>
-							<a role="button" class="btn btn-default" data-toggle="modal"
+							</select> <a role="button" class="btn btn-default" data-toggle="modal"
 								data-target="#chart">订单数量走势</a> <a role="button"
 								href="${ctx }/excel/contribution.action" class="btn btn-default">导出Excel</a>
 						</div>

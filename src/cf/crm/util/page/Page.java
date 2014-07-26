@@ -41,6 +41,8 @@ public class Page<T> {
 	}
 
 	public int getCurrentPage() {
+		if (currentPage > getCountPage())
+			currentPage = 1;
 		return currentPage;
 	}
 

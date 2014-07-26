@@ -6,7 +6,7 @@
 <struts>
 	<!-- 将Action的创建交给spring来管理 -->
 	<constant name="struts.objectFactory" value="spring" />
-	<constant name="struts.devMode" value="true" />
+	<constant name="struts.devMode" value="false" />
 	<constant name="struts.i18n.encoding" value="UTF-8" />
 	<constant name="struts.action.extension" value="action,," />
 
@@ -23,19 +23,19 @@
 		<default-action-ref name="index.action" />
 		<global-results>
 			<result name="404">/view/error/404.jsp</result>
+			<result name="403">/view/error/403.jsp</result>
 			<result name="checkLoginFail" type="redirectAction">
 				<param name="actionName">login-login</param>
 				<param name="namespace">/account </param>
 			</result>
 		</global-results>
-
+		<global-exception-mappings>
+			<exception-mapping result="404" exception="java.lang.Exception"></exception-mapping>
+		</global-exception-mappings>
 		<action name="index">
 			<result>/view/account/login.jsp</result>
 		</action>
 
-		<action name="404">
-			<result>/view/error/404.jsp</result>
-		</action>
 	</package>
 
 	<!-- 包含的配置文件 -->
