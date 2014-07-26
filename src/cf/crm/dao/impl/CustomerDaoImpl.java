@@ -80,9 +80,9 @@ public class CustomerDaoImpl extends DaoAdapter implements CustomerDao {
 		if ("1".equals(compositionType))
 			sql = "select cuLevel,count(cuLevel) cuTotal from customer group by cuLevel";
 		else if ("2".equals(compositionType))
-			sql = "select cuLevel,count(cuCredit) cuTotal from customer group by cuCredit";
+			sql = "select cuCredit,count(cuCredit) cuTotal from customer group by cuCredit";
 		else if ("3".equals(compositionType))
-			sql = "select cuLevel,count(cuSatisfy) cuTotal from customer group by cuSatisfy";
+			sql = "select cuSatisfy,count(cuSatisfy) cuTotal from customer group by cuSatisfy";
 		else
 			sql = "select cuLevel,count(cuLevel) cuTotal from customer group by cuLevel";
 		super.findByPage(page, sql);
