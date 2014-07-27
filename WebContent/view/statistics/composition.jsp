@@ -51,9 +51,9 @@
 						<br> <br>
 						<table class="table table-bordered" align="center" valign="middle">
 							<tr>
-								<td align="center">编号</td>
-								<td align="center" id="compositionTypeTitle">等级</td>
-								<td align="center">客户数量</td>
+								<th align="center">编号</th>
+								<th align="center" id="compositionTypeTitle">等级</th>
+								<th align="center">客户数量</th>
 							</tr>
 							<s:iterator value="page.list" status="st">
 								<tr>

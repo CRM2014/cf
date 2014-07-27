@@ -46,9 +46,9 @@
 						<br> <br>
 						<table class="table table-bordered" align="center" valign="middle">
 							<tr>
-								<td align="center">编号</td>
-								<td align="center">客户名称</td>
-								<td align="center">订单金额（元）</td>
+								<th align="center">编号</th>
+								<th align="center">客户名称</th>
+								<th align="center">订单金额（元）</th>
 							</tr>
 							<s:iterator value="page.list" status="st">
 								<tr>

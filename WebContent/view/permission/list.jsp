@@ -65,11 +65,11 @@
 						<table class="table table-bordered" align="center" valign="middle">
 
 							<tr>
-								<td align="center">编号</td>
-								<td align="center">用户名</td>
-								<td align="center">用户姓名</td>
-								<td align="center">用户角色</td>
-								<td align="center">操作</td>
+								<th align="center">编号</th>
+								<th align="center">用户名</th>
+								<th align="center">用户姓名</th>
+								<th align="center">用户角色</th>
+								<th align="center">操作</th>
 							</tr>
 							<s:iterator value="%{page.list}">
 								<tr>

@@ -91,6 +91,7 @@
 		pageInfo.generate();
 
 		$("form").submit(function() {
+			isChange = false;
 			var b = check();
 			if (b) {
 				$.ajax({
@@ -115,6 +116,16 @@
 				});
 			}
 			return b;
+		});
+
+		var isChange = false;
+		window.onbeforeunload = checkLeave;
+		function checkLeave() {
+			if (isChange)
+				event.returnValue = "有信息未保存,确定离开当前页面吗？";
+		};
+		$("[type='text']").change(function() {
+			isChange = true;
 		});
 	</script>
 	<!-- js结束 -->
