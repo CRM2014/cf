@@ -11,10 +11,14 @@
 
 package cf.crm.action.ajax;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
+
+import com.opensymphony.xwork2.ActionContext;
 
 import cf.crm.action.BaseAjaxAction;
 import cf.crm.entity.User;
@@ -40,7 +44,7 @@ public class PermissionAjaxAction extends BaseAjaxAction {
 		}
 		User user = userService.findByUserName(userName);
 		if (user != null)
-		output(false);
+			output(false);
 		else
 			output(true);
 	}

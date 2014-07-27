@@ -45,9 +45,9 @@
 						<div class="form-group">
 							<label class="col-sm-3 col-sm-offset-1 control-label">用户名：</label>
 							<div class="col-sm-4">
-								<input type="text" class="form-control checkable"
+								<input type="text" class="form-control"
 									reg="/^[a-zA-Z0-9]{2,10}$/" data-content="2-10个字母或数字"
-									name="user.usUserName" value="${ user.usUserName}">
+									name="user.usUserName" value="${ user.usUserName}" disabled>
 							</div>
 						</div>
 
