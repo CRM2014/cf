@@ -9,7 +9,7 @@
  * @version 1.0, 2014-7-15 
  */
 
-package cf.crm.util.page;
+package cf.crm.dao.support.adapter.page;
 
 public class PageHelper {
 	@SuppressWarnings("rawtypes")

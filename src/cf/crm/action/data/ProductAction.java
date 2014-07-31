@@ -20,10 +20,10 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import cf.crm.action.BaseAction;
+import cf.crm.dao.support.adapter.page.Page;
+import cf.crm.dao.support.adapter.page.PageHelper;
 import cf.crm.entity.Product;
 import cf.crm.service.ProductService;
-import cf.crm.util.page.Page;
-import cf.crm.util.page.PageHelper;
 
 @Controller
 @Scope("prototype")

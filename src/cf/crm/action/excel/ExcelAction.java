@@ -21,9 +21,9 @@ import org.springframework.stereotype.Controller;
 
 import cf.crm.action.BaseExcelAction;
 import cf.crm.action.util.Poi;
+import cf.crm.dao.support.adapter.page.Page;
+import cf.crm.dao.support.adapter.page.PageHelper;
 import cf.crm.service.CustomerService;
-import cf.crm.util.page.Page;
-import cf.crm.util.page.PageHelper;
 
 @Controller
 @Scope("prototype")

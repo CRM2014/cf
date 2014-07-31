@@ -22,12 +22,12 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import cf.crm.action.BaseAction;
+import cf.crm.dao.support.adapter.page.Page;
+import cf.crm.dao.support.adapter.page.PageHelper;
 import cf.crm.entity.Salechance;
 import cf.crm.entity.User;
 import cf.crm.service.SalechanceService;
 import cf.crm.service.UserService;
-import cf.crm.util.page.Page;
-import cf.crm.util.page.PageHelper;
 
 @Controller
 @Scope("prototype")

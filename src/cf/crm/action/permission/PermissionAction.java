@@ -24,11 +24,11 @@ import org.springframework.stereotype.Controller;
 
 import cf.crm.action.BaseAction;
 import cf.crm.action.util.MD5Util;
+import cf.crm.dao.support.adapter.page.Page;
+import cf.crm.dao.support.adapter.page.PageHelper;
 import cf.crm.entity.User;
 import cf.crm.service.UserService;
 import cf.crm.util.Info.Role;
-import cf.crm.util.page.Page;
-import cf.crm.util.page.PageHelper;
 
 @Controller
 @Scope("prototype")

@@ -20,9 +20,9 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import cf.crm.dao.DatadictionaryDao;
+import cf.crm.dao.support.adapter.page.Page;
 import cf.crm.entity.Datadictionary;
 import cf.crm.service.DatadictionaryService;
-import cf.crm.util.page.Page;
 
 @Component
 @Scope("prototype")

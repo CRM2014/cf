@@ -14,8 +14,9 @@ package cf.crm.dao;
 import java.util.List;
 import java.util.Map;
 
+import cf.crm.dao.support.adapter.Dao;
+import cf.crm.dao.support.adapter.page.Page;
 import cf.crm.entity.Orderrecord;
-import cf.crm.util.page.Page;
 
 public interface OrderrecordDao extends Dao {
 	public void add(Orderrecord orderrecord);

@@ -13,6 +13,7 @@ package cf.crm.dao;
 
 import java.util.List;
 
+import cf.crm.dao.support.adapter.Dao;
 import cf.crm.entity.Orderrecordproduct;
 import cf.crm.entity.Product;
 

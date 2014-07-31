@@ -14,8 +14,8 @@ package cf.crm.service;
 import java.util.List;
 import java.util.Map;
 
+import cf.crm.dao.support.adapter.page.Page;
 import cf.crm.entity.Contactperson;
-import cf.crm.util.page.Page;
 
 public interface ContactpersonService {
 	public void add(Contactperson contactperson);

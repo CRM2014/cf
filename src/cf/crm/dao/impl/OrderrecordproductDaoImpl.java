@@ -17,6 +17,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import cf.crm.dao.OrderrecordproductDao;
+import cf.crm.dao.support.adapter.impl.DaoAdapter;
 import cf.crm.entity.Orderrecordproduct;
 import cf.crm.entity.Product;
 

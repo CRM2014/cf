@@ -20,9 +20,9 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import cf.crm.dao.StorageDao;
+import cf.crm.dao.support.adapter.page.Page;
 import cf.crm.entity.Storage;
 import cf.crm.service.StorageService;
-import cf.crm.util.page.Page;
 
 @Component
 @Scope("prototype")

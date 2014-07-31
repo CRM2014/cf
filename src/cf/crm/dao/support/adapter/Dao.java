@@ -9,7 +9,7 @@
  * @version 1.0, 2014-7-15 
  */
 
-package cf.crm.dao;
+package cf.crm.dao.support.adapter;
 
 import java.util.List;
 import java.util.Map;
@@ -17,7 +17,7 @@ import java.util.Map;
 import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.Order;
 
-import cf.crm.util.page.Page;
+import cf.crm.dao.support.adapter.page.Page;
 
 public interface Dao {
 	/**

@@ -20,11 +20,11 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import cf.crm.action.BaseAction;
+import cf.crm.dao.support.adapter.page.Page;
+import cf.crm.dao.support.adapter.page.PageHelper;
 import cf.crm.entity.Outflow;
 import cf.crm.service.OutflowService;
 import cf.crm.service.CustomerService;
-import cf.crm.util.page.Page;
-import cf.crm.util.page.PageHelper;
 @Controller
 @Scope("prototype")
 public class DrainAction extends BaseAction {

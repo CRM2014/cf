@@ -20,6 +20,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import cf.crm.action.BaseAction;
+import cf.crm.dao.support.adapter.page.Page;
 import cf.crm.entity.Datadictionary;
 import cf.crm.entity.Orderrecordproduct;
 import cf.crm.entity.Product;
@@ -30,7 +31,6 @@ import cf.crm.service.OrderrecordproductService;
 import cf.crm.service.ProductService;
 import cf.crm.service.ServiceService;
 import cf.crm.service.ServicecustomerService;
-import cf.crm.util.page.Page;
 
 @Controller
 @Scope("prototype")

@@ -14,8 +14,9 @@ package cf.crm.dao;
 import java.util.List;
 import java.util.Map;
 
+import cf.crm.dao.support.adapter.Dao;
+import cf.crm.dao.support.adapter.page.Page;
 import cf.crm.entity.Outflow;
-import cf.crm.util.page.Page;
 
 public interface OutflowDao extends Dao {
 	public void add(Outflow outflow);

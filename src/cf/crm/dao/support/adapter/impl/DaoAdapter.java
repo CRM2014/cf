@@ -9,7 +9,7 @@
  * @version 1.0, 2014-7-15 
  */
 
-package cf.crm.dao.impl;
+package cf.crm.dao.support.adapter.impl;
 
 import java.util.List;
 import java.util.Map;
@@ -26,8 +26,8 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 import org.springframework.stereotype.Component;
 
-import cf.crm.dao.Dao;
-import cf.crm.util.page.Page;
+import cf.crm.dao.support.adapter.Dao;
+import cf.crm.dao.support.adapter.page.Page;
 
 @Component
 @Scope("prototype")
